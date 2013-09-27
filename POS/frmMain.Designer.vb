@@ -52,12 +52,14 @@ Partial Class frmMain
         Me.tpMain = New DevComponents.DotNetBar.TabControl()
         Me.TabControlPanel1 = New DevComponents.DotNetBar.TabControlPanel()
         Me.TabItem1 = New DevComponents.DotNetBar.TabItem(Me.components)
+        Me.SuperTabControl1 = New DevComponents.DotNetBar.SuperTabControl()
         Me.MetroShell1.SuspendLayout()
         Me.MetroTabPanel3.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         CType(Me.tpMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpMain.SuspendLayout()
+        CType(Me.SuperTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroShell1
@@ -75,6 +77,7 @@ Partial Class frmMain
         Me.MetroShell1.Dock = System.Windows.Forms.DockStyle.Top
         Me.MetroShell1.ForeColor = System.Drawing.Color.Black
         Me.MetroShell1.HelpButtonText = Nothing
+        Me.MetroShell1.HelpButtonVisible = False
         Me.MetroShell1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuArchivo, Me.mnuInicio, Me.mnuVer, Me.mnuAdmon, Me.mnuSistema})
         Me.MetroShell1.KeyTipsFont = New System.Drawing.Font("Tahoma", 7.0!)
         Me.MetroShell1.Location = New System.Drawing.Point(0, 1)
@@ -82,7 +85,8 @@ Partial Class frmMain
         Me.MetroShell1.QuickToolbarItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.lbTitulo, Me.QatCustomizeItem1})
         Me.MetroShell1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.MetroShell1.SettingsButtonText = "OPCIONES"
-        Me.MetroShell1.Size = New System.Drawing.Size(963, 120)
+        Me.MetroShell1.SettingsButtonVisible = False
+        Me.MetroShell1.Size = New System.Drawing.Size(606, 120)
         Me.MetroShell1.SystemText.MaximizeRibbonText = "&Maximize the Ribbon"
         Me.MetroShell1.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon"
         Me.MetroShell1.SystemText.QatAddItemText = "&Add to Quick Access Toolbar"
@@ -111,7 +115,7 @@ Partial Class frmMain
         Me.MetroTabPanel3.Location = New System.Drawing.Point(0, 51)
         Me.MetroTabPanel3.Name = "MetroTabPanel3"
         Me.MetroTabPanel3.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.MetroTabPanel3.Size = New System.Drawing.Size(963, 69)
+        Me.MetroTabPanel3.Size = New System.Drawing.Size(606, 69)
         '
         '
         '
@@ -227,6 +231,7 @@ Partial Class frmMain
         'mnuArchivo
         '
         Me.mnuArchivo.AutoExpandOnClick = True
+        Me.mnuArchivo.BackstageTab = Me.SuperTabControl1
         Me.mnuArchivo.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.TextOnlyAlways
         Me.mnuArchivo.ImageFixedSize = New System.Drawing.Size(20, 20)
         Me.mnuArchivo.ImagePaddingHorizontal = 0
@@ -289,9 +294,9 @@ Partial Class frmMain
         Me.StatusBar.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusBar.ForeColor = System.Drawing.Color.Black
         Me.StatusBar.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.lbEstado})
-        Me.StatusBar.Location = New System.Drawing.Point(0, 498)
+        Me.StatusBar.Location = New System.Drawing.Point(0, 377)
         Me.StatusBar.Name = "StatusBar"
-        Me.StatusBar.Size = New System.Drawing.Size(963, 30)
+        Me.StatusBar.Size = New System.Drawing.Size(606, 30)
         Me.StatusBar.TabIndex = 1
         Me.StatusBar.Text = "MetroStatusBar1"
         '
@@ -376,7 +381,7 @@ Partial Class frmMain
         Me.ToolStripContainer1.ContentPanel.BackColor = System.Drawing.Color.Transparent
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.tpMain)
         Me.ToolStripContainer1.ContentPanel.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(963, 352)
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(606, 231)
         Me.ToolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         '
         'ToolStripContainer1.LeftToolStripPanel
@@ -390,7 +395,7 @@ Partial Class frmMain
         '
         Me.ToolStripContainer1.RightToolStripPanel.BackColor = System.Drawing.Color.White
         Me.ToolStripContainer1.RightToolStripPanel.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripContainer1.Size = New System.Drawing.Size(963, 377)
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(606, 256)
         Me.ToolStripContainer1.TabIndex = 2
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         '
@@ -415,7 +420,7 @@ Partial Class frmMain
         Me.tpMain.Name = "tpMain"
         Me.tpMain.SelectedTabFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tpMain.SelectedTabIndex = 0
-        Me.tpMain.Size = New System.Drawing.Size(963, 352)
+        Me.tpMain.Size = New System.Drawing.Size(606, 231)
         Me.tpMain.Style = DevComponents.DotNetBar.eTabStripStyle.Metro
         Me.tpMain.TabCloseButtonHot = Global.POS.My.Resources.Resources.close16
         Me.tpMain.TabCloseButtonNormal = Global.POS.My.Resources.Resources.close16
@@ -431,7 +436,7 @@ Partial Class frmMain
         Me.TabControlPanel1.Location = New System.Drawing.Point(0, 29)
         Me.TabControlPanel1.Name = "TabControlPanel1"
         Me.TabControlPanel1.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabControlPanel1.Size = New System.Drawing.Size(963, 323)
+        Me.TabControlPanel1.Size = New System.Drawing.Size(606, 202)
         Me.TabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.White
         Me.TabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
         Me.TabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer))
@@ -447,12 +452,50 @@ Partial Class frmMain
         Me.TabItem1.Name = "TabItem1"
         Me.TabItem1.Text = "TabItem1"
         '
+        'SuperTabControl1
+        '
+        Me.SuperTabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SuperTabControl1.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        '
+        '
+        '
+        Me.SuperTabControl1.ControlBox.CloseBox.Name = ""
+        '
+        '
+        '
+        Me.SuperTabControl1.ControlBox.MenuBox.Name = ""
+        Me.SuperTabControl1.ControlBox.Name = ""
+        Me.SuperTabControl1.ControlBox.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SuperTabControl1.ControlBox.MenuBox, Me.SuperTabControl1.ControlBox.CloseBox})
+        Me.SuperTabControl1.ControlBox.Visible = False
+        Me.SuperTabControl1.ForeColor = System.Drawing.Color.Black
+        Me.SuperTabControl1.ItemPadding.Left = 6
+        Me.SuperTabControl1.ItemPadding.Right = 4
+        Me.SuperTabControl1.ItemPadding.Top = 4
+        Me.SuperTabControl1.Location = New System.Drawing.Point(0, 52)
+        Me.SuperTabControl1.Name = "SuperTabControl1"
+        Me.SuperTabControl1.ReorderTabsEnabled = False
+        Me.SuperTabControl1.SelectedTabFont = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.SuperTabControl1.SelectedTabIndex = -1
+        Me.SuperTabControl1.Size = New System.Drawing.Size(606, 355)
+        Me.SuperTabControl1.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Left
+        Me.SuperTabControl1.TabFont = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SuperTabControl1.TabHorizontalSpacing = 16
+        Me.SuperTabControl1.TabIndex = 3
+        Me.SuperTabControl1.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.Office2010BackstageBlue
+        Me.SuperTabControl1.TabVerticalSpacing = 8
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(964, 529)
+        Me.ClientSize = New System.Drawing.Size(607, 408)
+        Me.Controls.Add(Me.SuperTabControl1)
         Me.Controls.Add(Me.ToolStripContainer1)
         Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.MetroShell1)
@@ -468,6 +511,7 @@ Partial Class frmMain
         Me.ToolStripContainer1.PerformLayout()
         CType(Me.tpMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpMain.ResumeLayout(False)
+        CType(Me.SuperTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -499,5 +543,6 @@ Partial Class frmMain
     Friend WithEvents tpMain As DevComponents.DotNetBar.TabControl
     Friend WithEvents TabControlPanel1 As DevComponents.DotNetBar.TabControlPanel
     Friend WithEvents TabItem1 As DevComponents.DotNetBar.TabItem
+    Friend WithEvents SuperTabControl1 As DevComponents.DotNetBar.SuperTabControl
 
 End Class
