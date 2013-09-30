@@ -4,7 +4,7 @@ Imports DevComponents.DotNetBar.Controls
 
 Module Funciones
 
-    Sub _LLENAR_CMB(ByVal sql As String, ByRef _cmb As ComboBox)
+    Public Sub _LLENAR_CMB(ByVal sql As String, ByRef _cmb As ComboBox)
         Dim Dt As DataTable
         Dim Da As New OracleDataAdapter
         With frmMain._cmd
@@ -21,6 +21,26 @@ Module Funciones
             .ValueMember = "id"
         End With
     End Sub
+
+    Public Sub _LLENAR_CMB(ByVal sql As String, ByRef _cmb As ComboBoxEx)
+        Dim Dt As DataTable
+        Dim Da As New OracleDataAdapter
+        With frmMain._cmd
+            .CommandType = CommandType.Text
+            .CommandText = sql
+            .Connection = frmMain._cnn
+        End With
+        Da.SelectCommand = frmMain._cmd
+        Dt = New DataTable
+        Da.Fill(Dt)
+        With _cmb
+            .DataSource = Dt
+            .DisplayMember = "nombre"
+            .ValueMember = "id"
+        End With
+    End Sub
+ 
+    
     Public Sub _SET_DG(ByVal nombreTabla As String, ByVal query As String, ByRef dg As DataGridView)
         Dim ds = New DataSet
         Dim da = New OracleDataAdapter(query, frmMain._cnn)
@@ -28,10 +48,40 @@ Module Funciones
         dg.DataSource = ds.Tables(nombreTabla)
     End Sub
 
-    Sub _ESTADO(ByVal texto As String, ByRef _lbl As LabelItem)
+    Public Sub _ESTADO(ByVal texto As String, ByRef _lbl As LabelItem)
         '_lbl.Text = texto
         frmMain.lb = _lbl
         frmMain.lb.Text = texto
         frmMain.bEstado = True
     End Sub
+  
+   
+
+    Public Function _NITvalido(ByVal Nit As String) As Boolean
+        Try
+            Dim pos As Integer = Nit.IndexOf("-")
+            Dim Correlativo As String = Nit.Substring(0, pos)
+            Dim DigitoVerificador As String = Nit.Substring(pos + 1)
+            Dim Factor As Integer = Correlativo.Length + 1
+            Dim Suma As Integer = 0
+            Dim Valor As Integer = 0
+            For x As Integer = 0 To Nit.IndexOf("-") - 1
+                Valor = CInt(Nit.Substring(x, 1))
+                Suma = Suma + (Valor * Factor)
+                Factor = Factor - 1
+            Next
+
+            Dim xMOd11 As Double
+            xMOd11 = (11 - (Suma Mod 11)) Mod 11
+            Dim s As String = Str(xMOd11)
+
+            If (xMOd11 = 10 And DigitoVerificador = "K") Or (s.Trim = DigitoVerificador) Then
+
+                Return True
+            End If
+            Return False
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 End Module

@@ -24,7 +24,6 @@ Partial Class ctrlTienda
     Private Sub InitializeComponent()
         Me.cbLugar = New System.Windows.Forms.ComboBox()
         Me.swBt = New DevComponents.DotNetBar.Controls.SwitchButton()
-        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txNombre = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txSerie = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -39,7 +38,10 @@ Partial Class ctrlTienda
         Me.cbTipo = New System.Windows.Forms.ComboBox()
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
+        Me.imgBuscar = New System.Windows.Forms.PictureBox()
+        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.imgBuscar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cbLugar
@@ -47,9 +49,9 @@ Partial Class ctrlTienda
         Me.cbLugar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cbLugar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbLugar.FormattingEnabled = True
-        Me.cbLugar.Location = New System.Drawing.Point(306, 33)
+        Me.cbLugar.Location = New System.Drawing.Point(371, 33)
         Me.cbLugar.Name = "cbLugar"
-        Me.cbLugar.Size = New System.Drawing.Size(235, 29)
+        Me.cbLugar.Size = New System.Drawing.Size(197, 29)
         Me.cbLugar.TabIndex = 11
         Me.cbLugar.Visible = False
         '
@@ -59,7 +61,7 @@ Partial Class ctrlTienda
         '
         '
         Me.swBt.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.swBt.Location = New System.Drawing.Point(547, 33)
+        Me.swBt.Location = New System.Drawing.Point(574, 33)
         Me.swBt.Name = "swBt"
         Me.swBt.OffText = "Editar"
         Me.swBt.OnText = "Crear"
@@ -68,18 +70,6 @@ Partial Class ctrlTienda
         Me.swBt.TabIndex = 10
         Me.swBt.Value = True
         Me.swBt.ValueObject = "Y"
-        '
-        'btGuardar
-        '
-        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btGuardar.Image = Global.POS.My.Resources.Resources.save_26
-        Me.btGuardar.Location = New System.Drawing.Point(510, 260)
-        Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(117, 38)
-        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuardar.TabIndex = 8
-        Me.btGuardar.Text = "Guardar"
         '
         'GroupBox1
         '
@@ -275,11 +265,35 @@ Partial Class ctrlTienda
         Me.ReflectionLabel1.TabIndex = 9
         Me.ReflectionLabel1.Text = "<font size=""+6"">Crear o editar<font color=""#32b8ff""> lugar</font></font>"
         '
+        'imgBuscar
+        '
+        Me.imgBuscar.Image = Global.POS.My.Resources.Resources.zoom
+        Me.imgBuscar.Location = New System.Drawing.Point(333, 33)
+        Me.imgBuscar.Name = "imgBuscar"
+        Me.imgBuscar.Size = New System.Drawing.Size(32, 29)
+        Me.imgBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgBuscar.TabIndex = 13
+        Me.imgBuscar.TabStop = False
+        Me.imgBuscar.Visible = False
+        '
+        'btGuardar
+        '
+        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btGuardar.Image = Global.POS.My.Resources.Resources.diskette
+        Me.btGuardar.Location = New System.Drawing.Point(510, 260)
+        Me.btGuardar.Name = "btGuardar"
+        Me.btGuardar.Size = New System.Drawing.Size(117, 38)
+        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btGuardar.TabIndex = 8
+        Me.btGuardar.Text = "Guardar"
+        '
         'ctrlTienda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
+        Me.Controls.Add(Me.imgBuscar)
         Me.Controls.Add(Me.cbLugar)
         Me.Controls.Add(Me.swBt)
         Me.Controls.Add(Me.btGuardar)
@@ -288,8 +302,9 @@ Partial Class ctrlTienda
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "ctrlTienda"
-        Me.Size = New System.Drawing.Size(663, 328)
+        Me.Size = New System.Drawing.Size(670, 384)
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.imgBuscar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -310,5 +325,6 @@ Partial Class ctrlTienda
     Friend WithEvents cbTipo As System.Windows.Forms.ComboBox
     Friend WithEvents LabelX1 As DevComponents.DotNetBar.LabelX
     Friend WithEvents ReflectionLabel1 As DevComponents.DotNetBar.Controls.ReflectionLabel
+    Friend WithEvents imgBuscar As System.Windows.Forms.PictureBox
 
 End Class

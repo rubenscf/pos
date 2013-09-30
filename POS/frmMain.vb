@@ -79,15 +79,32 @@ Public Class frmMain
     End Sub
 
 
-    Private Sub tpMain_Click(sender As Object, e As EventArgs) Handles tpMain.TabItemClose
-        Dim itemToRemove As TabItem = tpMain.SelectedTab
-        ' MsgBox(itemToRemove.Text)
-        htp.Remove(itemToRemove.Text)
-    End Sub
-
     Private Sub tpMain_Click(sender As Object, e As TabStripActionEventArgs) Handles tpMain.TabItemClose
-
+        Dim itemToRemove As TabItem = tpMain.SelectedTab
+        If itemToRemove.Text.Equals("INICIO") Then
+            e.Cancel = True
+            'MsgBox(itemToRemove.Text)
+        Else
+            ' MsgBox(itemToRemove.Text)
+            htp.Remove(itemToRemove.Text)
+        End If
     End Sub
 
-    
+
+    Private Sub bt_Click(sender As Object, e As EventArgs) Handles bt.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Empleados" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlEmpleados 'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+        End If
+    End Sub
 End Class

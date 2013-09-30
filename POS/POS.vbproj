@@ -83,6 +83,12 @@
   <ItemGroup>
     <Compile Include="Utilidades\DbmsOutput.vb" />
     <Compile Include="Utilidades\Funciones.vb" />
+    <Compile Include="VB\ctrlEmpleados.Designer.vb">
+      <DependentUpon>ctrlEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlEmpleados.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="VB\ctrlPuesto.Designer.vb">
       <DependentUpon>ctrlPuesto.vb</DependentUpon>
     </Compile>
@@ -124,6 +130,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="VB\ctrlEmpleados.resx">
+      <DependentUpon>ctrlEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlPuesto.resx">
       <DependentUpon>ctrlPuesto.vb</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +170,13 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="cloudangel.ico" />
+    <None Include="Resources\management1.png" />
+    <None Include="Resources\Logo_ANGEL.png" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\briefcase1.png" />
+    <None Include="Resources\management.png" />
+    <None Include="Resources\zoom.png" />
+    <None Include="Resources\document.png" />
     <None Include="Resources\close16.png" />
     <None Include="Resources\plus-26.png" />
     <None Include="Resources\briefcase.png" />

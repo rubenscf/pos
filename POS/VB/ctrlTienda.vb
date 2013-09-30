@@ -100,9 +100,11 @@ Public Class ctrlTienda
             cbLugar.Visible = True
             txSerie.Enabled = False
             cbTipo.Enabled = False
+            imgBuscar.Visible = True
         Else
             cbLugar.Visible = False
             cbTipo.Enabled = True
+            imgBuscar.Visible = False
             txSerie.Enabled = True
         End If
 
@@ -113,7 +115,7 @@ Public Class ctrlTienda
             frmMain._cnn.Open()
             If swBt.Value = False Then
                 query = "select nombre, direccion, telefono, telefono1 from lugar where idlugar = '" & cbLugar.SelectedValue.ToString & "'"
-                MsgBox(query)
+                ' MsgBox(query)
                 frmMain._cmd = New OracleCommand(query, frmMain._cnn)
                 Dim cnt As OracleDataReader = frmMain._cmd.ExecuteReader()
                 While cnt.Read()
@@ -131,4 +133,6 @@ Public Class ctrlTienda
             frmMain._cnn.Close()
         End Try
     End Sub
+
+    
 End Class
