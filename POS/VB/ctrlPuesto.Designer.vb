@@ -37,6 +37,7 @@ Partial Class ctrlPuesto
         Me.dg.AllowUserToAddRows = False
         Me.dg.AllowUserToDeleteRows = False
         Me.dg.BackgroundColor = System.Drawing.SystemColors.Window
+        Me.dg.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.Window
         Me.dg.Location = New System.Drawing.Point(101, 131)

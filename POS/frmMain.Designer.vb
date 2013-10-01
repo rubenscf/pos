@@ -44,16 +44,22 @@ Partial Class frmMain
         Me.ButtonItem2 = New DevComponents.DotNetBar.ButtonItem()
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
         Me.mnuINICIO = New DevComponents.DotNetBar.Metro.MetroAppButton()
+        Me.mnuProducto = New DevComponents.DotNetBar.Metro.MetroTabItem()
+        Me.MetroTabPanel4 = New DevComponents.DotNetBar.Metro.MetroTabPanel()
         Me.tpMain = New DevComponents.DotNetBar.TabControl()
         Me.TabControlPanel1 = New DevComponents.DotNetBar.TabControlPanel()
         Me.INICIO = New DevComponents.DotNetBar.TabItem(Me.components)
+        Me.ButtonX1 = New DevComponents.DotNetBar.ButtonX()
+        Me.mnuPRMarca = New DevComponents.DotNetBar.ButtonX()
         Me.bt = New DevComponents.DotNetBar.ButtonX()
         Me.bt_puesto = New DevComponents.DotNetBar.ButtonX()
         Me.btNuevoLugar = New DevComponents.DotNetBar.ButtonX()
+        Me.ButtonX2 = New DevComponents.DotNetBar.ButtonX()
         Me.MetroShell1.SuspendLayout()
         Me.MetroTabPanel3.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
+        Me.MetroTabPanel4.SuspendLayout()
         CType(Me.tpMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpMain.SuspendLayout()
         Me.SuspendLayout()
@@ -66,6 +72,7 @@ Partial Class frmMain
         '
         Me.MetroShell1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.MetroShell1.CaptionVisible = True
+        Me.MetroShell1.Controls.Add(Me.MetroTabPanel4)
         Me.MetroShell1.Controls.Add(Me.MetroTabPanel3)
         Me.MetroShell1.Controls.Add(Me.MetroTabPanel2)
         Me.MetroShell1.Controls.Add(Me.MetroTabPanel1)
@@ -73,7 +80,7 @@ Partial Class frmMain
         Me.MetroShell1.ForeColor = System.Drawing.Color.Black
         Me.MetroShell1.HelpButtonText = Nothing
         Me.MetroShell1.HelpButtonVisible = False
-        Me.MetroShell1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuVer, Me.mnuAdmon, Me.mnuSistema})
+        Me.MetroShell1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuVer, Me.mnuAdmon, Me.mnuProducto, Me.mnuSistema})
         Me.MetroShell1.KeyTipsFont = New System.Drawing.Font("Tahoma", 7.0!)
         Me.MetroShell1.Location = New System.Drawing.Point(0, 1)
         Me.MetroShell1.Name = "MetroShell1"
@@ -81,7 +88,7 @@ Partial Class frmMain
         Me.MetroShell1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.MetroShell1.SettingsButtonText = "OPCIONES"
         Me.MetroShell1.SettingsButtonVisible = False
-        Me.MetroShell1.Size = New System.Drawing.Size(687, 120)
+        Me.MetroShell1.Size = New System.Drawing.Size(687, 126)
         Me.MetroShell1.SystemText.MaximizeRibbonText = "&Maximize the Ribbon"
         Me.MetroShell1.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon"
         Me.MetroShell1.SystemText.QatAddItemText = "&Add to Quick Access Toolbar"
@@ -111,7 +118,7 @@ Partial Class frmMain
         Me.MetroTabPanel3.Location = New System.Drawing.Point(0, 51)
         Me.MetroTabPanel3.Name = "MetroTabPanel3"
         Me.MetroTabPanel3.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.MetroTabPanel3.Size = New System.Drawing.Size(687, 69)
+        Me.MetroTabPanel3.Size = New System.Drawing.Size(687, 75)
         '
         '
         '
@@ -126,6 +133,7 @@ Partial Class frmMain
         Me.MetroTabPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.MetroTabPanel3.TabIndex = 4
         Me.MetroTabPanel3.ThemeAware = True
+        Me.MetroTabPanel3.Visible = False
         '
         'MetroTabPanel2
         '
@@ -187,7 +195,6 @@ Partial Class frmMain
         '
         'mnuSistema
         '
-        Me.mnuSistema.Checked = True
         Me.mnuSistema.Name = "mnuSistema"
         Me.mnuSistema.Panel = Me.MetroTabPanel3
         Me.mnuSistema.Text = "SISTEMA"
@@ -302,21 +309,21 @@ Partial Class frmMain
         Me.ToolStripContainer1.ContentPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.tpMain)
         Me.ToolStripContainer1.ContentPanel.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(687, 278)
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(687, 297)
         Me.ToolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         '
         'ToolStripContainer1.LeftToolStripPanel
         '
         Me.ToolStripContainer1.LeftToolStripPanel.BackColor = System.Drawing.Color.White
         Me.ToolStripContainer1.LeftToolStripPanel.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripContainer1.Location = New System.Drawing.Point(0, 121)
+        Me.ToolStripContainer1.Location = New System.Drawing.Point(0, 127)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
         '
         'ToolStripContainer1.RightToolStripPanel
         '
         Me.ToolStripContainer1.RightToolStripPanel.BackColor = System.Drawing.Color.White
         Me.ToolStripContainer1.RightToolStripPanel.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripContainer1.Size = New System.Drawing.Size(687, 303)
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(687, 297)
         Me.ToolStripContainer1.TabIndex = 2
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         '
@@ -337,6 +344,39 @@ Partial Class frmMain
         Me.mnuINICIO.ShowSubItems = False
         Me.mnuINICIO.Text = "&INICIO"
         '
+        'mnuProducto
+        '
+        Me.mnuProducto.Checked = True
+        Me.mnuProducto.Name = "mnuProducto"
+        Me.mnuProducto.Panel = Me.MetroTabPanel4
+        Me.mnuProducto.Text = "PRODUCTOS"
+        '
+        'MetroTabPanel4
+        '
+        Me.MetroTabPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.MetroTabPanel4.Controls.Add(Me.ButtonX2)
+        Me.MetroTabPanel4.Controls.Add(Me.ButtonX1)
+        Me.MetroTabPanel4.Controls.Add(Me.mnuPRMarca)
+        Me.MetroTabPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTabPanel4.Location = New System.Drawing.Point(0, 51)
+        Me.MetroTabPanel4.Name = "MetroTabPanel4"
+        Me.MetroTabPanel4.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.MetroTabPanel4.Size = New System.Drawing.Size(687, 75)
+        '
+        '
+        '
+        Me.MetroTabPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.MetroTabPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.MetroTabPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.MetroTabPanel4.TabIndex = 5
+        Me.MetroTabPanel4.ThemeAware = True
+        '
         'tpMain
         '
         Me.tpMain.AutoCloseTabs = True
@@ -353,7 +393,7 @@ Partial Class frmMain
         Me.tpMain.Name = "tpMain"
         Me.tpMain.SelectedTabFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tpMain.SelectedTabIndex = 0
-        Me.tpMain.Size = New System.Drawing.Size(687, 278)
+        Me.tpMain.Size = New System.Drawing.Size(687, 297)
         Me.tpMain.Style = DevComponents.DotNetBar.eTabStripStyle.Metro
         Me.tpMain.TabCloseButtonHot = Global.POS.My.Resources.Resources.close16
         Me.tpMain.TabCloseButtonNormal = Global.POS.My.Resources.Resources.close16
@@ -370,7 +410,7 @@ Partial Class frmMain
         Me.TabControlPanel1.Location = New System.Drawing.Point(0, 33)
         Me.TabControlPanel1.Name = "TabControlPanel1"
         Me.TabControlPanel1.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabControlPanel1.Size = New System.Drawing.Size(687, 245)
+        Me.TabControlPanel1.Size = New System.Drawing.Size(687, 264)
         Me.TabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.White
         Me.TabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
         Me.TabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer))
@@ -386,6 +426,34 @@ Partial Class frmMain
         Me.INICIO.Name = "INICIO"
         Me.INICIO.Text = "INICIO"
         '
+        'ButtonX1
+        '
+        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.ButtonX1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonX1.Image = Global.POS.My.Resources.Resources.boxes
+        Me.ButtonX1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.ButtonX1.Location = New System.Drawing.Point(90, 3)
+        Me.ButtonX1.Name = "ButtonX1"
+        Me.ButtonX1.Size = New System.Drawing.Size(75, 66)
+        Me.ButtonX1.TabIndex = 5
+        Me.ButtonX1.Text = "Modelos"
+        '
+        'mnuPRMarca
+        '
+        Me.mnuPRMarca.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.mnuPRMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.mnuPRMarca.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.mnuPRMarca.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuPRMarca.Image = Global.POS.My.Resources.Resources.box
+        Me.mnuPRMarca.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuPRMarca.Location = New System.Drawing.Point(9, 3)
+        Me.mnuPRMarca.Name = "mnuPRMarca"
+        Me.mnuPRMarca.Size = New System.Drawing.Size(75, 66)
+        Me.mnuPRMarca.TabIndex = 4
+        Me.mnuPRMarca.Text = "Marcas"
+        '
         'bt
         '
         Me.bt.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
@@ -394,9 +462,9 @@ Partial Class frmMain
         Me.bt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt.Image = Global.POS.My.Resources.Resources.management1
         Me.bt.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.bt.Location = New System.Drawing.Point(169, 4)
+        Me.bt.Location = New System.Drawing.Point(168, 3)
         Me.bt.Name = "bt"
-        Me.bt.Size = New System.Drawing.Size(75, 59)
+        Me.bt.Size = New System.Drawing.Size(75, 66)
         Me.bt.TabIndex = 3
         Me.bt.Text = "Empleados"
         '
@@ -408,10 +476,10 @@ Partial Class frmMain
         Me.bt_puesto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt_puesto.Image = Global.POS.My.Resources.Resources.briefcase
         Me.bt_puesto.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.bt_puesto.Location = New System.Drawing.Point(78, 3)
+        Me.bt_puesto.Location = New System.Drawing.Point(87, 3)
         Me.bt_puesto.Name = "bt_puesto"
         Me.bt_puesto.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2)
-        Me.bt_puesto.Size = New System.Drawing.Size(85, 63)
+        Me.bt_puesto.Size = New System.Drawing.Size(75, 66)
         Me.bt_puesto.TabIndex = 2
         Me.bt_puesto.Text = "Puestos"
         '
@@ -423,12 +491,26 @@ Partial Class frmMain
         Me.btNuevoLugar.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNuevoLugar.Image = Global.POS.My.Resources.Resources.home
         Me.btNuevoLugar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btNuevoLugar.Location = New System.Drawing.Point(6, 0)
+        Me.btNuevoLugar.Location = New System.Drawing.Point(6, 3)
         Me.btNuevoLugar.Name = "btNuevoLugar"
         Me.btNuevoLugar.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2)
-        Me.btNuevoLugar.Size = New System.Drawing.Size(66, 63)
+        Me.btNuevoLugar.Size = New System.Drawing.Size(75, 66)
         Me.btNuevoLugar.TabIndex = 1
         Me.btNuevoLugar.Text = "Lugares"
+        '
+        'ButtonX2
+        '
+        Me.ButtonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.ButtonX2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonX2.Image = Global.POS.My.Resources.Resources.boxes
+        Me.ButtonX2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.ButtonX2.Location = New System.Drawing.Point(171, 3)
+        Me.ButtonX2.Name = "ButtonX2"
+        Me.ButtonX2.Size = New System.Drawing.Size(75, 66)
+        Me.ButtonX2.TabIndex = 6
+        Me.ButtonX2.Text = "Categoria"
         '
         'frmMain
         '
@@ -441,14 +523,17 @@ Partial Class frmMain
         Me.Controls.Add(Me.MetroShell1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "frmMain"
         Me.Text = "Punto de venta :: AGENCIAS EL ANGEL"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MetroShell1.ResumeLayout(False)
         Me.MetroShell1.PerformLayout()
         Me.MetroTabPanel3.ResumeLayout(False)
         Me.ToolStripContainer1.ContentPanel.ResumeLayout(False)
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
+        Me.MetroTabPanel4.ResumeLayout(False)
         CType(Me.tpMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpMain.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -480,5 +565,10 @@ Partial Class frmMain
     Friend WithEvents TabControlPanel1 As DevComponents.DotNetBar.TabControlPanel
     Friend WithEvents INICIO As DevComponents.DotNetBar.TabItem
     Friend WithEvents bt As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents MetroTabPanel4 As DevComponents.DotNetBar.Metro.MetroTabPanel
+    Friend WithEvents mnuProducto As DevComponents.DotNetBar.Metro.MetroTabItem
+    Friend WithEvents mnuPRMarca As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents ButtonX1 As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents ButtonX2 As DevComponents.DotNetBar.ButtonX
 
 End Class

@@ -26,7 +26,6 @@ Partial Class ctrlEmpleados
         Me.txNit = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txExtendido = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.cbSexo = New DevComponents.DotNetBar.Controls.ComboBoxEx()
-        Me.ComboItem1 = New DevComponents.Editors.ComboItem()
         Me.ComboItem2 = New DevComponents.Editors.ComboItem()
         Me.ComboItem3 = New DevComponents.Editors.ComboItem()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -43,6 +42,9 @@ Partial Class ctrlEmpleados
         Me.txDPI = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.cbLugar = New DevComponents.DotNetBar.Controls.ComboBoxEx()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbEstado = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.cbArea = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -50,20 +52,15 @@ Partial Class ctrlEmpleados
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbPuesto = New DevComponents.DotNetBar.Controls.ComboBoxEx()
-        Me.cbLugar = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.Sistema = New System.Windows.Forms.GroupBox()
         Me.txPass = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txUsuario = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
-        Me.imgBuscar = New System.Windows.Forms.PictureBox()
-        Me.cbEmpleado = New System.Windows.Forms.ComboBox()
-        Me.swBt = New DevComponents.DotNetBar.Controls.SwitchButton()
         Me.GroupBox1.SuspendLayout()
         CType(Me.txfechanac, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.Sistema.SuspendLayout()
-        CType(Me.imgBuscar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -86,7 +83,7 @@ Partial Class ctrlEmpleados
         Me.GroupBox1.Location = New System.Drawing.Point(15, 57)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(424, 367)
-        Me.GroupBox1.TabIndex = 28
+        Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos personales"
         '
@@ -102,7 +99,7 @@ Partial Class ctrlEmpleados
         Me.txNit.Location = New System.Drawing.Point(285, 52)
         Me.txNit.Name = "txNit"
         Me.txNit.Size = New System.Drawing.Size(121, 29)
-        Me.txNit.TabIndex = 18
+        Me.txNit.TabIndex = 2
         Me.txNit.WatermarkText = "Nit"
         '
         'txExtendido
@@ -117,7 +114,7 @@ Partial Class ctrlEmpleados
         Me.txExtendido.Location = New System.Drawing.Point(138, 52)
         Me.txExtendido.Name = "txExtendido"
         Me.txExtendido.Size = New System.Drawing.Size(141, 29)
-        Me.txExtendido.TabIndex = 17
+        Me.txExtendido.TabIndex = 1
         Me.txExtendido.WatermarkText = "Extendido"
         '
         'cbSexo
@@ -126,27 +123,22 @@ Partial Class ctrlEmpleados
         Me.cbSexo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cbSexo.FormattingEnabled = True
         Me.cbSexo.ItemHeight = 23
-        Me.cbSexo.Items.AddRange(New Object() {Me.ComboItem1, Me.ComboItem2, Me.ComboItem3})
+        Me.cbSexo.Items.AddRange(New Object() {Me.ComboItem2, Me.ComboItem3})
         Me.cbSexo.Location = New System.Drawing.Point(214, 119)
         Me.cbSexo.Name = "cbSexo"
         Me.cbSexo.Size = New System.Drawing.Size(192, 29)
         Me.cbSexo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbSexo.TabIndex = 16
+        Me.cbSexo.TabIndex = 4
         Me.cbSexo.WatermarkText = "Seleccione Sexo"
-        '
-        'ComboItem1
-        '
-        Me.ComboItem1.Text = "Seleccione"
-        Me.ComboItem1.Value = "n"
         '
         'ComboItem2
         '
-        Me.ComboItem2.Text = "Masculino"
+        Me.ComboItem2.Text = "M"
         Me.ComboItem2.Value = "M"
         '
         'ComboItem3
         '
-        Me.ComboItem3.Text = "Femenino"
+        Me.ComboItem3.Text = "F"
         Me.ComboItem3.Value = "F"
         '
         'Label3
@@ -207,7 +199,7 @@ Partial Class ctrlEmpleados
         Me.txfechanac.Name = "txfechanac"
         Me.txfechanac.Size = New System.Drawing.Size(192, 29)
         Me.txfechanac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txfechanac.TabIndex = 14
+        Me.txfechanac.TabIndex = 3
         Me.txfechanac.WatermarkText = "Fecha de nacimiento"
         '
         'Label2
@@ -232,7 +224,7 @@ Partial Class ctrlEmpleados
         Me.txConyugue.Location = New System.Drawing.Point(12, 219)
         Me.txConyugue.Name = "txConyugue"
         Me.txConyugue.Size = New System.Drawing.Size(394, 29)
-        Me.txConyugue.TabIndex = 12
+        Me.txConyugue.TabIndex = 7
         Me.txConyugue.WatermarkText = "Conyugue"
         '
         'txTel
@@ -248,7 +240,7 @@ Partial Class ctrlEmpleados
         Me.txTel.Name = "txTel"
         Me.txTel.Size = New System.Drawing.Size(195, 28)
         Me.txTel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txTel.TabIndex = 11
+        Me.txTel.TabIndex = 9
         Me.txTel.Text = ""
         Me.txTel.WatermarkText = "Telefono"
         '
@@ -289,7 +281,7 @@ Partial Class ctrlEmpleados
         Me.txApellido.Location = New System.Drawing.Point(213, 184)
         Me.txApellido.Name = "txApellido"
         Me.txApellido.Size = New System.Drawing.Size(193, 29)
-        Me.txApellido.TabIndex = 7
+        Me.txApellido.TabIndex = 6
         Me.txApellido.WatermarkText = "Apellido"
         '
         'Label4
@@ -314,7 +306,7 @@ Partial Class ctrlEmpleados
         Me.txNombre.Location = New System.Drawing.Point(11, 184)
         Me.txNombre.Name = "txNombre"
         Me.txNombre.Size = New System.Drawing.Size(193, 29)
-        Me.txNombre.TabIndex = 3
+        Me.txNombre.TabIndex = 5
         Me.txNombre.WatermarkText = "Nombre"
         '
         'Label5
@@ -338,7 +330,7 @@ Partial Class ctrlEmpleados
         Me.txDPI.Location = New System.Drawing.Point(11, 52)
         Me.txDPI.Name = "txDPI"
         Me.txDPI.Size = New System.Drawing.Size(121, 29)
-        Me.txDPI.TabIndex = 1
+        Me.txDPI.TabIndex = 0
         Me.txDPI.WatermarkText = "DPI"
         '
         'ReflectionLabel1
@@ -354,10 +346,13 @@ Partial Class ctrlEmpleados
         Me.ReflectionLabel1.ReflectionEnabled = False
         Me.ReflectionLabel1.Size = New System.Drawing.Size(306, 44)
         Me.ReflectionLabel1.TabIndex = 27
-        Me.ReflectionLabel1.Text = "<font size=""+6"">Crear o editar<font color=""#32b8ff""> empleado</font></font>"
+        Me.ReflectionLabel1.Text = "<font size=""+6"">Crear <font color=""#32b8ff""> empleado</font></font>"
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.cbLugar)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.cbEstado)
         Me.GroupBox2.Controls.Add(Me.cbArea)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Label8)
@@ -365,13 +360,46 @@ Partial Class ctrlEmpleados
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.cbPuesto)
-        Me.GroupBox2.Controls.Add(Me.cbLugar)
         Me.GroupBox2.Location = New System.Drawing.Point(463, 57)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(320, 225)
-        Me.GroupBox2.TabIndex = 29
+        Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de la empresa"
+        '
+        'cbLugar
+        '
+        Me.cbLugar.DisplayMember = "Text"
+        Me.cbLugar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbLugar.FormattingEnabled = True
+        Me.cbLugar.ItemHeight = 23
+        Me.cbLugar.Location = New System.Drawing.Point(17, 119)
+        Me.cbLugar.Name = "cbLugar"
+        Me.cbLugar.Size = New System.Drawing.Size(153, 29)
+        Me.cbLugar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.cbLugar.TabIndex = 26
+        Me.cbLugar.WatermarkText = "Seleccione Lugar"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(172, 160)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(59, 21)
+        Me.Label11.TabIndex = 25
+        Me.Label11.Text = "Estado:"
+        '
+        'cbEstado
+        '
+        Me.cbEstado.DisplayMember = "Text"
+        Me.cbEstado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbEstado.FormattingEnabled = True
+        Me.cbEstado.ItemHeight = 23
+        Me.cbEstado.Location = New System.Drawing.Point(176, 185)
+        Me.cbEstado.Name = "cbEstado"
+        Me.cbEstado.Size = New System.Drawing.Size(130, 29)
+        Me.cbEstado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.cbEstado.TabIndex = 24
         '
         'cbArea
         '
@@ -383,7 +411,7 @@ Partial Class ctrlEmpleados
         Me.cbArea.Name = "cbArea"
         Me.cbArea.Size = New System.Drawing.Size(289, 29)
         Me.cbArea.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbArea.TabIndex = 24
+        Me.cbArea.TabIndex = 0
         Me.cbArea.WatermarkText = "Seleccione Area"
         '
         'Label10
@@ -398,7 +426,7 @@ Partial Class ctrlEmpleados
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(177, 160)
+        Me.Label8.Location = New System.Drawing.Point(14, 160)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(97, 21)
         Me.Label8.TabIndex = 22
@@ -412,19 +440,19 @@ Partial Class ctrlEmpleados
         Me.txSueldo.BackgroundStyle.Class = "TextBoxBorder"
         Me.txSueldo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txSueldo.ButtonClear.Visible = True
-        Me.txSueldo.Location = New System.Drawing.Point(181, 184)
+        Me.txSueldo.Location = New System.Drawing.Point(18, 185)
         Me.txSueldo.Mask = "0000000,00"
         Me.txSueldo.Name = "txSueldo"
-        Me.txSueldo.Size = New System.Drawing.Size(125, 28)
+        Me.txSueldo.Size = New System.Drawing.Size(152, 28)
         Me.txSueldo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txSueldo.TabIndex = 21
+        Me.txSueldo.TabIndex = 3
         Me.txSueldo.Text = ""
         Me.txSueldo.WatermarkText = "Sueldo Base"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(13, 160)
+        Me.Label7.Location = New System.Drawing.Point(177, 94)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(60, 21)
         Me.Label7.TabIndex = 20
@@ -445,25 +473,12 @@ Partial Class ctrlEmpleados
         Me.cbPuesto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cbPuesto.FormattingEnabled = True
         Me.cbPuesto.ItemHeight = 23
-        Me.cbPuesto.Location = New System.Drawing.Point(17, 184)
+        Me.cbPuesto.Location = New System.Drawing.Point(176, 118)
         Me.cbPuesto.Name = "cbPuesto"
-        Me.cbPuesto.Size = New System.Drawing.Size(153, 29)
+        Me.cbPuesto.Size = New System.Drawing.Size(130, 29)
         Me.cbPuesto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbPuesto.TabIndex = 1
+        Me.cbPuesto.TabIndex = 2
         Me.cbPuesto.WatermarkText = "Seleccione Puesto"
-        '
-        'cbLugar
-        '
-        Me.cbLugar.DisplayMember = "Text"
-        Me.cbLugar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbLugar.FormattingEnabled = True
-        Me.cbLugar.ItemHeight = 23
-        Me.cbLugar.Location = New System.Drawing.Point(17, 119)
-        Me.cbLugar.Name = "cbLugar"
-        Me.cbLugar.Size = New System.Drawing.Size(289, 29)
-        Me.cbLugar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbLugar.TabIndex = 0
-        Me.cbLugar.WatermarkText = "Seleccione Lugar"
         '
         'Sistema
         '
@@ -473,7 +488,7 @@ Partial Class ctrlEmpleados
         Me.Sistema.Location = New System.Drawing.Point(463, 289)
         Me.Sistema.Name = "Sistema"
         Me.Sistema.Size = New System.Drawing.Size(320, 135)
-        Me.Sistema.TabIndex = 30
+        Me.Sistema.TabIndex = 3
         Me.Sistema.TabStop = False
         Me.Sistema.Text = "Sistema"
         '
@@ -489,7 +504,7 @@ Partial Class ctrlEmpleados
         Me.txPass.Location = New System.Drawing.Point(17, 87)
         Me.txPass.Name = "txPass"
         Me.txPass.Size = New System.Drawing.Size(289, 29)
-        Me.txPass.TabIndex = 21
+        Me.txPass.TabIndex = 1
         Me.txPass.WatermarkText = "Contraseña"
         '
         'txUsuario
@@ -504,7 +519,7 @@ Partial Class ctrlEmpleados
         Me.txUsuario.Location = New System.Drawing.Point(17, 53)
         Me.txUsuario.Name = "txUsuario"
         Me.txUsuario.Size = New System.Drawing.Size(289, 29)
-        Me.txUsuario.TabIndex = 20
+        Me.txUsuario.TabIndex = 0
         Me.txUsuario.WatermarkText = "Usuario"
         '
         'Label9
@@ -526,55 +541,14 @@ Partial Class ctrlEmpleados
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(117, 38)
         Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuardar.TabIndex = 32
+        Me.btGuardar.TabIndex = 4
         Me.btGuardar.Text = "Guardar"
-        '
-        'imgBuscar
-        '
-        Me.imgBuscar.Image = Global.POS.My.Resources.Resources.zoom
-        Me.imgBuscar.Location = New System.Drawing.Point(463, 20)
-        Me.imgBuscar.Name = "imgBuscar"
-        Me.imgBuscar.Size = New System.Drawing.Size(32, 29)
-        Me.imgBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgBuscar.TabIndex = 35
-        Me.imgBuscar.TabStop = False
-        Me.imgBuscar.Visible = False
-        '
-        'cbEmpleado
-        '
-        Me.cbEmpleado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cbEmpleado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cbEmpleado.FormattingEnabled = True
-        Me.cbEmpleado.Location = New System.Drawing.Point(501, 20)
-        Me.cbEmpleado.Name = "cbEmpleado"
-        Me.cbEmpleado.Size = New System.Drawing.Size(197, 29)
-        Me.cbEmpleado.TabIndex = 34
-        Me.cbEmpleado.Visible = False
-        '
-        'swBt
-        '
-        '
-        '
-        '
-        Me.swBt.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.swBt.Location = New System.Drawing.Point(704, 20)
-        Me.swBt.Name = "swBt"
-        Me.swBt.OffText = "Editar"
-        Me.swBt.OnText = "Crear"
-        Me.swBt.Size = New System.Drawing.Size(80, 29)
-        Me.swBt.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.swBt.TabIndex = 33
-        Me.swBt.Value = True
-        Me.swBt.ValueObject = "Y"
         '
         'ctrlEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.Controls.Add(Me.imgBuscar)
-        Me.Controls.Add(Me.cbEmpleado)
-        Me.Controls.Add(Me.swBt)
         Me.Controls.Add(Me.btGuardar)
         Me.Controls.Add(Me.Sistema)
         Me.Controls.Add(Me.GroupBox2)
@@ -583,7 +557,7 @@ Partial Class ctrlEmpleados
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "ctrlEmpleados"
-        Me.Size = New System.Drawing.Size(810, 487)
+        Me.Size = New System.Drawing.Size(810, 493)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.txfechanac, System.ComponentModel.ISupportInitialize).EndInit()
@@ -591,7 +565,6 @@ Partial Class ctrlEmpleados
         Me.GroupBox2.PerformLayout()
         Me.Sistema.ResumeLayout(False)
         Me.Sistema.PerformLayout()
-        CType(Me.imgBuscar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -613,7 +586,6 @@ Partial Class ctrlEmpleados
     Friend WithEvents cbSexo As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents cbLugar As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txSueldo As DevComponents.DotNetBar.Controls.MaskedTextBoxAdv
     Friend WithEvents Label7 As System.Windows.Forms.Label
@@ -626,11 +598,10 @@ Partial Class ctrlEmpleados
     Friend WithEvents btGuardar As DevComponents.DotNetBar.ButtonX
     Friend WithEvents cbArea As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents ComboItem1 As DevComponents.Editors.ComboItem
     Friend WithEvents ComboItem2 As DevComponents.Editors.ComboItem
     Friend WithEvents ComboItem3 As DevComponents.Editors.ComboItem
-    Friend WithEvents imgBuscar As System.Windows.Forms.PictureBox
-    Friend WithEvents cbEmpleado As System.Windows.Forms.ComboBox
-    Friend WithEvents swBt As DevComponents.DotNetBar.Controls.SwitchButton
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents cbEstado As DevComponents.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents cbLugar As DevComponents.DotNetBar.Controls.ComboBoxEx
 
 End Class

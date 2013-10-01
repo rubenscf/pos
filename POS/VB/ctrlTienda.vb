@@ -135,4 +135,7 @@ Public Class ctrlTienda
     End Sub
 
     
+    Private Sub cbLugar_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbLugar.SelectedIndexChanged
+
+    End Sub
 End Class

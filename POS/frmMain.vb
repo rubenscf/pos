@@ -18,7 +18,7 @@ Public Class frmMain
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' frmCnn.Show() 'Mostrar la ventana de conexion
         Timer.Interval = 1000
-        Timer.Start()
+        ' Timer.Start()
         bEstado = False
 
     End Sub
@@ -105,6 +105,42 @@ Public Class frmMain
             control.Dock = DockStyle.Fill
             panel.Controls.Add(control)
             htp.Add(clave, ind)
+        End If
+    End Sub
+
+    Private Sub mnuPRMarca_Click(sender As Object, e As EventArgs) Handles mnuPRMarca.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "PR. Marcas" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlMarca 'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub ButtonX1_Click(sender As Object, e As EventArgs) Handles ButtonX1.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "PR. Modelos" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlPRModelo 'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
         End If
     End Sub
 End Class

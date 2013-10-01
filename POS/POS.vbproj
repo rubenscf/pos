@@ -83,10 +83,22 @@
   <ItemGroup>
     <Compile Include="Utilidades\DbmsOutput.vb" />
     <Compile Include="Utilidades\Funciones.vb" />
+    <Compile Include="VB\ctrlPRModelo.Designer.vb">
+      <DependentUpon>ctrlPRModelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlPRModelo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="VB\ctrlEmpleados.Designer.vb">
       <DependentUpon>ctrlEmpleados.vb</DependentUpon>
     </Compile>
     <Compile Include="VB\ctrlEmpleados.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlMarca.Designer.vb">
+      <DependentUpon>ctrlMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlMarca.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="VB\ctrlPuesto.Designer.vb">
@@ -130,8 +142,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="VB\ctrlPRModelo.resx">
+      <DependentUpon>ctrlPRModelo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlEmpleados.resx">
       <DependentUpon>ctrlEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlMarca.resx">
+      <DependentUpon>ctrlMarca.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlPuesto.resx">
       <DependentUpon>ctrlPuesto.vb</DependentUpon>
@@ -170,6 +188,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="cloudangel.ico" />
+    <None Include="Resources\boxes.png" />
+    <None Include="Resources\box.png" />
+    <None Include="Resources\trojan.png" />
     <None Include="Resources\management1.png" />
     <None Include="Resources\Logo_ANGEL.png" />
     <None Include="Resources\diskette.png" />
