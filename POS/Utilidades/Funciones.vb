@@ -58,30 +58,74 @@ Module Funciones
    
 
     Public Function _NITvalido(ByVal Nit As String) As Boolean
+        If Nit = "c/f" Then
+            Return True
+        Else
+            Try
+                Dim pos As Integer = Nit.IndexOf("-")
+                Dim Correlativo As String = Nit.Substring(0, pos)
+                Dim DigitoVerificador As String = Nit.Substring(pos + 1)
+                Dim Factor As Integer = Correlativo.Length + 1
+                Dim Suma As Integer = 0
+                Dim Valor As Integer = 0
+                For x As Integer = 0 To Nit.IndexOf("-") - 1
+                    Valor = CInt(Nit.Substring(x, 1))
+                    Suma = Suma + (Valor * Factor)
+                    Factor = Factor - 1
+                Next
+
+                Dim xMOd11 As Double
+                xMOd11 = (11 - (Suma Mod 11)) Mod 11
+                Dim s As String = Str(xMOd11)
+
+                If (xMOd11 = 10 And DigitoVerificador = "K") Or (s.Trim = DigitoVerificador) Then
+
+                    Return True
+                End If
+                Return False
+            Catch ex As Exception
+                Return False
+            End Try
+        End If
+    End Function
+
+
+    Function Filtrar_tabla( _
+        ByVal Col As String, _
+        ByVal tx As String, _
+        ByRef Bs As BindingSource, _
+        ByRef Dgv As DataGridView) As Integer
+        If Bs.DataSource Is Nothing Then
+
+            Return 0
+
+        End If
         Try
-            Dim pos As Integer = Nit.IndexOf("-")
-            Dim Correlativo As String = Nit.Substring(0, pos)
-            Dim DigitoVerificador As String = Nit.Substring(pos + 1)
-            Dim Factor As Integer = Correlativo.Length + 1
-            Dim Suma As Integer = 0
-            Dim Valor As Integer = 0
-            For x As Integer = 0 To Nit.IndexOf("-") - 1
-                Valor = CInt(Nit.Substring(x, 1))
-                Suma = Suma + (Valor * Factor)
-                Factor = Factor - 1
-            Next
-
-            Dim xMOd11 As Double
-            xMOd11 = (11 - (Suma Mod 11)) Mod 11
-            Dim s As String = Str(xMOd11)
-
-            If (xMOd11 = 10 And DigitoVerificador = "K") Or (s.Trim = DigitoVerificador) Then
-
-                Return True
+            Dim filtro As String = String.Empty
+            ' Seleccionar la opción 
+            ' If tx.Trim <> "" Then
+            If Col = "" Then
+                filtro = " = " & CInt(tx.Trim) & ""
+            Else
+                filtro = " like '%" & tx.Trim & "%'"
             End If
-            Return False
+            ' armar el sql
+            If filtro <> String.Empty Then
+                filtro = Col & filtro
+            End If
+            ' asigar el criterio a la propiedad Filter del BindingSource
+            Bs.Filter = filtro
+            '   End If
+            ' enlzar el datagridview al BindingSource
+            Dgv.DataSource = Bs.DataSource
+            ' retornar la cantidad de registros encontrados
+            Return Bs.Count
+            ' errores
         Catch ex As Exception
-            Return False
+            MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
         End Try
+
+        Return 0
+
     End Function
 End Module

@@ -3,7 +3,7 @@
 Public Class ctrlMarca
     Dim editar As Boolean = False
     Dim id As String
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellDoubleClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellClick
         id = dg.SelectedCells(0).Value.ToString
         MsgBox(id)
         txMarca.Text = dg.SelectedCells(1).Value.ToString
@@ -91,4 +91,7 @@ Public Class ctrlMarca
             editar = False
         End If
     End Sub
+
+   
+   
 End Class

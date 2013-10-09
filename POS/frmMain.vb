@@ -9,6 +9,7 @@ Public Class frmMain
     Public _cnn As New OracleConnection(_strcnn)
     ' Public _cnn As New OracleConnection
     Public _cmd As New OracleCommand
+    Public _Bs As BindingSource
     'variables de contenedoras
     Private con As Long
     Public lb As LabelItem
@@ -79,7 +80,7 @@ Public Class frmMain
     End Sub
 
 
-    Private Sub tpMain_Click(sender As Object, e As TabStripActionEventArgs) Handles tpMain.TabItemClose
+    Private Sub tpMain_Click(sender As Object, e As TabStripActionEventArgs) Handles tpMain.TabItemClose, tpMain.Click
         Dim itemToRemove As TabItem = tpMain.SelectedTab
         If itemToRemove.Text.Equals("INICIO") Then
             e.Cancel = True
@@ -143,4 +144,79 @@ Public Class frmMain
             '            MsgBox(ind.ToString)
         End If
     End Sub
+
+   
+    Private Sub mnuPRCategoria_Click(sender As Object, e As EventArgs) Handles mnuPRCategoria.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "PR. Categorias" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlCategoria 'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub btNInvetario_Click(sender As Object, e As EventArgs) Handles btNInvetario.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Nuevo producto a inventario" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlStokAdd 'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+
+    Private Sub btNuevoCliente_Click(sender As Object, e As EventArgs) Handles btNuevoCliente.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Nuevo Cliente" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlNuevoCliente'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub btEnvios_Click(sender As Object, e As EventArgs) Handles btEnvios.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Nuevo Envio" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlNuevoEnvio            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+    
 End Class

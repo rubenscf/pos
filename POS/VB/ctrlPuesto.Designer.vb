@@ -61,7 +61,7 @@ Partial Class ctrlPuesto
         '
         Me.bt_guarda.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.bt_guarda.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.bt_guarda.Image = Global.POS.My.Resources.Resources.plus_26
+        Me.bt_guarda.Image = Global.POS.My.Resources.Resources.plus
         Me.bt_guarda.Location = New System.Drawing.Point(413, 96)
         Me.bt_guarda.Name = "bt_guarda"
         Me.bt_guarda.Size = New System.Drawing.Size(40, 29)

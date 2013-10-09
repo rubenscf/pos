@@ -32,15 +32,19 @@ Partial Class ctrlPRModelo
         Me.cbTCategoria = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.cbCategoria = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.cbMarca = New DevComponents.DotNetBar.Controls.ComboBoxEx()
-        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.txNombre = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.swBt = New DevComponents.DotNetBar.Controls.SwitchButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txDetalle = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.txCompra = New DevComponents.DotNetBar.Controls.MaskedTextBoxAdv()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.txVenta = New DevComponents.DotNetBar.Controls.MaskedTextBoxAdv()
-        Me.ButtonX1 = New DevComponents.DotNetBar.ButtonX()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txVenta = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txCompra = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btGuarda = New DevComponents.DotNetBar.ButtonX()
+        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -54,7 +58,8 @@ Partial Class ctrlPRModelo
         '
         Me.ReflectionLabel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.ReflectionLabel1.Font = New System.Drawing.Font("Segoe UI Light", 16.25!)
-        Me.ReflectionLabel1.Location = New System.Drawing.Point(18, 19)
+        Me.ReflectionLabel1.Location = New System.Drawing.Point(20, 20)
+        Me.ReflectionLabel1.Margin = New System.Windows.Forms.Padding(20)
         Me.ReflectionLabel1.Name = "ReflectionLabel1"
         Me.ReflectionLabel1.ReflectionEnabled = False
         Me.ReflectionLabel1.Size = New System.Drawing.Size(286, 40)
@@ -186,17 +191,6 @@ Partial Class ctrlPRModelo
         Me.cbMarca.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.cbMarca.TabIndex = 15
         '
-        'btGuardar
-        '
-        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btGuardar.Image = Global.POS.My.Resources.Resources.diskette
-        Me.btGuardar.Location = New System.Drawing.Point(522, 164)
-        Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(37, 32)
-        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuardar.TabIndex = 13
-        '
         'txNombre
         '
         Me.txNombre.BackColor = System.Drawing.Color.White
@@ -255,27 +249,14 @@ Partial Class ctrlPRModelo
         Me.txDetalle.TabIndex = 13
         Me.txDetalle.WatermarkText = "Detalle"
         '
-        'txCompra
-        '
-        '
-        '
-        '
-        Me.txCompra.BackgroundStyle.Class = "TextBoxBorder"
-        Me.txCompra.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txCompra.ButtonClear.Visible = True
-        Me.txCompra.Location = New System.Drawing.Point(15, 24)
-        Me.txCompra.Mask = "999999,99"
-        Me.txCompra.Name = "txCompra"
-        Me.txCompra.Size = New System.Drawing.Size(209, 24)
-        Me.txCompra.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txCompra.TabIndex = 14
-        Me.txCompra.Text = ""
-        Me.txCompra.WatermarkText = "Compra"
-        '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.txVenta)
         Me.GroupBox3.Controls.Add(Me.txCompra)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Location = New System.Drawing.Point(295, 187)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(245, 105)
@@ -283,41 +264,101 @@ Partial Class ctrlPRModelo
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Precio"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(170, 66)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(41, 17)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Venta"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(170, 35)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(55, 17)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Compra"
+        '
         'txVenta
         '
+        Me.txVenta.BackColor = System.Drawing.Color.White
         '
         '
         '
-        Me.txVenta.BackgroundStyle.Class = "TextBoxBorder"
-        Me.txVenta.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txVenta.ButtonClear.Visible = True
-        Me.txVenta.Location = New System.Drawing.Point(15, 54)
-        Me.txVenta.Mask = "999999,99"
+        Me.txVenta.Border.Class = "TextBoxBorder"
+        Me.txVenta.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txVenta.ForeColor = System.Drawing.Color.Black
+        Me.txVenta.Location = New System.Drawing.Point(30, 61)
         Me.txVenta.Name = "txVenta"
-        Me.txVenta.Size = New System.Drawing.Size(209, 24)
-        Me.txVenta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txVenta.TabIndex = 15
-        Me.txVenta.Text = ""
-        Me.txVenta.WatermarkText = "Compra"
+        Me.txVenta.Size = New System.Drawing.Size(134, 25)
+        Me.txVenta.TabIndex = 5
+        Me.txVenta.WatermarkText = "Venta"
         '
-        'ButtonX1
+        'txCompra
         '
-        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.ButtonX1.Image = Global.POS.My.Resources.Resources.diskette
-        Me.ButtonX1.Location = New System.Drawing.Point(437, 314)
-        Me.ButtonX1.Name = "ButtonX1"
-        Me.ButtonX1.Size = New System.Drawing.Size(103, 39)
-        Me.ButtonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.ButtonX1.TabIndex = 17
-        Me.ButtonX1.Text = "Guardar"
+        Me.txCompra.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txCompra.Border.Class = "TextBoxBorder"
+        Me.txCompra.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txCompra.ForeColor = System.Drawing.Color.Black
+        Me.txCompra.Location = New System.Drawing.Point(30, 30)
+        Me.txCompra.Name = "txCompra"
+        Me.txCompra.Size = New System.Drawing.Size(134, 25)
+        Me.txCompra.TabIndex = 4
+        Me.txCompra.WatermarkText = "Compra"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 66)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(21, 17)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Q."
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 35)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(21, 17)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Q."
+        '
+        'btGuarda
+        '
+        Me.btGuarda.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGuarda.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btGuarda.Image = Global.POS.My.Resources.Resources.diskette
+        Me.btGuarda.Location = New System.Drawing.Point(437, 314)
+        Me.btGuarda.Name = "btGuarda"
+        Me.btGuarda.Size = New System.Drawing.Size(103, 39)
+        Me.btGuarda.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btGuarda.TabIndex = 17
+        Me.btGuarda.Text = "Guardar"
+        '
+        'btGuardar
+        '
+        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btGuardar.Image = Global.POS.My.Resources.Resources.diskette
+        Me.btGuardar.Location = New System.Drawing.Point(522, 164)
+        Me.btGuardar.Name = "btGuardar"
+        Me.btGuardar.Size = New System.Drawing.Size(37, 32)
+        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btGuardar.TabIndex = 13
         '
         'ctrlPRModelo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.ButtonX1)
+        Me.Controls.Add(Me.btGuarda)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.swBt)
@@ -326,10 +367,11 @@ Partial Class ctrlPRModelo
         Me.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "ctrlPRModelo"
-        Me.Size = New System.Drawing.Size(570, 395)
+        Me.Size = New System.Drawing.Size(563, 384)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -346,11 +388,15 @@ Partial Class ctrlPRModelo
     Friend WithEvents cbCategoria As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents txDetalle As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents txCompra As DevComponents.DotNetBar.Controls.MaskedTextBoxAdv
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents txVenta As DevComponents.DotNetBar.Controls.MaskedTextBoxAdv
     Friend WithEvents lbbM As DevComponents.DotNetBar.LabelX
     Friend WithEvents cbModelo As DevComponents.DotNetBar.Controls.ComboBoxEx
-    Friend WithEvents ButtonX1 As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents btGuarda As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txVenta As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txCompra As DevComponents.DotNetBar.Controls.TextBoxX
 
 End Class

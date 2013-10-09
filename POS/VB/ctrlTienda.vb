@@ -102,6 +102,11 @@ Public Class ctrlTienda
             cbTipo.Enabled = False
             imgBuscar.Visible = True
         Else
+            txDireccion.Text = ""
+            txNombre.Text = ""
+            txSerie.Text = ""
+            txTel1.Text = ""
+            txTel2.Text = ""
             cbLugar.Visible = False
             cbTipo.Enabled = True
             imgBuscar.Visible = False

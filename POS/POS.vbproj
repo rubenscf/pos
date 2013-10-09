@@ -56,6 +56,7 @@
     <Reference Include="DevComponents.Instrumentation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.SuperGrid.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1fea3f5d8d482bff, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.TreeGX, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cfcbd7476b2389d1, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -81,8 +82,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlNuevoEnvio.Designer.vb">
+      <DependentUpon>ctrlNuevoEnvio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlNuevoEnvio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sesion.vb" />
+    <Compile Include="Utilidades\mdlQuery.vb" />
+    <Compile Include="VB\ctrlNuevoCliente.Designer.vb">
+      <DependentUpon>ctrlNuevoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlNuevoCliente.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlStokAdd.Designer.vb">
+      <DependentUpon>ctrlStokAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlStokAdd.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Utilidades\DbmsOutput.vb" />
     <Compile Include="Utilidades\Funciones.vb" />
+    <Compile Include="VB\ctrlCategoria.Designer.vb">
+      <DependentUpon>ctrlCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlCategoria.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="VB\ctrlPRModelo.Designer.vb">
       <DependentUpon>ctrlPRModelo.vb</DependentUpon>
     </Compile>
@@ -142,6 +169,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ctrlNuevoEnvio.resx">
+      <DependentUpon>ctrlNuevoEnvio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlNuevoCliente.resx">
+      <DependentUpon>ctrlNuevoCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlCategoria.resx">
+      <DependentUpon>ctrlCategoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlPRModelo.resx">
       <DependentUpon>ctrlPRModelo.vb</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlPuesto.resx">
       <DependentUpon>ctrlPuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlStokAdd.resx">
+      <DependentUpon>ctrlStokAdd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlTienda.resx">
       <DependentUpon>ctrlTienda.vb</DependentUpon>
@@ -188,6 +227,32 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="cloudangel.ico" />
+    <None Include="Resources\delete-32.png" />
+    <None Include="Resources\right-32.png" />
+    <None Include="Resources\3720.png" />
+    <None Include="Resources\10140.png" />
+    <None Include="Resources\ListSend.png" />
+    <None Include="Resources\11220.png" />
+    <None Include="Resources\Build %287%29.png" />
+    <None Include="Resources\salesMinus.png" />
+    <None Include="Resources\salesMoney.png" />
+    <None Include="Resources\contratClient1.png" />
+    <None Include="Resources\clientEdit.png" />
+    <None Include="Resources\inventaryAdd.png" />
+    <None Include="Resources\contratClient.png" />
+    <None Include="Resources\client %284%29.png" />
+    <None Include="Resources\send %285%29.png" />
+    <None Include="Resources\employees.png" />
+    <None Include="Resources\salesMan.png" />
+    <None Include="Resources\sendStarus.png" />
+    <None Include="Resources\ProductsGet.png" />
+    <None Include="Resources\sendNew.png" />
+    <None Include="Resources\Inventory_pr.png" />
+    <None Include="Resources\StockAdd.png" />
+    <None Include="Resources\briefcase2.png" />
+    <None Include="Resources\brand1.jpg" />
+    <None Include="Resources\brand.jpg" />
+    <None Include="Resources\13590.png" />
     <None Include="Resources\boxes.png" />
     <None Include="Resources\box.png" />
     <None Include="Resources\trojan.png" />

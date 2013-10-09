@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ctrlEmpleados
+Partial Class ctrlNuevoCliente
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,6 +23,15 @@ Partial Class ctrlEmpleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txTel2 = New DevComponents.DotNetBar.Controls.MaskedTextBoxAdv()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txTel1 = New DevComponents.DotNetBar.Controls.MaskedTextBoxAdv()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txTel = New DevComponents.DotNetBar.Controls.MaskedTextBoxAdv()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txNacional = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txDireccion = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txNit = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txExtendido = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.cbSexo = New DevComponents.DotNetBar.Controls.ComboBoxEx()
@@ -31,50 +40,51 @@ Partial Class ctrlEmpleados
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txfechanac = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txConyugue = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.txTel = New DevComponents.DotNetBar.Controls.MaskedTextBoxAdv()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txDireccion = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txApellido = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txNombre = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txDPI = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txBienes = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txConyugue = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.cbLugar = New DevComponents.DotNetBar.Controls.ComboBoxEx()
+        Me.txEDire = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txETel = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txIngreso = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txPuesto = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.cbEstado = New DevComponents.DotNetBar.Controls.ComboBoxEx()
-        Me.cbArea = New DevComponents.DotNetBar.Controls.ComboBoxEx()
+        Me.cbEmpresa = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txSueldo = New DevComponents.DotNetBar.Controls.MaskedTextBoxAdv()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.cbPuesto = New DevComponents.DotNetBar.Controls.ComboBoxEx()
-        Me.Sistema = New System.Windows.Forms.GroupBox()
-        Me.txPass = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.txUsuario = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
+        Me.Contacto = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.txfechanac, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        Me.Sistema.SuspendLayout()
+        Me.Contacto.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.txTel2)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.txTel1)
+        Me.GroupBox1.Controls.Add(Me.Label13)
+        Me.GroupBox1.Controls.Add(Me.txTel)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.txNacional)
+        Me.GroupBox1.Controls.Add(Me.txDireccion)
         Me.GroupBox1.Controls.Add(Me.txNit)
         Me.GroupBox1.Controls.Add(Me.txExtendido)
         Me.GroupBox1.Controls.Add(Me.cbSexo)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txfechanac)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txConyugue)
-        Me.GroupBox1.Controls.Add(Me.txTel)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txDireccion)
         Me.GroupBox1.Controls.Add(Me.txApellido)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txNombre)
@@ -86,6 +96,128 @@ Partial Class ctrlEmpleados
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos personales"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(8, 292)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(77, 21)
+        Me.Label16.TabIndex = 29
+        Me.Label16.Text = "Telefonos"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'txTel2
+        '
+        '
+        '
+        '
+        Me.txTel2.BackgroundStyle.Class = "TextBoxBorder"
+        Me.txTel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txTel2.ButtonClear.Visible = True
+        Me.txTel2.Location = New System.Drawing.Point(256, 318)
+        Me.txTel2.Mask = "00000000"
+        Me.txTel2.Name = "txTel2"
+        Me.txTel2.Size = New System.Drawing.Size(116, 28)
+        Me.txTel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.txTel2.TabIndex = 11
+        Me.txTel2.Text = ""
+        Me.txTel2.WatermarkText = "Telefono"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(8, 226)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(76, 21)
+        Me.Label15.TabIndex = 28
+        Me.Label15.Text = "Domicilio"
+        '
+        'txTel1
+        '
+        '
+        '
+        '
+        Me.txTel1.BackgroundStyle.Class = "TextBoxBorder"
+        Me.txTel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txTel1.ButtonClear.Visible = True
+        Me.txTel1.Location = New System.Drawing.Point(134, 318)
+        Me.txTel1.Mask = "00000000"
+        Me.txTel1.Name = "txTel1"
+        Me.txTel1.Size = New System.Drawing.Size(116, 28)
+        Me.txTel1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.txTel1.TabIndex = 10
+        Me.txTel1.Text = ""
+        Me.txTel1.WatermarkText = "Telefono"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(280, 28)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(34, 21)
+        Me.Label13.TabIndex = 19
+        Me.Label13.Text = "NIT"
+        '
+        'txTel
+        '
+        '
+        '
+        '
+        Me.txTel.BackgroundStyle.Class = "TextBoxBorder"
+        Me.txTel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txTel.ButtonClear.Visible = True
+        Me.txTel.Location = New System.Drawing.Point(12, 318)
+        Me.txTel.Mask = "00000000"
+        Me.txTel.Name = "txTel"
+        Me.txTel.Size = New System.Drawing.Size(116, 28)
+        Me.txTel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.txTel.TabIndex = 9
+        Me.txTel.Text = ""
+        Me.txTel.WatermarkText = "Telefono"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(286, 161)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(101, 21)
+        Me.Label12.TabIndex = 17
+        Me.Label12.Text = "Nacionalidad"
+        '
+        'txNacional
+        '
+        Me.txNacional.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txNacional.Border.Class = "TextBoxBorder"
+        Me.txNacional.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txNacional.ForeColor = System.Drawing.Color.Black
+        Me.txNacional.Location = New System.Drawing.Point(284, 185)
+        Me.txNacional.Name = "txNacional"
+        Me.txNacional.Size = New System.Drawing.Size(122, 29)
+        Me.txNacional.TabIndex = 7
+        Me.txNacional.Text = "Guatemalteco"
+        Me.txNacional.WatermarkText = "Nacionalidad"
+        '
+        'txDireccion
+        '
+        Me.txDireccion.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txDireccion.Border.Class = "TextBoxBorder"
+        Me.txDireccion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txDireccion.ForeColor = System.Drawing.Color.Black
+        Me.txDireccion.Location = New System.Drawing.Point(11, 250)
+        Me.txDireccion.Name = "txDireccion"
+        Me.txDireccion.Size = New System.Drawing.Size(395, 29)
+        Me.txDireccion.TabIndex = 8
+        Me.txDireccion.WatermarkText = "Dirección"
         '
         'txNit
         '
@@ -124,11 +256,11 @@ Partial Class ctrlEmpleados
         Me.cbSexo.FormattingEnabled = True
         Me.cbSexo.ItemHeight = 23
         Me.cbSexo.Items.AddRange(New Object() {Me.ComboItem2, Me.ComboItem3})
-        Me.cbSexo.Location = New System.Drawing.Point(214, 119)
+        Me.cbSexo.Location = New System.Drawing.Point(167, 185)
         Me.cbSexo.Name = "cbSexo"
-        Me.cbSexo.Size = New System.Drawing.Size(192, 29)
+        Me.cbSexo.Size = New System.Drawing.Size(111, 29)
         Me.cbSexo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbSexo.TabIndex = 4
+        Me.cbSexo.TabIndex = 6
         Me.cbSexo.WatermarkText = "Seleccione Sexo"
         '
         'ComboItem2
@@ -144,7 +276,7 @@ Partial Class ctrlEmpleados
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(210, 94)
+        Me.Label3.Location = New System.Drawing.Point(167, 161)
         Me.Label3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 21)
@@ -161,7 +293,7 @@ Partial Class ctrlEmpleados
         Me.txfechanac.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
         Me.txfechanac.ButtonDropDown.Visible = True
         Me.txfechanac.IsPopupCalendarOpen = False
-        Me.txfechanac.Location = New System.Drawing.Point(12, 118)
+        Me.txfechanac.Location = New System.Drawing.Point(11, 185)
         Me.txfechanac.MinDate = New Date(1940, 1, 1, 0, 0, 0, 0)
         '
         '
@@ -197,77 +329,20 @@ Partial Class ctrlEmpleados
         Me.txfechanac.MonthCalendar.TodayButtonVisible = True
         Me.txfechanac.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
         Me.txfechanac.Name = "txfechanac"
-        Me.txfechanac.Size = New System.Drawing.Size(192, 29)
+        Me.txfechanac.Size = New System.Drawing.Size(150, 29)
         Me.txfechanac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txfechanac.TabIndex = 3
-        Me.txfechanac.WatermarkText = "Fecha de nacimiento"
+        Me.txfechanac.TabIndex = 5
+        Me.txfechanac.WatermarkText = "Fecha nacimiento"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 94)
+        Me.Label2.Location = New System.Drawing.Point(7, 161)
         Me.Label2.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(155, 21)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "Fecha de Nacimiento"
-        '
-        'txConyugue
-        '
-        Me.txConyugue.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.txConyugue.Border.Class = "TextBoxBorder"
-        Me.txConyugue.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txConyugue.ForeColor = System.Drawing.Color.Black
-        Me.txConyugue.Location = New System.Drawing.Point(12, 219)
-        Me.txConyugue.Name = "txConyugue"
-        Me.txConyugue.Size = New System.Drawing.Size(394, 29)
-        Me.txConyugue.TabIndex = 7
-        Me.txConyugue.WatermarkText = "Conyugue"
-        '
-        'txTel
-        '
-        '
-        '
-        '
-        Me.txTel.BackgroundStyle.Class = "TextBoxBorder"
-        Me.txTel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txTel.ButtonClear.Visible = True
-        Me.txTel.Location = New System.Drawing.Point(12, 320)
-        Me.txTel.Mask = "00000000"
-        Me.txTel.Name = "txTel"
-        Me.txTel.Size = New System.Drawing.Size(195, 28)
-        Me.txTel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txTel.TabIndex = 9
-        Me.txTel.Text = ""
-        Me.txTel.WatermarkText = "Telefono"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 261)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 21)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Contacto"
-        '
-        'txDireccion
-        '
-        Me.txDireccion.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.txDireccion.Border.Class = "TextBoxBorder"
-        Me.txDireccion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txDireccion.ForeColor = System.Drawing.Color.Black
-        Me.txDireccion.Location = New System.Drawing.Point(12, 285)
-        Me.txDireccion.Name = "txDireccion"
-        Me.txDireccion.Size = New System.Drawing.Size(395, 29)
-        Me.txDireccion.TabIndex = 8
-        Me.txDireccion.WatermarkText = "Dirección"
         '
         'txApellido
         '
@@ -278,16 +353,16 @@ Partial Class ctrlEmpleados
         Me.txApellido.Border.Class = "TextBoxBorder"
         Me.txApellido.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txApellido.ForeColor = System.Drawing.Color.Black
-        Me.txApellido.Location = New System.Drawing.Point(213, 184)
+        Me.txApellido.Location = New System.Drawing.Point(211, 118)
         Me.txApellido.Name = "txApellido"
-        Me.txApellido.Size = New System.Drawing.Size(193, 29)
-        Me.txApellido.TabIndex = 6
+        Me.txApellido.Size = New System.Drawing.Size(195, 29)
+        Me.txApellido.TabIndex = 4
         Me.txApellido.WatermarkText = "Apellido"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(7, 160)
+        Me.Label4.Location = New System.Drawing.Point(8, 94)
         Me.Label4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 21)
@@ -303,10 +378,10 @@ Partial Class ctrlEmpleados
         Me.txNombre.Border.Class = "TextBoxBorder"
         Me.txNombre.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txNombre.ForeColor = System.Drawing.Color.Black
-        Me.txNombre.Location = New System.Drawing.Point(11, 184)
+        Me.txNombre.Location = New System.Drawing.Point(11, 119)
         Me.txNombre.Name = "txNombre"
         Me.txNombre.Size = New System.Drawing.Size(193, 29)
-        Me.txNombre.TabIndex = 5
+        Me.txNombre.TabIndex = 3
         Me.txNombre.WatermarkText = "Nombre"
         '
         'Label5
@@ -333,6 +408,46 @@ Partial Class ctrlEmpleados
         Me.txDPI.TabIndex = 0
         Me.txDPI.WatermarkText = "DPI"
         '
+        'txBienes
+        '
+        Me.txBienes.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txBienes.Border.Class = "TextBoxBorder"
+        Me.txBienes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txBienes.ForeColor = System.Drawing.Color.Black
+        Me.txBienes.Location = New System.Drawing.Point(17, 86)
+        Me.txBienes.Name = "txBienes"
+        Me.txBienes.Size = New System.Drawing.Size(289, 29)
+        Me.txBienes.TabIndex = 1
+        Me.txBienes.WatermarkText = "Bienes"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(13, 62)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(115, 21)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "Bienes Propios:"
+        '
+        'txConyugue
+        '
+        Me.txConyugue.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txConyugue.Border.Class = "TextBoxBorder"
+        Me.txConyugue.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txConyugue.ForeColor = System.Drawing.Color.Black
+        Me.txConyugue.Location = New System.Drawing.Point(17, 28)
+        Me.txConyugue.Name = "txConyugue"
+        Me.txConyugue.Size = New System.Drawing.Size(289, 29)
+        Me.txConyugue.TabIndex = 0
+        Me.txConyugue.WatermarkText = "Conyugue"
+        '
         'ReflectionLabel1
         '
         '
@@ -346,225 +461,193 @@ Partial Class ctrlEmpleados
         Me.ReflectionLabel1.ReflectionEnabled = False
         Me.ReflectionLabel1.Size = New System.Drawing.Size(306, 44)
         Me.ReflectionLabel1.TabIndex = 27
-        Me.ReflectionLabel1.Text = "<font size=""+6"">Crear <font color=""#32b8ff""> empleado</font></font>"
+        Me.ReflectionLabel1.Text = "<font size=""+6"">Ingresar <font color=""#32b8ff""> cliente</font></font>"
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.cbLugar)
+        Me.GroupBox2.Controls.Add(Me.txEDire)
+        Me.GroupBox2.Controls.Add(Me.txETel)
+        Me.GroupBox2.Controls.Add(Me.txIngreso)
+        Me.GroupBox2.Controls.Add(Me.txPuesto)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.cbEstado)
-        Me.GroupBox2.Controls.Add(Me.cbArea)
+        Me.GroupBox2.Controls.Add(Me.cbEmpresa)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.txSueldo)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.cbPuesto)
         Me.GroupBox2.Location = New System.Drawing.Point(463, 57)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(320, 225)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Datos de la empresa"
+        Me.GroupBox2.Text = "Datos Laborales"
         '
-        'cbLugar
+        'txEDire
         '
-        Me.cbLugar.DisplayMember = "Text"
-        Me.cbLugar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbLugar.FormattingEnabled = True
-        Me.cbLugar.ItemHeight = 23
-        Me.cbLugar.Location = New System.Drawing.Point(17, 119)
-        Me.cbLugar.Name = "cbLugar"
-        Me.cbLugar.Size = New System.Drawing.Size(153, 29)
-        Me.cbLugar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbLugar.TabIndex = 1
-        Me.cbLugar.WatermarkText = "Seleccione Lugar"
+        Me.txEDire.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txEDire.Border.Class = "TextBoxBorder"
+        Me.txEDire.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txEDire.ForeColor = System.Drawing.Color.Black
+        Me.txEDire.Location = New System.Drawing.Point(104, 119)
+        Me.txEDire.Name = "txEDire"
+        Me.txEDire.Size = New System.Drawing.Size(202, 29)
+        Me.txEDire.TabIndex = 2
+        Me.txEDire.WatermarkText = "Dirección"
+        '
+        'txETel
+        '
+        Me.txETel.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txETel.Border.Class = "TextBoxBorder"
+        Me.txETel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txETel.ForeColor = System.Drawing.Color.Black
+        Me.txETel.Location = New System.Drawing.Point(17, 118)
+        Me.txETel.MaxLength = 8
+        Me.txETel.Name = "txETel"
+        Me.txETel.Size = New System.Drawing.Size(83, 29)
+        Me.txETel.TabIndex = 1
+        Me.txETel.WatermarkText = "Telefono"
+        '
+        'txIngreso
+        '
+        Me.txIngreso.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txIngreso.Border.Class = "TextBoxBorder"
+        Me.txIngreso.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txIngreso.ForeColor = System.Drawing.Color.Black
+        Me.txIngreso.Location = New System.Drawing.Point(17, 185)
+        Me.txIngreso.Name = "txIngreso"
+        Me.txIngreso.Size = New System.Drawing.Size(80, 29)
+        Me.txIngreso.TabIndex = 3
+        Me.txIngreso.WatermarkText = "Salario"
+        '
+        'txPuesto
+        '
+        Me.txPuesto.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txPuesto.Border.Class = "TextBoxBorder"
+        Me.txPuesto.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txPuesto.ForeColor = System.Drawing.Color.Black
+        Me.txPuesto.Location = New System.Drawing.Point(104, 185)
+        Me.txPuesto.Name = "txPuesto"
+        Me.txPuesto.Size = New System.Drawing.Size(202, 29)
+        Me.txPuesto.TabIndex = 4
+        Me.txPuesto.WatermarkText = "Puesto que desempeña"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(172, 160)
+        Me.Label11.Location = New System.Drawing.Point(100, 161)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(59, 21)
+        Me.Label11.Size = New System.Drawing.Size(60, 21)
         Me.Label11.TabIndex = 25
-        Me.Label11.Text = "Estado:"
+        Me.Label11.Text = "Puesto:"
         '
-        'cbEstado
+        'cbEmpresa
         '
-        Me.cbEstado.DisplayMember = "Text"
-        Me.cbEstado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbEstado.FormattingEnabled = True
-        Me.cbEstado.ItemHeight = 23
-        Me.cbEstado.Location = New System.Drawing.Point(176, 185)
-        Me.cbEstado.Name = "cbEstado"
-        Me.cbEstado.Size = New System.Drawing.Size(130, 29)
-        Me.cbEstado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbEstado.TabIndex = 4
-        '
-        'cbArea
-        '
-        Me.cbArea.DisplayMember = "Text"
-        Me.cbArea.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbArea.FormattingEnabled = True
-        Me.cbArea.ItemHeight = 23
-        Me.cbArea.Location = New System.Drawing.Point(17, 52)
-        Me.cbArea.Name = "cbArea"
-        Me.cbArea.Size = New System.Drawing.Size(289, 29)
-        Me.cbArea.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbArea.TabIndex = 0
-        Me.cbArea.WatermarkText = "Seleccione Area"
+        Me.cbEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cbEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cbEmpresa.DisplayMember = "Text"
+        Me.cbEmpresa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbEmpresa.FormattingEnabled = True
+        Me.cbEmpresa.ItemHeight = 23
+        Me.cbEmpresa.Location = New System.Drawing.Point(17, 52)
+        Me.cbEmpresa.Name = "cbEmpresa"
+        Me.cbEmpresa.Size = New System.Drawing.Size(289, 29)
+        Me.cbEmpresa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.cbEmpresa.TabIndex = 0
+        Me.cbEmpresa.WatermarkText = "Seleccione Area"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(13, 25)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(45, 21)
+        Me.Label10.Size = New System.Drawing.Size(135, 21)
         Me.Label10.TabIndex = 23
-        Me.Label10.Text = "Area:"
+        Me.Label10.Text = "Nombre Empresa:"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(14, 160)
+        Me.Label8.Location = New System.Drawing.Point(13, 161)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(97, 21)
+        Me.Label8.Size = New System.Drawing.Size(72, 21)
         Me.Label8.TabIndex = 22
-        Me.Label8.Text = "Sueldo Base:"
-        '
-        'txSueldo
-        '
-        '
-        '
-        '
-        Me.txSueldo.BackgroundStyle.Class = "TextBoxBorder"
-        Me.txSueldo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txSueldo.ButtonClear.Visible = True
-        Me.txSueldo.Location = New System.Drawing.Point(18, 185)
-        Me.txSueldo.Mask = "0000000,00"
-        Me.txSueldo.Name = "txSueldo"
-        Me.txSueldo.Size = New System.Drawing.Size(152, 28)
-        Me.txSueldo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txSueldo.TabIndex = 3
-        Me.txSueldo.Text = ""
-        Me.txSueldo.WatermarkText = "Sueldo Base"
+        Me.Label8.Text = "Ingresos:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(177, 94)
+        Me.Label7.Location = New System.Drawing.Point(13, 94)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(60, 21)
+        Me.Label7.Size = New System.Drawing.Size(73, 21)
         Me.Label7.TabIndex = 20
-        Me.Label7.Text = "Puesto:"
+        Me.Label7.Text = "Telefono:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(13, 94)
+        Me.Label6.Location = New System.Drawing.Point(100, 95)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(81, 21)
+        Me.Label6.Size = New System.Drawing.Size(78, 21)
         Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Ubicacion:"
-        '
-        'cbPuesto
-        '
-        Me.cbPuesto.DisplayMember = "Text"
-        Me.cbPuesto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbPuesto.FormattingEnabled = True
-        Me.cbPuesto.ItemHeight = 23
-        Me.cbPuesto.Location = New System.Drawing.Point(176, 118)
-        Me.cbPuesto.Name = "cbPuesto"
-        Me.cbPuesto.Size = New System.Drawing.Size(130, 29)
-        Me.cbPuesto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbPuesto.TabIndex = 2
-        Me.cbPuesto.WatermarkText = "Seleccione Puesto"
-        '
-        'Sistema
-        '
-        Me.Sistema.Controls.Add(Me.txPass)
-        Me.Sistema.Controls.Add(Me.txUsuario)
-        Me.Sistema.Controls.Add(Me.Label9)
-        Me.Sistema.Location = New System.Drawing.Point(463, 289)
-        Me.Sistema.Name = "Sistema"
-        Me.Sistema.Size = New System.Drawing.Size(320, 135)
-        Me.Sistema.TabIndex = 2
-        Me.Sistema.TabStop = False
-        Me.Sistema.Text = "Sistema"
-        '
-        'txPass
-        '
-        Me.txPass.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.txPass.Border.Class = "TextBoxBorder"
-        Me.txPass.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txPass.ForeColor = System.Drawing.Color.Black
-        Me.txPass.Location = New System.Drawing.Point(17, 87)
-        Me.txPass.Name = "txPass"
-        Me.txPass.Size = New System.Drawing.Size(289, 29)
-        Me.txPass.TabIndex = 1
-        Me.txPass.WatermarkText = "Contraseña"
-        '
-        'txUsuario
-        '
-        Me.txUsuario.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.txUsuario.Border.Class = "TextBoxBorder"
-        Me.txUsuario.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txUsuario.ForeColor = System.Drawing.Color.Black
-        Me.txUsuario.Location = New System.Drawing.Point(17, 53)
-        Me.txUsuario.Name = "txUsuario"
-        Me.txUsuario.Size = New System.Drawing.Size(289, 29)
-        Me.txUsuario.TabIndex = 0
-        Me.txUsuario.WatermarkText = "Usuario"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(13, 29)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 21)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "Credenciales"
+        Me.Label6.Text = "Direccion:"
         '
         'btGuardar
         '
         Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.btGuardar.Image = Global.POS.My.Resources.Resources.diskette
-        Me.btGuardar.Location = New System.Drawing.Point(666, 430)
+        Me.btGuardar.Location = New System.Drawing.Point(666, 436)
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(117, 38)
         Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuardar.TabIndex = 3
+        Me.btGuardar.TabIndex = 2
         Me.btGuardar.Text = "Guardar"
         '
-        'ctrlEmpleados
+        'Contacto
+        '
+        Me.Contacto.Controls.Add(Me.txBienes)
+        Me.Contacto.Controls.Add(Me.Label9)
+        Me.Contacto.Controls.Add(Me.txConyugue)
+        Me.Contacto.Location = New System.Drawing.Point(463, 288)
+        Me.Contacto.Name = "Contacto"
+        Me.Contacto.Size = New System.Drawing.Size(320, 136)
+        Me.Contacto.TabIndex = 2
+        Me.Contacto.TabStop = False
+        Me.Contacto.Text = "Conyugue"
+        '
+        'ctrlNuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
+        Me.Controls.Add(Me.Contacto)
         Me.Controls.Add(Me.btGuardar)
-        Me.Controls.Add(Me.Sistema)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ReflectionLabel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Name = "ctrlEmpleados"
-        Me.Size = New System.Drawing.Size(810, 493)
+        Me.Name = "ctrlNuevoCliente"
+        Me.Size = New System.Drawing.Size(811, 493)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.txfechanac, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.Sistema.ResumeLayout(False)
-        Me.Sistema.PerformLayout()
+        Me.Contacto.ResumeLayout(False)
+        Me.Contacto.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -578,7 +661,6 @@ Partial Class ctrlEmpleados
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txConyugue As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents txTel As DevComponents.DotNetBar.Controls.MaskedTextBoxAdv
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txDireccion As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents txfechanac As DevComponents.Editors.DateTimeAdv.DateTimeInput
     Friend WithEvents txNit As DevComponents.DotNetBar.Controls.TextBoxX
@@ -587,21 +669,27 @@ Partial Class ctrlEmpleados
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents txSueldo As DevComponents.DotNetBar.Controls.MaskedTextBoxAdv
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents cbPuesto As DevComponents.DotNetBar.Controls.ComboBoxEx
-    Friend WithEvents Sistema As System.Windows.Forms.GroupBox
-    Friend WithEvents txPass As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents txUsuario As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents btGuardar As DevComponents.DotNetBar.ButtonX
-    Friend WithEvents cbArea As DevComponents.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents cbEmpresa As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents ComboItem2 As DevComponents.Editors.ComboItem
     Friend WithEvents ComboItem3 As DevComponents.Editors.ComboItem
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents cbEstado As DevComponents.DotNetBar.Controls.ComboBoxEx
-    Friend WithEvents cbLugar As DevComponents.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents txETel As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txIngreso As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txPuesto As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents txNacional As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txEDire As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txBienes As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Contacto As System.Windows.Forms.GroupBox
+    Friend WithEvents txTel2 As DevComponents.DotNetBar.Controls.MaskedTextBoxAdv
+    Friend WithEvents txTel1 As DevComponents.DotNetBar.Controls.MaskedTextBoxAdv
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
 
 End Class
