@@ -22,14 +22,14 @@ Public Class frmCnn
 
     Private Sub bt_guardar_Click(sender As Object, e As EventArgs) Handles bt_guardar.Click
         Try
-            frmMain._strcnn = "DATA SOURCE=" + txIp.Text + ":" + txPuerto.Text + "/" + txSID.Text + "; PERSIST SECURITY INFO=True;USER ID=" + txUsuario.Text + ";PASSWORD=" + txPass.Text + ";"
-            frmMain._cnn = New OracleConnection(frmMain._strcnn)
-            frmMain._cnn.Open()
-            lbEstado.Text = "Conexion Guardada"
+            ' frmMain._strcnn = "DATA SOURCE=" + txIp.Text + ":" + txPuerto.Text + "/" + txSID.Text + "; PERSIST SECURITY INFO=True;USER ID=" + txUsuario.Text + ";PASSWORD=" + txPass.Text + ";"
+            ' frmMain._cnn = New OracleConnection(frmMain._strcnn)
+            ' frmMain._cnn.Open()
+            ' lbEstado.Text = "Conexion Guardada"
         Catch ex As Exception
-            lbEstado.Text = ex.Message
+            ' lbEstado.Text = ex.Message
         Finally
-            frmMain._cnn.Close()
+            'frmMain._cnn.Close()
         End Try
 
 

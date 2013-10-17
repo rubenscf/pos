@@ -1,4 +1,5 @@
 ﻿Imports Oracle.DataAccess.Client
+Imports System.Security.Cryptography
 
 Public Class ctrlEmpleados
     Private idempleado As Integer
@@ -12,7 +13,7 @@ Public Class ctrlEmpleados
         Catch ex As Exception
             _ESTADO(ex.Message, frmMain.lbEstado)
         End Try
-        
+
     End Sub
 
     Private Sub cbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbArea.LostFocus
@@ -22,6 +23,12 @@ Public Class ctrlEmpleados
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim pass As String
+        Using md5Hash As MD5 = MD5.Create()
+            Dim hash As String = _ObtieneMd5Hash(md5Hash, txPass.Text)
+            pass = hash
+        End Using
+
+
         pass = txPass.Text
         If txNombre.Text = "" Or txApellido.Text = "" Or txDPI.Text = "" Or txDireccion.Text = "" Or txUsuario.Text = "" Or txPass.Text = "" Then
             _ESTADO("No pueden existir campos vacios", frmMain.lbEstado)
@@ -144,7 +151,7 @@ Public Class ctrlEmpleados
         End If
     End Sub
 
-   
+
 
 
     Private Sub txUsuario_TextChanged(sender As Object, e As EventArgs) Handles txUsuario.LostFocus

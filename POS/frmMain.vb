@@ -2,10 +2,15 @@ Imports Oracle.DataAccess.Client
 Imports System.Configuration
 Imports DevComponents.DotNetBar
 
+
 Public Class frmMain
+    ' Protected conf As New OracleConnectionStringBuilder("OracleCnn")
     'declaracion de variables para la conexion a la base de datos
-    Public _strcnn As String = "DATA SOURCE=localhost:1521/XE; PERSIST SECURITY INFO=True;USER ID=agencia;PASSWORD=sistemas;"
-    '_strcnn =  "DATA SOURCE=;PERSIST SECURITY INFO=True;USER ID=taller;Password=sistemas;"
+
+    'Public _strcnn As String = "DATA SOURCE=192.168.1.6:1521/XE; PERSIST SECURITY INFO=True;USER ID=agencia;PASSWORD=sistemas;"
+    Public _strcnn As String = ConfigurationManager.ConnectionStrings("POS.My.MySettings.ConnectionString").ConnectionString
+    '_strcnn =  ConfigurationManager.ConnectionStrings("POS.My.MySettings.ConnectionString").ConnectionString
+
     Public _cnn As New OracleConnection(_strcnn)
     ' Public _cnn As New OracleConnection
     Public _cmd As New OracleCommand
@@ -16,11 +21,48 @@ Public Class frmMain
     Public htp As New Hashtable()
     Public bEstado As Boolean
 
+    'variables de sesion
+    Public nombre, puesto, lugar, serie, tipolugar As String
+    Public idempleado, idpuesto, idtipolugar As Decimal
+
+
+    Public Sub iniciarSesion()
+        menuMetro.Visible = True
+        If idtipolugar = 2 Then
+            mnuTienda.Visible = False
+            mnuSistema.Visible = False
+        ElseIf idtipolugar = 3 Then
+            mnuBodega.Visible = False
+            mnuSistema.Visible = False
+            ' 7 encargado de tienda - 8 secretaria - 9 cajero -10 vendedor - 11 cobrador 
+            If idpuesto = 7 Then
+                rbTieCaja.Visible = False
+            ElseIf idpuesto = 8 Then
+                rbTieCaja.Visible = False
+            ElseIf idpuesto = 9 Then
+                rbTieClientes.Visible = False
+                rbTieTraslado.Visible = False
+                rbtieVentas.Visible = False
+            ElseIf idpuesto = 10 Or idpuesto = 11 Then
+                rbTieCaja.Visible = False
+                rbTieTraslado.Visible = False
+            End If
+        End If
+
+    End Sub
+    Public Sub cerrarSesion()
+
+    End Sub
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '   _strcnn = ConfigurationManager.ConnectionStrings("POS.My.MySettings.ConnectionString").ConnectionString
+        MsgBox(_strcnn)
         ' frmCnn.Show() 'Mostrar la ventana de conexion
         Timer.Interval = 1000
         ' Timer.Start()
         bEstado = False
+        Dim clogin As New ctrlLogin
+        clogin.Dock = DockStyle.Fill
+        tcpMain.Controls.Add(clogin)
 
     End Sub
 
@@ -145,7 +187,7 @@ Public Class frmMain
         End If
     End Sub
 
-   
+
     Private Sub mnuPRCategoria_Click(sender As Object, e As EventArgs) Handles mnuPRCategoria.Click
         Dim ind As Integer = -1
         Dim clave As String = "PR. Categorias" 'cambiar valor
@@ -193,7 +235,7 @@ Public Class frmMain
             Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
             ind = tpMain.Tabs.Count - 1
             tpMain.SelectedTabIndex = ind
-            Dim control As New ctrlNuevoCliente'cambiar control
+            Dim control As New ctrlNuevoCliente 'cambiar control
             control.Dock = DockStyle.Fill
             panel.Controls.Add(control)
             htp.Add(clave, ind)
@@ -218,5 +260,48 @@ Public Class frmMain
             '            MsgBox(ind.ToString)
         End If
     End Sub
-    
+
+    Private Sub btEstados_Click(sender As Object, e As EventArgs) Handles btEstados.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Estado De Envios" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlEstadoEnvio            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub btVerPedidos_Click(sender As Object, e As EventArgs) Handles btVerPedidos.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Gestor De Pedidos" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlPedidos            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub tpMain_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btNuAbono_Click(sender As Object, e As EventArgs) Handles btNuAbono.Click
+        frmImprimir.Show()
+    End Sub
 End Class

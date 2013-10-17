@@ -159,7 +159,7 @@ Partial Class frmCnn
         Me.statusbar.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.lbEstado})
         Me.statusbar.Location = New System.Drawing.Point(0, 278)
         Me.statusbar.Name = "statusbar"
-        Me.statusbar.Size = New System.Drawing.Size(440, 22)
+        Me.statusbar.Size = New System.Drawing.Size(451, 22)
         Me.statusbar.TabIndex = 13
         Me.statusbar.Text = "asdf"
         '
@@ -202,7 +202,7 @@ Partial Class frmCnn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(440, 300)
+        Me.ClientSize = New System.Drawing.Size(451, 300)
         Me.Controls.Add(Me.txSID)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txIp)
