@@ -22,18 +22,16 @@ Public Class ctrlEmpleados
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
-        Dim pass As String
-        Using md5Hash As MD5 = MD5.Create()
-            Dim hash As String = _ObtieneMd5Hash(md5Hash, txPass.Text)
-            pass = hash
-        End Using
-
-
-        pass = txPass.Text
+        
         If txNombre.Text = "" Or txApellido.Text = "" Or txDPI.Text = "" Or txDireccion.Text = "" Or txUsuario.Text = "" Or txPass.Text = "" Then
             _ESTADO("No pueden existir campos vacios", frmMain.lbEstado)
         Else
             Try
+                Dim pass As String
+                Using md5Hash As MD5 = MD5.Create()
+                    Dim hash As String = _ObtieneMd5Hash(md5Hash, txPass.Text)
+                    pass = hash
+                End Using
                 frmMain._cnn.Open()
                 Dim dbms As New DBMSOutput(frmMain._cnn)
                 If valido Then
@@ -159,7 +157,7 @@ Public Class ctrlEmpleados
         query = "select count(idempleado) as id from empleado where usuario ='" & CStr(txUsuario.Text.ToLower) & "'"
         Try
             frmMain._cnn.Open()
-            MsgBox(query)
+
             frmMain._cmd = New OracleCommand(query, frmMain._cnn)
             Dim r As OracleDataReader = frmMain._cmd.ExecuteReader()
             Dim f As Decimal = 0
@@ -168,9 +166,9 @@ Public Class ctrlEmpleados
             End While
             r.Close()
             If f > 0 Then
+                _ESTADO("Este nombre de usuario se encuentra en uso...", frmMain.lbEstado)
                 txUsuario.Focus()
                 txUsuario.SelectAll()
-                _ESTADO("Este nombre de usuario se encuentra en uso...", frmMain.lbEstado)
             Else
                 valido = True
                 _ESTADO("Nombre de usuario disponible", frmMain.lbEstado)
@@ -217,4 +215,6 @@ Public Class ctrlEmpleados
     '        frmMain._cnn.Close()
     '    End Try
     'End Sub
+
+    
 End Class

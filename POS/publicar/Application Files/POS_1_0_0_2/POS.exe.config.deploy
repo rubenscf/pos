@@ -7,8 +7,7 @@
     </startup>
   
 <connectionStrings>
-
-    <add name="POS.My.MySettings.ConnectionString" connectionString="DATA SOURCE=192.168.1.6:1521/XE;PASSWORD=sistemas;PERSIST SECURITY INFO=True;USER ID=AGENCIA"
+    <add name="POS.My.MySettings.ConnectionString" connectionString="DATA SOURCE=LOCALHOST:1521/XE; PERSIST SECURITY INFO=True;USER ID=agencia;PASSWORD=sistemas;"
         providerName="Oracle.ManagedDataAccess.Client" />
 </connectionStrings>
 </configuration>

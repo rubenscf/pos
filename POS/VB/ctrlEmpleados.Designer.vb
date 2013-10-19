@@ -100,6 +100,7 @@ Partial Class ctrlEmpleados
         Me.txNit.Name = "txNit"
         Me.txNit.Size = New System.Drawing.Size(121, 29)
         Me.txNit.TabIndex = 2
+        Me.txNit.Text = "c/f"
         Me.txNit.WatermarkText = "Nit"
         '
         'txExtendido

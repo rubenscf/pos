@@ -8,7 +8,7 @@ Public Class ctrlLogin
 
         Using md5Hash As MD5 = MD5.Create()
             Dim hash As String = _ObtieneMd5Hash(md5Hash, txPass.Text)
-            query = "SELECT emp.IDEMPLEADO, emp.NOMBRE || ' ' || emp.APELLIDO AS NOMBRE, pue.DETALLE AS puesto,lug.IDLUGAR AS serie, lug.NOMBRE AS lugar, pue.IDLU_PUESTO AS idpuesto,  tip.NOMBRE AS tipoLugar, tip.IDLU_TIPO AS idtipolugar FROM AGENCIA.EMPLEADO emp INNER JOIN AGENCIA.LUGAR lug ON emp.IDLUGAR = lug.IDLUGAR INNER JOIN AGENCIA.LU_PUESTO pue ON emp.IDLU_PUESTO = pue.IDLU_PUESTO INNER JOIN AGENCIA.LU_TIPO tip ON lug.IDLU_TIPO = tip.IDLU_TIPO AND pue.IDLU_TIPO = tip.IDLU_TIPO WHERE emp.USUARIO = '" & txUsuario.Text & "' AND emp.pass = '" & hash & "'"
+            query = "SELECT emp.IDEMPLEADO, emp.NOMBRE || ' ' || emp.APELLIDO AS NOMBRE, pue.DETALLE AS puesto,lug.IDLUGAR AS serie, lug.NOMBRE AS lugar, pue.IDLU_PUESTO AS idpuesto,  tip.NOMBRE AS tipoLugar, tip.IDLU_TIPO AS idtipolugar FROM AGENCIA.EMPLEADO emp INNER JOIN AGENCIA.LUGAR lug ON emp.IDLUGAR = lug.IDLUGAR INNER JOIN AGENCIA.LU_PUESTO pue ON emp.IDLU_PUESTO = pue.IDLU_PUESTO INNER JOIN AGENCIA.LU_TIPO tip ON lug.IDLU_TIPO = tip.IDLU_TIPO AND pue.IDLU_TIPO = tip.IDLU_TIPO WHERE emp.USUARIO = '" & txUsuario.Text.ToLower & "' AND emp.pass = '" & hash & "'"
         End Using
         MsgBox(query)
         Try

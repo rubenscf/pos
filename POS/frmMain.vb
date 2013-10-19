@@ -58,7 +58,7 @@ Public Class frmMain
         MsgBox(_strcnn)
         ' frmCnn.Show() 'Mostrar la ventana de conexion
         Timer.Interval = 1000
-        ' Timer.Start()
+        Timer.Start()
         bEstado = False
         Dim clogin As New ctrlLogin
         clogin.Dock = DockStyle.Fill

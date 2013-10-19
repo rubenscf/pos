@@ -54,14 +54,14 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString), _
-         Global.System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=localhost;PASSWORD=sistemas;PERSIST SECURITY INFO=True;USER ID=AGENCI" & _
-            "A")> _
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=LOCALHOST:1521/XE; PERSIST SECURITY INFO=True;USER ID=agencia;PASSWOR"& _ 
+            "D=sistemas;")>  _
         Public ReadOnly Property ConnectionString() As String
             Get
-                Return CType(Me("ConnectionString"), String)
+                Return CType(Me("ConnectionString"),String)
             End Get
         End Property
     End Class

@@ -28,6 +28,7 @@ Partial Class ctrlNuevoEnvio
         Me.cbVerTienda = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.ReflectionLabel2 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
         Me.splCBody = New System.Windows.Forms.SplitContainer()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.txB = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.cbF = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -45,11 +46,10 @@ Partial Class ctrlNuevoEnvio
         Me.NUEVO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.USADOS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.detalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.toolStrpAdd = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btBorrarL = New System.Windows.Forms.ToolStripButton()
         CType(Me.splcMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splcMain.Panel1.SuspendLayout()
@@ -106,6 +106,7 @@ Partial Class ctrlNuevoEnvio
         '
         '
         Me.swBt.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.swBt.Enabled = False
         Me.swBt.Location = New System.Drawing.Point(1056, 25)
         Me.swBt.Name = "swBt"
         Me.swBt.OffText = "Traslado"
@@ -166,6 +167,14 @@ Partial Class ctrlNuevoEnvio
         Me.splCBody.Size = New System.Drawing.Size(1149, 429)
         Me.splCBody.SplitterDistance = 639
         Me.splCBody.TabIndex = 16
+        '
+        'Label4
+        '
+        Me.Label4.Image = Global.POS.My.Resources.Resources.zoom
+        Me.Label4.Location = New System.Drawing.Point(484, 11)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 27)
+        Me.Label4.TabIndex = 4
         '
         'txB
         '
@@ -350,30 +359,6 @@ Partial Class ctrlNuevoEnvio
         Me.detalle.Name = "detalle"
         Me.detalle.Width = 106
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
-        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStrpAdd, Me.ToolStripSeparator1, Me.btBorrarL})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 78)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip1.Size = New System.Drawing.Size(36, 85)
-        Me.ToolStrip1.TabIndex = 0
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(34, 6)
-        '
-        'Label4
-        '
-        Me.Label4.Image = Global.POS.My.Resources.Resources.zoom
-        Me.Label4.Location = New System.Drawing.Point(484, 11)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(37, 27)
-        Me.Label4.TabIndex = 4
-        '
         'btGuardar
         '
         Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
@@ -388,6 +373,17 @@ Partial Class ctrlNuevoEnvio
         Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btGuardar.TabIndex = 15
         Me.btGuardar.Text = "Enviar Listado"
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStrpAdd, Me.ToolStripSeparator1, Me.btBorrarL})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 78)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.ToolStrip1.Size = New System.Drawing.Size(36, 85)
+        Me.ToolStrip1.TabIndex = 0
         '
         'toolStrpAdd
         '
@@ -405,6 +401,11 @@ Partial Class ctrlNuevoEnvio
         Me.toolStrpAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.toolStrpAdd.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90
         Me.toolStrpAdd.ToolTipText = "Agregar a la Lista"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(34, 6)
         '
         'btBorrarL
         '

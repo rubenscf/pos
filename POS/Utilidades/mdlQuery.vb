@@ -126,7 +126,7 @@ Module mdlQuery
         dg.Columns(0).Visible = False
         dg.Columns(1).Visible = False
         'cargar los items de opciones para filtrar
-        
+
     End Sub
 
 End Module

@@ -5,18 +5,22 @@ Public Class ctrlNuevoEnvio
 
 
     Private Sub swBt_ValueChanged(sender As Object, e As EventArgs) Handles swBt.ValueChanged
-        If swBt.Value = False Then
-            _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '3'", cbVerTienda)
-        Else
+
+        If swBt.Value = True Then
             _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '2'", cbVerTienda)
+        Else
+            _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '3' AND idlugar <> '" & frmMain.serie & "'", cbVerTienda)
         End If
+
+
+
     End Sub
 
-    Sub CargaStock(ByVal envio As Boolean, ByVal ti As String)
+    Sub CargaStock()
         Try
             frmMain._cnn.Open()
             frmMain._Bs = New BindingSource
-            setBSInventario(envio, cbVerTienda.SelectedValue, frmMain._Bs, dg, cbF)
+            setBSInventario(swBt.Value, cbVerTienda.SelectedValue, frmMain._Bs, dg, cbF)
             If frmMain._Bs.Count > 0 Then
                 toolStrpAdd.Enabled = True
             Else
@@ -31,7 +35,13 @@ Public Class ctrlNuevoEnvio
 
 
     Private Sub ctrlNuevoEnvio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '2'", cbVerTienda)
+        If frmMain.idtipolugar = 2 Then
+            swBt.Enabled = True
+        Else
+            swBt.Value = False
+
+        End If
+        _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '" & frmMain.idtipolugar & "'", cbVerTienda)
         With (cbF)
             .Items.Add("CODIGO")
             .Items.Add("CATEGORIA")
@@ -57,7 +67,7 @@ Public Class ctrlNuevoEnvio
     End Sub
 
     Private Sub cbVerTienda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbVerTienda.LostFocus
-        CargaStock(swBt.Value, cbVerTienda.SelectedValue)
+        CargaStock()
 
 
     End Sub
@@ -132,7 +142,7 @@ Public Class ctrlNuevoEnvio
             Dim trans As OracleTransaction
             Dim iden As Integer
 
-            Dim lugarActual As String = "LOC"
+            Dim lugarActual As String = frmMain.serie
             Dim query As String
             Dim s As OracleDataReader
             frmMain._cnn.Open()
@@ -146,11 +156,6 @@ Public Class ctrlNuevoEnvio
                 Else
                     identipo = 2
                 End If
-
-                
-
-               
-
                 frmMain._cmd.CommandText = "INSERT INTO ENVIO(sale, iden_tipo, idenvio, destino, fecha_salida, estado) VALUES('" & cbVerTienda.SelectedValue & "', " & identipo & ", SEQ_" & cbVerTienda.SelectedValue & "_IDENVIO.NEXTVAL, '" & lugarActual & "', sysdate, 'EEN')"
                 frmMain._cmd.ExecuteNonQuery()
 
@@ -173,7 +178,7 @@ Public Class ctrlNuevoEnvio
 
                 trans.Commit()
                 dgL.Rows.Clear()
-                CargaStock(swBt.Value, cbVerTienda.SelectedValue)
+                CargaStock()
 
                 _ESTADO("Envio Realizado espere apobacion de la otra parte... ", frmMain.lbEstado)
             Catch ex As Exception
@@ -186,4 +191,5 @@ Public Class ctrlNuevoEnvio
     End Sub
 
     
+
 End Class
