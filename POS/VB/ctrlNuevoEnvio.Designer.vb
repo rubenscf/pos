@@ -106,7 +106,6 @@ Partial Class ctrlNuevoEnvio
         '
         '
         Me.swBt.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.swBt.Enabled = False
         Me.swBt.Location = New System.Drawing.Point(1056, 25)
         Me.swBt.Name = "swBt"
         Me.swBt.OffText = "Traslado"

@@ -31,6 +31,7 @@ Partial Class ctrlLogin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txUsuario = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.ReflectionLabel2 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
+        Me.ButtonX1 = New DevComponents.DotNetBar.ButtonX()
         CType(Me.spltC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.spltC.Panel1.SuspendLayout()
         Me.spltC.Panel2.SuspendLayout()
@@ -53,6 +54,7 @@ Partial Class ctrlLogin
         '
         'spltC.Panel2
         '
+        Me.spltC.Panel2.Controls.Add(Me.ButtonX1)
         Me.spltC.Panel2.Controls.Add(Me.PictureBox3)
         Me.spltC.Panel2.Controls.Add(Me.btEntrar)
         Me.spltC.Panel2.Controls.Add(Me.Label3)
@@ -92,12 +94,12 @@ Partial Class ctrlLogin
         Me.btEntrar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btEntrar.Image = Global.POS.My.Resources.Resources.key
         Me.btEntrar.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btEntrar.Location = New System.Drawing.Point(247, 298)
+        Me.btEntrar.Location = New System.Drawing.Point(274, 286)
         Me.btEntrar.Name = "btEntrar"
-        Me.btEntrar.Size = New System.Drawing.Size(137, 47)
+        Me.btEntrar.Size = New System.Drawing.Size(110, 47)
         Me.btEntrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010
         Me.btEntrar.TabIndex = 3
-        Me.btEntrar.Text = "   Entrar"
+        Me.btEntrar.Text = " Entrar"
         '
         'Label3
         '
@@ -165,10 +167,23 @@ Partial Class ctrlLogin
         Me.ReflectionLabel2.Location = New System.Drawing.Point(115, 37)
         Me.ReflectionLabel2.Margin = New System.Windows.Forms.Padding(20)
         Me.ReflectionLabel2.Name = "ReflectionLabel2"
-        Me.ReflectionLabel2.ReflectionEnabled = False
-        Me.ReflectionLabel2.Size = New System.Drawing.Size(307, 52)
+        Me.ReflectionLabel2.Size = New System.Drawing.Size(307, 82)
         Me.ReflectionLabel2.TabIndex = 16
         Me.ReflectionLabel2.Text = "<font size=""+6"">Ingresar al <font color=""#ffffff"">Sistema</font></font>"
+        '
+        'ButtonX1
+        '
+        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonX1.Image = Global.POS.My.Resources.Resources._3720
+        Me.ButtonX1.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.ButtonX1.Location = New System.Drawing.Point(178, 286)
+        Me.ButtonX1.Name = "ButtonX1"
+        Me.ButtonX1.Size = New System.Drawing.Size(90, 47)
+        Me.ButtonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010
+        Me.ButtonX1.TabIndex = 25
+        Me.ButtonX1.Text = "Salir"
         '
         'ctrlLogin
         '
@@ -199,5 +214,6 @@ Partial Class ctrlLogin
     Friend WithEvents txUsuario As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents ReflectionLabel2 As DevComponents.DotNetBar.Controls.ReflectionLabel
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents ButtonX1 As DevComponents.DotNetBar.ButtonX
 
 End Class

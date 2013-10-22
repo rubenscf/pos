@@ -2,8 +2,10 @@
 
 Public Class ctrlPedidos
     Dim query As String
+    Dim impreso As Boolean = False
     Sub cargaPedido()
-        query = "SELECT sa.IDLUGAR AS cdestino, ti.IDEN_TIPO AS ctipo, en.idenvio, sa.NOMBRE AS lugar, en.FECHA_SALIDA AS fecha, ti.DETALLE AS tipo, es.DETALLE AS estado FROM AGENCIA.ENVIO en INNER JOIN AGENCIA.LUGAR sa ON en.DESTINO = sa.IDLUGAR INNER JOIN AGENCIA.ESTADO es ON en.ESTADO = es. ID INNER JOIN AGENCIA.EN_TIPO ti ON en.IDEN_TIPO = ti.IDEN_TIPO WHERE en.ESTADO = 'EEN' AND en.SALE = '" & frmMain.serie & "'"
+
+        query = "SELECT sa.IDLUGAR AS cdestino, ti.IDEN_TIPO AS ctipo, en.idenvio, sa.NOMBRE AS lugar, en.FECHA_SALIDA AS fecha, ti.DETALLE AS tipo, es.DETALLE AS estado FROM AGENCIA.ENVIO en INNER JOIN AGENCIA.LUGAR sa ON en.DESTINO = sa.IDLUGAR INNER JOIN AGENCIA.ESTADO es ON en.ESTADO = es. ID INNER JOIN AGENCIA.EN_TIPO ti ON en.IDEN_TIPO = ti.IDEN_TIPO WHERE en.ESTADO = 'ESO' AND en.SALE = '" & frmMain.serie & "'"
         _SET_DG("Pedidos", query, dg)
         dg.Columns(0).Visible = False
         dg.Columns(1).Visible = False
@@ -13,6 +15,7 @@ Public Class ctrlPedidos
 
     Private Sub ctrlPedidos_Load(sender As Object, e As EventArgs) Handles Me.Load
         cargaPedido()
+        dgD.Rows.Clear()
     End Sub
     Private Sub ReflectionLabel2_Click(sender As Object, e As EventArgs) Handles ReflectionLabel2.Click
 
@@ -31,24 +34,51 @@ Public Class ctrlPedidos
 
     Private Sub btAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
 
-        'For Each f As DataGridViewRow In dgD.Rows
-        '    query = "UPDATE pr_inventario set nueva = nueva - " & f.Cells(5).Value & ", segunda = segunda - " & f.Cells(6).Value & " where idlugar= '" & cbVerTienda.SelectedValue & "' and idpr_marca = " & f.Cells(0).Value & " and idpr_modelo = " & f.Cells(1).Value
-        '    frmMain._cmd.CommandText = query
-        '    frmMain._cmd.ExecuteNonQuery()
+        Try
 
-        '    query = "SELECT nueva, segunda from pr_inventario where idlugar = '" & cbVerTienda.SelectedValue & "' and idpr_marca = " & f.Cells(0).Value & " and idpr_modelo = " & f.Cells(1).Value
-        '    frmMain._cmd.CommandText = query
-        '    r = frmMain._cmd.ExecuteReader()
-        '    While r.Read
-        '        nueva = r.GetDecimal(0)
-        '        segunda = r.GetDecimal(1)
-        '    End While
-        '    r.Close()
-        '    If nueva < f.Cells(5).Value Or segunda < f.Cells(6).Value Then
-        '        _ESTADO("No hay cantidad de producto requerido... actualize nuevamente la ventana ", frmMain.lbEstado)
-        '        Exit Try
-        '    End If
-        'Next
+            frmMain._cnn.Open()
+            If impreso Then
+                Dim dbms As New DBMSOutput(frmMain._cnn)
+                If dg.RowCount < 1 Then
+                    _ESTADO("No hay elementos seleccionados", frmMain.lbEstado)
+                Else
+                    dbms.Enable()
+                    frmMain._cmd = New OracleCommand()
+                    frmMain._cmd.Connection = frmMain._cnn
+                    With frmMain._cmd
+                        .CommandType = CommandType.StoredProcedure
+                        .CommandText = "SP_ACEPTAR_ENVIO"
+                        .Parameters.Add(New OracleParameter("v_sale", OracleDbType.Varchar2)).Value = frmMain.serie
+                        .Parameters.Add(New OracleParameter("v_idenvio", OracleDbType.Int32)).Value = CInt(dg.SelectedCells(2).Value)
+                        .Parameters.Add(New OracleParameter("v_estado", OracleDbType.Int32, ParameterDirection.Output))
+                    End With
+                    frmMain._cmd.ExecuteNonQuery()
+
+                    If frmMain._cmd.Parameters("v_estado").Value > 0 Then
+
+                        dbms.Show(frmMain.lbEstado)
+                        dbms.Disable()
+                    ElseIf frmMain._cmd.Parameters("v_estado").Value = 0 Then
+                        dbms.Show()
+
+                    Else
+
+                        dbms.Show()
+
+                    End If
+                    cargaPedido()
+                End If
+            Else
+                _ESTADO("Primero debe Imprimir el formato de envio", frmMain.lbEstado)
+            End If
+
+        Catch ex As Exception
+            _ESTADO(ex.Message, frmMain.lbEstado)
+        Finally
+            frmMain._cnn.Close()
+        End Try
+
+
     End Sub
 
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
@@ -74,5 +104,6 @@ Public Class ctrlPedidos
         Dim frm As New frmImprimir
         frm.EnvioTraslado(frmMain.serie, dg.SelectedCells(2).Value, frmMain.idtipolugar)
         frm.Show()
+        impreso = True
     End Sub
 End Class

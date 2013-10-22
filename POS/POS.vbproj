@@ -179,6 +179,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlPlanCliente.Designer.vb">
+      <DependentUpon>ctrlPlanCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlPlanCliente.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlRecibeProducto.Designer.vb">
+      <DependentUpon>ctrlRecibeProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlRecibeProducto.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlInicio.Designer.vb">
+      <DependentUpon>ctrlInicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlInicio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -294,8 +312,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_DS.vb">
+      <DependentUpon>_DS.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ctrlPlanCliente.resx">
+      <DependentUpon>ctrlPlanCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlRecibeProducto.resx">
+      <DependentUpon>ctrlRecibeProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlInicio.resx">
+      <DependentUpon>ctrlInicio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formatos\FormaTraslado.rdlc" />
     <EmbeddedResource Include="VB\ctrlEstadoEnvio.resx">
       <DependentUpon>ctrlEstadoEnvio.vb</DependentUpon>
@@ -396,6 +426,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cloudangel.ico" />
+    <None Include="Resources\15310.png" />
+    <None Include="Resources\cloudbg.jpg" />
+    <None Include="Resources\4170.png" />
     <None Include="Resources\Logo_ANGELs.png" />
     <None Include="Resources\cloudbg2.png" />
     <None Include="Resources\cloudbg1.png" />

@@ -68,7 +68,7 @@ Public Class ctrlStokAdd
     
     Private Sub btGuarda_Click(sender As Object, e As EventArgs) Handles btGuarda.Click
         If txCantidad.Text <> "" Then
-            Dim r As Integer = MsgBox("Esta seguro de agregar este producto al invetario local?", vbYesNo)
+            Dim r As Integer = MsgBox("Esta seguro de agregar este producto al inventario local?", vbYesNo)
             If r = vbYes Then
                 Try
                     frmMain._cnn.Open()
@@ -79,7 +79,7 @@ Public Class ctrlStokAdd
                     With frmMain._cmd
                         .CommandType = CommandType.StoredProcedure
                         .CommandText = "SP_NUEVO_PR_INVENTARIO"
-                        .Parameters.Add(New OracleParameter("v_idlugar", OracleDbType.Varchar2)).Value = "BOD"
+                        .Parameters.Add(New OracleParameter("v_idlugar", OracleDbType.Varchar2)).Value = frmMain.serie
                         .Parameters.Add(New OracleParameter("v_marca", OracleDbType.Varchar2)).Value = CStr(marca)
                         .Parameters.Add(New OracleParameter("v_modelo", OracleDbType.Varchar2)).Value = CStr(modelo)
                         .Parameters.Add(New OracleParameter("v_nueva", OracleDbType.Varchar2)).Value = CStr(txCantidad.Text)

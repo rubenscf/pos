@@ -25,15 +25,76 @@ Public Class frmMain
     Public nombre, puesto, lugar, serie, tipolugar As String
     Public idempleado, idpuesto, idtipolugar As Decimal
 
-
+    Public Sub verPedidos()
+        Dim ind As Integer = -1
+        Dim clave As String = "Gestor De Pedidos" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlPedidos            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+    Sub verNuevoEnvio()
+        Dim ind As Integer = -1
+        Dim clave As String = "Nuevo Envio" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlNuevoEnvio            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+    Sub addStock()
+        Dim ind As Integer = -1
+        Dim clave As String = "Nuevo producto a inventario" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlStokAdd 'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
     Public Sub iniciarSesion()
         menuMetro.Visible = True
         If idtipolugar = 2 Then
+            mnuBodega.Visible = True
+            mnuTABBODEGA.Visible = True
             mnuTienda.Visible = False
+            mnuTABTIENDA.Visible = False
+
             mnuSistema.Visible = False
+            mnuTABSISTEMA.Visible = False
+            mnuBodega.Select()
         ElseIf idtipolugar = 3 Then
+
+            mnuTienda.Visible = True
+            mnuTABTIENDA.Visible = True
             mnuBodega.Visible = False
+            mnuTABBODEGA.Visible = False
             mnuSistema.Visible = False
+            mnuTABSISTEMA.Visible = False
             ' 7 encargado de tienda - 8 secretaria - 9 cajero -10 vendedor - 11 cobrador 
             If idpuesto = 7 Then
                 rbTieCaja.Visible = False
@@ -47,18 +108,64 @@ Public Class frmMain
                 rbTieCaja.Visible = False
                 rbTieTraslado.Visible = False
             End If
+            mnuTienda.Select()
         End If
-
+        Dim cinicio As New ctrlInicio
+        cinicio.Dock = DockStyle.Fill
+        tcpMain.Controls.Add(cinicio)
+    End Sub
+    Sub verEstadoEnvio()
+        Dim ind As Integer = -1
+        Dim clave As String = "Estado De Envios" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlEstadoEnvio            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
     End Sub
     Public Sub cerrarSesion()
-
+        menuMetro.Visible = False
+        If idtipolugar = 2 Then
+            mnuTienda.Visible = False
+            mnuTABTIENDA.Visible = False
+            mnuSistema.Visible = False
+            mnuTABSISTEMA.Visible = False
+        ElseIf idtipolugar = 3 Then
+            mnuBodega.Enabled = True
+            mnuSistema.Enabled = True
+            ' 7 encargado de tienda - 8 secretaria - 9 cajero -10 vendedor - 11 cobrador 
+            If idpuesto = 7 Then
+                rbTieCaja.Visible = True
+            ElseIf idpuesto = 8 Then
+                rbTieCaja.Visible = True
+            ElseIf idpuesto = 9 Then
+                rbTieClientes.Visible = False
+                rbTieTraslado.Visible = True
+                rbtieVentas.Visible = False
+            ElseIf idpuesto = 10 Or idpuesto = 11 Then
+                rbTieCaja.Visible = True
+                rbTieTraslado.Visible = True
+            End If
+        End If
+        htp.Clear()
+        Dim cinicio As New ctrlLogin
+        cinicio.Dock = DockStyle.Fill
+        tcpMain.Controls.Add(cinicio)
     End Sub
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '   _strcnn = ConfigurationManager.ConnectionStrings("POS.My.MySettings.ConnectionString").ConnectionString
-        MsgBox(_strcnn)
+        ' MsgBox(_strcnn)
         ' frmCnn.Show() 'Mostrar la ventana de conexion
         Timer.Interval = 1000
-        Timer.Start()
+        'Timer.Start()
         bEstado = False
         Dim clogin As New ctrlLogin
         clogin.Dock = DockStyle.Fill
@@ -207,21 +314,7 @@ Public Class frmMain
     End Sub
 
     Private Sub btNInvetario_Click(sender As Object, e As EventArgs) Handles btNInvetario.Click
-        Dim ind As Integer = -1
-        Dim clave As String = "Nuevo producto a inventario" 'cambiar valor
-        If htp.ContainsKey(clave) Then
-            tpMain.SelectedTabIndex = htp.Item(clave)
-        Else
-            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
-            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
-            ind = tpMain.Tabs.Count - 1
-            tpMain.SelectedTabIndex = ind
-            Dim control As New ctrlStokAdd 'cambiar control
-            control.Dock = DockStyle.Fill
-            panel.Controls.Add(control)
-            htp.Add(clave, ind)
-            '            MsgBox(ind.ToString)
-        End If
+        addStock()
     End Sub
 
 
@@ -243,27 +336,22 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub btEnvios_Click(sender As Object, e As EventArgs) Handles btEnvios.Click
-        Dim ind As Integer = -1
-        Dim clave As String = "Nuevo Envio" 'cambiar valor
-        If htp.ContainsKey(clave) Then
-            tpMain.SelectedTabIndex = htp.Item(clave)
-        Else
-            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
-            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
-            ind = tpMain.Tabs.Count - 1
-            tpMain.SelectedTabIndex = ind
-            Dim control As New ctrlNuevoEnvio            'cambiar control
-            control.Dock = DockStyle.Fill
-            panel.Controls.Add(control)
-            htp.Add(clave, ind)
-            '            MsgBox(ind.ToString)
-        End If
+    Private Sub btEnvios_Click(sender As Object, e As EventArgs)
+        verNuevoEnvio()
     End Sub
 
     Private Sub btEstados_Click(sender As Object, e As EventArgs) Handles btEstados.Click
+        verEstadoEnvio()
+    End Sub
+
+    Private Sub btVerPedidos_Click(sender As Object, e As EventArgs)
+        verPedidos()
+    End Sub
+
+
+    Private Sub btRecibir_Click(sender As Object, e As EventArgs) Handles btRecibir.Click
         Dim ind As Integer = -1
-        Dim clave As String = "Estado De Envios" 'cambiar valor
+        Dim clave As String = "Recepcion de Productos" 'cambiar valor
         If htp.ContainsKey(clave) Then
             tpMain.SelectedTabIndex = htp.Item(clave)
         Else
@@ -271,7 +359,7 @@ Public Class frmMain
             Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
             ind = tpMain.Tabs.Count - 1
             tpMain.SelectedTabIndex = ind
-            Dim control As New ctrlEstadoEnvio            'cambiar control
+            Dim control As New ctrlRecibeProducto            'cambiar control
             control.Dock = DockStyle.Fill
             panel.Controls.Add(control)
             htp.Add(clave, ind)
@@ -279,29 +367,16 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub btVerPedidos_Click(sender As Object, e As EventArgs) Handles btVerPedidos.Click
-        Dim ind As Integer = -1
-        Dim clave As String = "Gestor De Pedidos" 'cambiar valor
-        If htp.ContainsKey(clave) Then
-            tpMain.SelectedTabIndex = htp.Item(clave)
-        Else
-            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
-            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
-            ind = tpMain.Tabs.Count - 1
-            tpMain.SelectedTabIndex = ind
-            Dim control As New ctrlPedidos            'cambiar control
-            control.Dock = DockStyle.Fill
-            panel.Controls.Add(control)
-            htp.Add(clave, ind)
-            '            MsgBox(ind.ToString)
-        End If
+    
+    Private Sub btPedidos_Click(sender As Object, e As EventArgs) Handles btPedidos.Click
+        verPedidos()
     End Sub
 
-    Private Sub tpMain_Click(sender As Object, e As EventArgs)
-
+    Private Sub btNuevoEnvio_Click(sender As Object, e As EventArgs) Handles btNuevoEnvio.Click
+        verNuevoEnvio()
     End Sub
 
-    Private Sub btNuAbono_Click(sender As Object, e As EventArgs) Handles btNuAbono.Click
-        frmImprimir.Show()
+    Private Sub ButtonX2_Click(sender As Object, e As EventArgs) Handles btEstadoEnvio.Click
+        verEstadoEnvio()
     End Sub
 End Class

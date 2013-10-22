@@ -153,7 +153,6 @@ Public Class ctrlEmpleados
 
 
     Private Sub txUsuario_TextChanged(sender As Object, e As EventArgs) Handles txUsuario.LostFocus
-        MsgBox(txUsuario.Text.ToLower)
         query = "select count(idempleado) as id from empleado where usuario ='" & CStr(txUsuario.Text.ToLower) & "'"
         Try
             frmMain._cnn.Open()
@@ -217,4 +216,5 @@ Public Class ctrlEmpleados
     'End Sub
 
     
+   
 End Class

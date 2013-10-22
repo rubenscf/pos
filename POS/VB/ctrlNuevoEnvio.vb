@@ -7,13 +7,10 @@ Public Class ctrlNuevoEnvio
     Private Sub swBt_ValueChanged(sender As Object, e As EventArgs) Handles swBt.ValueChanged
 
         If swBt.Value = True Then
-            _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '2'", cbVerTienda)
+            _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '2' AND idlugar <> '" & frmMain.serie & "'", cbVerTienda)
         Else
             _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '3' AND idlugar <> '" & frmMain.serie & "'", cbVerTienda)
         End If
-
-
-
     End Sub
 
     Sub CargaStock()
@@ -36,12 +33,14 @@ Public Class ctrlNuevoEnvio
 
     Private Sub ctrlNuevoEnvio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If frmMain.idtipolugar = 2 Then
-            swBt.Enabled = True
+            swBt.Enabled = False
+            swBt.Value = False
+            _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '3' AND idlugar <> '" & frmMain.serie & "'", cbVerTienda)
         Else
             swBt.Value = False
-
+            _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '2' AND idlugar <> '" & frmMain.serie & "'", cbVerTienda)
         End If
-        _LLENAR_CMB("SELECT idlugar as id, nombre||' '||direccion as nombre from lugar where idlu_tipo = '" & frmMain.idtipolugar & "'", cbVerTienda)
+
         With (cbF)
             .Items.Add("CODIGO")
             .Items.Add("CATEGORIA")
@@ -156,7 +155,7 @@ Public Class ctrlNuevoEnvio
                 Else
                     identipo = 2
                 End If
-                frmMain._cmd.CommandText = "INSERT INTO ENVIO(sale, iden_tipo, idenvio, destino, fecha_salida, estado) VALUES('" & cbVerTienda.SelectedValue & "', " & identipo & ", SEQ_" & cbVerTienda.SelectedValue & "_IDENVIO.NEXTVAL, '" & lugarActual & "', sysdate, 'EEN')"
+                frmMain._cmd.CommandText = "INSERT INTO ENVIO(sale, iden_tipo, idenvio, destino, fecha_salida, estado) VALUES('" & cbVerTienda.SelectedValue & "', " & identipo & ", SEQ_" & cbVerTienda.SelectedValue & "_IDENVIO.NEXTVAL, '" & lugarActual & "', sysdate, 'ESO')"
                 frmMain._cmd.ExecuteNonQuery()
 
                 frmMain._cmd.CommandText = "select SEQ_" & cbVerTienda.SelectedValue.ToString & "_IDENVIO.currval from dual"
@@ -189,7 +188,4 @@ Public Class ctrlNuevoEnvio
             End Try
         End If
     End Sub
-
-    
-
 End Class
