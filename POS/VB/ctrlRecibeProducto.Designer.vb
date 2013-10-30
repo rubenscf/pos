@@ -38,22 +38,22 @@ Partial Class ctrlRecibeProducto
         Me.txSerie = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.PedidoDataGridView = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.SALELabel2 = New System.Windows.Forms.Label()
+        Me.DIRECCIONLabel2 = New System.Windows.Forms.Label()
+        Me.DESTINOLabel2 = New System.Windows.Forms.Label()
+        Me.FECHA_SALIDALabel2 = New System.Windows.Forms.Label()
+        Me.CORRELATIVOLabel1 = New System.Windows.Forms.Label()
+        Me.SERIELabel2 = New System.Windows.Forms.Label()
         Me.btAceptar = New DevComponents.DotNetBar.ButtonX()
+        Me.RecepcionProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me._DS = New POS._DS()
         Me.CANTIDADDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MARCADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MODELODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DESCRIPCIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.USADOSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RecepcionProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me._DS = New POS._DS()
         Me.RecepcionProductoTableAdapter = New POS._DSTableAdapters.RecepcionProductoTableAdapter()
         Me.TableAdapterManager = New POS._DSTableAdapters.TableAdapterManager()
-        Me.SERIELabel2 = New System.Windows.Forms.Label()
-        Me.CORRELATIVOLabel1 = New System.Windows.Forms.Label()
-        Me.FECHA_SALIDALabel2 = New System.Windows.Forms.Label()
-        Me.DESTINOLabel2 = New System.Windows.Forms.Label()
-        Me.DIRECCIONLabel2 = New System.Windows.Forms.Label()
-        Me.SALELabel2 = New System.Windows.Forms.Label()
         FECHA_SALIDALabel = New System.Windows.Forms.Label()
         SERIELabel = New System.Windows.Forms.Label()
         SALELabel = New System.Windows.Forms.Label()
@@ -65,6 +65,51 @@ Partial Class ctrlRecibeProducto
         CType(Me.RecepcionProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me._DS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'FECHA_SALIDALabel
+        '
+        FECHA_SALIDALabel.AutoSize = True
+        FECHA_SALIDALabel.Location = New System.Drawing.Point(12, 48)
+        FECHA_SALIDALabel.Name = "FECHA_SALIDALabel"
+        FECHA_SALIDALabel.Size = New System.Drawing.Size(94, 17)
+        FECHA_SALIDALabel.TabIndex = 0
+        FECHA_SALIDALabel.Text = "FECHA SALIDA:"
+        '
+        'SERIELabel
+        '
+        SERIELabel.AutoSize = True
+        SERIELabel.Location = New System.Drawing.Point(12, 25)
+        SERIELabel.Name = "SERIELabel"
+        SERIELabel.Size = New System.Drawing.Size(60, 17)
+        SERIELabel.TabIndex = 2
+        SERIELabel.Text = "CODIGO:"
+        '
+        'SALELabel
+        '
+        SALELabel.AutoSize = True
+        SALELabel.Location = New System.Drawing.Point(12, 74)
+        SALELabel.Name = "SALELabel"
+        SALELabel.Size = New System.Drawing.Size(39, 17)
+        SALELabel.TabIndex = 5
+        SALELabel.Text = "SALE:"
+        '
+        'DESTINOLabel
+        '
+        DESTINOLabel.AutoSize = True
+        DESTINOLabel.Location = New System.Drawing.Point(12, 101)
+        DESTINOLabel.Name = "DESTINOLabel"
+        DESTINOLabel.Size = New System.Drawing.Size(64, 17)
+        DESTINOLabel.TabIndex = 7
+        DESTINOLabel.Text = "DESTINO:"
+        '
+        'DIRECCIONLabel
+        '
+        DIRECCIONLabel.AutoSize = True
+        DIRECCIONLabel.Location = New System.Drawing.Point(15, 128)
+        DIRECCIONLabel.Name = "DIRECCIONLabel"
+        DIRECCIONLabel.Size = New System.Drawing.Size(77, 17)
+        DIRECCIONLabel.TabIndex = 9
+        DIRECCIONLabel.Text = "DIRECCION:"
         '
         'ReflectionLabel1
         '
@@ -104,7 +149,7 @@ Partial Class ctrlRecibeProducto
         Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
-        Me.btBuscar.Location = New System.Drawing.Point(214, 25)
+        Me.btBuscar.Location = New System.Drawing.Point(241, 25)
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(52, 40)
         Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -204,50 +249,57 @@ Partial Class ctrlRecibeProducto
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Informacion del Movimiento"
         '
-        'FECHA_SALIDALabel
+        'SALELabel2
         '
-        FECHA_SALIDALabel.AutoSize = True
-        FECHA_SALIDALabel.Location = New System.Drawing.Point(12, 48)
-        FECHA_SALIDALabel.Name = "FECHA_SALIDALabel"
-        FECHA_SALIDALabel.Size = New System.Drawing.Size(94, 17)
-        FECHA_SALIDALabel.TabIndex = 0
-        FECHA_SALIDALabel.Text = "FECHA SALIDA:"
+        Me.SALELabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "SALE", True))
+        Me.SALELabel2.Location = New System.Drawing.Point(112, 74)
+        Me.SALELabel2.Name = "SALELabel2"
+        Me.SALELabel2.Size = New System.Drawing.Size(100, 23)
+        Me.SALELabel2.TabIndex = 17
         '
-        'SERIELabel
+        'DIRECCIONLabel2
         '
-        SERIELabel.AutoSize = True
-        SERIELabel.Location = New System.Drawing.Point(12, 25)
-        SERIELabel.Name = "SERIELabel"
-        SERIELabel.Size = New System.Drawing.Size(60, 17)
-        SERIELabel.TabIndex = 2
-        SERIELabel.Text = "CODIGO:"
+        Me.DIRECCIONLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "DIRECCION", True))
+        Me.DIRECCIONLabel2.Location = New System.Drawing.Point(112, 128)
+        Me.DIRECCIONLabel2.Name = "DIRECCIONLabel2"
+        Me.DIRECCIONLabel2.Size = New System.Drawing.Size(100, 23)
+        Me.DIRECCIONLabel2.TabIndex = 16
         '
-        'SALELabel
+        'DESTINOLabel2
         '
-        SALELabel.AutoSize = True
-        SALELabel.Location = New System.Drawing.Point(12, 74)
-        SALELabel.Name = "SALELabel"
-        SALELabel.Size = New System.Drawing.Size(39, 17)
-        SALELabel.TabIndex = 5
-        SALELabel.Text = "SALE:"
+        Me.DESTINOLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "DESTINO", True))
+        Me.DESTINOLabel2.Location = New System.Drawing.Point(112, 101)
+        Me.DESTINOLabel2.Name = "DESTINOLabel2"
+        Me.DESTINOLabel2.Size = New System.Drawing.Size(154, 23)
+        Me.DESTINOLabel2.TabIndex = 15
         '
-        'DESTINOLabel
+        'FECHA_SALIDALabel2
         '
-        DESTINOLabel.AutoSize = True
-        DESTINOLabel.Location = New System.Drawing.Point(12, 101)
-        DESTINOLabel.Name = "DESTINOLabel"
-        DESTINOLabel.Size = New System.Drawing.Size(64, 17)
-        DESTINOLabel.TabIndex = 7
-        DESTINOLabel.Text = "DESTINO:"
+        Me.FECHA_SALIDALabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "FECHA_SALIDA", True))
+        Me.FECHA_SALIDALabel2.Location = New System.Drawing.Point(112, 48)
+        Me.FECHA_SALIDALabel2.Name = "FECHA_SALIDALabel2"
+        Me.FECHA_SALIDALabel2.Size = New System.Drawing.Size(154, 23)
+        Me.FECHA_SALIDALabel2.TabIndex = 14
         '
-        'DIRECCIONLabel
+        'CORRELATIVOLabel1
         '
-        DIRECCIONLabel.AutoSize = True
-        DIRECCIONLabel.Location = New System.Drawing.Point(15, 128)
-        DIRECCIONLabel.Name = "DIRECCIONLabel"
-        DIRECCIONLabel.Size = New System.Drawing.Size(77, 17)
-        DIRECCIONLabel.TabIndex = 9
-        DIRECCIONLabel.Text = "DIRECCION:"
+        Me.CORRELATIVOLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "CORRELATIVO", True))
+        Me.CORRELATIVOLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CORRELATIVOLabel1.ForeColor = System.Drawing.Color.Maroon
+        Me.CORRELATIVOLabel1.Location = New System.Drawing.Point(156, 25)
+        Me.CORRELATIVOLabel1.Name = "CORRELATIVOLabel1"
+        Me.CORRELATIVOLabel1.Size = New System.Drawing.Size(100, 23)
+        Me.CORRELATIVOLabel1.TabIndex = 13
+        '
+        'SERIELabel2
+        '
+        Me.SERIELabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "SERIE", True))
+        Me.SERIELabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SERIELabel2.ForeColor = System.Drawing.Color.Maroon
+        Me.SERIELabel2.Location = New System.Drawing.Point(112, 25)
+        Me.SERIELabel2.Name = "SERIELabel2"
+        Me.SERIELabel2.Size = New System.Drawing.Size(47, 23)
+        Me.SERIELabel2.TabIndex = 12
         '
         'btAceptar
         '
@@ -261,6 +313,16 @@ Partial Class ctrlRecibeProducto
         Me.btAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btAceptar.TabIndex = 11
         Me.btAceptar.Text = "    Aceptar Producto (s)"
+        '
+        'RecepcionProductoBindingSource
+        '
+        Me.RecepcionProductoBindingSource.DataMember = "RecepcionProducto"
+        Me.RecepcionProductoBindingSource.DataSource = Me._DS
+        '
+        '_DS
+        '
+        Me._DS.DataSetName = "_DS"
+        Me._DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'CANTIDADDataGridViewTextBoxColumn
         '
@@ -302,16 +364,6 @@ Partial Class ctrlRecibeProducto
         Me.USADOSDataGridViewTextBoxColumn.ReadOnly = True
         Me.USADOSDataGridViewTextBoxColumn.Width = 83
         '
-        'RecepcionProductoBindingSource
-        '
-        Me.RecepcionProductoBindingSource.DataMember = "RecepcionProducto"
-        Me.RecepcionProductoBindingSource.DataSource = Me._DS
-        '
-        '_DS
-        '
-        Me._DS.DataSetName = "_DS"
-        Me._DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'RecepcionProductoTableAdapter
         '
         Me.RecepcionProductoTableAdapter.ClearBeforeFill = True
@@ -319,60 +371,9 @@ Partial Class ctrlRecibeProducto
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CL_PLANTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = POS._DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'SERIELabel2
-        '
-        Me.SERIELabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "SERIE", True))
-        Me.SERIELabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SERIELabel2.ForeColor = System.Drawing.Color.Maroon
-        Me.SERIELabel2.Location = New System.Drawing.Point(112, 25)
-        Me.SERIELabel2.Name = "SERIELabel2"
-        Me.SERIELabel2.Size = New System.Drawing.Size(47, 23)
-        Me.SERIELabel2.TabIndex = 12
-        '
-        'CORRELATIVOLabel1
-        '
-        Me.CORRELATIVOLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "CORRELATIVO", True))
-        Me.CORRELATIVOLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CORRELATIVOLabel1.ForeColor = System.Drawing.Color.Maroon
-        Me.CORRELATIVOLabel1.Location = New System.Drawing.Point(156, 25)
-        Me.CORRELATIVOLabel1.Name = "CORRELATIVOLabel1"
-        Me.CORRELATIVOLabel1.Size = New System.Drawing.Size(100, 23)
-        Me.CORRELATIVOLabel1.TabIndex = 13
-        '
-        'FECHA_SALIDALabel2
-        '
-        Me.FECHA_SALIDALabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "FECHA_SALIDA", True))
-        Me.FECHA_SALIDALabel2.Location = New System.Drawing.Point(112, 48)
-        Me.FECHA_SALIDALabel2.Name = "FECHA_SALIDALabel2"
-        Me.FECHA_SALIDALabel2.Size = New System.Drawing.Size(154, 23)
-        Me.FECHA_SALIDALabel2.TabIndex = 14
-        '
-        'DESTINOLabel2
-        '
-        Me.DESTINOLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "DESTINO", True))
-        Me.DESTINOLabel2.Location = New System.Drawing.Point(112, 101)
-        Me.DESTINOLabel2.Name = "DESTINOLabel2"
-        Me.DESTINOLabel2.Size = New System.Drawing.Size(154, 23)
-        Me.DESTINOLabel2.TabIndex = 15
-        '
-        'DIRECCIONLabel2
-        '
-        Me.DIRECCIONLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "DIRECCION", True))
-        Me.DIRECCIONLabel2.Location = New System.Drawing.Point(112, 128)
-        Me.DIRECCIONLabel2.Name = "DIRECCIONLabel2"
-        Me.DIRECCIONLabel2.Size = New System.Drawing.Size(100, 23)
-        Me.DIRECCIONLabel2.TabIndex = 16
-        '
-        'SALELabel2
-        '
-        Me.SALELabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RecepcionProductoBindingSource, "SALE", True))
-        Me.SALELabel2.Location = New System.Drawing.Point(112, 74)
-        Me.SALELabel2.Name = "SALELabel2"
-        Me.SALELabel2.Size = New System.Drawing.Size(100, 23)
-        Me.SALELabel2.TabIndex = 17
         '
         'ctrlRecibeProducto
         '

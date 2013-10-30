@@ -217,4 +217,5 @@ Public Class ctrlEmpleados
 
     
    
+ 
 End Class

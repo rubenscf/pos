@@ -55,10 +55,10 @@ Public Class DBMSOutput
         " :done := l_done; " & _
         " :buffer := l_buffer; " & _
         "end;", conn)
-        cmdShow.Parameters.Add("maxbytes", OracleDbType.Int32).Value() = 32000
+        cmdShow.Parameters.Add("maxbytes", OracleDbType.Int32).Value() = 1000
         cmdShow.Parameters.Add("done", OracleDbType.Int32).Direction() = ParameterDirection.Output
         cmdShow.Parameters.Add("buffer", OracleDbType.Varchar2).Direction = ParameterDirection.Output
-        cmdShow.Parameters("buffer").Size = 32000
+        cmdShow.Parameters("buffer").Size = 1000
     End Sub
 
     '
@@ -67,7 +67,7 @@ Public Class DBMSOutput
     '
     '
     Public Sub Enable()
-        cmdEnable.Parameters("1").Value = 32000
+        cmdEnable.Parameters("1").Value = 1000
         cmdEnable.ExecuteNonQuery()
     End Sub
 

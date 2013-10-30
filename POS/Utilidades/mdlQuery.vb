@@ -72,8 +72,8 @@ Module mdlQuery
         da.Fill(dt)
         BS.DataSource = dt
         dg.DataSource = BS.DataSource
-        ' dg.Columns(0).Visible = False
-        ' dg.Columns(1).Visible = False
+        dg.Columns(0).Visible = False
+        dg.Columns(1).Visible = False
         'cargar los items de opciones para filtrar
         With (cbf)
             .Items.Add("CODIGO")
@@ -128,5 +128,39 @@ Module mdlQuery
         'cargar los items de opciones para filtrar
 
     End Sub
+
+    Sub setBSInventario(ByRef BS As BindingSource, ByRef dg As DataGridView, ByRef cbf As ComboBoxEx)
+
+        query = "SELECT MO.IDPR_MARCA, MO.IDPR_MODELO, MO.IDPR_MARCA || '-' || MO.IDPR_MODELO AS CODIGO, CA.NOMBRE AS CATEGORIA, TI.NOMBRE AS TIPO, MA.NOMBRE AS MARCA," &
+                       "MO.NOMBRE AS MODELO, MO.DETALLE AS DETALLE, INV.NUEVA AS NUEVOS, INV.SEGUNDA AS USADOS, INV.DETALLE AS DESCRIPCION " &
+                "FROM AGENCIA.PR_INVENTARIO INV " &
+                     "INNER JOIN AGENCIA.PR_MODELO MO ON INV.IDPR_MODELO = MO.IDPR_MODELO AND INV.IDPR_MARCA = MO.IDPR_MARCA  " &
+                     "INNER JOIN AGENCIA.PR_MARCA MA ON MO.IDPR_MARCA = MA.IDMARCA " &
+                     "INNER JOIN AGENCIA.PR_TIPO TI ON MO.IDPR_TIPO = TI.IDPR_TIPO AND MO.IDPR_CATEGORIA = TI.IDPR_CATEGORIA " &
+                     "INNER JOIN AGENCIA.PR_CATEGORIA CA ON TI.IDPR_CATEGORIA = CA.IDPR_CATEGORIA " &
+                     "INNER JOIN AGENCIA.LUGAR LU ON INV.IDLUGAR = LU.IDLUGAR " &
+                     "WHERE LU.IDLUGAR = '" & frmMain.serie & "'"
+
+        Dim dt = New DataTable
+        Dim da = New OracleDataAdapter(query, frmMain._cnn)
+        da.Fill(dt)
+        BS.DataSource = dt
+        dg.DataSource = BS.DataSource
+        dg.Columns(0).Visible = False
+        dg.Columns(1).Visible = False
+        'cargar los items de opciones para filtrar
+        With (cbf)
+            .Items.Add("CODIGO")
+            .Items.Add("CATEGORIA")
+            .Items.Add("TIPO")
+            .Items.Add("MARCA")
+            .Items.Add("MODELO")
+            .Items.Add("DETALLE")
+            .DropDownStyle = ComboBoxStyle.DropDownList
+            .SelectedIndex = 1
+        End With
+    End Sub
+
+   
 
 End Module

@@ -102,11 +102,11 @@ Public Class frmMain
                 rbTieCaja.Visible = False
             ElseIf idpuesto = 9 Then
                 rbTieClientes.Visible = False
-                rbTieTraslado.Visible = False
+
                 rbtieVentas.Visible = False
             ElseIf idpuesto = 10 Or idpuesto = 11 Then
                 rbTieCaja.Visible = False
-                rbTieTraslado.Visible = False
+
             End If
             mnuTienda.Select()
         End If
@@ -148,11 +148,11 @@ Public Class frmMain
                 rbTieCaja.Visible = True
             ElseIf idpuesto = 9 Then
                 rbTieClientes.Visible = False
-                rbTieTraslado.Visible = True
+
                 rbtieVentas.Visible = False
             ElseIf idpuesto = 10 Or idpuesto = 11 Then
                 rbTieCaja.Visible = True
-                rbTieTraslado.Visible = True
+
             End If
         End If
         htp.Clear()
@@ -378,5 +378,107 @@ Public Class frmMain
 
     Private Sub ButtonX2_Click(sender As Object, e As EventArgs) Handles btEstadoEnvio.Click
         verEstadoEnvio()
+    End Sub
+
+    Private Sub btPlanCliente_Click(sender As Object, e As EventArgs) Handles btPlanCliente.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Planes de cliente" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlPlanCliente            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub btInvetario_Click(sender As Object, e As EventArgs) Handles btInvetario.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Stock"
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlStokVer            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub bt_Creditos_Click(sender As Object, e As EventArgs) Handles bt_Creditos.Click
+
+    End Sub
+
+    Private Sub tpMain_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btNuevaVenta_Click(sender As Object, e As EventArgs) Handles btNuevaVenta.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Ventas"
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlFacturar           'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub btDeposito_Click(sender As Object, e As EventArgs) Handles btDeposito.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Depositos"
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlDeposito            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub btGastos_Click(sender As Object, e As EventArgs) Handles btGastos.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Gastos"
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlGasto            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+    Private Sub menuMetro_Click(sender As Object, e As EventArgs) Handles menuMetro.Click
+
     End Sub
 End Class

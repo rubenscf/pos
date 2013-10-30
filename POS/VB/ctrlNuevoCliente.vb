@@ -42,7 +42,7 @@ Public Class ctrlNuevoCliente
                     .Parameters.Add(New OracleParameter("v_apellido", OracleDbType.Varchar2)).Value = CStr(txApellido.Text)
                     .Parameters.Add(New OracleParameter("v_extendida", OracleDbType.Varchar2)).Value = CStr(txExtendido.Text)
                     .Parameters.Add(New OracleParameter("v_bienes", OracleDbType.Varchar2)).Value = CStr(txBienes.Text)
-                    .Parameters.Add(New OracleParameter("v_nit", OracleDbType.Varchar2)).Value = CStr(txNit.Text)
+                    .Parameters.Add(New OracleParameter("v_nit", OracleDbType.Varchar2)).Value = CStr(txNit.Text.ToUpper)
                     .Parameters.Add(New OracleParameter("v_sexo", OracleDbType.Varchar2)).Value = CStr(cbSexo.Text)
                     .Parameters.Add(New OracleParameter("v_nacional", OracleDbType.Varchar2)).Value = CStr(txNacional.Text)
                     .Parameters.Add(New OracleParameter("v_direccion", OracleDbType.Varchar2)).Value = CStr(txDireccion.Text)
@@ -233,6 +233,14 @@ Public Class ctrlNuevoCliente
             End Try
 
         End If
+
+    End Sub
+
+    Private Sub txfechanac_Click(sender As Object, e As EventArgs) Handles txfechanac.Click
+
+    End Sub
+
+    Private Sub txIngreso_TextChanged(sender As Object, e As EventArgs) Handles txIngreso.TextChanged
 
     End Sub
 End Class

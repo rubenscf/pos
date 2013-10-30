@@ -179,16 +179,46 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlPlanCliente.Designer.vb">
-      <DependentUpon>ctrlPlanCliente.vb</DependentUpon>
+    <Compile Include="ctrlFacturar.Designer.vb">
+      <DependentUpon>ctrlFacturar.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlPlanCliente.vb">
+    <Compile Include="ctrlFacturar.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlRecibeProducto.Designer.vb">
+    <Compile Include="frmBuscarEnStock.Designer.vb">
+      <DependentUpon>frmBuscarEnStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarEnStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlGasto.Designer.vb">
+      <DependentUpon>ctrlGasto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlGasto.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlDeposito.Designer.vb">
+      <DependentUpon>ctrlDeposito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlDeposito.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlPlanCliente.Designer.vb">
+      <DependentUpon>ctrlPlanCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlPlanCliente.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlRecibeProducto.Designer.vb">
       <DependentUpon>ctrlRecibeProducto.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlRecibeProducto.vb">
+    <Compile Include="VB\ctrlRecibeProducto.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlStokVer.Designer.vb">
+      <DependentUpon>ctrlStokVer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlStokVer.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="VB\ctrlInicio.Designer.vb">
@@ -317,11 +347,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ctrlPlanCliente.resx">
+    <EmbeddedResource Include="ctrlFacturar.resx">
+      <DependentUpon>ctrlFacturar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarEnStock.resx">
+      <DependentUpon>frmBuscarEnStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlGasto.resx">
+      <DependentUpon>ctrlGasto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlDeposito.resx">
+      <DependentUpon>ctrlDeposito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlPlanCliente.resx">
       <DependentUpon>ctrlPlanCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlRecibeProducto.resx">
+    <EmbeddedResource Include="VB\ctrlRecibeProducto.resx">
       <DependentUpon>ctrlRecibeProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlStokVer.resx">
+      <DependentUpon>ctrlStokVer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlInicio.resx">
       <DependentUpon>ctrlInicio.vb</DependentUpon>
@@ -426,6 +471,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cloudangel.ico" />
+    <None Include="Resources\inventary %2826%29.png" />
+    <None Include="Resources\barcode %2829%29.png" />
+    <None Include="Resources\8430.png" />
+    <None Include="Resources\8530.png" />
+    <None Include="Resources\cart %2814%29.png" />
+    <None Include="Resources\cart %284%29.png" />
+    <None Include="Resources\invoice %2827%29.png" />
+    <None Include="Resources\invoice %287%29.png" />
+    <None Include="Resources\bullet %289%29.png" />
+    <None Include="Resources\cart %2824%29.png" />
     <None Include="Resources\15310.png" />
     <None Include="Resources\cloudbg.jpg" />
     <None Include="Resources\4170.png" />

@@ -60,8 +60,8 @@ Partial Class ctrlNuevoCliente
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.Contacto = New System.Windows.Forms.GroupBox()
+        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.GroupBox1.SuspendLayout()
         CType(Me.txfechanac, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -603,18 +603,6 @@ Partial Class ctrlNuevoCliente
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Direccion:"
         '
-        'btGuardar
-        '
-        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btGuardar.Image = Global.POS.My.Resources.Resources.diskette
-        Me.btGuardar.Location = New System.Drawing.Point(666, 436)
-        Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(117, 38)
-        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuardar.TabIndex = 2
-        Me.btGuardar.Text = "Guardar"
-        '
         'Contacto
         '
         Me.Contacto.Controls.Add(Me.txBienes)
@@ -626,6 +614,18 @@ Partial Class ctrlNuevoCliente
         Me.Contacto.TabIndex = 2
         Me.Contacto.TabStop = False
         Me.Contacto.Text = "Conyugue"
+        '
+        'btGuardar
+        '
+        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btGuardar.Image = Global.POS.My.Resources.Resources.diskette
+        Me.btGuardar.Location = New System.Drawing.Point(666, 436)
+        Me.btGuardar.Name = "btGuardar"
+        Me.btGuardar.Size = New System.Drawing.Size(117, 38)
+        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btGuardar.TabIndex = 2
+        Me.btGuardar.Text = "Guardar"
         '
         'ctrlNuevoCliente
         '

@@ -58,7 +58,7 @@ Module Funciones
    
 
     Public Function _NITvalido(ByVal Nit As String) As Boolean
-        If Nit = "c/f" Then
+        If Nit = "c/f" Or Nit = "C/F" Then
             Return True
         Else
             Try
@@ -128,4 +128,8 @@ Module Funciones
         Return 0
 
     End Function
+
+
+
+    
 End Module

@@ -67,6 +67,7 @@ Public Class ctrlPedidos
 
                     End If
                     cargaPedido()
+                    impreso = False
                 End If
             Else
                 _ESTADO("Primero debe Imprimir el formato de envio", frmMain.lbEstado)
@@ -82,28 +83,33 @@ Public Class ctrlPedidos
     End Sub
 
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
-        Dim resp As Integer = MsgBox("Esta Seguro Que Desea Anular El Pedido Seleccionado", MsgBoxStyle.YesNo)
-        If resp = vbYes Then
-            query = "UPDATE envio set estado = 'EAN' WHERE sale = '" & frmMain.serie & "' and idenvio = " & dg.SelectedCells(2).Value
-            Try
-                frmMain._cmd = New OracleCommand
-                frmMain._cnn.Open()
-                frmMain._cmd.CommandText = query
-                frmMain._cmd.Connection = frmMain._cnn
-                frmMain._cmd.ExecuteNonQuery()
-                cargaPedido()
-                _ESTADO("Pedido Anulado Exitosamente", frmMain.lbEstado)
-            Catch ex As Exception
-                _ESTADO(ex.Message, frmMain.lbEstado)
-            Finally
-                frmMain._cnn.Close()
-            End Try
+        If dg.RowCount > 0 Then
+            Dim resp As Integer = MsgBox("Esta Seguro Que Desea Anular El Pedido Seleccionado", MsgBoxStyle.YesNo)
+            If resp = vbYes Then
+                query = "UPDATE envio set estado = 'EAN' WHERE sale = '" & frmMain.serie & "' and idenvio = " & dg.SelectedCells(2).Value
+                Try
+                    frmMain._cmd = New OracleCommand
+                    frmMain._cnn.Open()
+                    frmMain._cmd.CommandText = query
+                    frmMain._cmd.Connection = frmMain._cnn
+                    frmMain._cmd.ExecuteNonQuery()
+                    cargaPedido()
+                    _ESTADO("Pedido Anulado Exitosamente", frmMain.lbEstado)
+                Catch ex As Exception
+                    _ESTADO(ex.Message, frmMain.lbEstado)
+                Finally
+                    frmMain._cnn.Close()
+                End Try
+            End If
         End If
     End Sub
     Private Sub btPrint_Click(sender As Object, e As EventArgs) Handles btPrint.Click
-        Dim frm As New frmImprimir
-        frm.EnvioTraslado(frmMain.serie, dg.SelectedCells(2).Value, frmMain.idtipolugar)
-        frm.Show()
-        impreso = True
+        If dg.RowCount > 0 Then
+            Dim frm As New frmImprimir
+            frm.EnvioTraslado(frmMain.serie, dg.SelectedCells(2).Value, frmMain.idtipolugar)
+            frm.Show()
+            impreso = True
+        End If
+
     End Sub
 End Class
