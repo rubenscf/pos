@@ -25,8 +25,6 @@ Partial Class ctrlPlanCliente
         Me.components = New System.ComponentModel.Container()
         Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btGuarda = New DevComponents.DotNetBar.ButtonX()
-        Me.btBuscar = New DevComponents.DotNetBar.ButtonX()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbCategoria = New System.Windows.Forms.ComboBox()
@@ -36,6 +34,8 @@ Partial Class ctrlPlanCliente
         Me.CL_PLANTableAdapter = New POS._DSTableAdapters.CL_PLANTableAdapter()
         Me.TableAdapterManager = New POS._DSTableAdapters.TableAdapterManager()
         Me.CL_PLANDataGridView = New System.Windows.Forms.DataGridView()
+        Me.btGuarda = New DevComponents.DotNetBar.ButtonX()
+        Me.btBuscar = New DevComponents.DotNetBar.ButtonX()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,36 +71,14 @@ Partial Class ctrlPlanCliente
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.cbCategoria)
         Me.GroupBox1.Controls.Add(Me.cbPlan)
-        Me.GroupBox1.Location = New System.Drawing.Point(397, 26)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 72)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(488, 83)
+        Me.GroupBox1.Size = New System.Drawing.Size(862, 83)
         Me.GroupBox1.TabIndex = 29
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tipo de Clientes"
-        '
-        'btGuarda
-        '
-        Me.btGuarda.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btGuarda.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btGuarda.Image = Global.POS.My.Resources.Resources.diskette
-        Me.btGuarda.Location = New System.Drawing.Point(417, 33)
-        Me.btGuarda.Name = "btGuarda"
-        Me.btGuarda.Size = New System.Drawing.Size(52, 40)
-        Me.btGuarda.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuarda.TabIndex = 33
-        '
-        'btBuscar
-        '
-        Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
-        Me.btBuscar.Location = New System.Drawing.Point(340, 33)
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(52, 40)
-        Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btBuscar.TabIndex = 32
         '
         'Label2
         '
@@ -166,47 +144,70 @@ Partial Class ctrlPlanCliente
         Me.CL_PLANDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CL_PLANDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.CL_PLANDataGridView.DataSource = Me.CL_PLANBindingSource
-        Me.CL_PLANDataGridView.Location = New System.Drawing.Point(23, 116)
+        Me.CL_PLANDataGridView.Location = New System.Drawing.Point(23, 176)
         Me.CL_PLANDataGridView.Name = "CL_PLANDataGridView"
-        Me.CL_PLANDataGridView.Size = New System.Drawing.Size(862, 293)
+        Me.CL_PLANDataGridView.Size = New System.Drawing.Size(862, 233)
         Me.CL_PLANDataGridView.TabIndex = 31
+        '
+        'btGuarda
+        '
+        Me.btGuarda.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGuarda.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btGuarda.Image = Global.POS.My.Resources.Resources.diskette
+        Me.btGuarda.Location = New System.Drawing.Point(411, 28)
+        Me.btGuarda.Name = "btGuarda"
+        Me.btGuarda.Size = New System.Drawing.Size(52, 45)
+        Me.btGuarda.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btGuarda.TabIndex = 33
+        '
+        'btBuscar
+        '
+        Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
+        Me.btBuscar.ImageFixedSize = New System.Drawing.Size(40, 40)
+        Me.btBuscar.Location = New System.Drawing.Point(338, 28)
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(52, 45)
+        Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btBuscar.TabIndex = 32
         '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "IDCL_NIVEL"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "IDCL_NIVEL"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "NIVEL CLIENTE"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn1.Width = 98
+        Me.DataGridViewTextBoxColumn1.Width = 119
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "IDPR_CATEGORIA"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "IDPR_CATEGORIA"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "ID CATEGORIA"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn2.Width = 133
+        Me.DataGridViewTextBoxColumn2.Width = 117
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "IDCL_PLAN"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "IDCL_PLAN"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "CORRELATIVO"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 95
+        Me.DataGridViewTextBoxColumn3.Width = 116
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "MES_MIN"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "MES_MIN"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "MES MINIMO"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 89
+        Me.DataGridViewTextBoxColumn4.Width = 113
         '
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "MES_MAX"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "MES_MAX"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "MES MAXIMO"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.Width = 92
+        Me.DataGridViewTextBoxColumn5.Width = 116
         '
         'DataGridViewTextBoxColumn6
         '

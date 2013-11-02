@@ -417,7 +417,21 @@ Public Class frmMain
     End Sub
 
     Private Sub bt_Creditos_Click(sender As Object, e As EventArgs) Handles bt_Creditos.Click
-
+        Dim ind As Integer = -1
+        Dim clave As String = "Nuevo Credito"
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlNuevoCredito            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
     End Sub
 
     Private Sub tpMain_Click(sender As Object, e As EventArgs)
@@ -480,5 +494,23 @@ Public Class frmMain
 
     Private Sub menuMetro_Click(sender As Object, e As EventArgs) Handles menuMetro.Click
 
+    End Sub
+
+    Private Sub btCreditos_Click(sender As Object, e As EventArgs) Handles btCreditos.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Solicitud Contratos"
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlGestionContratos           'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
     End Sub
 End Class

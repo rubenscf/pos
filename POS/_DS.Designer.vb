@@ -30,6 +30,12 @@ Partial Public Class _DS
     Private tableRecepcionProducto As RecepcionProductoDataTable
     
     Private tableCL_PLAN As CL_PLANDataTable
+    
+    Private tableCLIENTE As CLIENTEDataTable
+    
+    Private tableCREDITOS As CREDITOSDataTable
+
+    Private tableDE_CREDITOS As DE_CREDITOSDataTable
 
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
 
@@ -68,6 +74,15 @@ Partial Public Class _DS
             End If
             If (Not (ds.Tables("CL_PLAN")) Is Nothing) Then
                 MyBase.Tables.Add(New CL_PLANDataTable(ds.Tables("CL_PLAN")))
+            End If
+            If (Not (ds.Tables("CLIENTE")) Is Nothing) Then
+                MyBase.Tables.Add(New CLIENTEDataTable(ds.Tables("CLIENTE")))
+            End If
+            If (Not (ds.Tables("CREDITOS")) Is Nothing) Then
+                MyBase.Tables.Add(New CREDITOSDataTable(ds.Tables("CREDITOS")))
+            End If
+            If (Not (ds.Tables("DE_CREDITOS")) Is Nothing) Then
+                MyBase.Tables.Add(New DE_CREDITOSDataTable(ds.Tables("DE_CREDITOS")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -113,6 +128,36 @@ Partial Public Class _DS
     Public ReadOnly Property CL_PLAN() As CL_PLANDataTable
         Get
             Return Me.tableCL_PLAN
+        End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Browsable(False), _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)> _
+    Public ReadOnly Property CLIENTE() As CLIENTEDataTable
+        Get
+            Return Me.tableCLIENTE
+        End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Browsable(False), _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)> _
+    Public ReadOnly Property CREDITOS() As CREDITOSDataTable
+        Get
+            Return Me.tableCREDITOS
+        End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Browsable(False), _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)> _
+    Public ReadOnly Property DE_CREDITOS() As DE_CREDITOSDataTable
+        Get
+            Return Me.tableDE_CREDITOS
         End Get
     End Property
 
@@ -192,6 +237,15 @@ Partial Public Class _DS
             If (Not (ds.Tables("CL_PLAN")) Is Nothing) Then
                 MyBase.Tables.Add(New CL_PLANDataTable(ds.Tables("CL_PLAN")))
             End If
+            If (Not (ds.Tables("CLIENTE")) Is Nothing) Then
+                MyBase.Tables.Add(New CLIENTEDataTable(ds.Tables("CLIENTE")))
+            End If
+            If (Not (ds.Tables("CREDITOS")) Is Nothing) Then
+                MyBase.Tables.Add(New CREDITOSDataTable(ds.Tables("CREDITOS")))
+            End If
+            If (Not (ds.Tables("DE_CREDITOS")) Is Nothing) Then
+                MyBase.Tables.Add(New DE_CREDITOSDataTable(ds.Tables("DE_CREDITOS")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -242,6 +296,24 @@ Partial Public Class _DS
                 Me.tableCL_PLAN.InitVars()
             End If
         End If
+        Me.tableCLIENTE = CType(MyBase.Tables("CLIENTE"), CLIENTEDataTable)
+        If (initTable = True) Then
+            If (Not (Me.tableCLIENTE) Is Nothing) Then
+                Me.tableCLIENTE.InitVars()
+            End If
+        End If
+        Me.tableCREDITOS = CType(MyBase.Tables("CREDITOS"), CREDITOSDataTable)
+        If (initTable = True) Then
+            If (Not (Me.tableCREDITOS) Is Nothing) Then
+                Me.tableCREDITOS.InitVars()
+            End If
+        End If
+        Me.tableDE_CREDITOS = CType(MyBase.Tables("DE_CREDITOS"), DE_CREDITOSDataTable)
+        If (initTable = True) Then
+            If (Not (Me.tableDE_CREDITOS) Is Nothing) Then
+                Me.tableDE_CREDITOS.InitVars()
+            End If
+        End If
     End Sub
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -258,6 +330,12 @@ Partial Public Class _DS
         MyBase.Tables.Add(Me.tableRecepcionProducto)
         Me.tableCL_PLAN = New CL_PLANDataTable()
         MyBase.Tables.Add(Me.tableCL_PLAN)
+        Me.tableCLIENTE = New CLIENTEDataTable()
+        MyBase.Tables.Add(Me.tableCLIENTE)
+        Me.tableCREDITOS = New CREDITOSDataTable()
+        MyBase.Tables.Add(Me.tableCREDITOS)
+        Me.tableDE_CREDITOS = New DE_CREDITOSDataTable()
+        MyBase.Tables.Add(Me.tableDE_CREDITOS)
     End Sub
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -275,6 +353,24 @@ Partial Public Class _DS
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
     Private Function ShouldSerializeCL_PLAN() As Boolean
+        Return False
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Function ShouldSerializeCLIENTE() As Boolean
+        Return False
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Function ShouldSerializeCREDITOS() As Boolean
+        Return False
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Function ShouldSerializeDE_CREDITOS() As Boolean
         Return False
     End Function
 
@@ -344,6 +440,15 @@ Partial Public Class _DS
 
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
     Public Delegate Sub CL_PLANRowChangeEventHandler(ByVal sender As Object, ByVal e As CL_PLANRowChangeEvent)
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Delegate Sub CLIENTERowChangeEventHandler(ByVal sender As Object, ByVal e As CLIENTERowChangeEvent)
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Delegate Sub CREDITOSRowChangeEventHandler(ByVal sender As Object, ByVal e As CREDITOSRowChangeEvent)
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Delegate Sub DE_CREDITOSRowChangeEventHandler(ByVal sender As Object, ByVal e As DE_CREDITOSRowChangeEvent)
 
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -1475,6 +1580,1316 @@ Partial Public Class _DS
     End Class
 
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(), _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")> _
+    Partial Public Class CLIENTEDataTable
+        Inherits Global.System.Data.TypedTableBase(Of CLIENTERow)
+
+        Private columnIDCLIENTE As Global.System.Data.DataColumn
+
+        Private columnIDCL_EMPRESA As Global.System.Data.DataColumn
+
+        Private columnCL_NIVEL As Global.System.Data.DataColumn
+
+        Private columnDPI As Global.System.Data.DataColumn
+
+        Private columnCEDULA As Global.System.Data.DataColumn
+
+        Private columnNOMBRE As Global.System.Data.DataColumn
+
+        Private columnAPELLIDO As Global.System.Data.DataColumn
+
+        Private columnEXTENDIDA As Global.System.Data.DataColumn
+
+        Private columnBIENES As Global.System.Data.DataColumn
+
+        Private columnNIT As Global.System.Data.DataColumn
+
+        Private columnSEXO As Global.System.Data.DataColumn
+
+        Private columnNACIONAL As Global.System.Data.DataColumn
+
+        Private columnDIRECCION As Global.System.Data.DataColumn
+
+        Private columnTELEFONO As Global.System.Data.DataColumn
+
+        Private columnCONYUGUE As Global.System.Data.DataColumn
+
+        Private columnFECHANAC As Global.System.Data.DataColumn
+
+        Private columnFECHA_REGISTRO As Global.System.Data.DataColumn
+
+        Private columnINGRESO As Global.System.Data.DataColumn
+
+        Private columnPUESTO As Global.System.Data.DataColumn
+
+        Private columnTELEFONO1 As Global.System.Data.DataColumn
+
+        Private columnTELEFONO2 As Global.System.Data.DataColumn
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New()
+            MyBase.New()
+            Me.TableName = "CLIENTE"
+            Me.BeginInit()
+            Me.InitClass()
+            Me.EndInit()
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New()
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars()
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property IDCLIENTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIDCLIENTE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property IDCL_EMPRESAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIDCL_EMPRESA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CL_NIVELColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCL_NIVEL
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property DPIColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDPI
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CEDULAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCEDULA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property NOMBREColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNOMBRE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property APELLIDOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAPELLIDO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property EXTENDIDAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEXTENDIDA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property BIENESColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBIENES
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property NITColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNIT
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property SEXOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSEXO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property NACIONALColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNACIONAL
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property DIRECCIONColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDIRECCION
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TELEFONOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTELEFONO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CONYUGUEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCONYUGUE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property FECHANACColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFECHANAC
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property FECHA_REGISTROColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFECHA_REGISTRO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property INGRESOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnINGRESO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property PUESTOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPUESTO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TELEFONO1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTELEFONO1
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TELEFONO2Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTELEFONO2
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Browsable(False)> _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Default Public ReadOnly Property Item(ByVal index As Integer) As CLIENTERow
+            Get
+                Return CType(Me.Rows(index), CLIENTERow)
+            End Get
+        End Property
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event CLIENTERowChanging As CLIENTERowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event CLIENTERowChanged As CLIENTERowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event CLIENTERowDeleting As CLIENTERowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event CLIENTERowDeleted As CLIENTERowChangeEventHandler
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overloads Sub AddCLIENTERow(ByVal row As CLIENTERow)
+            Me.Rows.Add(row)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overloads Function AddCLIENTERow( _
+                    ByVal IDCLIENTE As Decimal, _
+                    ByVal IDCL_EMPRESA As Decimal, _
+                    ByVal CL_NIVEL As String, _
+                    ByVal DPI As String, _
+                    ByVal CEDULA As String, _
+                    ByVal NOMBRE As String, _
+                    ByVal APELLIDO As String, _
+                    ByVal EXTENDIDA As String, _
+                    ByVal BIENES As String, _
+                    ByVal NIT As String, _
+                    ByVal SEXO As String, _
+                    ByVal NACIONAL As String, _
+                    ByVal DIRECCION As String, _
+                    ByVal TELEFONO As String, _
+                    ByVal CONYUGUE As String, _
+                    ByVal FECHANAC As Date, _
+                    ByVal FECHA_REGISTRO As Date, _
+                    ByVal INGRESO As Double, _
+                    ByVal PUESTO As String, _
+                    ByVal TELEFONO1 As String, _
+                    ByVal TELEFONO2 As String) As CLIENTERow
+            Dim rowCLIENTERow As CLIENTERow = CType(Me.NewRow, CLIENTERow)
+            Dim columnValuesArray() As Object = New Object() {IDCLIENTE, IDCL_EMPRESA, CL_NIVEL, DPI, CEDULA, NOMBRE, APELLIDO, EXTENDIDA, BIENES, NIT, SEXO, NACIONAL, DIRECCION, TELEFONO, CONYUGUE, FECHANAC, FECHA_REGISTRO, INGRESO, PUESTO, TELEFONO1, TELEFONO2}
+            rowCLIENTERow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowCLIENTERow)
+            Return rowCLIENTERow
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function FindByIDCLIENTE(ByVal IDCLIENTE As Decimal) As CLIENTERow
+            Return CType(Me.Rows.Find(New Object() {IDCLIENTE}), CLIENTERow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As CLIENTEDataTable = CType(MyBase.Clone, CLIENTEDataTable)
+            cln.InitVars()
+            Return cln
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New CLIENTEDataTable()
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub InitVars()
+            Me.columnIDCLIENTE = MyBase.Columns("IDCLIENTE")
+            Me.columnIDCL_EMPRESA = MyBase.Columns("IDCL_EMPRESA")
+            Me.columnCL_NIVEL = MyBase.Columns("CL_NIVEL")
+            Me.columnDPI = MyBase.Columns("DPI")
+            Me.columnCEDULA = MyBase.Columns("CEDULA")
+            Me.columnNOMBRE = MyBase.Columns("NOMBRE")
+            Me.columnAPELLIDO = MyBase.Columns("APELLIDO")
+            Me.columnEXTENDIDA = MyBase.Columns("EXTENDIDA")
+            Me.columnBIENES = MyBase.Columns("BIENES")
+            Me.columnNIT = MyBase.Columns("NIT")
+            Me.columnSEXO = MyBase.Columns("SEXO")
+            Me.columnNACIONAL = MyBase.Columns("NACIONAL")
+            Me.columnDIRECCION = MyBase.Columns("DIRECCION")
+            Me.columnTELEFONO = MyBase.Columns("TELEFONO")
+            Me.columnCONYUGUE = MyBase.Columns("CONYUGUE")
+            Me.columnFECHANAC = MyBase.Columns("FECHANAC")
+            Me.columnFECHA_REGISTRO = MyBase.Columns("FECHA_REGISTRO")
+            Me.columnINGRESO = MyBase.Columns("INGRESO")
+            Me.columnPUESTO = MyBase.Columns("PUESTO")
+            Me.columnTELEFONO1 = MyBase.Columns("TELEFONO1")
+            Me.columnTELEFONO2 = MyBase.Columns("TELEFONO2")
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitClass()
+            Me.columnIDCLIENTE = New Global.System.Data.DataColumn("IDCLIENTE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDCLIENTE)
+            Me.columnIDCL_EMPRESA = New Global.System.Data.DataColumn("IDCL_EMPRESA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDCL_EMPRESA)
+            Me.columnCL_NIVEL = New Global.System.Data.DataColumn("CL_NIVEL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCL_NIVEL)
+            Me.columnDPI = New Global.System.Data.DataColumn("DPI", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDPI)
+            Me.columnCEDULA = New Global.System.Data.DataColumn("CEDULA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCEDULA)
+            Me.columnNOMBRE = New Global.System.Data.DataColumn("NOMBRE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNOMBRE)
+            Me.columnAPELLIDO = New Global.System.Data.DataColumn("APELLIDO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAPELLIDO)
+            Me.columnEXTENDIDA = New Global.System.Data.DataColumn("EXTENDIDA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEXTENDIDA)
+            Me.columnBIENES = New Global.System.Data.DataColumn("BIENES", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBIENES)
+            Me.columnNIT = New Global.System.Data.DataColumn("NIT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNIT)
+            Me.columnSEXO = New Global.System.Data.DataColumn("SEXO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSEXO)
+            Me.columnNACIONAL = New Global.System.Data.DataColumn("NACIONAL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNACIONAL)
+            Me.columnDIRECCION = New Global.System.Data.DataColumn("DIRECCION", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDIRECCION)
+            Me.columnTELEFONO = New Global.System.Data.DataColumn("TELEFONO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTELEFONO)
+            Me.columnCONYUGUE = New Global.System.Data.DataColumn("CONYUGUE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCONYUGUE)
+            Me.columnFECHANAC = New Global.System.Data.DataColumn("FECHANAC", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFECHANAC)
+            Me.columnFECHA_REGISTRO = New Global.System.Data.DataColumn("FECHA_REGISTRO", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFECHA_REGISTRO)
+            Me.columnINGRESO = New Global.System.Data.DataColumn("INGRESO", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnINGRESO)
+            Me.columnPUESTO = New Global.System.Data.DataColumn("PUESTO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPUESTO)
+            Me.columnTELEFONO1 = New Global.System.Data.DataColumn("TELEFONO1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTELEFONO1)
+            Me.columnTELEFONO2 = New Global.System.Data.DataColumn("TELEFONO2", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTELEFONO2)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDCLIENTE}, True))
+            Me.columnIDCLIENTE.AllowDBNull = False
+            Me.columnIDCLIENTE.Unique = True
+            Me.columnCL_NIVEL.MaxLength = 1
+            Me.columnDPI.MaxLength = 20
+            Me.columnCEDULA.MaxLength = 20
+            Me.columnNOMBRE.MaxLength = 250
+            Me.columnAPELLIDO.MaxLength = 250
+            Me.columnEXTENDIDA.MaxLength = 100
+            Me.columnBIENES.MaxLength = 250
+            Me.columnNIT.MaxLength = 30
+            Me.columnSEXO.MaxLength = 2
+            Me.columnNACIONAL.MaxLength = 50
+            Me.columnDIRECCION.MaxLength = 250
+            Me.columnTELEFONO.MaxLength = 12
+            Me.columnCONYUGUE.MaxLength = 400
+            Me.columnPUESTO.MaxLength = 50
+            Me.columnTELEFONO1.MaxLength = 12
+            Me.columnTELEFONO2.MaxLength = 12
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function NewCLIENTERow() As CLIENTERow
+            Return CType(Me.NewRow, CLIENTERow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New CLIENTERow(builder)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(CLIENTERow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.CLIENTERowChangedEvent) Is Nothing) Then
+                RaiseEvent CLIENTERowChanged(Me, New CLIENTERowChangeEvent(CType(e.Row, CLIENTERow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.CLIENTERowChangingEvent) Is Nothing) Then
+                RaiseEvent CLIENTERowChanging(Me, New CLIENTERowChangeEvent(CType(e.Row, CLIENTERow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.CLIENTERowDeletedEvent) Is Nothing) Then
+                RaiseEvent CLIENTERowDeleted(Me, New CLIENTERowChangeEvent(CType(e.Row, CLIENTERow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.CLIENTERowDeletingEvent) Is Nothing) Then
+                RaiseEvent CLIENTERowDeleting(Me, New CLIENTERowChangeEvent(CType(e.Row, CLIENTERow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub RemoveCLIENTERow(ByVal row As CLIENTERow)
+            Me.Rows.Remove(row)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As _DS = New _DS()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "CLIENTEDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current, Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+
+                            Do While ((s1.Position <> s1.Length) _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+
+
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close()
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close()
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(), _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")> _
+    Partial Public Class CREDITOSDataTable
+        Inherits Global.System.Data.TypedTableBase(Of CREDITOSRow)
+
+        Private columnCLIENTE As Global.System.Data.DataColumn
+
+        Private columnFIADOR As Global.System.Data.DataColumn
+
+        Private columnESTADO As Global.System.Data.DataColumn
+
+        Private columnFECHA As Global.System.Data.DataColumn
+
+        Private columnSERIE As Global.System.Data.DataColumn
+
+        Private columnNUMERO As Global.System.Data.DataColumn
+
+        Private columnTIENDA As Global.System.Data.DataColumn
+
+        Private columnENGANCHE As Global.System.Data.DataColumn
+
+        Private columnNO_CUOTA As Global.System.Data.DataColumn
+
+        Private columnVALOR_CUOTA As Global.System.Data.DataColumn
+
+        Private columnULTIMA_CUOTA As Global.System.Data.DataColumn
+
+        Private columnDESCUENTO As Global.System.Data.DataColumn
+
+        Private columnTOTAL As Global.System.Data.DataColumn
+
+        Private columnOBSERVACIONES As Global.System.Data.DataColumn
+
+        Private columnDETALLE As Global.System.Data.DataColumn
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New()
+            MyBase.New()
+            Me.TableName = "CREDITOS"
+            Me.BeginInit()
+            Me.InitClass()
+            Me.EndInit()
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New()
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars()
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CLIENTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCLIENTE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property FIADORColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFIADOR
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ESTADOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnESTADO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property FECHAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFECHA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property SERIEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSERIE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property NUMEROColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNUMERO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TIENDAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTIENDA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ENGANCHEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnENGANCHE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property NO_CUOTAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNO_CUOTA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property VALOR_CUOTAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVALOR_CUOTA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ULTIMA_CUOTAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnULTIMA_CUOTA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property DESCUENTOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDESCUENTO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TOTALColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTOTAL
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property OBSERVACIONESColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOBSERVACIONES
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property DETALLEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDETALLE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Browsable(False)> _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Default Public ReadOnly Property Item(ByVal index As Integer) As CREDITOSRow
+            Get
+                Return CType(Me.Rows(index), CREDITOSRow)
+            End Get
+        End Property
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event CREDITOSRowChanging As CREDITOSRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event CREDITOSRowChanged As CREDITOSRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event CREDITOSRowDeleting As CREDITOSRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event CREDITOSRowDeleted As CREDITOSRowChangeEventHandler
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overloads Sub AddCREDITOSRow(ByVal row As CREDITOSRow)
+            Me.Rows.Add(row)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overloads Function AddCREDITOSRow(ByVal CLIENTE As Decimal, ByVal FIADOR As Decimal, ByVal ESTADO As String, ByVal FECHA As Date, ByVal SERIE As String, ByVal NUMERO As Decimal, ByVal TIENDA As String, ByVal ENGANCHE As Decimal, ByVal NO_CUOTA As Decimal, ByVal VALOR_CUOTA As Decimal, ByVal ULTIMA_CUOTA As Decimal, ByVal DESCUENTO As Decimal, ByVal TOTAL As Decimal, ByVal OBSERVACIONES As String, ByVal DETALLE As String) As CREDITOSRow
+            Dim rowCREDITOSRow As CREDITOSRow = CType(Me.NewRow, CREDITOSRow)
+            Dim columnValuesArray() As Object = New Object() {CLIENTE, FIADOR, ESTADO, FECHA, SERIE, NUMERO, TIENDA, ENGANCHE, NO_CUOTA, VALOR_CUOTA, ULTIMA_CUOTA, DESCUENTO, TOTAL, OBSERVACIONES, DETALLE}
+            rowCREDITOSRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowCREDITOSRow)
+            Return rowCREDITOSRow
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As CREDITOSDataTable = CType(MyBase.Clone, CREDITOSDataTable)
+            cln.InitVars()
+            Return cln
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New CREDITOSDataTable()
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub InitVars()
+            Me.columnCLIENTE = MyBase.Columns("CLIENTE")
+            Me.columnFIADOR = MyBase.Columns("FIADOR")
+            Me.columnESTADO = MyBase.Columns("ESTADO")
+            Me.columnFECHA = MyBase.Columns("FECHA")
+            Me.columnSERIE = MyBase.Columns("SERIE")
+            Me.columnNUMERO = MyBase.Columns("NUMERO")
+            Me.columnTIENDA = MyBase.Columns("TIENDA")
+            Me.columnENGANCHE = MyBase.Columns("ENGANCHE")
+            Me.columnNO_CUOTA = MyBase.Columns("NO_CUOTA")
+            Me.columnVALOR_CUOTA = MyBase.Columns("VALOR_CUOTA")
+            Me.columnULTIMA_CUOTA = MyBase.Columns("ULTIMA_CUOTA")
+            Me.columnDESCUENTO = MyBase.Columns("DESCUENTO")
+            Me.columnTOTAL = MyBase.Columns("TOTAL")
+            Me.columnOBSERVACIONES = MyBase.Columns("OBSERVACIONES")
+            Me.columnDETALLE = MyBase.Columns("DETALLE")
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitClass()
+            Me.columnCLIENTE = New Global.System.Data.DataColumn("CLIENTE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCLIENTE)
+            Me.columnFIADOR = New Global.System.Data.DataColumn("FIADOR", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFIADOR)
+            Me.columnESTADO = New Global.System.Data.DataColumn("ESTADO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnESTADO)
+            Me.columnFECHA = New Global.System.Data.DataColumn("FECHA", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFECHA)
+            Me.columnSERIE = New Global.System.Data.DataColumn("SERIE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSERIE)
+            Me.columnNUMERO = New Global.System.Data.DataColumn("NUMERO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNUMERO)
+            Me.columnTIENDA = New Global.System.Data.DataColumn("TIENDA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTIENDA)
+            Me.columnENGANCHE = New Global.System.Data.DataColumn("ENGANCHE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnENGANCHE)
+            Me.columnNO_CUOTA = New Global.System.Data.DataColumn("NO_CUOTA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNO_CUOTA)
+            Me.columnVALOR_CUOTA = New Global.System.Data.DataColumn("VALOR_CUOTA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVALOR_CUOTA)
+            Me.columnULTIMA_CUOTA = New Global.System.Data.DataColumn("ULTIMA_CUOTA", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnULTIMA_CUOTA)
+            Me.columnDESCUENTO = New Global.System.Data.DataColumn("DESCUENTO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDESCUENTO)
+            Me.columnTOTAL = New Global.System.Data.DataColumn("TOTAL", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTOTAL)
+            Me.columnOBSERVACIONES = New Global.System.Data.DataColumn("OBSERVACIONES", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOBSERVACIONES)
+            Me.columnDETALLE = New Global.System.Data.DataColumn("DETALLE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDETALLE)
+            Me.columnCLIENTE.ReadOnly = True
+            Me.columnFIADOR.ReadOnly = True
+            Me.columnESTADO.ReadOnly = True
+            Me.columnESTADO.MaxLength = 3
+            Me.columnFECHA.ReadOnly = True
+            Me.columnSERIE.ReadOnly = True
+            Me.columnSERIE.MaxLength = 10
+            Me.columnNUMERO.ReadOnly = True
+            Me.columnTIENDA.ReadOnly = True
+            Me.columnTIENDA.MaxLength = 100
+            Me.columnENGANCHE.ReadOnly = True
+            Me.columnNO_CUOTA.ReadOnly = True
+            Me.columnVALOR_CUOTA.ReadOnly = True
+            Me.columnULTIMA_CUOTA.ReadOnly = True
+            Me.columnDESCUENTO.ReadOnly = True
+            Me.columnTOTAL.ReadOnly = True
+            Me.columnOBSERVACIONES.ReadOnly = True
+            Me.columnOBSERVACIONES.MaxLength = 255
+            Me.columnDETALLE.ReadOnly = True
+            Me.columnDETALLE.MaxLength = 100
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function NewCREDITOSRow() As CREDITOSRow
+            Return CType(Me.NewRow, CREDITOSRow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New CREDITOSRow(builder)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(CREDITOSRow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.CREDITOSRowChangedEvent) Is Nothing) Then
+                RaiseEvent CREDITOSRowChanged(Me, New CREDITOSRowChangeEvent(CType(e.Row, CREDITOSRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.CREDITOSRowChangingEvent) Is Nothing) Then
+                RaiseEvent CREDITOSRowChanging(Me, New CREDITOSRowChangeEvent(CType(e.Row, CREDITOSRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.CREDITOSRowDeletedEvent) Is Nothing) Then
+                RaiseEvent CREDITOSRowDeleted(Me, New CREDITOSRowChangeEvent(CType(e.Row, CREDITOSRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.CREDITOSRowDeletingEvent) Is Nothing) Then
+                RaiseEvent CREDITOSRowDeleting(Me, New CREDITOSRowChangeEvent(CType(e.Row, CREDITOSRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub RemoveCREDITOSRow(ByVal row As CREDITOSRow)
+            Me.Rows.Remove(row)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As _DS = New _DS()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "CREDITOSDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current, Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+
+                            Do While ((s1.Position <> s1.Length) _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+
+
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close()
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close()
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(), _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")> _
+    Partial Public Class DE_CREDITOSDataTable
+        Inherits Global.System.Data.TypedTableBase(Of DE_CREDITOSRow)
+
+        Private columnMARCA As Global.System.Data.DataColumn
+
+        Private columnMODELO As Global.System.Data.DataColumn
+
+        Private columnNO_SERIE As Global.System.Data.DataColumn
+
+        Private columnSUBTOTAL As Global.System.Data.DataColumn
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New()
+            MyBase.New()
+            Me.TableName = "DE_CREDITOS"
+            Me.BeginInit()
+            Me.InitClass()
+            Me.EndInit()
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New()
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars()
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MARCAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMARCA
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MODELOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMODELO
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property NO_SERIEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNO_SERIE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property SUBTOTALColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSUBTOTAL
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Browsable(False)> _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Default Public ReadOnly Property Item(ByVal index As Integer) As DE_CREDITOSRow
+            Get
+                Return CType(Me.Rows(index), DE_CREDITOSRow)
+            End Get
+        End Property
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event DE_CREDITOSRowChanging As DE_CREDITOSRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event DE_CREDITOSRowChanged As DE_CREDITOSRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event DE_CREDITOSRowDeleting As DE_CREDITOSRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event DE_CREDITOSRowDeleted As DE_CREDITOSRowChangeEventHandler
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overloads Sub AddDE_CREDITOSRow(ByVal row As DE_CREDITOSRow)
+            Me.Rows.Add(row)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overloads Function AddDE_CREDITOSRow(ByVal MARCA As String, ByVal MODELO As String, ByVal NO_SERIE As String, ByVal SUBTOTAL As Decimal) As DE_CREDITOSRow
+            Dim rowDE_CREDITOSRow As DE_CREDITOSRow = CType(Me.NewRow, DE_CREDITOSRow)
+            Dim columnValuesArray() As Object = New Object() {MARCA, MODELO, NO_SERIE, SUBTOTAL}
+            rowDE_CREDITOSRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowDE_CREDITOSRow)
+            Return rowDE_CREDITOSRow
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As DE_CREDITOSDataTable = CType(MyBase.Clone, DE_CREDITOSDataTable)
+            cln.InitVars()
+            Return cln
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New DE_CREDITOSDataTable()
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub InitVars()
+            Me.columnMARCA = MyBase.Columns("MARCA")
+            Me.columnMODELO = MyBase.Columns("MODELO")
+            Me.columnNO_SERIE = MyBase.Columns("NO_SERIE")
+            Me.columnSUBTOTAL = MyBase.Columns("SUBTOTAL")
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitClass()
+            Me.columnMARCA = New Global.System.Data.DataColumn("MARCA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMARCA)
+            Me.columnMODELO = New Global.System.Data.DataColumn("MODELO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMODELO)
+            Me.columnNO_SERIE = New Global.System.Data.DataColumn("NO_SERIE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNO_SERIE)
+            Me.columnSUBTOTAL = New Global.System.Data.DataColumn("SUBTOTAL", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSUBTOTAL)
+            Me.columnMARCA.ReadOnly = True
+            Me.columnMARCA.MaxLength = 100
+            Me.columnMODELO.ReadOnly = True
+            Me.columnMODELO.MaxLength = 150
+            Me.columnNO_SERIE.ReadOnly = True
+            Me.columnNO_SERIE.MaxLength = 500
+            Me.columnSUBTOTAL.ReadOnly = True
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function NewDE_CREDITOSRow() As DE_CREDITOSRow
+            Return CType(Me.NewRow, DE_CREDITOSRow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New DE_CREDITOSRow(builder)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(DE_CREDITOSRow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.DE_CREDITOSRowChangedEvent) Is Nothing) Then
+                RaiseEvent DE_CREDITOSRowChanged(Me, New DE_CREDITOSRowChangeEvent(CType(e.Row, DE_CREDITOSRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.DE_CREDITOSRowChangingEvent) Is Nothing) Then
+                RaiseEvent DE_CREDITOSRowChanging(Me, New DE_CREDITOSRowChangeEvent(CType(e.Row, DE_CREDITOSRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.DE_CREDITOSRowDeletedEvent) Is Nothing) Then
+                RaiseEvent DE_CREDITOSRowDeleted(Me, New DE_CREDITOSRowChangeEvent(CType(e.Row, DE_CREDITOSRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.DE_CREDITOSRowDeletingEvent) Is Nothing) Then
+                RaiseEvent DE_CREDITOSRowDeleting(Me, New DE_CREDITOSRowChangeEvent(CType(e.Row, DE_CREDITOSRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub RemoveDE_CREDITOSRow(ByVal row As DE_CREDITOSRow)
+            Me.Rows.Remove(row)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As _DS = New _DS()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "DE_CREDITOSDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current, Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+
+                            Do While ((s1.Position <> s1.Length) _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+
+
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close()
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close()
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class PedidoRow
@@ -2231,6 +3646,1118 @@ Partial Public Class _DS
     End Class
 
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class CLIENTERow
+        Inherits Global.System.Data.DataRow
+
+        Private tableCLIENTE As CLIENTEDataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableCLIENTE = CType(Me.Table, CLIENTEDataTable)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property IDCLIENTE() As Decimal
+            Get
+                Return CType(Me(Me.tableCLIENTE.IDCLIENTEColumn), Decimal)
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCLIENTE.IDCLIENTEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property IDCL_EMPRESA() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.IDCL_EMPRESAColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'IDCL_EMPRESA' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCLIENTE.IDCL_EMPRESAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CL_NIVEL() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.CL_NIVELColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CL_NIVEL' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.CL_NIVELColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property DPI() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.DPIColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DPI' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.DPIColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CEDULA() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.CEDULAColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CEDULA' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.CEDULAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property NOMBRE() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.NOMBREColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NOMBRE' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.NOMBREColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property APELLIDO() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.APELLIDOColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'APELLIDO' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.APELLIDOColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property EXTENDIDA() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.EXTENDIDAColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'EXTENDIDA' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.EXTENDIDAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property BIENES() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.BIENESColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'BIENES' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.BIENESColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property NIT() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.NITColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NIT' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.NITColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property SEXO() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.SEXOColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SEXO' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.SEXOColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property NACIONAL() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.NACIONALColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NACIONAL' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.NACIONALColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property DIRECCION() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.DIRECCIONColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DIRECCION' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.DIRECCIONColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TELEFONO() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.TELEFONOColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TELEFONO' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.TELEFONOColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CONYUGUE() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.CONYUGUEColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CONYUGUE' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.CONYUGUEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property FECHANAC() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.FECHANACColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FECHANAC' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableCLIENTE.FECHANACColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property FECHA_REGISTRO() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.FECHA_REGISTROColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FECHA_REGISTRO' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableCLIENTE.FECHA_REGISTROColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property INGRESO() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.INGRESOColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'INGRESO' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableCLIENTE.INGRESOColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property PUESTO() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.PUESTOColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'PUESTO' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.PUESTOColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TELEFONO1() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.TELEFONO1Column), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TELEFONO1' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.TELEFONO1Column) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TELEFONO2() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCLIENTE.TELEFONO2Column), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TELEFONO2' de la tabla 'CLIENTE' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCLIENTE.TELEFONO2Column) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsIDCL_EMPRESANull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.IDCL_EMPRESAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetIDCL_EMPRESANull()
+            Me(Me.tableCLIENTE.IDCL_EMPRESAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCL_NIVELNull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.CL_NIVELColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCL_NIVELNull()
+            Me(Me.tableCLIENTE.CL_NIVELColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsDPINull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.DPIColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetDPINull()
+            Me(Me.tableCLIENTE.DPIColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCEDULANull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.CEDULAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCEDULANull()
+            Me(Me.tableCLIENTE.CEDULAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsNOMBRENull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.NOMBREColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetNOMBRENull()
+            Me(Me.tableCLIENTE.NOMBREColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsAPELLIDONull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.APELLIDOColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetAPELLIDONull()
+            Me(Me.tableCLIENTE.APELLIDOColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsEXTENDIDANull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.EXTENDIDAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetEXTENDIDANull()
+            Me(Me.tableCLIENTE.EXTENDIDAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsBIENESNull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.BIENESColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetBIENESNull()
+            Me(Me.tableCLIENTE.BIENESColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsNITNull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.NITColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetNITNull()
+            Me(Me.tableCLIENTE.NITColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsSEXONull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.SEXOColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetSEXONull()
+            Me(Me.tableCLIENTE.SEXOColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsNACIONALNull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.NACIONALColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetNACIONALNull()
+            Me(Me.tableCLIENTE.NACIONALColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsDIRECCIONNull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.DIRECCIONColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetDIRECCIONNull()
+            Me(Me.tableCLIENTE.DIRECCIONColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTELEFONONull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.TELEFONOColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTELEFONONull()
+            Me(Me.tableCLIENTE.TELEFONOColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCONYUGUENull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.CONYUGUEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCONYUGUENull()
+            Me(Me.tableCLIENTE.CONYUGUEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsFECHANACNull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.FECHANACColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetFECHANACNull()
+            Me(Me.tableCLIENTE.FECHANACColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsFECHA_REGISTRONull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.FECHA_REGISTROColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetFECHA_REGISTRONull()
+            Me(Me.tableCLIENTE.FECHA_REGISTROColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsINGRESONull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.INGRESOColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetINGRESONull()
+            Me(Me.tableCLIENTE.INGRESOColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsPUESTONull() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.PUESTOColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetPUESTONull()
+            Me(Me.tableCLIENTE.PUESTOColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTELEFONO1Null() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.TELEFONO1Column)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTELEFONO1Null()
+            Me(Me.tableCLIENTE.TELEFONO1Column) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTELEFONO2Null() As Boolean
+            Return Me.IsNull(Me.tableCLIENTE.TELEFONO2Column)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTELEFONO2Null()
+            Me(Me.tableCLIENTE.TELEFONO2Column) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class CREDITOSRow
+        Inherits Global.System.Data.DataRow
+
+        Private tableCREDITOS As CREDITOSDataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableCREDITOS = CType(Me.Table, CREDITOSDataTable)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CLIENTE() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.CLIENTEColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CLIENTE' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.CLIENTEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property FIADOR() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.FIADORColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FIADOR' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.FIADORColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ESTADO() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.ESTADOColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'ESTADO' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCREDITOS.ESTADOColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property FECHA() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.FECHAColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FECHA' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableCREDITOS.FECHAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property SERIE() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.SERIEColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SERIE' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCREDITOS.SERIEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property NUMERO() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.NUMEROColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NUMERO' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.NUMEROColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TIENDA() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.TIENDAColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TIENDA' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCREDITOS.TIENDAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ENGANCHE() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.ENGANCHEColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'ENGANCHE' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.ENGANCHEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property NO_CUOTA() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.NO_CUOTAColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NO_CUOTA' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.NO_CUOTAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property VALOR_CUOTA() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.VALOR_CUOTAColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'VALOR_CUOTA' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.VALOR_CUOTAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ULTIMA_CUOTA() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.ULTIMA_CUOTAColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'ULTIMA_CUOTA' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.ULTIMA_CUOTAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property DESCUENTO() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.DESCUENTOColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DESCUENTO' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.DESCUENTOColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TOTAL() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.TOTALColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TOTAL' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableCREDITOS.TOTALColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property OBSERVACIONES() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.OBSERVACIONESColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'OBSERVACIONES' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCREDITOS.OBSERVACIONESColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property DETALLE() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableCREDITOS.DETALLEColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DETALLE' de la tabla 'CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableCREDITOS.DETALLEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCLIENTENull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.CLIENTEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCLIENTENull()
+            Me(Me.tableCREDITOS.CLIENTEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsFIADORNull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.FIADORColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetFIADORNull()
+            Me(Me.tableCREDITOS.FIADORColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsESTADONull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.ESTADOColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetESTADONull()
+            Me(Me.tableCREDITOS.ESTADOColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsFECHANull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.FECHAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetFECHANull()
+            Me(Me.tableCREDITOS.FECHAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsSERIENull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.SERIEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetSERIENull()
+            Me(Me.tableCREDITOS.SERIEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsNUMERONull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.NUMEROColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetNUMERONull()
+            Me(Me.tableCREDITOS.NUMEROColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTIENDANull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.TIENDAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTIENDANull()
+            Me(Me.tableCREDITOS.TIENDAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsENGANCHENull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.ENGANCHEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetENGANCHENull()
+            Me(Me.tableCREDITOS.ENGANCHEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsNO_CUOTANull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.NO_CUOTAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetNO_CUOTANull()
+            Me(Me.tableCREDITOS.NO_CUOTAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsVALOR_CUOTANull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.VALOR_CUOTAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetVALOR_CUOTANull()
+            Me(Me.tableCREDITOS.VALOR_CUOTAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsULTIMA_CUOTANull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.ULTIMA_CUOTAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetULTIMA_CUOTANull()
+            Me(Me.tableCREDITOS.ULTIMA_CUOTAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsDESCUENTONull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.DESCUENTOColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetDESCUENTONull()
+            Me(Me.tableCREDITOS.DESCUENTOColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTOTALNull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.TOTALColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTOTALNull()
+            Me(Me.tableCREDITOS.TOTALColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsOBSERVACIONESNull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.OBSERVACIONESColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetOBSERVACIONESNull()
+            Me(Me.tableCREDITOS.OBSERVACIONESColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsDETALLENull() As Boolean
+            Return Me.IsNull(Me.tableCREDITOS.DETALLEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetDETALLENull()
+            Me(Me.tableCREDITOS.DETALLEColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class DE_CREDITOSRow
+        Inherits Global.System.Data.DataRow
+
+        Private tableDE_CREDITOS As DE_CREDITOSDataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableDE_CREDITOS = CType(Me.Table, DE_CREDITOSDataTable)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MARCA() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableDE_CREDITOS.MARCAColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'MARCA' de la tabla 'DE_CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableDE_CREDITOS.MARCAColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MODELO() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableDE_CREDITOS.MODELOColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'MODELO' de la tabla 'DE_CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableDE_CREDITOS.MODELOColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property NO_SERIE() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableDE_CREDITOS.NO_SERIEColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NO_SERIE' de la tabla 'DE_CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableDE_CREDITOS.NO_SERIEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property SUBTOTAL() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableDE_CREDITOS.SUBTOTALColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SUBTOTAL' de la tabla 'DE_CREDITOS' es DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableDE_CREDITOS.SUBTOTALColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMARCANull() As Boolean
+            Return Me.IsNull(Me.tableDE_CREDITOS.MARCAColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMARCANull()
+            Me(Me.tableDE_CREDITOS.MARCAColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMODELONull() As Boolean
+            Return Me.IsNull(Me.tableDE_CREDITOS.MODELOColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMODELONull()
+            Me(Me.tableDE_CREDITOS.MODELOColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsNO_SERIENull() As Boolean
+            Return Me.IsNull(Me.tableDE_CREDITOS.NO_SERIEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetNO_SERIENull()
+            Me(Me.tableDE_CREDITOS.NO_SERIEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsSUBTOTALNull() As Boolean
+            Return Me.IsNull(Me.tableDE_CREDITOS.SUBTOTALColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetSUBTOTALNull()
+            Me(Me.tableDE_CREDITOS.SUBTOTALColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -2324,6 +4851,114 @@ Partial Public Class _DS
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public ReadOnly Property Row() As CL_PLANRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Class CLIENTERowChangeEvent
+        Inherits Global.System.EventArgs
+
+        Private eventRow As CLIENTERow
+
+        Private eventAction As Global.System.Data.DataRowAction
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New(ByVal row As CLIENTERow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New()
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Row() As CLIENTERow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Class CREDITOSRowChangeEvent
+        Inherits Global.System.EventArgs
+
+        Private eventRow As CREDITOSRow
+
+        Private eventAction As Global.System.Data.DataRowAction
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New(ByVal row As CREDITOSRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New()
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Row() As CREDITOSRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Class DE_CREDITOSRowChangeEvent
+        Inherits Global.System.EventArgs
+
+        Private eventRow As DE_CREDITOSRow
+
+        Private eventAction As Global.System.Data.DataRowAction
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New(ByVal row As DE_CREDITOSRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New()
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Row() As DE_CREDITOSRow
             Get
                 Return Me.eventRow
             End Get
@@ -3575,14 +6210,98 @@ Namespace _DSTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" & _
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-    Partial Public Class QueriesTableAdapter
+    Partial Public Class CLIENTETableAdapter
         Inherits Global.System.ComponentModel.Component
 
-        Private _commandCollection() As Global.System.Data.IDbCommand
+        Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+
+        Private _connection As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+
+        Private _transaction As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+
+        Private _commandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand
+
+        Private _clearBeforeFill As Boolean
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.IDbCommand()
+        Public Sub New()
+            MyBase.New()
+            Me.ClearBeforeFill = True
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Friend ReadOnly Property Adapter() As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter()
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Property Connection() As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection()
+                End If
+                Return Me._connection
+            End Get
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleConnection)
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Property Transaction() As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleTransaction)
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected ReadOnly Property CommandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Get
                 If (Me._commandCollection Is Nothing) Then
                     Me.InitCommandCollection()
@@ -3593,3242 +6312,3778 @@ Namespace _DSTableAdapters
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set(value As Boolean)
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "CLIENTE"
+            tableMapping.ColumnMappings.Add("IDCLIENTE", "IDCLIENTE")
+            tableMapping.ColumnMappings.Add("IDCL_EMPRESA", "IDCL_EMPRESA")
+            tableMapping.ColumnMappings.Add("CL_NIVEL", "CL_NIVEL")
+            tableMapping.ColumnMappings.Add("DPI", "DPI")
+            tableMapping.ColumnMappings.Add("CEDULA", "CEDULA")
+            tableMapping.ColumnMappings.Add("NOMBRE", "NOMBRE")
+            tableMapping.ColumnMappings.Add("APELLIDO", "APELLIDO")
+            tableMapping.ColumnMappings.Add("EXTENDIDA", "EXTENDIDA")
+            tableMapping.ColumnMappings.Add("BIENES", "BIENES")
+            tableMapping.ColumnMappings.Add("NIT", "NIT")
+            tableMapping.ColumnMappings.Add("SEXO", "SEXO")
+            tableMapping.ColumnMappings.Add("NACIONAL", "NACIONAL")
+            tableMapping.ColumnMappings.Add("DIRECCION", "DIRECCION")
+            tableMapping.ColumnMappings.Add("TELEFONO", "TELEFONO")
+            tableMapping.ColumnMappings.Add("CONYUGUE", "CONYUGUE")
+            tableMapping.ColumnMappings.Add("FECHANAC", "FECHANAC")
+            tableMapping.ColumnMappings.Add("FECHA_REGISTRO", "FECHA_REGISTRO")
+            tableMapping.ColumnMappings.Add("INGRESO", "INGRESO")
+            tableMapping.ColumnMappings.Add("PUESTO", "PUESTO")
+            tableMapping.ColumnMappings.Add("TELEFONO1", "TELEFONO1")
+            tableMapping.ColumnMappings.Add("TELEFONO2", "TELEFONO2")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitConnection()
+            Me._connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection()
+            Me._connection.ConnectionString = Global.POS.My.MySettings.Default.ConnectionString
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.IDbCommand(29) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(0), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(0), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_CL_NIVEL"
-            CType(Me._commandCollection(0), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDCL_NIVEL"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 1
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(0), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NUEVO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 1
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(0), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(0), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_CLIENTE"
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ID_CLIENTE"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_BIENES"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DIRECCION"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_CONYUGUE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 400
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_INGRESO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_PUESTO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(2), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(2), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_DETALLE_LU_PUESTO"
-            CType(Me._commandCollection(2), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLU_PUESTO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(2), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DETALLE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(2), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(2), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(3) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_EMPLEADO"
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDEMPLEADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLU_PUESTO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DPI"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 20
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_APELLIDO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_EXTENDIDA"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NIT"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 30
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_SEXO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 2
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DIRECCION"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_CONYUGUE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 400
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_FECHANAC"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_SUELDO_BASE"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO_E"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 3
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(4) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(4), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(4), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_ABONO"
-            CType(Me._commandCollection(4), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ID_LUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(4), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDVE_ABONO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(4), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 3
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(4), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO1"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(4), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(5) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(5), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(5), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_CATEGORIA"
-            CType(Me._commandCollection(5), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_CATEGORIA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(5), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(5), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(5), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(6) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(6), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(6), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_CREDITO"
-            CType(Me._commandCollection(6), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ID_LUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(6), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDVE_CREDITO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(6), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 3
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(6), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO1"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(6), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(7) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_ENVIO"
-            CType(Me._commandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_SALE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDEN_TIPO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDENVIO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 3
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO1"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(8) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(8), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(8), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_FACTURA"
-            CType(Me._commandCollection(8), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ID_LUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(8), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ID_FACTURA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(8), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 3
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(8), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO1"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(8), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(9) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_INVENTARIO"
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_MARCA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_MODELO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NUEVA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_SEGUNDA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TERCERA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DETALLE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 500
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(10) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_LUGAR"
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ID_LUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DIRECCION"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO1"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(11) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(11), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(11), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_MARCA"
-            CType(Me._commandCollection(11), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDMARCA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(11), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(11), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(11), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(12) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_MODELO"
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_MARCA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_MODELO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_TIPO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 150
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DETALLE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 200
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_PRECIOC"
-            param.DbType = Global.System.Data.DbType.[Single]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Single]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_PRECIOV"
-            param.DbType = Global.System.Data.DbType.[Single]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Single]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO1"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 3
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(13) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(13), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(13), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_RECOGIDO"
-            CType(Me._commandCollection(13), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(13), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDRECOGIDO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(13), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 3
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(13), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO1"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(13), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(14) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(14), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(14), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_TIPO_PRODUCTO"
-            CType(Me._commandCollection(14), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_CATEGORIA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(14), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_TIPO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(14), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(14), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(14), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(15) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_LUGAR"
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ID_LUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DIRECCION"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO1"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(16) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(16), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(16), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_NIVEL_CLIENTE"
-            CType(Me._commandCollection(16), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ID_CLIENTE"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(16), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NUEVO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 1
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(16), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(16), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(17) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_PLAN"
-            CType(Me._commandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDCL_PLAN"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_MES_MIN"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_MES_MAX"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_PORCENTAJE"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(18) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(18), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(18), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_CL_NIVEL"
-            CType(Me._commandCollection(18), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDCL_NIVEL"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 1
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(18), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(18), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(19) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_CLIENTE"
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_CL_NIVEL"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 1
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DPI"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 20
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_CEDULA"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 20
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_APELLIDO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_EXTENDIDA"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_BIENES"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NIT"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 30
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_SEXO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 2
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NACIONAL"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DIRECCION"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO1"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO2"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_CONYUGUE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 400
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_FECHANAC"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_INGRESO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_PUESTO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDCL_EMPRESA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_E_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_E_DIRECCION"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_E_TEL"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(20) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_EMPLEADO"
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLU_PUESTO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DPI"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 20
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_APELLIDO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_EXTENDIDA"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NIT"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 30
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_SEXO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 2
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DIRECCION"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TELEFONO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_CONYUGUE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 400
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_FECHANAC"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_USUARIO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_PASS"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 500
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_SUELDO_BASE"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(21) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_LU_DEPOSITO"
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_BOLETA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TOTAL"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_BANCO"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_FECHA"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(22) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_LU_GASTO"
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_FACTURA"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 20
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TOTAL"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_CANTIDAD"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DETALLE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_FECHA"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(23) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(23), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(23), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_LU_PUESTO"
-            CType(Me._commandCollection(23), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLU_TIPO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(23), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DETALLE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(23), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(23), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(24) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_LUGAR"
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DIRECCION"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 250
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TEL1"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_TEL2"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 12
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLU_TIPO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(25) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(25), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(25), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_CATEGORIA"
-            CType(Me._commandCollection(25), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(25), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(25), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(26) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_INVENTARIO"
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDLUGAR"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 10
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_MARCA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_MODELO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NUEVA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_SEGUNDA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DETALLE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 500
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(27) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(27), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(27), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_MARCA"
-            CType(Me._commandCollection(27), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 100
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(27), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(27), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(28) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_MODELO"
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_MARCA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 150
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_DETALLE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 200
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_CATEGORIA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_TIPO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_PRECIOC"
-            param.DbType = Global.System.Data.DbType.[Single]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Single]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_PRECIOV"
-            param.DbType = Global.System.Data.DbType.[Single]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Single]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            Me._commandCollection(29) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            CType(Me._commandCollection(29), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
-            CType(Me._commandCollection(29), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_TIPO"
-            CType(Me._commandCollection(29), Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_IDPR_CATEGORIA"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(29), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_NOMBRE"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 50
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(29), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = "V_ESTADO"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.Direction = Global.System.Data.ParameterDirection.Output
-            param.IsNullable = True
-            param.SourceColumn = Nothing
-            CType(Me._commandCollection(29), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT IDCLIENTE, IDCL_EMPRESA, CL_NIVEL, DPI, CEDULA, NOMBRE, APELLIDO, EXTENDID" & _
+                "A, BIENES, NIT, SEXO, NACIONAL, DIRECCION, TELEFONO, CONYUGUE, FECHANAC, FECHA_R" & _
+                "EGISTRO, INGRESO, PUESTO, TELEFONO1, TELEFONO2 FROM AGENCIA.CLIENTE"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_CL_NIVEL(ByVal V_IDCL_NIVEL As String, ByVal V_NUEVO As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(0), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDCL_NIVEL Is Nothing) Then
-                command.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                command.Parameters(0).Value = CType(V_IDCL_NIVEL, String)
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As _DS.CLIENTEDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
             End If
-            If (V_NUEVO Is Nothing) Then
-                command.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                command.Parameters(1).Value = CType(V_NUEVO, String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
-            End If
-            Dim returnValue As Integer
-            Try
-                returnValue = command.ExecuteNonQuery
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
-                End If
-            End Try
-            If ((command.Parameters(2).Value Is Nothing) _
-                        OrElse (command.Parameters(2).Value.GetType Is GetType(Global.System.DBNull))) Then
-                V_ESTADO = New Global.System.Nullable(Of Decimal)()
-            Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value, Decimal))
-            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_CLIENTE(ByVal V_ID_CLIENTE As Global.System.Nullable(Of Decimal), ByVal V_BIENES As String, ByVal V_DIRECCION As String, ByVal V_TELEFONO As String, ByVal V_CONYUGUE As String, ByVal V_INGRESO As Global.System.Nullable(Of Decimal), ByVal V_PUESTO As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(1), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_ID_CLIENTE.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_ID_CLIENTE.Value, Decimal)
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+        Public Overridable Overloads Function GetData() As _DS.CLIENTEDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As _DS.CLIENTEDataTable = New _DS.CLIENTEDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
+     Global.System.ComponentModel.ToolboxItem(True), _
+     Global.System.ComponentModel.DataObjectAttribute(True), _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" & _
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+    Partial Public Class CREDITOSTableAdapter
+        Inherits Global.System.ComponentModel.Component
+
+        Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+
+        Private _connection As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+
+        Private _transaction As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+
+        Private _commandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand
+
+        Private _clearBeforeFill As Boolean
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New()
+            MyBase.New()
+            Me.ClearBeforeFill = True
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Friend ReadOnly Property Adapter() As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter()
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Property Connection() As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection()
+                End If
+                Return Me._connection
+            End Get
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleConnection)
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Property Transaction() As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleTransaction)
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected ReadOnly Property CommandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection()
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set(value As Boolean)
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "CREDITOS"
+            tableMapping.ColumnMappings.Add("CLIENTE", "CLIENTE")
+            tableMapping.ColumnMappings.Add("FIADOR", "FIADOR")
+            tableMapping.ColumnMappings.Add("ESTADO", "ESTADO")
+            tableMapping.ColumnMappings.Add("FECHA", "FECHA")
+            tableMapping.ColumnMappings.Add("SERIE", "SERIE")
+            tableMapping.ColumnMappings.Add("NUMERO", "NUMERO")
+            tableMapping.ColumnMappings.Add("TIENDA", "TIENDA")
+            tableMapping.ColumnMappings.Add("ENGANCHE", "ENGANCHE")
+            tableMapping.ColumnMappings.Add("NO_CUOTA", "NO_CUOTA")
+            tableMapping.ColumnMappings.Add("VALOR_CUOTA", "VALOR_CUOTA")
+            tableMapping.ColumnMappings.Add("ULTIMA_CUOTA", "ULTIMA_CUOTA")
+            tableMapping.ColumnMappings.Add("DESCUENTO", "DESCUENTO")
+            tableMapping.ColumnMappings.Add("TOTAL", "TOTAL")
+            tableMapping.ColumnMappings.Add("OBSERVACIONES", "OBSERVACIONES")
+            tableMapping.ColumnMappings.Add("DETALLE", "DETALLE")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitConnection()
+            Me._connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection()
+            Me._connection.ConnectionString = Global.POS.My.MySettings.Default.ConnectionString
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
+            Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.CLIENTE," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.FIADOR," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.ESTADO," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.FECHA," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.IDLUGAR AS SERIE," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR." & _
+                "IDVE_CREDITO AS NUMERO," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "LU.NOMBRE AS TIENDA," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.ENGANCHE," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.NO_CUOTA," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.VA" & _
+                "LOR_CUOTA," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.ULTIMA_CUOTA," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.DESCUENTO," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.TOTAL," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CR.OBSERVACIONES," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "AGENC" & _
+                "IA.ESTADO.DETALLE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "AGENCIA.VE_CREDITO CR" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN AGENCIA.LUGAR LU ON C" & _
+                "R.IDLUGAR = LU.IDLUGAR" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN AGENCIA.ESTADO ON CR.ESTADO = AGENCIA.ESTADO." & _
+                "ID" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "where CR.ESTADO = :ESTADO"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":ESTADO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 3
+            param.IsNullable = True
+            param.SourceColumn = "ESTADO"
+            Me._commandCollection(0).Parameters.Add(param)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As _DS.CREDITOSDataTable, ByVal ESTADO As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ESTADO Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ESTADO")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(ESTADO, String)
+            End If
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+        Public Overridable Overloads Function GetData(ByVal ESTADO As String) As _DS.CREDITOSDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ESTADO Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ESTADO")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(ESTADO, String)
+            End If
+            Dim dataTable As _DS.CREDITOSDataTable = New _DS.CREDITOSDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
+     Global.System.ComponentModel.ToolboxItem(True), _
+     Global.System.ComponentModel.DataObjectAttribute(True), _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" & _
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+    Partial Public Class DE_CREDITOSTableAdapter
+        Inherits Global.System.ComponentModel.Component
+
+        Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+
+        Private _connection As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+
+        Private _transaction As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+
+        Private _commandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand
+
+        Private _clearBeforeFill As Boolean
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New()
+            MyBase.New()
+            Me.ClearBeforeFill = True
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Friend ReadOnly Property Adapter() As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter()
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Property Connection() As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection()
+                End If
+                Return Me._connection
+            End Get
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleConnection)
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i), Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Property Transaction() As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set(value As Global.Oracle.ManagedDataAccess.Client.OracleTransaction)
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected ReadOnly Property CommandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection()
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set(value As Boolean)
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "DE_CREDITOS"
+            tableMapping.ColumnMappings.Add("MARCA", "MARCA")
+            tableMapping.ColumnMappings.Add("MODELO", "MODELO")
+            tableMapping.ColumnMappings.Add("NO_SERIE", "NO_SERIE")
+            tableMapping.ColumnMappings.Add("SUBTOTAL", "SUBTOTAL")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitConnection()
+            Me._connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection()
+            Me._connection.ConnectionString = Global.POS.My.MySettings.Default.ConnectionString
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
+            Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ma.NOMBRE as MARCA," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mo.NOMBRE as MODELO," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "crd.NO_SERIE," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "crd.SUBTOTAL" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "F" & _
+                "ROM" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "AGENCIA.VE_CR_DETALLE crd" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN AGENCIA.PR_MODELO mo ON crd.IDPR_MARC" & _
+                "A = mo.IDPR_MARCA AND crd.IDPR_MODELO = mo.IDPR_MODELO" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INNER JOIN AGENCIA.PR_MA" & _
+                "RCA ma ON mo.IDPR_MARCA = ma.IDMARCA" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "where crd.idpr_marca = :marca and crd.idpr" & _
+                "_modelo = :modelo"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":marca"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = True
+            param.SourceColumn = "IDPR_MARCA"
+            Me._commandCollection(0).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":modelo"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = True
+            param.SourceColumn = "IDPR_MODELO"
+            Me._commandCollection(0).Parameters.Add(param)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As _DS.DE_CREDITOSDataTable, ByVal marca As Global.System.Nullable(Of Decimal), ByVal modelo As Global.System.Nullable(Of Decimal)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (marca.HasValue = True) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(marca.Value, Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (modelo.HasValue = True) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(modelo.Value, Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+        Public Overridable Overloads Function GetData(ByVal marca As Global.System.Nullable(Of Decimal), ByVal modelo As Global.System.Nullable(Of Decimal)) As _DS.DE_CREDITOSDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (marca.HasValue = True) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(marca.Value, Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (modelo.HasValue = True) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(modelo.Value, Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As _DS.DE_CREDITOSDataTable = New _DS.DE_CREDITOSDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class QueriesTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private _commandCollection() As Global.System.Data.IDbCommand
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.IDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.IDbCommand(29) {}
+            Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(0),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(0),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_CL_NIVEL"
+            CType(Me._commandCollection(0),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDCL_NIVEL"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 1
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(0),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NUEVO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 1
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(0),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(0),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_CLIENTE"
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ID_CLIENTE"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_BIENES"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DIRECCION"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_CONYUGUE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 400
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_INGRESO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_PUESTO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(2),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(2),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_DETALLE_LU_PUESTO"
+            CType(Me._commandCollection(2),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLU_PUESTO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(2),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DETALLE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(2),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(2),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(3) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_EMPLEADO"
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDEMPLEADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLU_PUESTO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DPI"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_APELLIDO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_EXTENDIDA"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NIT"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 30
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_SEXO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 2
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DIRECCION"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_CONYUGUE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 400
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_FECHANAC"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_SUELDO_BASE"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO_E"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 3
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(4) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(4),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(4),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_ABONO"
+            CType(Me._commandCollection(4),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ID_LUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(4),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDVE_ABONO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(4),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 3
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(4),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO1"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(4),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(5) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(5),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(5),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_CATEGORIA"
+            CType(Me._commandCollection(5),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_CATEGORIA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(5),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(5),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(5),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(6) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(6),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(6),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_CREDITO"
+            CType(Me._commandCollection(6),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ID_LUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(6),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDVE_CREDITO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(6),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 3
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(6),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO1"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(6),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(7) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_ENVIO"
+            CType(Me._commandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_SALE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDEN_TIPO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDENVIO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 3
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO1"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(8) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(8),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(8),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_FACTURA"
+            CType(Me._commandCollection(8),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ID_LUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(8),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ID_FACTURA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(8),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 3
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(8),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO1"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(8),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(9) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_INVENTARIO"
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_MARCA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_MODELO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NUEVA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_SEGUNDA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TERCERA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DETALLE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(10) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_LUGAR"
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ID_LUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DIRECCION"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO1"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(11) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(11),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(11),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_MARCA"
+            CType(Me._commandCollection(11),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDMARCA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(11),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(11),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(11),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(12) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_MODELO"
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_MARCA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_MODELO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_TIPO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 150
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DETALLE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 200
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_PRECIOC"
+            param.DbType = Global.System.Data.DbType.[Single]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Single]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_PRECIOV"
+            param.DbType = Global.System.Data.DbType.[Single]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Single]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO1"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 3
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(13) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(13),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(13),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_RECOGIDO"
+            CType(Me._commandCollection(13),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(13),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDRECOGIDO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(13),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 3
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(13),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO1"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(13),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(14) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(14),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(14),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_ESTADO_TIPO_PRODUCTO"
+            CType(Me._commandCollection(14),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_CATEGORIA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(14),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_TIPO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(14),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(14),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(14),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(15) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_LUGAR"
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ID_LUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DIRECCION"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO1"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(16) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(16),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(16),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_NIVEL_CLIENTE"
+            CType(Me._commandCollection(16),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ID_CLIENTE"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(16),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NUEVO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 1
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(16),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(16),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(17) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_EDITAR_PLAN"
+            CType(Me._commandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDCL_PLAN"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_MES_MIN"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_MES_MAX"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_PORCENTAJE"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(18) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(18),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(18),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_CL_NIVEL"
+            CType(Me._commandCollection(18),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDCL_NIVEL"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 1
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(18),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(18),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(19) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_CLIENTE"
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_CL_NIVEL"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 1
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DPI"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_CEDULA"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_APELLIDO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_EXTENDIDA"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_BIENES"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NIT"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 30
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_SEXO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 2
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NACIONAL"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DIRECCION"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO1"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO2"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_CONYUGUE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 400
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_FECHANAC"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_INGRESO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_PUESTO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDCL_EMPRESA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_E_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_E_DIRECCION"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_E_TEL"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(20) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_EMPLEADO"
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLU_PUESTO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DPI"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_APELLIDO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_EXTENDIDA"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NIT"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 30
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_SEXO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 2
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DIRECCION"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TELEFONO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_CONYUGUE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 400
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_FECHANAC"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_USUARIO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_PASS"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_SUELDO_BASE"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(21) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_LU_DEPOSITO"
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_BOLETA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TOTAL"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_BANCO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_FECHA"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(22) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_LU_GASTO"
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_FACTURA"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TOTAL"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_CANTIDAD"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DETALLE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_FECHA"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(23) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(23),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(23),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_LU_PUESTO"
+            CType(Me._commandCollection(23),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLU_TIPO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(23),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DETALLE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(23),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(23),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(24) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_LUGAR"
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DIRECCION"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 250
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TEL1"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_TEL2"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 12
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLU_TIPO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(25) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(25),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(25),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_CATEGORIA"
+            CType(Me._commandCollection(25),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(25),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(25),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(26) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_INVENTARIO"
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDLUGAR"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 10
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_MARCA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_MODELO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NUEVA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_SEGUNDA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DETALLE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(27) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(27),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(27),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_MARCA"
+            CType(Me._commandCollection(27),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 100
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(27),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(27),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(28) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_MODELO"
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_MARCA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 150
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_DETALLE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 200
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_CATEGORIA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_TIPO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_PRECIOC"
+            param.DbType = Global.System.Data.DbType.[Single]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Single]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_PRECIOV"
+            param.DbType = Global.System.Data.DbType.[Single]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Single]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            Me._commandCollection(29) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            CType(Me._commandCollection(29),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection(Global.POS.My.MySettings.Default.ConnectionString)
+            CType(Me._commandCollection(29),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandText = "AGENCIA.SP_NUEVO_PR_TIPO"
+            CType(Me._commandCollection(29),Global.Oracle.ManagedDataAccess.Client.OracleCommand).CommandType = Global.System.Data.CommandType.StoredProcedure
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_IDPR_CATEGORIA"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(29),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_NOMBRE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(29),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "V_ESTADO"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.Direction = Global.System.Data.ParameterDirection.Output
+            param.IsNullable = true
+            param.SourceColumn = Nothing
+            CType(Me._commandCollection(29),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Parameters.Add(param)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_CL_NIVEL(ByVal V_IDCL_NIVEL As String, ByVal V_NUEVO As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(0),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDCL_NIVEL Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(V_IDCL_NIVEL,String)
+            End If
+            If (V_NUEVO Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(V_NUEVO,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((command.Parameters(2).Value Is Nothing)  _
+                        OrElse (command.Parameters(2).Value.GetType Is GetType(Global.System.DBNull))) Then
+                V_ESTADO = New Global.System.Nullable(Of Decimal)()
+            Else
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value,Decimal))
+            End If
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_CLIENTE(ByVal V_ID_CLIENTE As Global.System.Nullable(Of Decimal), ByVal V_BIENES As String, ByVal V_DIRECCION As String, ByVal V_TELEFONO As String, ByVal V_CONYUGUE As String, ByVal V_INGRESO As Global.System.Nullable(Of Decimal), ByVal V_PUESTO As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(1),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_ID_CLIENTE.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_ID_CLIENTE.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (V_BIENES Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_BIENES, String)
+                command.Parameters(1).Value = CType(V_BIENES,String)
             End If
             If (V_DIRECCION Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_DIRECCION, String)
+                command.Parameters(2).Value = CType(V_DIRECCION,String)
             End If
             If (V_TELEFONO Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_TELEFONO, String)
+                command.Parameters(3).Value = CType(V_TELEFONO,String)
             End If
             If (V_CONYUGUE Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_CONYUGUE, String)
+                command.Parameters(4).Value = CType(V_CONYUGUE,String)
             End If
-            If (V_INGRESO.HasValue = True) Then
-                command.Parameters(5).Value = CType(V_INGRESO.Value, Decimal)
+            If (V_INGRESO.HasValue = true) Then
+                command.Parameters(5).Value = CType(V_INGRESO.Value,Decimal)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (V_PUESTO Is Nothing) Then
                 command.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(6).Value = CType(V_PUESTO, String)
+                command.Parameters(6).Value = CType(V_PUESTO,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(7).Value Is Nothing) _
+            If ((command.Parameters(7).Value Is Nothing)  _
                         OrElse (command.Parameters(7).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(7).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(7).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_DETALLE_LU_PUESTO(ByVal V_IDLU_PUESTO As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(2), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDLU_PUESTO.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDLU_PUESTO.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_DETALLE_LU_PUESTO(ByVal V_IDLU_PUESTO As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(2),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDLU_PUESTO.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDLU_PUESTO.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (V_DETALLE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_DETALLE, String)
+                command.Parameters(1).Value = CType(V_DETALLE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(2).Value Is Nothing) _
+            If ((command.Parameters(2).Value Is Nothing)  _
                         OrElse (command.Parameters(2).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_EMPLEADO( _
-                    ByVal V_IDEMPLEADO As Global.System.Nullable(Of Decimal), _
-                    ByVal V_IDLU_PUESTO As Global.System.Nullable(Of Decimal), _
-                    ByVal V_IDLUGAR As String, _
-                    ByVal V_DPI As String, _
-                    ByVal V_NOMBRE As String, _
-                    ByVal V_APELLIDO As String, _
-                    ByVal V_EXTENDIDA As String, _
-                    ByVal V_NIT As String, _
-                    ByVal V_SEXO As String, _
-                    ByVal V_DIRECCION As String, _
-                    ByVal V_TELEFONO As String, _
-                    ByVal V_CONYUGUE As String, _
-                    ByVal V_FECHANAC As Global.System.Nullable(Of Date), _
-                    ByVal V_SUELDO_BASE As Global.System.Nullable(Of Decimal), _
-                    ByVal V_ESTADO_E As String, _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_EMPLEADO( _
+                    ByVal V_IDEMPLEADO As Global.System.Nullable(Of Decimal),  _
+                    ByVal V_IDLU_PUESTO As Global.System.Nullable(Of Decimal),  _
+                    ByVal V_IDLUGAR As String,  _
+                    ByVal V_DPI As String,  _
+                    ByVal V_NOMBRE As String,  _
+                    ByVal V_APELLIDO As String,  _
+                    ByVal V_EXTENDIDA As String,  _
+                    ByVal V_NIT As String,  _
+                    ByVal V_SEXO As String,  _
+                    ByVal V_DIRECCION As String,  _
+                    ByVal V_TELEFONO As String,  _
+                    ByVal V_CONYUGUE As String,  _
+                    ByVal V_FECHANAC As Global.System.Nullable(Of Date),  _
+                    ByVal V_SUELDO_BASE As Global.System.Nullable(Of Decimal),  _
+                    ByVal V_ESTADO_E As String,  _
                     ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(3), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDEMPLEADO.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDEMPLEADO.Value, Decimal)
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(3),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDEMPLEADO.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDEMPLEADO.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (V_IDLU_PUESTO.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDLU_PUESTO.Value, Decimal)
+            If (V_IDLU_PUESTO.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDLU_PUESTO.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             If (V_IDLUGAR Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_IDLUGAR, String)
+                command.Parameters(2).Value = CType(V_IDLUGAR,String)
             End If
             If (V_DPI Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_DPI, String)
+                command.Parameters(3).Value = CType(V_DPI,String)
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_NOMBRE, String)
+                command.Parameters(4).Value = CType(V_NOMBRE,String)
             End If
             If (V_APELLIDO Is Nothing) Then
                 command.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(5).Value = CType(V_APELLIDO, String)
+                command.Parameters(5).Value = CType(V_APELLIDO,String)
             End If
             If (V_EXTENDIDA Is Nothing) Then
                 command.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(6).Value = CType(V_EXTENDIDA, String)
+                command.Parameters(6).Value = CType(V_EXTENDIDA,String)
             End If
             If (V_NIT Is Nothing) Then
                 command.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(7).Value = CType(V_NIT, String)
+                command.Parameters(7).Value = CType(V_NIT,String)
             End If
             If (V_SEXO Is Nothing) Then
                 command.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(8).Value = CType(V_SEXO, String)
+                command.Parameters(8).Value = CType(V_SEXO,String)
             End If
             If (V_DIRECCION Is Nothing) Then
                 command.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(9).Value = CType(V_DIRECCION, String)
+                command.Parameters(9).Value = CType(V_DIRECCION,String)
             End If
             If (V_TELEFONO Is Nothing) Then
                 command.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(10).Value = CType(V_TELEFONO, String)
+                command.Parameters(10).Value = CType(V_TELEFONO,String)
             End If
             If (V_CONYUGUE Is Nothing) Then
                 command.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(11).Value = CType(V_CONYUGUE, String)
+                command.Parameters(11).Value = CType(V_CONYUGUE,String)
             End If
-            If (V_FECHANAC.HasValue = True) Then
-                command.Parameters(12).Value = CType(V_FECHANAC.Value, Date)
+            If (V_FECHANAC.HasValue = true) Then
+                command.Parameters(12).Value = CType(V_FECHANAC.Value,Date)
             Else
                 command.Parameters(12).Value = Global.System.DBNull.Value
             End If
-            If (V_SUELDO_BASE.HasValue = True) Then
-                command.Parameters(13).Value = CType(V_SUELDO_BASE.Value, Decimal)
+            If (V_SUELDO_BASE.HasValue = true) Then
+                command.Parameters(13).Value = CType(V_SUELDO_BASE.Value,Decimal)
             Else
                 command.Parameters(13).Value = Global.System.DBNull.Value
             End If
             If (V_ESTADO_E Is Nothing) Then
                 command.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(14).Value = CType(V_ESTADO_E, String)
+                command.Parameters(14).Value = CType(V_ESTADO_E,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(15).Value Is Nothing) _
+            If ((command.Parameters(15).Value Is Nothing)  _
                         OrElse (command.Parameters(15).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(15).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(15).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_ABONO(ByVal V_ID_LUGAR As String, ByVal V_IDVE_ABONO As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(4), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_ABONO(ByVal V_ID_LUGAR As String, ByVal V_IDVE_ABONO As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(4),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_ID_LUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_ID_LUGAR, String)
+                command.Parameters(0).Value = CType(V_ID_LUGAR,String)
             End If
-            If (V_IDVE_ABONO.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDVE_ABONO.Value, Decimal)
+            If (V_IDVE_ABONO.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDVE_ABONO.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             If (V_ESTADO Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_ESTADO, String)
+                command.Parameters(2).Value = CType(V_ESTADO,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(3).Value Is Nothing) _
+            If ((command.Parameters(3).Value Is Nothing)  _
                         OrElse (command.Parameters(3).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO1 = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value, Decimal))
+                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_CATEGORIA(ByVal V_IDPR_CATEGORIA As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(5), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDPR_CATEGORIA.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDPR_CATEGORIA.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_CATEGORIA(ByVal V_IDPR_CATEGORIA As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(5),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDPR_CATEGORIA.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDPR_CATEGORIA.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_NOMBRE, String)
+                command.Parameters(1).Value = CType(V_NOMBRE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(2).Value Is Nothing) _
+            If ((command.Parameters(2).Value Is Nothing)  _
                         OrElse (command.Parameters(2).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_CREDITO(ByVal V_ID_LUGAR As String, ByVal V_IDVE_CREDITO As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(6), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_CREDITO(ByVal V_ID_LUGAR As String, ByVal V_IDVE_CREDITO As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(6),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_ID_LUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_ID_LUGAR, String)
+                command.Parameters(0).Value = CType(V_ID_LUGAR,String)
             End If
-            If (V_IDVE_CREDITO.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDVE_CREDITO.Value, Decimal)
+            If (V_IDVE_CREDITO.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDVE_CREDITO.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             If (V_ESTADO Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_ESTADO, String)
+                command.Parameters(2).Value = CType(V_ESTADO,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(3).Value Is Nothing) _
+            If ((command.Parameters(3).Value Is Nothing)  _
                         OrElse (command.Parameters(3).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO1 = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value, Decimal))
+                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_ENVIO(ByVal V_SALE As String, ByVal V_IDEN_TIPO As Global.System.Nullable(Of Decimal), ByVal V_IDENVIO As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(7), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_ENVIO(ByVal V_SALE As String, ByVal V_IDEN_TIPO As Global.System.Nullable(Of Decimal), ByVal V_IDENVIO As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(7),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_SALE Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_SALE, String)
+                command.Parameters(0).Value = CType(V_SALE,String)
             End If
-            If (V_IDEN_TIPO.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDEN_TIPO.Value, Decimal)
+            If (V_IDEN_TIPO.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDEN_TIPO.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (V_IDENVIO.HasValue = True) Then
-                command.Parameters(2).Value = CType(V_IDENVIO.Value, Decimal)
+            If (V_IDENVIO.HasValue = true) Then
+                command.Parameters(2).Value = CType(V_IDENVIO.Value,Decimal)
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
             End If
             If (V_ESTADO Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_ESTADO, String)
+                command.Parameters(3).Value = CType(V_ESTADO,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(4).Value Is Nothing) _
+            If ((command.Parameters(4).Value Is Nothing)  _
                         OrElse (command.Parameters(4).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO1 = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(4).Value, Decimal))
+                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(4).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_FACTURA(ByVal V_ID_LUGAR As String, ByVal V_ID_FACTURA As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(8), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_FACTURA(ByVal V_ID_LUGAR As String, ByVal V_ID_FACTURA As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(8),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_ID_LUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_ID_LUGAR, String)
+                command.Parameters(0).Value = CType(V_ID_LUGAR,String)
             End If
-            If (V_ID_FACTURA.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_ID_FACTURA.Value, Decimal)
+            If (V_ID_FACTURA.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_ID_FACTURA.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             If (V_ESTADO Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_ESTADO, String)
+                command.Parameters(2).Value = CType(V_ESTADO,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(3).Value Is Nothing) _
+            If ((command.Parameters(3).Value Is Nothing)  _
                         OrElse (command.Parameters(3).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO1 = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value, Decimal))
+                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_INVENTARIO(ByVal V_IDLUGAR As String, ByVal V_IDPR_MARCA As Global.System.Nullable(Of Decimal), ByVal V_IDPR_MODELO As Global.System.Nullable(Of Decimal), ByVal V_NUEVA As Global.System.Nullable(Of Decimal), ByVal V_SEGUNDA As Global.System.Nullable(Of Decimal), ByVal V_TERCERA As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(9), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_INVENTARIO(ByVal V_IDLUGAR As String, ByVal V_IDPR_MARCA As Global.System.Nullable(Of Decimal), ByVal V_IDPR_MODELO As Global.System.Nullable(Of Decimal), ByVal V_NUEVA As Global.System.Nullable(Of Decimal), ByVal V_SEGUNDA As Global.System.Nullable(Of Decimal), ByVal V_TERCERA As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(9),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_IDLUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_IDLUGAR, String)
+                command.Parameters(0).Value = CType(V_IDLUGAR,String)
             End If
-            If (V_IDPR_MARCA.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDPR_MARCA.Value, Decimal)
+            If (V_IDPR_MARCA.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDPR_MARCA.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (V_IDPR_MODELO.HasValue = True) Then
-                command.Parameters(2).Value = CType(V_IDPR_MODELO.Value, Decimal)
+            If (V_IDPR_MODELO.HasValue = true) Then
+                command.Parameters(2).Value = CType(V_IDPR_MODELO.Value,Decimal)
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (V_NUEVA.HasValue = True) Then
-                command.Parameters(3).Value = CType(V_NUEVA.Value, Decimal)
+            If (V_NUEVA.HasValue = true) Then
+                command.Parameters(3).Value = CType(V_NUEVA.Value,Decimal)
             Else
                 command.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (V_SEGUNDA.HasValue = True) Then
-                command.Parameters(4).Value = CType(V_SEGUNDA.Value, Decimal)
+            If (V_SEGUNDA.HasValue = true) Then
+                command.Parameters(4).Value = CType(V_SEGUNDA.Value,Decimal)
             Else
                 command.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (V_TERCERA.HasValue = True) Then
-                command.Parameters(5).Value = CType(V_TERCERA.Value, Decimal)
+            If (V_TERCERA.HasValue = true) Then
+                command.Parameters(5).Value = CType(V_TERCERA.Value,Decimal)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (V_DETALLE Is Nothing) Then
                 command.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(6).Value = CType(V_DETALLE, String)
+                command.Parameters(6).Value = CType(V_DETALLE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(7).Value Is Nothing) _
+            If ((command.Parameters(7).Value Is Nothing)  _
                         OrElse (command.Parameters(7).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(7).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(7).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_LUGAR(ByVal V_ID_LUGAR As String, ByVal V_NOMBRE As String, ByVal V_DIRECCION As String, ByVal V_TELEFONO As String, ByVal V_TELEFONO1 As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(10), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_LUGAR(ByVal V_ID_LUGAR As String, ByVal V_NOMBRE As String, ByVal V_DIRECCION As String, ByVal V_TELEFONO As String, ByVal V_TELEFONO1 As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(10),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_ID_LUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_ID_LUGAR, String)
+                command.Parameters(0).Value = CType(V_ID_LUGAR,String)
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_NOMBRE, String)
+                command.Parameters(1).Value = CType(V_NOMBRE,String)
             End If
             If (V_DIRECCION Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_DIRECCION, String)
+                command.Parameters(2).Value = CType(V_DIRECCION,String)
             End If
             If (V_TELEFONO Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_TELEFONO, String)
+                command.Parameters(3).Value = CType(V_TELEFONO,String)
             End If
             If (V_TELEFONO1 Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_TELEFONO1, String)
+                command.Parameters(4).Value = CType(V_TELEFONO1,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(5).Value Is Nothing) _
+            If ((command.Parameters(5).Value Is Nothing)  _
                         OrElse (command.Parameters(5).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(5).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(5).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_MARCA(ByVal V_IDMARCA As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(11), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDMARCA.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDMARCA.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_MARCA(ByVal V_IDMARCA As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(11),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDMARCA.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDMARCA.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_NOMBRE, String)
+                command.Parameters(1).Value = CType(V_NOMBRE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(2).Value Is Nothing) _
+            If ((command.Parameters(2).Value Is Nothing)  _
                         OrElse (command.Parameters(2).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_MODELO(ByVal V_IDPR_MARCA As Global.System.Nullable(Of Decimal), ByVal V_IDPR_MODELO As Global.System.Nullable(Of Decimal), ByVal V_IDPR_TIPO As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByVal V_DETALLE As String, ByVal V_PRECIOC As Global.System.Nullable(Of Single), ByVal V_PRECIOV As Global.System.Nullable(Of Single), ByVal V_ESTADO1 As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(12), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDPR_MARCA.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDPR_MARCA.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_MODELO(ByVal V_IDPR_MARCA As Global.System.Nullable(Of Decimal), ByVal V_IDPR_MODELO As Global.System.Nullable(Of Decimal), ByVal V_IDPR_TIPO As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByVal V_DETALLE As String, ByVal V_PRECIOC As Global.System.Nullable(Of Single), ByVal V_PRECIOV As Global.System.Nullable(Of Single), ByVal V_ESTADO1 As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(12),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDPR_MARCA.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDPR_MARCA.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (V_IDPR_MODELO.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDPR_MODELO.Value, Decimal)
+            If (V_IDPR_MODELO.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDPR_MODELO.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (V_IDPR_TIPO.HasValue = True) Then
-                command.Parameters(2).Value = CType(V_IDPR_TIPO.Value, Decimal)
+            If (V_IDPR_TIPO.HasValue = true) Then
+                command.Parameters(2).Value = CType(V_IDPR_TIPO.Value,Decimal)
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_NOMBRE, String)
+                command.Parameters(3).Value = CType(V_NOMBRE,String)
             End If
             If (V_DETALLE Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_DETALLE, String)
+                command.Parameters(4).Value = CType(V_DETALLE,String)
             End If
-            If (V_PRECIOC.HasValue = True) Then
-                command.Parameters(5).Value = CType(V_PRECIOC.Value, Single)
+            If (V_PRECIOC.HasValue = true) Then
+                command.Parameters(5).Value = CType(V_PRECIOC.Value,Single)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (V_PRECIOV.HasValue = True) Then
-                command.Parameters(6).Value = CType(V_PRECIOV.Value, Single)
+            If (V_PRECIOV.HasValue = true) Then
+                command.Parameters(6).Value = CType(V_PRECIOV.Value,Single)
             Else
                 command.Parameters(6).Value = Global.System.DBNull.Value
             End If
             If (V_ESTADO1 Is Nothing) Then
                 command.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(7).Value = CType(V_ESTADO1, String)
+                command.Parameters(7).Value = CType(V_ESTADO1,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(8).Value Is Nothing) _
+            If ((command.Parameters(8).Value Is Nothing)  _
                         OrElse (command.Parameters(8).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(8).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(8).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_RECOGIDO(ByVal V_IDLUGAR As String, ByVal V_IDRECOGIDO As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(13), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_RECOGIDO(ByVal V_IDLUGAR As String, ByVal V_IDRECOGIDO As Global.System.Nullable(Of Decimal), ByVal V_ESTADO As String, ByRef V_ESTADO1 As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(13),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_IDLUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_IDLUGAR, String)
+                command.Parameters(0).Value = CType(V_IDLUGAR,String)
             End If
-            If (V_IDRECOGIDO.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDRECOGIDO.Value, Decimal)
+            If (V_IDRECOGIDO.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDRECOGIDO.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             If (V_ESTADO Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_ESTADO, String)
+                command.Parameters(2).Value = CType(V_ESTADO,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(3).Value Is Nothing) _
+            If ((command.Parameters(3).Value Is Nothing)  _
                         OrElse (command.Parameters(3).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO1 = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value, Decimal))
+                V_ESTADO1 = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_ESTADO_TIPO_PRODUCTO(ByVal V_IDPR_CATEGORIA As Global.System.Nullable(Of Decimal), ByVal V_IDPR_TIPO As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(14), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDPR_CATEGORIA.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDPR_CATEGORIA.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_ESTADO_TIPO_PRODUCTO(ByVal V_IDPR_CATEGORIA As Global.System.Nullable(Of Decimal), ByVal V_IDPR_TIPO As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(14),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDPR_CATEGORIA.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDPR_CATEGORIA.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (V_IDPR_TIPO.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDPR_TIPO.Value, Decimal)
+            If (V_IDPR_TIPO.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDPR_TIPO.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_NOMBRE, String)
+                command.Parameters(2).Value = CType(V_NOMBRE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(3).Value Is Nothing) _
+            If ((command.Parameters(3).Value Is Nothing)  _
                         OrElse (command.Parameters(3).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(3).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_LUGAR(ByVal V_ID_LUGAR As String, ByVal V_NOMBRE As String, ByVal V_DIRECCION As String, ByVal V_TELEFONO As String, ByVal V_TELEFONO1 As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(15), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_LUGAR(ByVal V_ID_LUGAR As String, ByVal V_NOMBRE As String, ByVal V_DIRECCION As String, ByVal V_TELEFONO As String, ByVal V_TELEFONO1 As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(15),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_ID_LUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_ID_LUGAR, String)
+                command.Parameters(0).Value = CType(V_ID_LUGAR,String)
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_NOMBRE, String)
+                command.Parameters(1).Value = CType(V_NOMBRE,String)
             End If
             If (V_DIRECCION Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_DIRECCION, String)
+                command.Parameters(2).Value = CType(V_DIRECCION,String)
             End If
             If (V_TELEFONO Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_TELEFONO, String)
+                command.Parameters(3).Value = CType(V_TELEFONO,String)
             End If
             If (V_TELEFONO1 Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_TELEFONO1, String)
+                command.Parameters(4).Value = CType(V_TELEFONO1,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(5).Value Is Nothing) _
+            If ((command.Parameters(5).Value Is Nothing)  _
                         OrElse (command.Parameters(5).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(5).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(5).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_NIVEL_CLIENTE(ByVal V_ID_CLIENTE As Global.System.Nullable(Of Decimal), ByVal V_NUEVO As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(16), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_ID_CLIENTE.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_ID_CLIENTE.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_NIVEL_CLIENTE(ByVal V_ID_CLIENTE As Global.System.Nullable(Of Decimal), ByVal V_NUEVO As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(16),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_ID_CLIENTE.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_ID_CLIENTE.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (V_NUEVO Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_NUEVO, String)
+                command.Parameters(1).Value = CType(V_NUEVO,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(2).Value Is Nothing) _
+            If ((command.Parameters(2).Value Is Nothing)  _
                         OrElse (command.Parameters(2).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_EDITAR_PLAN(ByVal V_IDCL_PLAN As Global.System.Nullable(Of Decimal), ByVal V_MES_MIN As Global.System.Nullable(Of Decimal), ByVal V_MES_MAX As Global.System.Nullable(Of Decimal), ByVal V_PORCENTAJE As Global.System.Nullable(Of Decimal), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(17), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDCL_PLAN.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDCL_PLAN.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_EDITAR_PLAN(ByVal V_IDCL_PLAN As Global.System.Nullable(Of Decimal), ByVal V_MES_MIN As Global.System.Nullable(Of Decimal), ByVal V_MES_MAX As Global.System.Nullable(Of Decimal), ByVal V_PORCENTAJE As Global.System.Nullable(Of Decimal), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(17),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDCL_PLAN.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDCL_PLAN.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (V_MES_MIN.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_MES_MIN.Value, Decimal)
+            If (V_MES_MIN.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_MES_MIN.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (V_MES_MAX.HasValue = True) Then
-                command.Parameters(2).Value = CType(V_MES_MAX.Value, Decimal)
+            If (V_MES_MAX.HasValue = true) Then
+                command.Parameters(2).Value = CType(V_MES_MAX.Value,Decimal)
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (V_PORCENTAJE.HasValue = True) Then
-                command.Parameters(3).Value = CType(V_PORCENTAJE.Value, Decimal)
+            If (V_PORCENTAJE.HasValue = true) Then
+                command.Parameters(3).Value = CType(V_PORCENTAJE.Value,Decimal)
             Else
                 command.Parameters(3).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(4).Value Is Nothing) _
+            If ((command.Parameters(4).Value Is Nothing)  _
                         OrElse (command.Parameters(4).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(4).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(4).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_CL_NIVEL(ByVal V_IDCL_NIVEL As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(18), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_CL_NIVEL(ByVal V_IDCL_NIVEL As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(18),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_IDCL_NIVEL Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_IDCL_NIVEL, String)
+                command.Parameters(0).Value = CType(V_IDCL_NIVEL,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(1).Value Is Nothing) _
+            If ((command.Parameters(1).Value Is Nothing)  _
                         OrElse (command.Parameters(1).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(1).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(1).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_CLIENTE( _
-                    ByVal V_CL_NIVEL As String, _
-                    ByVal V_DPI As String, _
-                    ByVal V_CEDULA As String, _
-                    ByVal V_NOMBRE As String, _
-                    ByVal V_APELLIDO As String, _
-                    ByVal V_EXTENDIDA As String, _
-                    ByVal V_BIENES As String, _
-                    ByVal V_NIT As String, _
-                    ByVal V_SEXO As String, _
-                    ByVal V_NACIONAL As String, _
-                    ByVal V_DIRECCION As String, _
-                    ByVal V_TELEFONO As String, _
-                    ByVal V_TELEFONO1 As String, _
-                    ByVal V_TELEFONO2 As String, _
-                    ByVal V_CONYUGUE As String, _
-                    ByVal V_FECHANAC As Global.System.Nullable(Of Date), _
-                    ByVal V_INGRESO As Global.System.Nullable(Of Decimal), _
-                    ByVal V_PUESTO As String, _
-                    ByVal V_IDCL_EMPRESA As Global.System.Nullable(Of Decimal), _
-                    ByVal V_E_NOMBRE As String, _
-                    ByVal V_E_DIRECCION As String, _
-                    ByVal V_E_TEL As String, _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_CLIENTE( _
+                    ByVal V_CL_NIVEL As String,  _
+                    ByVal V_DPI As String,  _
+                    ByVal V_CEDULA As String,  _
+                    ByVal V_NOMBRE As String,  _
+                    ByVal V_APELLIDO As String,  _
+                    ByVal V_EXTENDIDA As String,  _
+                    ByVal V_BIENES As String,  _
+                    ByVal V_NIT As String,  _
+                    ByVal V_SEXO As String,  _
+                    ByVal V_NACIONAL As String,  _
+                    ByVal V_DIRECCION As String,  _
+                    ByVal V_TELEFONO As String,  _
+                    ByVal V_TELEFONO1 As String,  _
+                    ByVal V_TELEFONO2 As String,  _
+                    ByVal V_CONYUGUE As String,  _
+                    ByVal V_FECHANAC As Global.System.Nullable(Of Date),  _
+                    ByVal V_INGRESO As Global.System.Nullable(Of Decimal),  _
+                    ByVal V_PUESTO As String,  _
+                    ByVal V_IDCL_EMPRESA As Global.System.Nullable(Of Decimal),  _
+                    ByVal V_E_NOMBRE As String,  _
+                    ByVal V_E_DIRECCION As String,  _
+                    ByVal V_E_TEL As String,  _
                     ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(19), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(19),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_CL_NIVEL Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_CL_NIVEL, String)
+                command.Parameters(0).Value = CType(V_CL_NIVEL,String)
             End If
             If (V_DPI Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_DPI, String)
+                command.Parameters(1).Value = CType(V_DPI,String)
             End If
             If (V_CEDULA Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_CEDULA, String)
+                command.Parameters(2).Value = CType(V_CEDULA,String)
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_NOMBRE, String)
+                command.Parameters(3).Value = CType(V_NOMBRE,String)
             End If
             If (V_APELLIDO Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_APELLIDO, String)
+                command.Parameters(4).Value = CType(V_APELLIDO,String)
             End If
             If (V_EXTENDIDA Is Nothing) Then
                 command.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(5).Value = CType(V_EXTENDIDA, String)
+                command.Parameters(5).Value = CType(V_EXTENDIDA,String)
             End If
             If (V_BIENES Is Nothing) Then
                 command.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(6).Value = CType(V_BIENES, String)
+                command.Parameters(6).Value = CType(V_BIENES,String)
             End If
             If (V_NIT Is Nothing) Then
                 command.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(7).Value = CType(V_NIT, String)
+                command.Parameters(7).Value = CType(V_NIT,String)
             End If
             If (V_SEXO Is Nothing) Then
                 command.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(8).Value = CType(V_SEXO, String)
+                command.Parameters(8).Value = CType(V_SEXO,String)
             End If
             If (V_NACIONAL Is Nothing) Then
                 command.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(9).Value = CType(V_NACIONAL, String)
+                command.Parameters(9).Value = CType(V_NACIONAL,String)
             End If
             If (V_DIRECCION Is Nothing) Then
                 command.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(10).Value = CType(V_DIRECCION, String)
+                command.Parameters(10).Value = CType(V_DIRECCION,String)
             End If
             If (V_TELEFONO Is Nothing) Then
                 command.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(11).Value = CType(V_TELEFONO, String)
+                command.Parameters(11).Value = CType(V_TELEFONO,String)
             End If
             If (V_TELEFONO1 Is Nothing) Then
                 command.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(12).Value = CType(V_TELEFONO1, String)
+                command.Parameters(12).Value = CType(V_TELEFONO1,String)
             End If
             If (V_TELEFONO2 Is Nothing) Then
                 command.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(13).Value = CType(V_TELEFONO2, String)
+                command.Parameters(13).Value = CType(V_TELEFONO2,String)
             End If
             If (V_CONYUGUE Is Nothing) Then
                 command.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(14).Value = CType(V_CONYUGUE, String)
+                command.Parameters(14).Value = CType(V_CONYUGUE,String)
             End If
-            If (V_FECHANAC.HasValue = True) Then
-                command.Parameters(15).Value = CType(V_FECHANAC.Value, Date)
+            If (V_FECHANAC.HasValue = true) Then
+                command.Parameters(15).Value = CType(V_FECHANAC.Value,Date)
             Else
                 command.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            If (V_INGRESO.HasValue = True) Then
-                command.Parameters(16).Value = CType(V_INGRESO.Value, Decimal)
+            If (V_INGRESO.HasValue = true) Then
+                command.Parameters(16).Value = CType(V_INGRESO.Value,Decimal)
             Else
                 command.Parameters(16).Value = Global.System.DBNull.Value
             End If
             If (V_PUESTO Is Nothing) Then
                 command.Parameters(17).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(17).Value = CType(V_PUESTO, String)
+                command.Parameters(17).Value = CType(V_PUESTO,String)
             End If
-            If (V_IDCL_EMPRESA.HasValue = True) Then
-                command.Parameters(18).Value = CType(V_IDCL_EMPRESA.Value, Decimal)
+            If (V_IDCL_EMPRESA.HasValue = true) Then
+                command.Parameters(18).Value = CType(V_IDCL_EMPRESA.Value,Decimal)
             Else
                 command.Parameters(18).Value = Global.System.DBNull.Value
             End If
             If (V_E_NOMBRE Is Nothing) Then
                 command.Parameters(19).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(19).Value = CType(V_E_NOMBRE, String)
+                command.Parameters(19).Value = CType(V_E_NOMBRE,String)
             End If
             If (V_E_DIRECCION Is Nothing) Then
                 command.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(20).Value = CType(V_E_DIRECCION, String)
+                command.Parameters(20).Value = CType(V_E_DIRECCION,String)
             End If
             If (V_E_TEL Is Nothing) Then
                 command.Parameters(21).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(21).Value = CType(V_E_TEL, String)
+                command.Parameters(21).Value = CType(V_E_TEL,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(22).Value Is Nothing) _
+            If ((command.Parameters(22).Value Is Nothing)  _
                         OrElse (command.Parameters(22).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(22).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(22).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_EMPLEADO( _
-                    ByVal V_IDLUGAR As String, _
-                    ByVal V_IDLU_PUESTO As Global.System.Nullable(Of Decimal), _
-                    ByVal V_DPI As String, _
-                    ByVal V_NOMBRE As String, _
-                    ByVal V_APELLIDO As String, _
-                    ByVal V_EXTENDIDA As String, _
-                    ByVal V_NIT As String, _
-                    ByVal V_SEXO As String, _
-                    ByVal V_DIRECCION As String, _
-                    ByVal V_TELEFONO As String, _
-                    ByVal V_CONYUGUE As String, _
-                    ByVal V_FECHANAC As Global.System.Nullable(Of Date), _
-                    ByVal V_USUARIO As String, _
-                    ByVal V_PASS As String, _
-                    ByVal V_SUELDO_BASE As Global.System.Nullable(Of Decimal), _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_EMPLEADO( _
+                    ByVal V_IDLUGAR As String,  _
+                    ByVal V_IDLU_PUESTO As Global.System.Nullable(Of Decimal),  _
+                    ByVal V_DPI As String,  _
+                    ByVal V_NOMBRE As String,  _
+                    ByVal V_APELLIDO As String,  _
+                    ByVal V_EXTENDIDA As String,  _
+                    ByVal V_NIT As String,  _
+                    ByVal V_SEXO As String,  _
+                    ByVal V_DIRECCION As String,  _
+                    ByVal V_TELEFONO As String,  _
+                    ByVal V_CONYUGUE As String,  _
+                    ByVal V_FECHANAC As Global.System.Nullable(Of Date),  _
+                    ByVal V_USUARIO As String,  _
+                    ByVal V_PASS As String,  _
+                    ByVal V_SUELDO_BASE As Global.System.Nullable(Of Decimal),  _
                     ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(20), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(20),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_IDLUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_IDLUGAR, String)
+                command.Parameters(0).Value = CType(V_IDLUGAR,String)
             End If
-            If (V_IDLU_PUESTO.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_IDLU_PUESTO.Value, Decimal)
+            If (V_IDLU_PUESTO.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_IDLU_PUESTO.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             If (V_DPI Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_DPI, String)
+                command.Parameters(2).Value = CType(V_DPI,String)
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_NOMBRE, String)
+                command.Parameters(3).Value = CType(V_NOMBRE,String)
             End If
             If (V_APELLIDO Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_APELLIDO, String)
+                command.Parameters(4).Value = CType(V_APELLIDO,String)
             End If
             If (V_EXTENDIDA Is Nothing) Then
                 command.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(5).Value = CType(V_EXTENDIDA, String)
+                command.Parameters(5).Value = CType(V_EXTENDIDA,String)
             End If
             If (V_NIT Is Nothing) Then
                 command.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(6).Value = CType(V_NIT, String)
+                command.Parameters(6).Value = CType(V_NIT,String)
             End If
             If (V_SEXO Is Nothing) Then
                 command.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(7).Value = CType(V_SEXO, String)
+                command.Parameters(7).Value = CType(V_SEXO,String)
             End If
             If (V_DIRECCION Is Nothing) Then
                 command.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(8).Value = CType(V_DIRECCION, String)
+                command.Parameters(8).Value = CType(V_DIRECCION,String)
             End If
             If (V_TELEFONO Is Nothing) Then
                 command.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(9).Value = CType(V_TELEFONO, String)
+                command.Parameters(9).Value = CType(V_TELEFONO,String)
             End If
             If (V_CONYUGUE Is Nothing) Then
                 command.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(10).Value = CType(V_CONYUGUE, String)
+                command.Parameters(10).Value = CType(V_CONYUGUE,String)
             End If
-            If (V_FECHANAC.HasValue = True) Then
-                command.Parameters(11).Value = CType(V_FECHANAC.Value, Date)
+            If (V_FECHANAC.HasValue = true) Then
+                command.Parameters(11).Value = CType(V_FECHANAC.Value,Date)
             Else
                 command.Parameters(11).Value = Global.System.DBNull.Value
             End If
             If (V_USUARIO Is Nothing) Then
                 command.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(12).Value = CType(V_USUARIO, String)
+                command.Parameters(12).Value = CType(V_USUARIO,String)
             End If
             If (V_PASS Is Nothing) Then
                 command.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(13).Value = CType(V_PASS, String)
+                command.Parameters(13).Value = CType(V_PASS,String)
             End If
-            If (V_SUELDO_BASE.HasValue = True) Then
-                command.Parameters(14).Value = CType(V_SUELDO_BASE.Value, Decimal)
+            If (V_SUELDO_BASE.HasValue = true) Then
+                command.Parameters(14).Value = CType(V_SUELDO_BASE.Value,Decimal)
             Else
                 command.Parameters(14).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(15).Value Is Nothing) _
+            If ((command.Parameters(15).Value Is Nothing)  _
                         OrElse (command.Parameters(15).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(15).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(15).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_LU_DEPOSITO(ByVal V_IDLUGAR As String, ByVal V_BOLETA As Global.System.Nullable(Of Decimal), ByVal V_TOTAL As Global.System.Nullable(Of Decimal), ByVal V_BANCO As String, ByVal V_FECHA As Global.System.Nullable(Of Date), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(21), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_LU_DEPOSITO(ByVal V_IDLUGAR As String, ByVal V_BOLETA As Global.System.Nullable(Of Decimal), ByVal V_TOTAL As Global.System.Nullable(Of Decimal), ByVal V_BANCO As String, ByVal V_FECHA As Global.System.Nullable(Of Date), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(21),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_IDLUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_IDLUGAR, String)
+                command.Parameters(0).Value = CType(V_IDLUGAR,String)
             End If
-            If (V_BOLETA.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_BOLETA.Value, Decimal)
+            If (V_BOLETA.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_BOLETA.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (V_TOTAL.HasValue = True) Then
-                command.Parameters(2).Value = CType(V_TOTAL.Value, Decimal)
+            If (V_TOTAL.HasValue = true) Then
+                command.Parameters(2).Value = CType(V_TOTAL.Value,Decimal)
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
             End If
             If (V_BANCO Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_BANCO, String)
+                command.Parameters(3).Value = CType(V_BANCO,String)
             End If
-            If (V_FECHA.HasValue = True) Then
-                command.Parameters(4).Value = CType(V_FECHA.Value, Date)
+            If (V_FECHA.HasValue = true) Then
+                command.Parameters(4).Value = CType(V_FECHA.Value,Date)
             Else
                 command.Parameters(4).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(5).Value Is Nothing) _
+            If ((command.Parameters(5).Value Is Nothing)  _
                         OrElse (command.Parameters(5).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(5).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(5).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_LU_GASTO(ByVal V_IDLUGAR As String, ByVal V_FACTURA As String, ByVal V_TOTAL As Global.System.Nullable(Of Decimal), ByVal V_CANTIDAD As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByVal V_FECHA As Global.System.Nullable(Of Date), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(22), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_LU_GASTO(ByVal V_IDLUGAR As String, ByVal V_FACTURA As String, ByVal V_TOTAL As Global.System.Nullable(Of Decimal), ByVal V_CANTIDAD As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByVal V_FECHA As Global.System.Nullable(Of Date), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(22),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_IDLUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_IDLUGAR, String)
+                command.Parameters(0).Value = CType(V_IDLUGAR,String)
             End If
             If (V_FACTURA Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_FACTURA, String)
+                command.Parameters(1).Value = CType(V_FACTURA,String)
             End If
-            If (V_TOTAL.HasValue = True) Then
-                command.Parameters(2).Value = CType(V_TOTAL.Value, Decimal)
+            If (V_TOTAL.HasValue = true) Then
+                command.Parameters(2).Value = CType(V_TOTAL.Value,Decimal)
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (V_CANTIDAD.HasValue = True) Then
-                command.Parameters(3).Value = CType(V_CANTIDAD.Value, Decimal)
+            If (V_CANTIDAD.HasValue = true) Then
+                command.Parameters(3).Value = CType(V_CANTIDAD.Value,Decimal)
             Else
                 command.Parameters(3).Value = Global.System.DBNull.Value
             End If
             If (V_DETALLE Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_DETALLE, String)
+                command.Parameters(4).Value = CType(V_DETALLE,String)
             End If
-            If (V_FECHA.HasValue = True) Then
-                command.Parameters(5).Value = CType(V_FECHA.Value, Date)
+            If (V_FECHA.HasValue = true) Then
+                command.Parameters(5).Value = CType(V_FECHA.Value,Date)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(6).Value Is Nothing) _
+            If ((command.Parameters(6).Value Is Nothing)  _
                         OrElse (command.Parameters(6).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(6).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(6).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_LU_PUESTO(ByVal V_IDLU_TIPO As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(23), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDLU_TIPO.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDLU_TIPO.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_LU_PUESTO(ByVal V_IDLU_TIPO As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(23),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDLU_TIPO.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDLU_TIPO.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (V_DETALLE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_DETALLE, String)
+                command.Parameters(1).Value = CType(V_DETALLE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(2).Value Is Nothing) _
+            If ((command.Parameters(2).Value Is Nothing)  _
                         OrElse (command.Parameters(2).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_LUGAR(ByVal V_IDLUGAR As String, ByVal V_NOMBRE As String, ByVal V_DIRECCION As String, ByVal V_TEL1 As String, ByVal V_TEL2 As String, ByVal V_IDLU_TIPO As Global.System.Nullable(Of Decimal), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(24), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_LUGAR(ByVal V_IDLUGAR As String, ByVal V_NOMBRE As String, ByVal V_DIRECCION As String, ByVal V_TEL1 As String, ByVal V_TEL2 As String, ByVal V_IDLU_TIPO As Global.System.Nullable(Of Decimal), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(24),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_IDLUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_IDLUGAR, String)
+                command.Parameters(0).Value = CType(V_IDLUGAR,String)
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_NOMBRE, String)
+                command.Parameters(1).Value = CType(V_NOMBRE,String)
             End If
             If (V_DIRECCION Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_DIRECCION, String)
+                command.Parameters(2).Value = CType(V_DIRECCION,String)
             End If
             If (V_TEL1 Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(V_TEL1, String)
+                command.Parameters(3).Value = CType(V_TEL1,String)
             End If
             If (V_TEL2 Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(V_TEL2, String)
+                command.Parameters(4).Value = CType(V_TEL2,String)
             End If
-            If (V_IDLU_TIPO.HasValue = True) Then
-                command.Parameters(5).Value = CType(V_IDLU_TIPO.Value, Decimal)
+            If (V_IDLU_TIPO.HasValue = true) Then
+                command.Parameters(5).Value = CType(V_IDLU_TIPO.Value,Decimal)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(6).Value Is Nothing) _
+            If ((command.Parameters(6).Value Is Nothing)  _
                         OrElse (command.Parameters(6).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(6).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(6).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_PR_CATEGORIA(ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(25), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_PR_CATEGORIA(ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(25),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_NOMBRE, String)
+                command.Parameters(0).Value = CType(V_NOMBRE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(1).Value Is Nothing) _
+            If ((command.Parameters(1).Value Is Nothing)  _
                         OrElse (command.Parameters(1).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(1).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(1).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_PR_INVENTARIO(ByVal V_IDLUGAR As String, ByVal V_MARCA As Global.System.Nullable(Of Decimal), ByVal V_MODELO As Global.System.Nullable(Of Decimal), ByVal V_NUEVA As Global.System.Nullable(Of Decimal), ByVal V_SEGUNDA As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(26), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_PR_INVENTARIO(ByVal V_IDLUGAR As String, ByVal V_MARCA As Global.System.Nullable(Of Decimal), ByVal V_MODELO As Global.System.Nullable(Of Decimal), ByVal V_NUEVA As Global.System.Nullable(Of Decimal), ByVal V_SEGUNDA As Global.System.Nullable(Of Decimal), ByVal V_DETALLE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(26),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_IDLUGAR Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_IDLUGAR, String)
+                command.Parameters(0).Value = CType(V_IDLUGAR,String)
             End If
-            If (V_MARCA.HasValue = True) Then
-                command.Parameters(1).Value = CType(V_MARCA.Value, Decimal)
+            If (V_MARCA.HasValue = true) Then
+                command.Parameters(1).Value = CType(V_MARCA.Value,Decimal)
             Else
                 command.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (V_MODELO.HasValue = True) Then
-                command.Parameters(2).Value = CType(V_MODELO.Value, Decimal)
+            If (V_MODELO.HasValue = true) Then
+                command.Parameters(2).Value = CType(V_MODELO.Value,Decimal)
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (V_NUEVA.HasValue = True) Then
-                command.Parameters(3).Value = CType(V_NUEVA.Value, Decimal)
+            If (V_NUEVA.HasValue = true) Then
+                command.Parameters(3).Value = CType(V_NUEVA.Value,Decimal)
             Else
                 command.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (V_SEGUNDA.HasValue = True) Then
-                command.Parameters(4).Value = CType(V_SEGUNDA.Value, Decimal)
+            If (V_SEGUNDA.HasValue = true) Then
+                command.Parameters(4).Value = CType(V_SEGUNDA.Value,Decimal)
             Else
                 command.Parameters(4).Value = Global.System.DBNull.Value
             End If
             If (V_DETALLE Is Nothing) Then
                 command.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(5).Value = CType(V_DETALLE, String)
+                command.Parameters(5).Value = CType(V_DETALLE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(6).Value Is Nothing) _
+            If ((command.Parameters(6).Value Is Nothing)  _
                         OrElse (command.Parameters(6).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(6).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(6).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_PR_MARCA(ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(27), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_PR_MARCA(ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(27),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(0).Value = CType(V_NOMBRE, String)
+                command.Parameters(0).Value = CType(V_NOMBRE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(1).Value Is Nothing) _
+            If ((command.Parameters(1).Value Is Nothing)  _
                         OrElse (command.Parameters(1).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(1).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(1).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_PR_MODELO(ByVal V_IDPR_MARCA As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByVal V_DETALLE As String, ByVal V_IDPR_CATEGORIA As Global.System.Nullable(Of Decimal), ByVal V_IDPR_TIPO As Global.System.Nullable(Of Decimal), ByVal V_PRECIOC As Global.System.Nullable(Of Single), ByVal V_PRECIOV As Global.System.Nullable(Of Single), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(28), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDPR_MARCA.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDPR_MARCA.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_PR_MODELO(ByVal V_IDPR_MARCA As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByVal V_DETALLE As String, ByVal V_IDPR_CATEGORIA As Global.System.Nullable(Of Decimal), ByVal V_IDPR_TIPO As Global.System.Nullable(Of Decimal), ByVal V_PRECIOC As Global.System.Nullable(Of Single), ByVal V_PRECIOV As Global.System.Nullable(Of Single), ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(28),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDPR_MARCA.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDPR_MARCA.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_NOMBRE, String)
+                command.Parameters(1).Value = CType(V_NOMBRE,String)
             End If
             If (V_DETALLE Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(V_DETALLE, String)
+                command.Parameters(2).Value = CType(V_DETALLE,String)
             End If
-            If (V_IDPR_CATEGORIA.HasValue = True) Then
-                command.Parameters(3).Value = CType(V_IDPR_CATEGORIA.Value, Decimal)
+            If (V_IDPR_CATEGORIA.HasValue = true) Then
+                command.Parameters(3).Value = CType(V_IDPR_CATEGORIA.Value,Decimal)
             Else
                 command.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (V_IDPR_TIPO.HasValue = True) Then
-                command.Parameters(4).Value = CType(V_IDPR_TIPO.Value, Decimal)
+            If (V_IDPR_TIPO.HasValue = true) Then
+                command.Parameters(4).Value = CType(V_IDPR_TIPO.Value,Decimal)
             Else
                 command.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (V_PRECIOC.HasValue = True) Then
-                command.Parameters(5).Value = CType(V_PRECIOC.Value, Single)
+            If (V_PRECIOC.HasValue = true) Then
+                command.Parameters(5).Value = CType(V_PRECIOC.Value,Single)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (V_PRECIOV.HasValue = True) Then
-                command.Parameters(6).Value = CType(V_PRECIOV.Value, Single)
+            If (V_PRECIOV.HasValue = true) Then
+                command.Parameters(6).Value = CType(V_PRECIOV.Value,Single)
             Else
                 command.Parameters(6).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(7).Value Is Nothing) _
+            If ((command.Parameters(7).Value Is Nothing)  _
                         OrElse (command.Parameters(7).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(7).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(7).Value,Decimal))
             End If
             Return returnValue
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-        Public Overridable Overloads Function SP_NUEVO_PR_TIPO(ByVal V_IDPR_CATEGORIA As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(29), Global.Oracle.ManagedDataAccess.Client.OracleCommand)
-            If (V_IDPR_CATEGORIA.HasValue = True) Then
-                command.Parameters(0).Value = CType(V_IDPR_CATEGORIA.Value, Decimal)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SP_NUEVO_PR_TIPO(ByVal V_IDPR_CATEGORIA As Global.System.Nullable(Of Decimal), ByVal V_NOMBRE As String, ByRef V_ESTADO As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = CType(Me.CommandCollection(29),Global.Oracle.ManagedDataAccess.Client.OracleCommand)
+            If (V_IDPR_CATEGORIA.HasValue = true) Then
+                command.Parameters(0).Value = CType(V_IDPR_CATEGORIA.Value,Decimal)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (V_NOMBRE Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(V_NOMBRE, String)
+                command.Parameters(1).Value = CType(V_NOMBRE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open()
+                command.Connection.Open
             End If
             Dim returnValue As Integer
-            Try
+            Try 
                 returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close()
+                    command.Connection.Close
                 End If
             End Try
-            If ((command.Parameters(2).Value Is Nothing) _
+            If ((command.Parameters(2).Value Is Nothing)  _
                         OrElse (command.Parameters(2).Value.GetType Is GetType(Global.System.DBNull))) Then
                 V_ESTADO = New Global.System.Nullable(Of Decimal)()
             Else
-                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value, Decimal))
+                V_ESTADO = New Global.System.Nullable(Of Decimal)(CType(command.Parameters(2).Value,Decimal))
             End If
             Return returnValue
         End Function
     End Class
-
+    
     '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
-     Global.System.ComponentModel.ToolboxItem(True), _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerDesigner, Microsoft.VSD" & _
-        "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapterManager")> _
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerDesigner, Microsoft.VSD"& _ 
+        "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapterManager")>  _
     Partial Public Class TableAdapterManager
         Inherits Global.System.ComponentModel.Component
-
+        
         Private _updateOrder As UpdateOrderOption
-
+        
         Private _cL_PLANTableAdapter As CL_PLANTableAdapter
-
+        
         Private _backupDataSetBeforeUpdate As Boolean
-
+        
         Private _connection As Global.System.Data.IDbConnection
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property UpdateOrder() As UpdateOrderOption
             Get
                 Return Me._updateOrder
             End Get
-            Set(value As UpdateOrderOption)
+            Set
                 Me._updateOrder = value
             End Set
         End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" & _
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" & _
-            "a", "System.Drawing.Design.UITypeEditor")> _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property CL_PLANTableAdapter() As CL_PLANTableAdapter
             Get
                 Return Me._cL_PLANTableAdapter
             End Get
-            Set(value As CL_PLANTableAdapter)
+            Set
                 Me._cL_PLANTableAdapter = value
             End Set
         End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
                 Return Me._backupDataSetBeforeUpdate
             End Get
-            Set(value As Boolean)
+            Set
                 Me._backupDataSetBeforeUpdate = value
             End Set
         End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Browsable(False)> _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
         Public Property Connection() As Global.System.Data.IDbConnection
             Get
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._cL_PLANTableAdapter) Is Nothing) _
+                If ((Not (Me._cL_PLANTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._cL_PLANTableAdapter.Connection) Is Nothing)) Then
                     Return Me._cL_PLANTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
-            Set(value As Global.System.Data.IDbConnection)
+            Set
                 Me._connection = value
             End Set
         End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
-         Global.System.ComponentModel.Browsable(False)> _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
@@ -6838,18 +10093,18 @@ Namespace _DSTableAdapters
                 Return count
             End Get
         End Property
-
+        
         '''<summary>
         '''Update rows in top-down order.
         '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As _DS, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._cL_PLANTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.CL_PLAN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing) _
+                If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._cL_PLANTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
@@ -6857,17 +10112,17 @@ Namespace _DSTableAdapters
             End If
             Return result
         End Function
-
+        
         '''<summary>
         '''Insert rows in top-down order.
         '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As _DS, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._cL_PLANTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.CL_PLAN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing) _
+                If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._cL_PLANTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
@@ -6875,17 +10130,17 @@ Namespace _DSTableAdapters
             End If
             Return result
         End Function
-
+        
         '''<summary>
         '''Delete rows in bottom-up order.
         '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As _DS, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._cL_PLANTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.CL_PLAN.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing) _
+                If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._cL_PLANTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
@@ -6893,18 +10148,18 @@ Namespace _DSTableAdapters
             End If
             Return result
         End Function
-
+        
         '''<summary>
         '''Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
         '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function GetRealUpdatedRows(ByVal updatedRows() As Global.System.Data.DataRow, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Global.System.Data.DataRow()
-            If ((updatedRows Is Nothing) _
+            If ((updatedRows Is Nothing)  _
                         OrElse (updatedRows.Length < 1)) Then
                 Return updatedRows
             End If
-            If ((allAddedRows Is Nothing) _
+            If ((allAddedRows Is Nothing)  _
                         OrElse (allAddedRows.Count < 1)) Then
                 Return updatedRows
             End If
@@ -6912,48 +10167,48 @@ Namespace _DSTableAdapters
             Dim i As Integer = 0
             Do While (i < updatedRows.Length)
                 Dim row As Global.System.Data.DataRow = updatedRows(i)
-                If (allAddedRows.Contains(row) = False) Then
+                If (allAddedRows.Contains(row) = false) Then
                     realUpdatedRows.Add(row)
                 End If
                 i = (i + 1)
             Loop
             Return realUpdatedRows.ToArray
         End Function
-
+        
         '''<summary>
         '''Update all changes to the dataset.
         '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overridable Function UpdateAll(ByVal dataSet As _DS) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
-            If (dataSet.HasChanges = False) Then
+            If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._cL_PLANTableAdapter) Is Nothing) _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._cL_PLANTableAdapter.Connection) = False)) Then
-                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" & _
+            If ((Not (Me._cL_PLANTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._cL_PLANTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
-                Throw New Global.System.ApplicationException("TableAdapterManager no contiene información de conexión. Establezca cada propieda" & _
+                Throw New Global.System.ApplicationException("TableAdapterManager no contiene información de conexión. Establezca cada propieda"& _ 
                         "d TableAdapterManager TableAdapter en una instancia TableAdapter válida.")
             End If
-            Dim workConnOpened As Boolean = False
-            If ((workConnection.State And Global.System.Data.ConnectionState.Broken) _
+            Dim workConnOpened As Boolean = false
+            If ((workConnection.State And Global.System.Data.ConnectionState.Broken)  _
                         = Global.System.Data.ConnectionState.Broken) Then
-                workConnection.Close()
+                workConnection.Close
             End If
             If (workConnection.State = Global.System.Data.ConnectionState.Closed) Then
-                workConnection.Open()
-                workConnOpened = True
+                workConnection.Open
+                workConnOpened = true
             End If
             Dim workTransaction As Global.System.Data.IDbTransaction = workConnection.BeginTransaction
             If (workTransaction Is Nothing) Then
-                Throw New Global.System.ApplicationException("La transacción no puede comenzar. La conexión de datos actual no es compatible co" & _
+                Throw New Global.System.ApplicationException("La transacción no puede comenzar. La conexión de datos actual no es compatible co"& _ 
                         "n las transacciones o el estado actual no permite que comience la transacción.")
             End If
             Dim allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow) = New Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)()
@@ -6966,15 +10221,15 @@ Namespace _DSTableAdapters
                 backupDataSet = New Global.System.Data.DataSet()
                 backupDataSet.Merge(dataSet)
             End If
-            Try
+            Try 
                 '---- Prepare for update -----------
                 '
                 If (Not (Me._cL_PLANTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._cL_PLANTableAdapter, Me._cL_PLANTableAdapter.Connection)
-                    Me._cL_PLANTableAdapter.Connection = CType(workConnection, Global.Oracle.ManagedDataAccess.Client.OracleConnection)
-                    Me._cL_PLANTableAdapter.Transaction = CType(workTransaction, Global.Oracle.ManagedDataAccess.Client.OracleTransaction)
+                    Me._cL_PLANTableAdapter.Connection = CType(workConnection,Global.Oracle.ManagedDataAccess.Client.OracleConnection)
+                    Me._cL_PLANTableAdapter.Transaction = CType(workTransaction,Global.Oracle.ManagedDataAccess.Client.OracleTransaction)
                     If Me._cL_PLANTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._cL_PLANTableAdapter.Adapter.AcceptChangesDuringUpdate = False
+                        Me._cL_PLANTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._cL_PLANTableAdapter.Adapter)
                     End If
                 End If
@@ -6992,14 +10247,14 @@ Namespace _DSTableAdapters
                 '
                 '---- Commit updates -----------
                 '
-                workTransaction.Commit()
+                workTransaction.Commit
                 If (0 < allAddedRows.Count) Then
                     Dim rows((allAddedRows.Count) - 1) As Global.System.Data.DataRow
                     allAddedRows.CopyTo(rows)
                     Dim i As Integer = 0
                     Do While (i < rows.Length)
                         Dim row As Global.System.Data.DataRow = rows(i)
-                        row.AcceptChanges()
+                        row.AcceptChanges
                         i = (i + 1)
                     Loop
                 End If
@@ -7009,16 +10264,16 @@ Namespace _DSTableAdapters
                     Dim i As Integer = 0
                     Do While (i < rows.Length)
                         Dim row As Global.System.Data.DataRow = rows(i)
-                        row.AcceptChanges()
+                        row.AcceptChanges
                         i = (i + 1)
                     Loop
                 End If
             Catch ex As Global.System.Exception
-                workTransaction.Rollback()
+                workTransaction.Rollback
                 '---- Restore the dataset -----------
                 If Me.BackupDataSetBeforeUpdate Then
                     Global.System.Diagnostics.Debug.Assert((Not (backupDataSet) Is Nothing))
-                    dataSet.Clear()
+                    dataSet.Clear
                     dataSet.Merge(backupDataSet)
                 Else
                     If (0 < allAddedRows.Count) Then
@@ -7027,8 +10282,8 @@ Namespace _DSTableAdapters
                         Dim i As Integer = 0
                         Do While (i < rows.Length)
                             Dim row As Global.System.Data.DataRow = rows(i)
-                            row.AcceptChanges()
-                            row.SetAdded()
+                            row.AcceptChanges
+                            row.SetAdded
                             i = (i + 1)
                         Loop
                     End If
@@ -7036,10 +10291,10 @@ Namespace _DSTableAdapters
                 Throw ex
             Finally
                 If workConnOpened Then
-                    workConnection.Close()
+                    workConnection.Close
                 End If
                 If (Not (Me._cL_PLANTableAdapter) Is Nothing) Then
-                    Me._cL_PLANTableAdapter.Connection = CType(revertConnections(Me._cL_PLANTableAdapter), Global.Oracle.ManagedDataAccess.Client.OracleConnection)
+                    Me._cL_PLANTableAdapter.Connection = CType(revertConnections(Me._cL_PLANTableAdapter),Global.Oracle.ManagedDataAccess.Client.OracleConnection)
                     Me._cL_PLANTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
@@ -7048,63 +10303,63 @@ Namespace _DSTableAdapters
                     Dim i As Integer = 0
                     Do While (i < adapters.Length)
                         Dim adapter As Global.System.Data.Common.DataAdapter = adapters(i)
-                        adapter.AcceptChangesDuringUpdate = True
+                        adapter.AcceptChangesDuringUpdate = true
                         i = (i + 1)
                     Loop
                 End If
             End Try
             Return result
         End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overridable Sub SortSelfReferenceRows(ByVal rows() As Global.System.Data.DataRow, ByVal relation As Global.System.Data.DataRelation, ByVal childFirst As Boolean)
             Global.System.Array.Sort(Of Global.System.Data.DataRow)(rows, New SelfReferenceComparer(relation, childFirst))
         End Sub
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overridable Function MatchTableAdapterConnection(ByVal inputConnection As Global.System.Data.IDbConnection) As Boolean
             If (Not (Me._connection) Is Nothing) Then
-                Return True
+                Return true
             End If
-            If ((Me.Connection Is Nothing) _
+            If ((Me.Connection Is Nothing)  _
                         OrElse (inputConnection Is Nothing)) Then
-                Return True
+                Return true
             End If
             If String.Equals(Me.Connection.ConnectionString, inputConnection.ConnectionString, Global.System.StringComparison.Ordinal) Then
-                Return True
+                Return true
             End If
-            Return False
+            Return false
         End Function
-
+        
         '''<summary>
         '''Update Order Option
         '''</summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Enum UpdateOrderOption
-
+            
             InsertUpdateDelete = 0
-
+            
             UpdateInsertDelete = 1
         End Enum
-
+        
         '''<summary>
         '''Used to sort self-referenced table's rows
         '''</summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Class SelfReferenceComparer
             Inherits Object
             Implements Global.System.Collections.Generic.IComparer(Of Global.System.Data.DataRow)
-
+            
             Private _relation As Global.System.Data.DataRelation
-
+            
             Private _childFirst As Integer
-
-            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+            
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
             Friend Sub New(ByVal relation As Global.System.Data.DataRelation, ByVal childFirst As Boolean)
-                MyBase.New()
+                MyBase.New
                 Me._relation = relation
                 If childFirst Then
                     Me._childFirst = -1
@@ -7112,9 +10367,9 @@ Namespace _DSTableAdapters
                     Me._childFirst = 1
                 End If
             End Sub
-
-            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+            
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
             Private Function GetRoot(ByVal row As Global.System.Data.DataRow, ByRef distance As Integer) As Global.System.Data.DataRow
                 Global.System.Diagnostics.Debug.Assert((Not (row) Is Nothing))
                 Dim root As Global.System.Data.DataRow = row
@@ -7125,8 +10380,8 @@ Namespace _DSTableAdapters
 
                 Dim parent As Global.System.Data.DataRow = row.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.[Default])
 
-                Do While ((Not (parent) Is Nothing) _
-                            AndAlso (traversedRows.ContainsKey(parent) = False))
+                Do While ((Not (parent) Is Nothing)  _
+                            AndAlso (traversedRows.ContainsKey(parent) = false))
                     distance = (distance + 1)
                     root = parent
                     traversedRows(parent) = parent
@@ -7135,12 +10390,12 @@ Namespace _DSTableAdapters
                 Loop
 
                 If (distance = 0) Then
-                    traversedRows.Clear()
+                    traversedRows.Clear
                     traversedRows(row) = row
                     parent = row.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.Original)
 
-                    Do While ((Not (parent) Is Nothing) _
-                                AndAlso (traversedRows.ContainsKey(parent) = False))
+                    Do While ((Not (parent) Is Nothing)  _
+                                AndAlso (traversedRows.ContainsKey(parent) = false))
                         distance = (distance + 1)
                         root = parent
                         traversedRows(parent) = parent
@@ -7151,9 +10406,9 @@ Namespace _DSTableAdapters
 
                 Return root
             End Function
-
-            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+            
+            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
             Public Function Compare(ByVal row1 As Global.System.Data.DataRow, ByVal row2 As Global.System.Data.DataRow) As Integer Implements Global.System.Collections.Generic.IComparer(Of Global.System.Data.DataRow).Compare
                 If Object.ReferenceEquals(row1, row2) Then
                     Return 0
@@ -7174,7 +10429,7 @@ Namespace _DSTableAdapters
                 If Object.ReferenceEquals(root1, root2) Then
                     Return (Me._childFirst * distance1.CompareTo(distance2))
                 Else
-                    Global.System.Diagnostics.Debug.Assert(((Not (root1.Table) Is Nothing) _
+                    Global.System.Diagnostics.Debug.Assert(((Not (root1.Table) Is Nothing)  _
                                     AndAlso (Not (root2.Table) Is Nothing)))
                     If (root1.Table.Rows.IndexOf(root1) < root2.Table.Rows.IndexOf(root2)) Then
                         Return -1

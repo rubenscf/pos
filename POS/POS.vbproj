@@ -179,17 +179,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlFacturar.Designer.vb">
-      <DependentUpon>ctrlFacturar.vb</DependentUpon>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="ctrlActualizaClientevb.Designer.vb">
+      <DependentUpon>ctrlActualizaClientevb.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlFacturar.vb">
+    <Compile Include="ctrlActualizaClientevb.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmBuscarEnStock.Designer.vb">
-      <DependentUpon>frmBuscarEnStock.vb</DependentUpon>
+    <Compile Include="VB\ctrlGestionContratos.Designer.vb">
+      <DependentUpon>ctrlGestionContratos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscarEnStock.vb">
-      <SubType>Form</SubType>
+    <Compile Include="VB\ctrlGestionContratos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlNuevoCredito.Designer.vb">
+      <DependentUpon>ctrlNuevoCredito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlNuevoCredito.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlFacturar.Designer.vb">
+      <DependentUpon>ctrlFacturar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlFacturar.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="VB\ctrlGasto.Designer.vb">
       <DependentUpon>ctrlGasto.vb</DependentUpon>
@@ -337,6 +350,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Include="VB\PantallaPresentacion.Designer.vb">
+      <DependentUpon>PantallaPresentacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\PantallaPresentacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="_DS.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -347,11 +366,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ctrlFacturar.resx">
-      <DependentUpon>ctrlFacturar.vb</DependentUpon>
+    <EmbeddedResource Include="ctrlActualizaClientevb.resx">
+      <DependentUpon>ctrlActualizaClientevb.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscarEnStock.resx">
-      <DependentUpon>frmBuscarEnStock.vb</DependentUpon>
+    <EmbeddedResource Include="VB\ctrlGestionContratos.resx">
+      <DependentUpon>ctrlGestionContratos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlNuevoCredito.resx">
+      <DependentUpon>ctrlNuevoCredito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlFacturar.resx">
+      <DependentUpon>ctrlFacturar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlGasto.resx">
       <DependentUpon>ctrlGasto.vb</DependentUpon>
@@ -424,6 +449,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VB\PantallaPresentacion.resx">
+      <DependentUpon>PantallaPresentacion.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -471,6 +499,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cloudangel.ico" />
+    <None Include="Resources\contrat %282%29.png" />
+    <None Include="Resources\cart %287%29.png" />
+    <None Include="Resources\pantallaPrincipal.jpg" />
+    <None Include="Resources\sales %283%29.png" />
+    <None Include="Resources\contrat %2825%29.png" />
+    <None Include="Resources\contrat %2839%29.png" />
+    <None Include="Resources\contrat %2827%29.png" />
+    <None Include="Resources\4380.png" />
+    <None Include="Resources\12130.png" />
+    <None Include="Resources\6420.png" />
     <None Include="Resources\inventary %2826%29.png" />
     <None Include="Resources\barcode %2829%29.png" />
     <None Include="Resources\8430.png" />

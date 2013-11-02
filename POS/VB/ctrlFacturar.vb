@@ -10,11 +10,7 @@ Public Class ctrlFacturar
     Dim cnivel As String
     Dim idcliente As Decimal
 
-    Private Sub ctrlFacturar_Load(sender As Object, e As EventArgs) Handles Me.Load
-        lbSerie.Text = frmMain.serie
-       
-    End Sub
-
+    
 
 
     Private Sub txNit_LostFocus(sender As Object, e As EventArgs) Handles txNit.LostFocus
@@ -262,7 +258,7 @@ Public Class ctrlFacturar
         End If
     End Sub
 
-    Private Sub txEfectivo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txEfectivo.KeyPress
+    Private Sub txEfectivo_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf e.KeyChar = "." Then
@@ -289,7 +285,7 @@ Public Class ctrlFacturar
             If cant >= Val(lbStock.Text) Then
                 _ESTADO("No puede sobrepasar la cantidad en stock", frmMain.lbEstado)
             Else
-                dgD.Rows.Add(vmarca, vmodelo, lbCodigo.Text, lbMarca.Text, lbModelo.Text, vdetalle, LbPrecioU.Text, txCantidad.Value, lbSubtotal.Text)
+                dgD.Rows.Add(vmarca, vmodelo, lbCodigo.Text, lbMarca.Text, lbModelo.Text, vdetalle, lbSubtotal.Text)
                 btGuardar.Enabled = True
                 txCantidad.Value = 1
                 btAgregarLista.Enabled = False
@@ -310,14 +306,18 @@ Public Class ctrlFacturar
         End Try
     End Sub
     Sub resumen()
+        Dim desc As Double
         Dim t As Double = 0
         Dim c As Integer = 0
         For Each row As DataGridViewRow In dgD.Rows
-            t += CDbl(row.Cells(8).Value)
-            c += CInt(row.Cells(7).Value)
+            t += CDbl(row.Cells(6).Value)
+            ' c += CInt(row.Cells(7).Value)
         Next
-        lbTotal.Text = t
-        lbNarticulo.Text = c
+        desc = txDescuento.Value / 100
+        lbDscto.Text = desc * t
+        lbSt.Text = t
+        lbTotal.Text = t - Val(lbDscto.Text)
+        lbNarticulo.Text = dgD.RowCount
     End Sub
     Private Sub btQuitarLista_Click(sender As Object, e As EventArgs) Handles btQuitarLista.Click
         If dgD.RowCount > 0 Then
@@ -335,133 +335,98 @@ Public Class ctrlFacturar
         End If
     End Sub
 
-    Private Sub txEfectivo_LostFocus(sender As Object, e As EventArgs) Handles txEfectivo.LostFocus
-        Dim t As Double
-        t = Val(txEfectivo.Text) - Val(lbTotal.Text)
-        If t < 0 Then
-            lbCambio.ForeColor = Color.Red
-        Else
-            lbCambio.ForeColor = Color.Green
-        End If
-        lbCambio.Text = t
-    End Sub
+    
 
 
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         
-            If txfactura.Text = "" Then
-                _ESTADO("Ingrese un numero de documento valido...", frmMain.lbEstado)
-                txfactura.Focus()
-            Else
-                Dim v As Boolean = True
-                If dgD.Rows.Count > 0 Then
+           
+        Dim v As Boolean = True
+        If dgD.Rows.Count > 0 Then
+            For Each f As DataGridViewRow In dgD.Rows
+                If f.Cells(7).Value = "" Then
+                    _ESTADO("Porfavor ingrese el numero de serie para el producto en lista de compra", frmMain.lbEstado)
+                    f.Selected = True
+                    v = False
+                    Exit For
+                End If
+            Next
 
-                    If Val(txEfectivo.Text) >= Val(lbTotal.Text) And txNit.Text <> "" Then
+            If v = True Then
+
+                Dim resp As Integer
+                resp = MsgBox("Esta segur@ que desea enviar a caja esta venta? ", MsgBoxStyle.YesNo)
+                If resp = vbYes Then
+                    frmMain._cmd = New OracleCommand()
+                    Dim trans As OracleTransaction
+
+
+                    Dim lugarActual As String = frmMain.serie
+                    Dim query As String
+                    Dim s As OracleDataReader
+                    frmMain._cnn.Open()
+                    trans = frmMain._cnn.BeginTransaction(IsolationLevel.ReadCommitted)
+                    frmMain._cmd.Transaction = trans
+                    frmMain._cmd.Connection = frmMain._cnn
+                    Try
+
+                        frmMain._cmd.CommandText = "INSERT INTO VE_FACTURA(idlugar, idfactura, idcliente, idempleado, fecha, total,descuento, estado ) VALUES('" &
+                            frmMain.serie & "',SEQ_" & frmMain.serie & "_IDFACTURA.nextval,'" & idcliente & "', '" & frmMain.idempleado & "', sysdate, '" & lbTotal.Text & "',  '" & lbDscto.Text & "','FSO')"
+                        frmMain._cmd.ExecuteNonQuery()
+
+                        frmMain._cmd.CommandText = "select SEQ_" & frmMain.serie & "_IDFACTURA.currval from dual"
+                        s = frmMain._cmd.ExecuteReader()
+                        Dim iden As Decimal
+                        While s.Read
+                            iden = s.GetDecimal(0)
+                        End While
+                        s.Close()
 
                         For Each f As DataGridViewRow In dgD.Rows
-                            If f.Cells(9).Value = "" Then
-                                _ESTADO("Porfavor ingrese el numero de serie para el producto en lista de compra", frmMain.lbEstado)
-                                f.Selected = True
-                                v = False
-                                Exit For
-                            End If
+                            query = " INSERT INTO VE_FA_DETALLE(idlugar, idfactura, idpr_marca, idpr_modelo, no_serie, cantidad, subtotal)" &
+                                                  "VALUES('" & frmMain.serie & "', '" & iden & "','" & f.Cells(0).Value & "','" & f.Cells(1).Value & "', '" & f.Cells(7).Value & "', '1', '" & f.Cells(6).Value & "')"
+                            frmMain._cmd.CommandText = query
+                            frmMain._cmd.ExecuteNonQuery()
                         Next
 
-                        If v = True Then
+                        trans.Commit()
 
-                        Dim resp As Integer
-                        resp = MsgBox("Esta segur@ que desea guardar el registro de factura de esta venta? ", MsgBoxStyle.YesNo)
-                        If resp = vbYes Then
-                            frmMain._cmd = New OracleCommand()
-                            Dim trans As OracleTransaction
+                        dgD.Rows.Clear()
+                        txNit.Text = "c/f"
+                        lbTotal.Text = "0.0"
+                        lbSt.Text = "0"
+                        lbNarticulo.Text = "0"
 
-
-                            Dim lugarActual As String = frmMain.serie
-                            Dim query As String
-                            Dim s As OracleDataReader
-                            frmMain._cnn.Open()
-                            trans = frmMain._cnn.BeginTransaction(IsolationLevel.ReadCommitted)
-                            frmMain._cmd.Transaction = trans
-                            frmMain._cmd.Connection = frmMain._cnn
-                            Try
-
-                                frmMain._cmd.CommandText = "INSERT INTO VE_FACTURA(idlugar, idfactura, idcliente, idempleado, fecha, total, estado ) VALUES('" &
-                                    frmMain.serie & "','" & txfactura.Text & "','" & idcliente & "', '" & frmMain.idempleado & "', sysdate, '" & lbTotal.Text & "', 'FCA')"
-                                frmMain._cmd.ExecuteNonQuery()
-
-                                'frmMain._cmd.CommandText = "select SEQ_" & frmMain.serie & "_IDENVIO.currval from dual"
-                                's = frmMain._cmd.ExecuteReader()
-
-                                'While s.Read
-                                '    iden = s.GetDecimal(0)
-                                'End While
-                                's.Close()
-
-                                For Each f As DataGridViewRow In dgD.Rows
-                                    query = " INSERT INTO VE_FA_DETALLE(idlugar, idfactura, idpr_marca, idpr_modelo, no_serie, cantidad, subtotal)" &
-                                                          "VALUES('" & frmMain.serie & "', '" & txfactura.Text & "','" & f.Cells(0).Value & "','" & f.Cells(1).Value & "', '" & f.Cells(9).Value & "', '1', '" & f.Cells(8).Value & "')"
-                                    frmMain._cmd.CommandText = query
-                                    frmMain._cmd.ExecuteNonQuery()
-
-                                    query = "UPDATE  PR_INVENTARIO SET nueva=nueva-1 where idlugar = '" & frmMain.serie & "' and idpr_marca = '" & f.Cells(0).Value & "' and idpr_modelo = '" & f.Cells(1).Value & "'"
-                                    frmMain._cmd.CommandText = query
-                                    frmMain._cmd.ExecuteNonQuery()
-
-
-                                Next
-
-                                trans.Commit()
-
-                                dgD.Rows.Clear()
-                                txNit.Text = "c/f"
-                                lbTotal.Text = "0.0"
-                                txfactura.Text = ""
-                                lbNarticulo.Text = "0"
-                                txEfectivo.Text = "0.0"
-                                lbCambio.Text = "0.0"
-
-                                _ESTADO("Transacion Guardada... ", frmMain.lbEstado)
-                            Catch ex As Exception
-                                trans.Rollback()
-                                _ESTADO(ex.Message, frmMain.lbEstado)
-                            Finally
-                                frmMain._cnn.Close()
-                            End Try
-                        End If
-                    End If
-                Else
-                    _ESTADO("El efectivo no puede ser menor que el valor total de la factura...", frmMain.lbEstado)
-                    txEfectivo.Focus()
-                    txEfectivo.SelectAll()
+                        _ESTADO("Transaccion Completada.. ", frmMain.lbEstado)
+                    Catch ex As Exception
+                        trans.Rollback()
+                        _ESTADO(ex.Message, frmMain.lbEstado)
+                    Finally
+                        frmMain._cnn.Close()
+                    End Try
                 End If
+            End If
             Else
-                _ESTADO("No hay productos que facturar...", frmMain.lbEstado)
-            End If
-            End If
+            _ESTADO("No hay productos que facturar...", frmMain.lbEstado)
+        End If
 
-    End Sub
 
-    Private Sub txfactura_LostFocus(sender As Object, e As EventArgs) Handles txfactura.LostFocus
-        Try
-            frmMain._cnn.Open()
-            Dim query As String = "select idfactura from ve_factura where idlugar = '" & frmMain.serie & "' and idfactura= '" & txfactura.Text & "'"
-            frmMain._cmd = New OracleCommand(query, frmMain._cnn)
-            Dim r As OracleDataReader = frmMain._cmd.ExecuteReader()
-
-            If r.HasRows Then
-                _ESTADO("Este numero de factura ya fue creado con anterioridad verifique su informacion.", frmMain.lbEstado)
-                txfactura.Focus()
-                txfactura.SelectAll()
-            Else
-                _ESTADO("Correcto", frmMain.lbEstado)
-            End If
-        Catch ex As Exception
-            _ESTADO(ex.Message.ToString, frmMain.lbEstado)
-        Finally
-            frmMain._cnn.Close()
-        End Try
     End Sub
 
    
+
+   
+    Private Sub txDescuento_ValueChanged(sender As Object, e As EventArgs) Handles txDescuento.ValueChanged
+        resumen()
+    End Sub
+
+    Private Sub btImprimir_Click(sender As Object, e As EventArgs) Handles btImprimir.Click
+        dgD.Rows.Clear()
+        txNit.Text = "c/f"
+        lbTotal.Text = "0.0"
+        lbSt.Text = "0"
+        lbNarticulo.Text = "0"
+        txDescuento.Value = 0
+    End Sub
 End Class

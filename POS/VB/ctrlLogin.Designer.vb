@@ -24,6 +24,7 @@ Partial Class ctrlLogin
     Private Sub InitializeComponent()
         Me.spltC = New System.Windows.Forms.SplitContainer()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ButtonX1 = New DevComponents.DotNetBar.ButtonX()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btEntrar = New DevComponents.DotNetBar.ButtonX()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -31,7 +32,6 @@ Partial Class ctrlLogin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txUsuario = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.ReflectionLabel2 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
-        Me.ButtonX1 = New DevComponents.DotNetBar.ButtonX()
         CType(Me.spltC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.spltC.Panel1.SuspendLayout()
         Me.spltC.Panel2.SuspendLayout()
@@ -77,6 +77,20 @@ Partial Class ctrlLogin
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'ButtonX1
+        '
+        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonX1.Image = Global.POS.My.Resources.Resources._3720
+        Me.ButtonX1.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.ButtonX1.Location = New System.Drawing.Point(178, 286)
+        Me.ButtonX1.Name = "ButtonX1"
+        Me.ButtonX1.Size = New System.Drawing.Size(90, 47)
+        Me.ButtonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010
+        Me.ButtonX1.TabIndex = 25
+        Me.ButtonX1.Text = "Salir"
         '
         'PictureBox3
         '
@@ -171,28 +185,16 @@ Partial Class ctrlLogin
         Me.ReflectionLabel2.TabIndex = 16
         Me.ReflectionLabel2.Text = "<font size=""+6"">Ingresar al <font color=""#ffffff"">Sistema</font></font>"
         '
-        'ButtonX1
-        '
-        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.ButtonX1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonX1.Image = Global.POS.My.Resources.Resources._3720
-        Me.ButtonX1.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.ButtonX1.Location = New System.Drawing.Point(178, 286)
-        Me.ButtonX1.Name = "ButtonX1"
-        Me.ButtonX1.Size = New System.Drawing.Size(90, 47)
-        Me.ButtonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010
-        Me.ButtonX1.TabIndex = 25
-        Me.ButtonX1.Text = "Salir"
-        '
         'ctrlLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.BackgroundImage = Global.POS.My.Resources.Resources.cloudbg
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.spltC)
+        Me.DoubleBuffered = True
+        Me.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.Name = "ctrlLogin"
         Me.Size = New System.Drawing.Size(935, 443)
         Me.spltC.Panel1.ResumeLayout(False)

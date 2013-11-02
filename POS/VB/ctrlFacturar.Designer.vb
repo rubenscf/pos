@@ -23,14 +23,13 @@ Partial Class ctrlFacturar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Container = New System.Windows.Forms.SplitContainer()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.lbCambio = New System.Windows.Forms.Label()
-        Me.txEfectivo = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.gb3 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lbSt = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.txDescuento = New System.Windows.Forms.NumericUpDown()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lbTotal = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -39,37 +38,25 @@ Partial Class ctrlFacturar
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txfactura = New System.Windows.Forms.TextBox()
-        Me.lbSerie = New System.Windows.Forms.Label()
-        Me.btImprimir = New DevComponents.DotNetBar.ButtonX()
-        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lbTipo = New System.Windows.Forms.Label()
-        Me.btCGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txDireccion = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txNombre = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.txNit = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txCantidad = New System.Windows.Forms.NumericUpDown()
-        Me.btBuscar = New DevComponents.DotNetBar.ButtonX()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txMo = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.lbStock = New System.Windows.Forms.Label()
-        Me.btQuitarLista = New DevComponents.DotNetBar.ButtonX()
-        Me.btAgregarLista = New DevComponents.DotNetBar.ButtonX()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.btBStock = New DevComponents.DotNetBar.ButtonX()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.lbSubtotal = New System.Windows.Forms.Label()
@@ -80,29 +67,35 @@ Partial Class ctrlFacturar
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txMa = New System.Windows.Forms.TextBox()
         Me.dgD = New System.Windows.Forms.DataGridView()
-        Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CODIGO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NMARCA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NMODELO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DETALLE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PRECIOU = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SUBTOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.serrie = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Splitter1 = New System.Windows.Forms.Splitter()
+        Me.btImprimir = New DevComponents.DotNetBar.ButtonX()
+        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
+        Me.btCGuardar = New DevComponents.DotNetBar.ButtonX()
+        Me.txNit = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.btBuscar = New DevComponents.DotNetBar.ButtonX()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btQuitarLista = New DevComponents.DotNetBar.ButtonX()
+        Me.btAgregarLista = New DevComponents.DotNetBar.ButtonX()
+        Me.btBStock = New DevComponents.DotNetBar.ButtonX()
         CType(Me.Container, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Container.Panel1.SuspendLayout()
         Me.Container.Panel2.SuspendLayout()
         Me.Container.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.gb3.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        CType(Me.txDescuento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.txCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgD, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Container
@@ -114,9 +107,7 @@ Partial Class ctrlFacturar
         '
         'Container.Panel1
         '
-        Me.Container.Panel1.Controls.Add(Me.GroupBox3)
         Me.Container.Panel1.Controls.Add(Me.gb3)
-        Me.Container.Panel1.Controls.Add(Me.GroupBox2)
         Me.Container.Panel1.Controls.Add(Me.btImprimir)
         Me.Container.Panel1.Controls.Add(Me.btGuardar)
         Me.Container.Panel1.Controls.Add(Me.GroupBox1)
@@ -128,88 +119,17 @@ Partial Class ctrlFacturar
         Me.Container.Panel2.Controls.Add(Me.Splitter1)
         Me.Container.Panel2.Enabled = False
         Me.Container.Size = New System.Drawing.Size(1251, 537)
-        Me.Container.SplitterDistance = 150
+        Me.Container.SplitterDistance = 157
         Me.Container.TabIndex = 29
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Controls.Add(Me.Label7)
-        Me.GroupBox3.Controls.Add(Me.lbCambio)
-        Me.GroupBox3.Controls.Add(Me.txEfectivo)
-        Me.GroupBox3.Controls.Add(Me.Label8)
-        Me.GroupBox3.Controls.Add(Me.Label9)
-        Me.GroupBox3.Location = New System.Drawing.Point(887, 16)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(244, 130)
-        Me.GroupBox3.TabIndex = 5
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Cobrar"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(126, 73)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(25, 19)
-        Me.Label10.TabIndex = 14
-        Me.Label10.Text = "Q."
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(8, 69)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(21, 17)
-        Me.Label7.TabIndex = 3
-        Me.Label7.Text = "Q."
-        '
-        'lbCambio
-        '
-        Me.lbCambio.AutoSize = True
-        Me.lbCambio.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCambio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbCambio.Location = New System.Drawing.Point(146, 68)
-        Me.lbCambio.Name = "lbCambio"
-        Me.lbCambio.Size = New System.Drawing.Size(59, 24)
-        Me.lbCambio.TabIndex = 13
-        Me.lbCambio.Text = "00.00"
-        Me.lbCambio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txEfectivo
-        '
-        Me.txEfectivo.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txEfectivo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txEfectivo.Location = New System.Drawing.Point(29, 63)
-        Me.txEfectivo.Name = "txEfectivo"
-        Me.txEfectivo.Size = New System.Drawing.Size(91, 29)
-        Me.txEfectivo.TabIndex = 1
-        Me.txEfectivo.Text = "0.0"
-        Me.txEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(147, 35)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(53, 17)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "Cambio"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(39, 35)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(53, 17)
-        Me.Label9.TabIndex = 0
-        Me.Label9.Text = "Efectivo"
         '
         'gb3
         '
+        Me.gb3.Controls.Add(Me.Label9)
+        Me.gb3.Controls.Add(Me.lbSt)
+        Me.gb3.Controls.Add(Me.Label23)
+        Me.gb3.Controls.Add(Me.txDescuento)
+        Me.gb3.Controls.Add(Me.Label7)
+        Me.gb3.Controls.Add(Me.Label8)
         Me.gb3.Controls.Add(Me.Label13)
         Me.gb3.Controls.Add(Me.lbTotal)
         Me.gb3.Controls.Add(Me.Label11)
@@ -218,19 +138,83 @@ Partial Class ctrlFacturar
         Me.gb3.Controls.Add(Me.Label6)
         Me.gb3.Controls.Add(Me.Label5)
         Me.gb3.Controls.Add(Me.Label4)
-        Me.gb3.Location = New System.Drawing.Point(583, 16)
+        Me.gb3.Location = New System.Drawing.Point(437, 16)
         Me.gb3.Name = "gb3"
-        Me.gb3.Size = New System.Drawing.Size(298, 130)
+        Me.gb3.Size = New System.Drawing.Size(597, 130)
         Me.gb3.TabIndex = 4
         Me.gb3.TabStop = False
         Me.gb3.Text = "Resumen"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(199, 68)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(31, 24)
+        Me.Label9.TabIndex = 30
+        Me.Label9.Text = "Q."
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbSt
+        '
+        Me.lbSt.AutoSize = True
+        Me.lbSt.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbSt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lbSt.Location = New System.Drawing.Point(225, 68)
+        Me.lbSt.Name = "lbSt"
+        Me.lbSt.Size = New System.Drawing.Size(59, 24)
+        Me.lbSt.TabIndex = 29
+        Me.lbSt.Text = "00.00"
+        Me.lbSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(216, 35)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(56, 17)
+        Me.Label23.TabIndex = 28
+        Me.Label23.Text = "Subtotal"
+        '
+        'txDescuento
+        '
+        Me.txDescuento.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txDescuento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txDescuento.Location = New System.Drawing.Point(97, 66)
+        Me.txDescuento.Name = "txDescuento"
+        Me.txDescuento.Size = New System.Drawing.Size(57, 32)
+        Me.txDescuento.TabIndex = 27
+        Me.txDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(151, 70)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(28, 22)
+        Me.Label7.TabIndex = 26
+        Me.Label7.Text = "%"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(94, 35)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(69, 17)
+        Me.Label8.TabIndex = 25
+        Me.Label8.Text = "Descuento"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(165, 68)
+        Me.Label13.Location = New System.Drawing.Point(450, 68)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(31, 24)
         Me.Label13.TabIndex = 12
@@ -242,7 +226,7 @@ Partial Class ctrlFacturar
         Me.lbTotal.AutoSize = True
         Me.lbTotal.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbTotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbTotal.Location = New System.Drawing.Point(191, 68)
+        Me.lbTotal.Location = New System.Drawing.Point(476, 68)
         Me.lbTotal.Name = "lbTotal"
         Me.lbTotal.Size = New System.Drawing.Size(59, 24)
         Me.lbTotal.TabIndex = 11
@@ -254,7 +238,7 @@ Partial Class ctrlFacturar
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Goldenrod
-        Me.Label11.Location = New System.Drawing.Point(76, 68)
+        Me.Label11.Location = New System.Drawing.Point(329, 68)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(31, 24)
         Me.Label11.TabIndex = 10
@@ -266,7 +250,7 @@ Partial Class ctrlFacturar
         Me.lbDscto.AutoSize = True
         Me.lbDscto.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbDscto.ForeColor = System.Drawing.Color.Goldenrod
-        Me.lbDscto.Location = New System.Drawing.Point(102, 68)
+        Me.lbDscto.Location = New System.Drawing.Point(355, 68)
         Me.lbDscto.Name = "lbDscto"
         Me.lbDscto.Size = New System.Drawing.Size(37, 24)
         Me.lbDscto.TabIndex = 9
@@ -288,7 +272,7 @@ Partial Class ctrlFacturar
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(182, 35)
+        Me.Label6.Location = New System.Drawing.Point(467, 35)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(87, 17)
         Me.Label6.TabIndex = 2
@@ -297,7 +281,7 @@ Partial Class ctrlFacturar
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(92, 35)
+        Me.Label5.Location = New System.Drawing.Point(345, 35)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 17)
         Me.Label5.TabIndex = 1
@@ -311,65 +295,6 @@ Partial Class ctrlFacturar
         Me.Label4.Size = New System.Drawing.Size(70, 17)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "# Articulos"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.txfactura)
-        Me.GroupBox2.Controls.Add(Me.lbSerie)
-        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox2.Location = New System.Drawing.Point(428, 16)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(149, 130)
-        Me.GroupBox2.TabIndex = 3
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "No. Factura"
-        '
-        'txfactura
-        '
-        Me.txfactura.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txfactura.ForeColor = System.Drawing.Color.OrangeRed
-        Me.txfactura.Location = New System.Drawing.Point(6, 85)
-        Me.txfactura.Name = "txfactura"
-        Me.txfactura.Size = New System.Drawing.Size(138, 29)
-        Me.txfactura.TabIndex = 0
-        Me.txfactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'lbSerie
-        '
-        Me.lbSerie.AutoSize = True
-        Me.lbSerie.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbSerie.ForeColor = System.Drawing.Color.OrangeRed
-        Me.lbSerie.Location = New System.Drawing.Point(33, 35)
-        Me.lbSerie.Name = "lbSerie"
-        Me.lbSerie.Size = New System.Drawing.Size(69, 31)
-        Me.lbSerie.TabIndex = 7
-        Me.lbSerie.Text = "XYZ"
-        '
-        'btImprimir
-        '
-        Me.btImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btImprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btImprimir.Enabled = False
-        Me.btImprimir.Image = Global.POS.My.Resources.Resources.invoice__27_
-        Me.btImprimir.Location = New System.Drawing.Point(1137, 92)
-        Me.btImprimir.Name = "btImprimir"
-        Me.btImprimir.Size = New System.Drawing.Size(111, 54)
-        Me.btImprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btImprimir.TabIndex = 1
-        Me.btImprimir.Text = "Imprimir"
-        '
-        'btGuardar
-        '
-        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btGuardar.Enabled = False
-        Me.btGuardar.Image = Global.POS.My.Resources.Resources.invoice__7_
-        Me.btGuardar.Location = New System.Drawing.Point(1137, 28)
-        Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(111, 54)
-        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuardar.TabIndex = 0
-        Me.btGuardar.Text = "Cobrar"
         '
         'GroupBox1
         '
@@ -397,20 +322,6 @@ Partial Class ctrlFacturar
         Me.lbTipo.Size = New System.Drawing.Size(18, 17)
         Me.lbTipo.TabIndex = 17
         Me.lbTipo.Text = "N"
-        '
-        'btCGuardar
-        '
-        Me.btCGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btCGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btCGuardar.Enabled = False
-        Me.btCGuardar.Image = Global.POS.My.Resources.Resources._8430
-        Me.btCGuardar.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btCGuardar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btCGuardar.Location = New System.Drawing.Point(339, 72)
-        Me.btCGuardar.Name = "btCGuardar"
-        Me.btCGuardar.Size = New System.Drawing.Size(57, 42)
-        Me.btCGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btCGuardar.TabIndex = 1
         '
         'Label3
         '
@@ -471,21 +382,6 @@ Partial Class ctrlFacturar
         Me.txNombre.TabIndex = 2
         Me.txNombre.WatermarkText = "Nombre"
         '
-        'txNit
-        '
-        Me.txNit.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.txNit.Border.Class = "TextBoxBorder"
-        Me.txNit.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txNit.ForeColor = System.Drawing.Color.Black
-        Me.txNit.Location = New System.Drawing.Point(9, 41)
-        Me.txNit.Name = "txNit"
-        Me.txNit.Size = New System.Drawing.Size(137, 25)
-        Me.txNit.TabIndex = 0
-        Me.txNit.Text = "C/F"
-        '
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -517,7 +413,7 @@ Partial Class ctrlFacturar
         Me.GroupBox4.Controls.Add(Me.txMa)
         Me.GroupBox4.Location = New System.Drawing.Point(14, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(329, 370)
+        Me.GroupBox4.Size = New System.Drawing.Size(329, 363)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Buscar Producto"
@@ -531,19 +427,6 @@ Partial Class ctrlFacturar
         Me.txCantidad.Size = New System.Drawing.Size(120, 25)
         Me.txCantidad.TabIndex = 29
         Me.txCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'btBuscar
-        '
-        Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
-        Me.btBuscar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btBuscar.Location = New System.Drawing.Point(241, 44)
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(58, 55)
-        Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btBuscar.TabIndex = 2
-        Me.btBuscar.Text = "Buscar"
         '
         'Label12
         '
@@ -564,20 +447,10 @@ Partial Class ctrlFacturar
         Me.txMo.TabIndex = 1
         Me.txMo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.POS.My.Resources.Resources.barcode__29_
-        Me.PictureBox1.Location = New System.Drawing.Point(16, 22)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(34, 43)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 26
-        Me.PictureBox1.TabStop = False
-        '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(13, 285)
+        Me.Label24.Location = New System.Drawing.Point(13, 293)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(42, 17)
         Me.Label24.TabIndex = 25
@@ -586,42 +459,13 @@ Partial Class ctrlFacturar
         'lbStock
         '
         Me.lbStock.AutoSize = True
-        Me.lbStock.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbStock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbStock.Location = New System.Drawing.Point(89, 285)
+        Me.lbStock.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbStock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lbStock.Location = New System.Drawing.Point(88, 287)
         Me.lbStock.Name = "lbStock"
-        Me.lbStock.Size = New System.Drawing.Size(15, 17)
+        Me.lbStock.Size = New System.Drawing.Size(23, 25)
         Me.lbStock.TabIndex = 24
         Me.lbStock.Text = "0"
-        '
-        'btQuitarLista
-        '
-        Me.btQuitarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btQuitarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btQuitarLista.Image = Global.POS.My.Resources.Resources.cart__14_
-        Me.btQuitarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btQuitarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btQuitarLista.Location = New System.Drawing.Point(241, 236)
-        Me.btQuitarLista.Name = "btQuitarLista"
-        Me.btQuitarLista.Size = New System.Drawing.Size(57, 55)
-        Me.btQuitarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btQuitarLista.TabIndex = 6
-        Me.btQuitarLista.Text = "Remover"
-        '
-        'btAgregarLista
-        '
-        Me.btAgregarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btAgregarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btAgregarLista.Enabled = False
-        Me.btAgregarLista.Image = Global.POS.My.Resources.Resources.cart__4_
-        Me.btAgregarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btAgregarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btAgregarLista.Location = New System.Drawing.Point(241, 172)
-        Me.btAgregarLista.Name = "btAgregarLista"
-        Me.btAgregarLista.Size = New System.Drawing.Size(58, 55)
-        Me.btAgregarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btAgregarLista.TabIndex = 5
-        Me.btAgregarLista.Text = "Agregar"
         '
         'Label22
         '
@@ -676,20 +520,6 @@ Partial Class ctrlFacturar
         Me.Label15.Size = New System.Drawing.Size(54, 17)
         Me.Label15.TabIndex = 16
         Me.Label15.Text = "Codigo:"
-        '
-        'btBStock
-        '
-        Me.btBStock.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btBStock.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btBStock.Image = Global.POS.My.Resources.Resources.inventary__26_
-        Me.btBStock.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btBStock.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btBStock.Location = New System.Drawing.Point(242, 108)
-        Me.btBStock.Name = "btBStock"
-        Me.btBStock.Size = New System.Drawing.Size(57, 55)
-        Me.btBStock.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btBStock.TabIndex = 4
-        Me.btBStock.Text = "Stock"
         '
         'Label21
         '
@@ -785,21 +615,13 @@ Partial Class ctrlFacturar
         Me.dgD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dgD.BackgroundColor = System.Drawing.SystemColors.Window
         Me.dgD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgD.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.marca, Me.modelo, Me.CODIGO, Me.NMARCA, Me.NMODELO, Me.DETALLE, Me.PRECIOU, Me.CANTIDAD, Me.SUBTOTAL, Me.serrie})
+        Me.dgD.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.marca, Me.modelo, Me.CODIGO, Me.NMARCA, Me.NMODELO, Me.DETALLE, Me.SUBTOTAL, Me.serrie})
         Me.dgD.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgD.Location = New System.Drawing.Point(356, 0)
         Me.dgD.Name = "dgD"
         Me.dgD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgD.Size = New System.Drawing.Size(895, 383)
+        Me.dgD.Size = New System.Drawing.Size(895, 376)
         Me.dgD.TabIndex = 1
-        '
-        'Splitter1
-        '
-        Me.Splitter1.Location = New System.Drawing.Point(0, 0)
-        Me.Splitter1.Name = "Splitter1"
-        Me.Splitter1.Size = New System.Drawing.Size(356, 383)
-        Me.Splitter1.TabIndex = 0
-        Me.Splitter1.TabStop = False
         '
         'marca
         '
@@ -807,7 +629,7 @@ Partial Class ctrlFacturar
         Me.marca.Name = "marca"
         Me.marca.ReadOnly = True
         Me.marca.Visible = False
-        Me.marca.Width = 69
+        Me.marca.Width = 61
         '
         'modelo
         '
@@ -815,7 +637,7 @@ Partial Class ctrlFacturar
         Me.modelo.Name = "modelo"
         Me.modelo.ReadOnly = True
         Me.modelo.Visible = False
-        Me.modelo.Width = 78
+        Me.modelo.Width = 66
         '
         'CODIGO
         '
@@ -845,20 +667,6 @@ Partial Class ctrlFacturar
         Me.DETALLE.ReadOnly = True
         Me.DETALLE.Width = 83
         '
-        'PRECIOU
-        '
-        Me.PRECIOU.HeaderText = "PRECIO UNITARIO (Q)"
-        Me.PRECIOU.Name = "PRECIOU"
-        Me.PRECIOU.ReadOnly = True
-        Me.PRECIOU.Width = 130
-        '
-        'CANTIDAD
-        '
-        Me.CANTIDAD.HeaderText = "CANTIDAD"
-        Me.CANTIDAD.Name = "CANTIDAD"
-        Me.CANTIDAD.ReadOnly = True
-        Me.CANTIDAD.Width = 95
-        '
         'SUBTOTAL
         '
         Me.SUBTOTAL.HeaderText = "SUBTOTAL (Q)"
@@ -872,6 +680,138 @@ Partial Class ctrlFacturar
         Me.serrie.MaxInputLength = 500
         Me.serrie.Name = "serrie"
         Me.serrie.Width = 104
+        '
+        'Splitter1
+        '
+        Me.Splitter1.Location = New System.Drawing.Point(0, 0)
+        Me.Splitter1.Name = "Splitter1"
+        Me.Splitter1.Size = New System.Drawing.Size(356, 376)
+        Me.Splitter1.TabIndex = 0
+        Me.Splitter1.TabStop = False
+        '
+        'btImprimir
+        '
+        Me.btImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btImprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btImprimir.Image = Global.POS.My.Resources.Resources.cart__24_
+        Me.btImprimir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btImprimir.Location = New System.Drawing.Point(1147, 25)
+        Me.btImprimir.Name = "btImprimir"
+        Me.btImprimir.Size = New System.Drawing.Size(91, 121)
+        Me.btImprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btImprimir.TabIndex = 1
+        Me.btImprimir.Text = "Nueva Venta"
+        '
+        'btGuardar
+        '
+        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btGuardar.Enabled = False
+        Me.btGuardar.Image = Global.POS.My.Resources.Resources.sales__3_
+        Me.btGuardar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btGuardar.Location = New System.Drawing.Point(1046, 25)
+        Me.btGuardar.Name = "btGuardar"
+        Me.btGuardar.Size = New System.Drawing.Size(91, 121)
+        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btGuardar.TabIndex = 0
+        Me.btGuardar.Text = "Enviar a Caja"
+        '
+        'btCGuardar
+        '
+        Me.btCGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btCGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btCGuardar.Enabled = False
+        Me.btCGuardar.Image = Global.POS.My.Resources.Resources._8430
+        Me.btCGuardar.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btCGuardar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btCGuardar.Location = New System.Drawing.Point(339, 72)
+        Me.btCGuardar.Name = "btCGuardar"
+        Me.btCGuardar.Size = New System.Drawing.Size(57, 42)
+        Me.btCGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btCGuardar.TabIndex = 1
+        '
+        'txNit
+        '
+        Me.txNit.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txNit.Border.Class = "TextBoxBorder"
+        Me.txNit.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txNit.ForeColor = System.Drawing.Color.Black
+        Me.txNit.Location = New System.Drawing.Point(9, 41)
+        Me.txNit.Name = "txNit"
+        Me.txNit.Size = New System.Drawing.Size(137, 25)
+        Me.txNit.TabIndex = 0
+        Me.txNit.Text = "C/F"
+        Me.txNit.WatermarkImage = Global.POS.My.Resources.Resources.zoom
+        Me.txNit.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'btBuscar
+        '
+        Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
+        Me.btBuscar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btBuscar.Location = New System.Drawing.Point(241, 44)
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(58, 55)
+        Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btBuscar.TabIndex = 2
+        Me.btBuscar.Text = "Buscar"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.POS.My.Resources.Resources.barcode__29_
+        Me.PictureBox1.Location = New System.Drawing.Point(16, 22)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(34, 43)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 26
+        Me.PictureBox1.TabStop = False
+        '
+        'btQuitarLista
+        '
+        Me.btQuitarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btQuitarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btQuitarLista.Image = Global.POS.My.Resources.Resources.cart__14_
+        Me.btQuitarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btQuitarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btQuitarLista.Location = New System.Drawing.Point(241, 236)
+        Me.btQuitarLista.Name = "btQuitarLista"
+        Me.btQuitarLista.Size = New System.Drawing.Size(57, 55)
+        Me.btQuitarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btQuitarLista.TabIndex = 6
+        Me.btQuitarLista.Text = "Remover"
+        '
+        'btAgregarLista
+        '
+        Me.btAgregarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btAgregarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btAgregarLista.Enabled = False
+        Me.btAgregarLista.Image = Global.POS.My.Resources.Resources.cart__4_
+        Me.btAgregarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btAgregarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btAgregarLista.Location = New System.Drawing.Point(241, 172)
+        Me.btAgregarLista.Name = "btAgregarLista"
+        Me.btAgregarLista.Size = New System.Drawing.Size(58, 55)
+        Me.btAgregarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btAgregarLista.TabIndex = 5
+        Me.btAgregarLista.Text = "Agregar"
+        '
+        'btBStock
+        '
+        Me.btBStock.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btBStock.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btBStock.Image = Global.POS.My.Resources.Resources.inventary__26_
+        Me.btBStock.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btBStock.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btBStock.Location = New System.Drawing.Point(242, 108)
+        Me.btBStock.Name = "btBStock"
+        Me.btBStock.Size = New System.Drawing.Size(57, 55)
+        Me.btBStock.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btBStock.TabIndex = 4
+        Me.btBStock.Text = "Stock"
         '
         'ctrlFacturar
         '
@@ -887,19 +827,16 @@ Partial Class ctrlFacturar
         Me.Container.Panel2.ResumeLayout(False)
         CType(Me.Container, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Container.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.gb3.ResumeLayout(False)
         Me.gb3.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        CType(Me.txDescuento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.txCantidad, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgD, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -911,16 +848,8 @@ Partial Class ctrlFacturar
     Friend WithEvents txDireccion As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents txNombre As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents txNit As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents txfactura As System.Windows.Forms.TextBox
     Friend WithEvents btImprimir As DevComponents.DotNetBar.ButtonX
     Friend WithEvents btGuardar As DevComponents.DotNetBar.ButtonX
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents lbCambio As System.Windows.Forms.Label
-    Friend WithEvents txEfectivo As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents gb3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents lbTotal As System.Windows.Forms.Label
@@ -930,8 +859,6 @@ Partial Class ctrlFacturar
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents lbSerie As System.Windows.Forms.Label
     Friend WithEvents dgD As System.Windows.Forms.DataGridView
     Friend WithEvents Splitter1 As System.Windows.Forms.Splitter
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
@@ -962,15 +889,19 @@ Partial Class ctrlFacturar
     Friend WithEvents txMo As System.Windows.Forms.TextBox
     Friend WithEvents btBuscar As DevComponents.DotNetBar.ButtonX
     Friend WithEvents txCantidad As System.Windows.Forms.NumericUpDown
+    Friend WithEvents txDescuento As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents marca As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents modelo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CODIGO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NMARCA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NMODELO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DETALLE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PRECIOU As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CANTIDAD As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SUBTOTAL As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents serrie As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents lbSt As System.Windows.Forms.Label
+    Friend WithEvents Label23 As System.Windows.Forms.Label
 
 End Class
