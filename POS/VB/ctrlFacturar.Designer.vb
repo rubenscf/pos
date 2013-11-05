@@ -38,25 +38,34 @@ Partial Class ctrlFacturar
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btImprimir = New DevComponents.DotNetBar.ButtonX()
+        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lbTipo = New System.Windows.Forms.Label()
+        Me.btCGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txDireccion = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txNombre = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txNit = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txCantidad = New System.Windows.Forms.NumericUpDown()
+        Me.btBuscar = New DevComponents.DotNetBar.ButtonX()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txMo = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.lbStock = New System.Windows.Forms.Label()
+        Me.btQuitarLista = New DevComponents.DotNetBar.ButtonX()
+        Me.btAgregarLista = New DevComponents.DotNetBar.ButtonX()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.btBStock = New DevComponents.DotNetBar.ButtonX()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.lbSubtotal = New System.Windows.Forms.Label()
@@ -76,15 +85,6 @@ Partial Class ctrlFacturar
         Me.SUBTOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.serrie = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Splitter1 = New System.Windows.Forms.Splitter()
-        Me.btImprimir = New DevComponents.DotNetBar.ButtonX()
-        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
-        Me.btCGuardar = New DevComponents.DotNetBar.ButtonX()
-        Me.txNit = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.btBuscar = New DevComponents.DotNetBar.ButtonX()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btQuitarLista = New DevComponents.DotNetBar.ButtonX()
-        Me.btAgregarLista = New DevComponents.DotNetBar.ButtonX()
-        Me.btBStock = New DevComponents.DotNetBar.ButtonX()
         CType(Me.Container, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Container.Panel1.SuspendLayout()
         Me.Container.Panel2.SuspendLayout()
@@ -94,8 +94,8 @@ Partial Class ctrlFacturar
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.txCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Container
@@ -296,6 +296,33 @@ Partial Class ctrlFacturar
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "# Articulos"
         '
+        'btImprimir
+        '
+        Me.btImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btImprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btImprimir.Image = Global.POS.My.Resources.Resources.cart__24_
+        Me.btImprimir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btImprimir.Location = New System.Drawing.Point(1147, 25)
+        Me.btImprimir.Name = "btImprimir"
+        Me.btImprimir.Size = New System.Drawing.Size(91, 121)
+        Me.btImprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btImprimir.TabIndex = 1
+        Me.btImprimir.Text = "Nueva Venta"
+        '
+        'btGuardar
+        '
+        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btGuardar.Enabled = False
+        Me.btGuardar.Image = Global.POS.My.Resources.Resources.sales__3_
+        Me.btGuardar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btGuardar.Location = New System.Drawing.Point(1046, 25)
+        Me.btGuardar.Name = "btGuardar"
+        Me.btGuardar.Size = New System.Drawing.Size(91, 121)
+        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btGuardar.TabIndex = 0
+        Me.btGuardar.Text = "Enviar a Caja"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.lbTipo)
@@ -322,6 +349,20 @@ Partial Class ctrlFacturar
         Me.lbTipo.Size = New System.Drawing.Size(18, 17)
         Me.lbTipo.TabIndex = 17
         Me.lbTipo.Text = "N"
+        '
+        'btCGuardar
+        '
+        Me.btCGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btCGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btCGuardar.Enabled = False
+        Me.btCGuardar.Image = Global.POS.My.Resources.Resources._8430
+        Me.btCGuardar.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btCGuardar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btCGuardar.Location = New System.Drawing.Point(339, 72)
+        Me.btCGuardar.Name = "btCGuardar"
+        Me.btCGuardar.Size = New System.Drawing.Size(57, 42)
+        Me.btCGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btCGuardar.TabIndex = 1
         '
         'Label3
         '
@@ -382,6 +423,23 @@ Partial Class ctrlFacturar
         Me.txNombre.TabIndex = 2
         Me.txNombre.WatermarkText = "Nombre"
         '
+        'txNit
+        '
+        Me.txNit.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txNit.Border.Class = "TextBoxBorder"
+        Me.txNit.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txNit.ForeColor = System.Drawing.Color.Black
+        Me.txNit.Location = New System.Drawing.Point(9, 41)
+        Me.txNit.Name = "txNit"
+        Me.txNit.Size = New System.Drawing.Size(137, 25)
+        Me.txNit.TabIndex = 0
+        Me.txNit.Text = "C/F"
+        Me.txNit.WatermarkImage = Global.POS.My.Resources.Resources.zoom
+        Me.txNit.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+        '
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -428,6 +486,19 @@ Partial Class ctrlFacturar
         Me.txCantidad.TabIndex = 29
         Me.txCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
+        'btBuscar
+        '
+        Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
+        Me.btBuscar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btBuscar.Location = New System.Drawing.Point(241, 44)
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(58, 55)
+        Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btBuscar.TabIndex = 2
+        Me.btBuscar.Text = "Buscar"
+        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -446,6 +517,16 @@ Partial Class ctrlFacturar
         Me.txMo.Size = New System.Drawing.Size(94, 25)
         Me.txMo.TabIndex = 1
         Me.txMo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.POS.My.Resources.Resources.barcode__29_
+        Me.PictureBox1.Location = New System.Drawing.Point(16, 22)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(34, 43)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 26
+        Me.PictureBox1.TabStop = False
         '
         'Label24
         '
@@ -466,6 +547,35 @@ Partial Class ctrlFacturar
         Me.lbStock.Size = New System.Drawing.Size(23, 25)
         Me.lbStock.TabIndex = 24
         Me.lbStock.Text = "0"
+        '
+        'btQuitarLista
+        '
+        Me.btQuitarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btQuitarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btQuitarLista.Image = Global.POS.My.Resources.Resources.cart__14_
+        Me.btQuitarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btQuitarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btQuitarLista.Location = New System.Drawing.Point(241, 236)
+        Me.btQuitarLista.Name = "btQuitarLista"
+        Me.btQuitarLista.Size = New System.Drawing.Size(57, 55)
+        Me.btQuitarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btQuitarLista.TabIndex = 6
+        Me.btQuitarLista.Text = "Remover"
+        '
+        'btAgregarLista
+        '
+        Me.btAgregarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btAgregarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btAgregarLista.Enabled = False
+        Me.btAgregarLista.Image = Global.POS.My.Resources.Resources.cart__4_
+        Me.btAgregarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btAgregarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btAgregarLista.Location = New System.Drawing.Point(241, 172)
+        Me.btAgregarLista.Name = "btAgregarLista"
+        Me.btAgregarLista.Size = New System.Drawing.Size(58, 55)
+        Me.btAgregarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btAgregarLista.TabIndex = 5
+        Me.btAgregarLista.Text = "Agregar"
         '
         'Label22
         '
@@ -520,6 +630,20 @@ Partial Class ctrlFacturar
         Me.Label15.Size = New System.Drawing.Size(54, 17)
         Me.Label15.TabIndex = 16
         Me.Label15.Text = "Codigo:"
+        '
+        'btBStock
+        '
+        Me.btBStock.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btBStock.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btBStock.Image = Global.POS.My.Resources.Resources.inventary__26_
+        Me.btBStock.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btBStock.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btBStock.Location = New System.Drawing.Point(242, 108)
+        Me.btBStock.Name = "btBStock"
+        Me.btBStock.Size = New System.Drawing.Size(57, 55)
+        Me.btBStock.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btBStock.TabIndex = 4
+        Me.btBStock.Text = "Stock"
         '
         'Label21
         '
@@ -689,130 +813,6 @@ Partial Class ctrlFacturar
         Me.Splitter1.TabIndex = 0
         Me.Splitter1.TabStop = False
         '
-        'btImprimir
-        '
-        Me.btImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btImprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btImprimir.Image = Global.POS.My.Resources.Resources.cart__24_
-        Me.btImprimir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btImprimir.Location = New System.Drawing.Point(1147, 25)
-        Me.btImprimir.Name = "btImprimir"
-        Me.btImprimir.Size = New System.Drawing.Size(91, 121)
-        Me.btImprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btImprimir.TabIndex = 1
-        Me.btImprimir.Text = "Nueva Venta"
-        '
-        'btGuardar
-        '
-        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btGuardar.Enabled = False
-        Me.btGuardar.Image = Global.POS.My.Resources.Resources.sales__3_
-        Me.btGuardar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btGuardar.Location = New System.Drawing.Point(1046, 25)
-        Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(91, 121)
-        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuardar.TabIndex = 0
-        Me.btGuardar.Text = "Enviar a Caja"
-        '
-        'btCGuardar
-        '
-        Me.btCGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btCGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btCGuardar.Enabled = False
-        Me.btCGuardar.Image = Global.POS.My.Resources.Resources._8430
-        Me.btCGuardar.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btCGuardar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btCGuardar.Location = New System.Drawing.Point(339, 72)
-        Me.btCGuardar.Name = "btCGuardar"
-        Me.btCGuardar.Size = New System.Drawing.Size(57, 42)
-        Me.btCGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btCGuardar.TabIndex = 1
-        '
-        'txNit
-        '
-        Me.txNit.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.txNit.Border.Class = "TextBoxBorder"
-        Me.txNit.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txNit.ForeColor = System.Drawing.Color.Black
-        Me.txNit.Location = New System.Drawing.Point(9, 41)
-        Me.txNit.Name = "txNit"
-        Me.txNit.Size = New System.Drawing.Size(137, 25)
-        Me.txNit.TabIndex = 0
-        Me.txNit.Text = "C/F"
-        Me.txNit.WatermarkImage = Global.POS.My.Resources.Resources.zoom
-        Me.txNit.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'btBuscar
-        '
-        Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
-        Me.btBuscar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btBuscar.Location = New System.Drawing.Point(241, 44)
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(58, 55)
-        Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btBuscar.TabIndex = 2
-        Me.btBuscar.Text = "Buscar"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.POS.My.Resources.Resources.barcode__29_
-        Me.PictureBox1.Location = New System.Drawing.Point(16, 22)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(34, 43)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 26
-        Me.PictureBox1.TabStop = False
-        '
-        'btQuitarLista
-        '
-        Me.btQuitarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btQuitarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btQuitarLista.Image = Global.POS.My.Resources.Resources.cart__14_
-        Me.btQuitarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btQuitarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btQuitarLista.Location = New System.Drawing.Point(241, 236)
-        Me.btQuitarLista.Name = "btQuitarLista"
-        Me.btQuitarLista.Size = New System.Drawing.Size(57, 55)
-        Me.btQuitarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btQuitarLista.TabIndex = 6
-        Me.btQuitarLista.Text = "Remover"
-        '
-        'btAgregarLista
-        '
-        Me.btAgregarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btAgregarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btAgregarLista.Enabled = False
-        Me.btAgregarLista.Image = Global.POS.My.Resources.Resources.cart__4_
-        Me.btAgregarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btAgregarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btAgregarLista.Location = New System.Drawing.Point(241, 172)
-        Me.btAgregarLista.Name = "btAgregarLista"
-        Me.btAgregarLista.Size = New System.Drawing.Size(58, 55)
-        Me.btAgregarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btAgregarLista.TabIndex = 5
-        Me.btAgregarLista.Text = "Agregar"
-        '
-        'btBStock
-        '
-        Me.btBStock.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btBStock.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btBStock.Image = Global.POS.My.Resources.Resources.inventary__26_
-        Me.btBStock.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btBStock.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btBStock.Location = New System.Drawing.Point(242, 108)
-        Me.btBStock.Name = "btBStock"
-        Me.btBStock.Size = New System.Drawing.Size(57, 55)
-        Me.btBStock.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btBStock.TabIndex = 4
-        Me.btBStock.Text = "Stock"
-        '
         'ctrlFacturar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -835,8 +835,8 @@ Partial Class ctrlFacturar
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.txCantidad, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

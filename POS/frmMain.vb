@@ -156,6 +156,7 @@ Public Class frmMain
             End If
         End If
         htp.Clear()
+
         Dim cinicio As New ctrlLogin
         cinicio.Dock = DockStyle.Fill
         tcpMain.Controls.Add(cinicio)
@@ -166,11 +167,13 @@ Public Class frmMain
         ' frmCnn.Show() 'Mostrar la ventana de conexion
         Timer.Interval = 1000
         'Timer.Start()
-        bEstado = False
+
+
+        tcpMain.Visible = False
         Dim clogin As New ctrlLogin
         clogin.Dock = DockStyle.Fill
         tcpMain.Controls.Add(clogin)
-
+        tcpMain.Visible = True
     End Sub
 
 
@@ -336,17 +339,26 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub btEnvios_Click(sender As Object, e As EventArgs)
-        verNuevoEnvio()
+
+    Private Sub btEstados_Click(sender As Object, e As EventArgs) Handles btRecepcion.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Recepcion de Productos" 'cambiar valor
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlRecibeProducto            'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
     End Sub
 
-    Private Sub btEstados_Click(sender As Object, e As EventArgs) Handles btEstados.Click
-        verEstadoEnvio()
-    End Sub
-
-    Private Sub btVerPedidos_Click(sender As Object, e As EventArgs)
-        verPedidos()
-    End Sub
+    
 
 
     Private Sub btRecibir_Click(sender As Object, e As EventArgs) Handles btRecibir.Click
@@ -492,9 +504,7 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub menuMetro_Click(sender As Object, e As EventArgs) Handles menuMetro.Click
 
-    End Sub
 
     Private Sub btCreditos_Click(sender As Object, e As EventArgs) Handles btCreditos.Click
         Dim ind As Integer = -1
@@ -507,6 +517,49 @@ Public Class frmMain
             ind = tpMain.Tabs.Count - 1
             tpMain.SelectedTabIndex = ind
             Dim control As New ctrlGestionContratos           'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+   
+    Private Sub btDarContrato_Click(sender As Object, e As EventArgs) Handles btDarContrato.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Activacion de Contratos"
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlContratoACliente           'cambiar control
+            control.Dock = DockStyle.Fill
+            panel.Controls.Add(control)
+            htp.Add(clave, ind)
+            '            MsgBox(ind.ToString)
+        End If
+    End Sub
+
+   
+   
+    Private Sub tcpMain_Click(sender As Object, e As EventArgs) Handles tcpMain.Click
+
+    End Sub
+
+    Private Sub btNuAbono_Click(sender As Object, e As EventArgs) Handles btNuAbono.Click
+        Dim ind As Integer = -1
+        Dim clave As String = "Abonos"
+        If htp.ContainsKey(clave) Then
+            tpMain.SelectedTabIndex = htp.Item(clave)
+        Else
+            Dim newTab As TabItem = tpMain.CreateTab(clave, -1)
+            Dim panel As TabControlPanel = DirectCast(newTab.AttachedControl, TabControlPanel)
+            ind = tpMain.Tabs.Count - 1
+            tpMain.SelectedTabIndex = ind
+            Dim control As New ctrlNuevoAbono           'cambiar control
             control.Dock = DockStyle.Fill
             panel.Controls.Add(control)
             htp.Add(clave, ind)

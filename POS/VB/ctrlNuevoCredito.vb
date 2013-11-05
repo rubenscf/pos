@@ -13,18 +13,13 @@ Public Class ctrlNuevoCredito
     Dim idcliente, idfiador As Decimal
     Dim idpr_categoria As Decimal = 1
     Dim descuento As Double
-
-
-
-
+    Dim doblEnganche As Boolean
     Private Sub txCDPI_LostFocus(sender As Object, e As EventArgs) Handles txCDPI.LostFocus
         txCDPI.Text = txCDPI.Text.ToUpper
         If txCDPI.Text <> "" Then
             Dim sDpi As String = txCDPI.Text
-
             verificaDPI(ExisteCDPI, sDpi, 0)
             If ExisteCDPI Then
-
                 Container.Panel2.Enabled = True
                 If dgD.RowCount > 0 Then
                     btGuardar.Enabled = True
@@ -317,6 +312,7 @@ Public Class ctrlNuevoCredito
 
                         Dim lugarActual As String = frmMain.serie
                         Dim query As String
+                        Dim eng_x2 As String = "0"
                         Dim s As OracleDataReader
                         frmMain._cnn.Open()
                         trans = frmMain._cnn.BeginTransaction(IsolationLevel.ReadCommitted)
@@ -325,9 +321,12 @@ Public Class ctrlNuevoCredito
 
                         Try
 
-                            query = "INSERT INTO VE_CREDITO(idlugar, idve_credito, cliente, idempleado, fiador, idcl_plan, fecha, enganche, no_cuota, valor_cuota, ultima_cuota, descuento, total, observaciones, estado ) VALUES('" &
-                                frmMain.serie & "', SEQ_" & frmMain.serie & "_IDVE_CREDITO.nextval, '" & idcliente & "', '" & frmMain.idempleado & "','" & idfiador & "', '" & idcl_plan & "', sysdate, '" & txEnganche.Text & "', '" & nPago.Value & "','" & lbCuotas.Text & "', '" & lbUCuota.Text & "','" & descuento & "', '" & lbTotal.Text & "','" & txObservaciones.Text & "','CSO')"
-                            MsgBox(query)
+                            If chDobleEnganche.Checked Then
+                                eng_x2 = "1"
+                            End If
+                            query = "INSERT INTO VE_CREDITO(idlugar, idve_credito, cliente, idempleado, fiador, idcl_plan, fecha, enganche, no_cuota, valor_cuota, ultima_cuota, descuento, total, observaciones, estado,eng_x2 ) VALUES('" &
+                                frmMain.serie & "', SEQ_" & frmMain.serie & "_IDVE_CREDITO.nextval, '" & idcliente & "', '" & frmMain.idempleado & "','" & idfiador & "', '" & idcl_plan & "', sysdate, '" & txEnganche.Text & "', '" & nPago.Value & "','" & lbCuotas.Text & "', '" & lbUCuota.Text & "','" & descuento & "', '" & lbTotal.Text & "','" & txObservaciones.Text & "','CSO','" & eng_x2 & "')"
+
                             txObservaciones.Text = query
                             frmMain._cmd.CommandText = query
                             frmMain._cmd.ExecuteNonQuery()
@@ -443,14 +442,16 @@ Public Class ctrlNuevoCredito
             dgD.Refresh()
             descuento = total * descuento
             total = total - descuento
-            lbTotal.Text = total
+            descuento = Replace(descuento.ToString, ",", ".")
+            lbTotal.Text = Replace(total.ToString, ",", ".")
             Pagos = (total - CDbl(txEnganche.Text)) / cuota
-            Pagos = Math.Round(Pagos)
+            Pagos = Math.Floor(Pagos)
             lbPorc.Text = porciento & " %"
-            lbCuotas.Text = Pagos
+            lbCuotas.Text = Replace(Pagos.ToString, ",", ".")
             ultimoPago = (total - CDbl(txEnganche.Text)) - (Pagos * (cuota - 1))
-            lbUCuota.Text = ultimoPago
+            lbUCuota.Text = Replace(ultimoPago.ToString, ",", ".")
         End If
+        btGuardar.Enabled = True
     End Sub
 
     Private Sub nPago_ValueChanged(sender As Object, e As EventArgs) Handles nPago.ValueChanged
@@ -460,6 +461,7 @@ Public Class ctrlNuevoCredito
             nPago.Value = 2
 
         End If
+        btGuardar.Enabled = False
     End Sub
 
     Private Sub txEnganche_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txEnganche.KeyPress
@@ -469,7 +471,22 @@ Public Class ctrlNuevoCredito
         Else
             e.Handled = True
         End If
+        btGuardar.Enabled = False
     End Sub
 
    
+    Private Sub chDobleEnganche_CheckedChanged(sender As Object, e As EventArgs) Handles chDobleEnganche.CheckedChanged
+        If chDobleEnganche.Checked = True Then
+            doblEnganche = True
+        Else
+            doblEnganche = False
+        End If
+    End Sub
+
+    Private Sub txDescuento_ValueChanged(sender As Object, e As EventArgs) Handles txDescuento.ValueChanged
+        btGuardar.Enabled = False
+    End Sub
+
+   
+    
 End Class

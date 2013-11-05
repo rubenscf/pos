@@ -42,6 +42,7 @@ Partial Class ctrlEmpleados
         Me.txDPI = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.cbPuesto = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.cbLugar = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cbEstado = New DevComponents.DotNetBar.Controls.ComboBoxEx()
@@ -51,7 +52,6 @@ Partial Class ctrlEmpleados
         Me.txSueldo = New DevComponents.DotNetBar.Controls.MaskedTextBoxAdv()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.cbPuesto = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.Sistema = New System.Windows.Forms.GroupBox()
         Me.txPass = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txUsuario = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -351,6 +351,7 @@ Partial Class ctrlEmpleados
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.cbPuesto)
         Me.GroupBox2.Controls.Add(Me.cbLugar)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.cbEstado)
@@ -360,13 +361,27 @@ Partial Class ctrlEmpleados
         Me.GroupBox2.Controls.Add(Me.txSueldo)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.cbPuesto)
         Me.GroupBox2.Location = New System.Drawing.Point(463, 57)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(320, 225)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de la empresa"
+        '
+        'cbPuesto
+        '
+        Me.cbPuesto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cbPuesto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.cbPuesto.DisplayMember = "Text"
+        Me.cbPuesto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbPuesto.FormattingEnabled = True
+        Me.cbPuesto.ItemHeight = 23
+        Me.cbPuesto.Location = New System.Drawing.Point(176, 118)
+        Me.cbPuesto.Name = "cbPuesto"
+        Me.cbPuesto.Size = New System.Drawing.Size(130, 29)
+        Me.cbPuesto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.cbPuesto.TabIndex = 26
+        Me.cbPuesto.WatermarkText = "Puesto"
         '
         'cbLugar
         '
@@ -467,19 +482,6 @@ Partial Class ctrlEmpleados
         Me.Label6.Size = New System.Drawing.Size(81, 21)
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Ubicacion:"
-        '
-        'cbPuesto
-        '
-        Me.cbPuesto.DisplayMember = "Text"
-        Me.cbPuesto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbPuesto.FormattingEnabled = True
-        Me.cbPuesto.ItemHeight = 23
-        Me.cbPuesto.Location = New System.Drawing.Point(176, 118)
-        Me.cbPuesto.Name = "cbPuesto"
-        Me.cbPuesto.Size = New System.Drawing.Size(130, 29)
-        Me.cbPuesto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbPuesto.TabIndex = 2
-        Me.cbPuesto.WatermarkText = "Seleccione Puesto"
         '
         'Sistema
         '
@@ -591,7 +593,6 @@ Partial Class ctrlEmpleados
     Friend WithEvents txSueldo As DevComponents.DotNetBar.Controls.MaskedTextBoxAdv
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents cbPuesto As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents Sistema As System.Windows.Forms.GroupBox
     Friend WithEvents txPass As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents txUsuario As DevComponents.DotNetBar.Controls.TextBoxX
@@ -604,5 +605,6 @@ Partial Class ctrlEmpleados
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents cbEstado As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents cbLugar As DevComponents.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents cbPuesto As DevComponents.DotNetBar.Controls.ComboBoxEx
 
 End Class

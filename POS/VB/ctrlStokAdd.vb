@@ -91,8 +91,8 @@ Public Class ctrlStokAdd
                     If frmMain._cmd.Parameters("v_estado").Value > 0 Then
                         dbms.Show(frmMain.lbEstado)
                         dbms.Disable()
-                        txCantidad.Text = ""
-                        txSegunda.Text = ""
+                        txCantidad.Text = "0"
+                        txSegunda.Text = "0"
                         lbCodigo.Text = "--"
                         txDetalle.Text = ""
                         marca = 0

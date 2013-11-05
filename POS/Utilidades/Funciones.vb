@@ -129,7 +129,10 @@ Module Funciones
 
     End Function
 
+    Function _CONSULTAR_orcl(ByVal query As String) As OracleDataReader
+        frmMain._cmd = New OracleCommand(query, frmMain._cnn)
+        Dim r As OracleDataReader = frmMain._cmd.ExecuteReader()
+        Return r
+    End Function
 
-
-    
 End Module

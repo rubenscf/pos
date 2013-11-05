@@ -25,26 +25,42 @@ Partial Class frmMain
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.menuMetro = New DevComponents.DotNetBar.Metro.MetroShell()
-        Me.mnuTABTIENDA = New DevComponents.DotNetBar.Metro.MetroTabPanel()
-        Me.rbTieCaja = New DevComponents.DotNetBar.RibbonBar()
-        Me.rbTieClientes = New DevComponents.DotNetBar.RibbonBar()
-        Me.ControlContainerItem12 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem13 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.rbtieVentas = New DevComponents.DotNetBar.RibbonBar()
-        Me.ControlContainerItem9 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem11 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem10 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.MetroTabPanel1 = New DevComponents.DotNetBar.Metro.MetroTabPanel()
+        Me.mnuBodRbInventario = New DevComponents.DotNetBar.RibbonBar()
+        Me.ControlContainerItem5 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.mnuBodRbTraslados = New DevComponents.DotNetBar.RibbonBar()
         Me.ControlContainerItem6 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.ControlContainerItem7 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.ControlContainerItem8 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.ControlContainerItem20 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.mnuBodRbInventario = New DevComponents.DotNetBar.RibbonBar()
-        Me.mnuBodRbProducto = New DevComponents.DotNetBar.RibbonBar()
         Me.mnuTABSISTEMA = New DevComponents.DotNetBar.Metro.MetroTabPanel()
+        Me.mnuTABTIENDA = New DevComponents.DotNetBar.Metro.MetroTabPanel()
+        Me.rbTieCaja = New DevComponents.DotNetBar.RibbonBar()
+        Me.ControlContainerItem16 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem14 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem17 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem18 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem19 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.rbTieClientes = New DevComponents.DotNetBar.RibbonBar()
+        Me.ControlContainerItem12 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem13 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.rbtieVentas = New DevComponents.DotNetBar.RibbonBar()
+        Me.ControlContainerItem9 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem10 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem11 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem24 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.mnuTABBODEGA = New DevComponents.DotNetBar.Metro.MetroTabPanel()
+        Me.RibbonBar2 = New DevComponents.DotNetBar.RibbonBar()
+        Me.ControlContainerItem21 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem22 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem23 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.RibbonBar1 = New DevComponents.DotNetBar.RibbonBar()
+        Me.ControlContainerItem15 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.mnuBodRbProducto = New DevComponents.DotNetBar.RibbonBar()
+        Me.ControlContainerItem2 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem3 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem1 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.ControlContainerItem4 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.mnuTienda = New DevComponents.DotNetBar.Metro.MetroTabItem()
         Me.mnuBodega = New DevComponents.DotNetBar.Metro.MetroTabItem()
         Me.mnuSistema = New DevComponents.DotNetBar.Metro.MetroTabItem()
@@ -62,67 +78,53 @@ Partial Class frmMain
         Me.ButtonItem2 = New DevComponents.DotNetBar.ButtonItem()
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
         Me.mnuINICIO = New DevComponents.DotNetBar.Metro.MetroAppButton()
-        Me.RibbonBar2 = New DevComponents.DotNetBar.RibbonBar()
         Me.tpMain = New DevComponents.DotNetBar.TabControl()
         Me.tcpMain = New DevComponents.DotNetBar.TabControlPanel()
         Me.INICIO = New DevComponents.DotNetBar.TabItem(Me.components)
-        Me.ButtonX2 = New DevComponents.DotNetBar.ButtonX()
-        Me.btTstock = New DevComponents.DotNetBar.ButtonX()
-        Me.btCreditos = New DevComponents.DotNetBar.ButtonX()
-        Me.ControlContainerItem21 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem22 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem23 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ButtonX4 = New DevComponents.DotNetBar.ButtonX()
-        Me.ControlContainerItem15 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.mnuPRMarca = New DevComponents.DotNetBar.ButtonX()
-        Me.mnuPRCategoria = New DevComponents.DotNetBar.ButtonX()
-        Me.ButtonX1 = New DevComponents.DotNetBar.ButtonX()
-        Me.btNInvetario = New DevComponents.DotNetBar.ButtonX()
-        Me.ControlContainerItem2 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem3 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem1 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem4 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.btInvetario = New DevComponents.DotNetBar.ButtonX()
+        Me.btNuevoEnvio = New DevComponents.DotNetBar.ButtonX()
+        Me.btEstadoEnvio = New DevComponents.DotNetBar.ButtonX()
+        Me.btPedidos = New DevComponents.DotNetBar.ButtonX()
+        Me.btRecepcion = New DevComponents.DotNetBar.ButtonX()
+        Me.btPlanCliente = New DevComponents.DotNetBar.ButtonX()
+        Me.bt = New DevComponents.DotNetBar.ButtonX()
+        Me.bt_puesto = New DevComponents.DotNetBar.ButtonX()
+        Me.btNuevoLugar = New DevComponents.DotNetBar.ButtonX()
         Me.btNuAbono = New DevComponents.DotNetBar.ButtonX()
         Me.btCContado = New DevComponents.DotNetBar.ButtonX()
         Me.btGastos = New DevComponents.DotNetBar.ButtonX()
         Me.btDeposito = New DevComponents.DotNetBar.ButtonX()
         Me.btCorte = New DevComponents.DotNetBar.ButtonX()
-        Me.ControlContainerItem16 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem14 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem17 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem18 = New DevComponents.DotNetBar.ControlContainerItem()
-        Me.ControlContainerItem19 = New DevComponents.DotNetBar.ControlContainerItem()
         Me.btNuevoCliente = New DevComponents.DotNetBar.ButtonX()
         Me.btClActualiza = New DevComponents.DotNetBar.ButtonX()
         Me.btNuevaVenta = New DevComponents.DotNetBar.ButtonX()
-        Me.bt_Creditos = New DevComponents.DotNetBar.ButtonX()
         Me.ButtonX3 = New DevComponents.DotNetBar.ButtonX()
-        Me.btPlanCliente = New DevComponents.DotNetBar.ButtonX()
-        Me.bt = New DevComponents.DotNetBar.ButtonX()
-        Me.bt_puesto = New DevComponents.DotNetBar.ButtonX()
-        Me.btNuevoLugar = New DevComponents.DotNetBar.ButtonX()
-        Me.btNuevoEnvio = New DevComponents.DotNetBar.ButtonX()
-        Me.btEstadoEnvio = New DevComponents.DotNetBar.ButtonX()
-        Me.btPedidos = New DevComponents.DotNetBar.ButtonX()
-        Me.btEstados = New DevComponents.DotNetBar.ButtonX()
-        Me.btInvetario = New DevComponents.DotNetBar.ButtonX()
-        Me.ControlContainerItem5 = New DevComponents.DotNetBar.ControlContainerItem()
+        Me.bt_Creditos = New DevComponents.DotNetBar.ButtonX()
+        Me.btDarContrato = New DevComponents.DotNetBar.ButtonX()
+        Me.ButtonX2 = New DevComponents.DotNetBar.ButtonX()
+        Me.btTstock = New DevComponents.DotNetBar.ButtonX()
+        Me.btCreditos = New DevComponents.DotNetBar.ButtonX()
+        Me.ButtonX4 = New DevComponents.DotNetBar.ButtonX()
+        Me.mnuPRMarca = New DevComponents.DotNetBar.ButtonX()
+        Me.mnuPRCategoria = New DevComponents.DotNetBar.ButtonX()
+        Me.ButtonX1 = New DevComponents.DotNetBar.ButtonX()
+        Me.btNInvetario = New DevComponents.DotNetBar.ButtonX()
         Me.btRecibir = New DevComponents.DotNetBar.ButtonX()
         Me.menuMetro.SuspendLayout()
+        Me.MetroTabPanel1.SuspendLayout()
+        Me.mnuBodRbInventario.SuspendLayout()
+        Me.mnuBodRbTraslados.SuspendLayout()
+        Me.mnuTABSISTEMA.SuspendLayout()
         Me.mnuTABTIENDA.SuspendLayout()
         Me.rbTieCaja.SuspendLayout()
         Me.rbTieClientes.SuspendLayout()
         Me.rbtieVentas.SuspendLayout()
-        Me.MetroTabPanel1.SuspendLayout()
-        Me.mnuBodRbTraslados.SuspendLayout()
-        Me.mnuBodRbInventario.SuspendLayout()
-        Me.mnuBodRbProducto.SuspendLayout()
-        Me.mnuTABSISTEMA.SuspendLayout()
         Me.mnuTABBODEGA.SuspendLayout()
+        Me.RibbonBar2.SuspendLayout()
         Me.RibbonBar1.SuspendLayout()
+        Me.mnuBodRbProducto.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
-        Me.RibbonBar2.SuspendLayout()
         CType(Me.tpMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpMain.SuspendLayout()
         Me.SuspendLayout()
@@ -136,10 +138,10 @@ Partial Class frmMain
         '
         Me.menuMetro.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.menuMetro.CaptionVisible = True
-        Me.menuMetro.Controls.Add(Me.mnuTABBODEGA)
         Me.menuMetro.Controls.Add(Me.mnuTABTIENDA)
-        Me.menuMetro.Controls.Add(Me.mnuTABSISTEMA)
         Me.menuMetro.Controls.Add(Me.MetroTabPanel1)
+        Me.menuMetro.Controls.Add(Me.mnuTABSISTEMA)
+        Me.menuMetro.Controls.Add(Me.mnuTABBODEGA)
         Me.menuMetro.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuMetro.ForeColor = System.Drawing.Color.Black
         Me.menuMetro.HelpButtonText = Nothing
@@ -173,6 +175,161 @@ Partial Class frmMain
         Me.menuMetro.Text = "MetroShell1"
         Me.menuMetro.Visible = False
         '
+        'MetroTabPanel1
+        '
+        Me.MetroTabPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.MetroTabPanel1.Controls.Add(Me.mnuBodRbInventario)
+        Me.MetroTabPanel1.Controls.Add(Me.mnuBodRbTraslados)
+        Me.MetroTabPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTabPanel1.Location = New System.Drawing.Point(0, 51)
+        Me.MetroTabPanel1.Name = "MetroTabPanel1"
+        Me.MetroTabPanel1.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.MetroTabPanel1.Size = New System.Drawing.Size(1105, 106)
+        '
+        '
+        '
+        Me.MetroTabPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.MetroTabPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.MetroTabPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.MetroTabPanel1.TabIndex = 6
+        Me.MetroTabPanel1.Visible = False
+        '
+        'mnuBodRbInventario
+        '
+        Me.mnuBodRbInventario.AutoOverflowEnabled = True
+        Me.mnuBodRbInventario.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.mnuBodRbInventario.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.mnuBodRbInventario.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.mnuBodRbInventario.ContainerControlProcessDialogKey = True
+        Me.mnuBodRbInventario.Controls.Add(Me.btInvetario)
+        Me.mnuBodRbInventario.Dock = System.Windows.Forms.DockStyle.Left
+        Me.mnuBodRbInventario.ForeColor = System.Drawing.Color.Black
+        Me.mnuBodRbInventario.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem5})
+        Me.mnuBodRbInventario.Location = New System.Drawing.Point(338, 0)
+        Me.mnuBodRbInventario.Name = "mnuBodRbInventario"
+        Me.mnuBodRbInventario.Size = New System.Drawing.Size(79, 103)
+        Me.mnuBodRbInventario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.mnuBodRbInventario.TabIndex = 1
+        Me.mnuBodRbInventario.Text = "Inventario"
+        '
+        '
+        '
+        Me.mnuBodRbInventario.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.mnuBodRbInventario.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        'ControlContainerItem5
+        '
+        Me.ControlContainerItem5.AllowItemResize = False
+        Me.ControlContainerItem5.Control = Me.btInvetario
+        Me.ControlContainerItem5.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem5.Name = "ControlContainerItem5"
+        '
+        'mnuBodRbTraslados
+        '
+        Me.mnuBodRbTraslados.AutoOverflowEnabled = True
+        Me.mnuBodRbTraslados.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.mnuBodRbTraslados.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.mnuBodRbTraslados.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.mnuBodRbTraslados.ContainerControlProcessDialogKey = True
+        Me.mnuBodRbTraslados.Controls.Add(Me.btNuevoEnvio)
+        Me.mnuBodRbTraslados.Controls.Add(Me.btEstadoEnvio)
+        Me.mnuBodRbTraslados.Controls.Add(Me.btPedidos)
+        Me.mnuBodRbTraslados.Controls.Add(Me.btRecepcion)
+        Me.mnuBodRbTraslados.Dock = System.Windows.Forms.DockStyle.Left
+        Me.mnuBodRbTraslados.ForeColor = System.Drawing.Color.Black
+        Me.mnuBodRbTraslados.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem6, Me.ControlContainerItem7, Me.ControlContainerItem8, Me.ControlContainerItem20})
+        Me.mnuBodRbTraslados.Location = New System.Drawing.Point(3, 0)
+        Me.mnuBodRbTraslados.Name = "mnuBodRbTraslados"
+        Me.mnuBodRbTraslados.Size = New System.Drawing.Size(335, 103)
+        Me.mnuBodRbTraslados.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.mnuBodRbTraslados.TabIndex = 9
+        Me.mnuBodRbTraslados.Text = "Movimientos de producto"
+        '
+        '
+        '
+        Me.mnuBodRbTraslados.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.mnuBodRbTraslados.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        'ControlContainerItem6
+        '
+        Me.ControlContainerItem6.AllowItemResize = False
+        Me.ControlContainerItem6.Control = Me.btNuevoEnvio
+        Me.ControlContainerItem6.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem6.Name = "ControlContainerItem6"
+        '
+        'ControlContainerItem7
+        '
+        Me.ControlContainerItem7.AllowItemResize = False
+        Me.ControlContainerItem7.Control = Me.btEstadoEnvio
+        Me.ControlContainerItem7.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem7.Name = "ControlContainerItem7"
+        '
+        'ControlContainerItem8
+        '
+        Me.ControlContainerItem8.AllowItemResize = False
+        Me.ControlContainerItem8.Control = Me.btPedidos
+        Me.ControlContainerItem8.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem8.Name = "ControlContainerItem8"
+        '
+        'ControlContainerItem20
+        '
+        Me.ControlContainerItem20.AllowItemResize = False
+        Me.ControlContainerItem20.Control = Me.btRecepcion
+        Me.ControlContainerItem20.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem20.Name = "ControlContainerItem20"
+        '
+        'mnuTABSISTEMA
+        '
+        Me.mnuTABSISTEMA.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2010
+        Me.mnuTABSISTEMA.Controls.Add(Me.btPlanCliente)
+        Me.mnuTABSISTEMA.Controls.Add(Me.bt)
+        Me.mnuTABSISTEMA.Controls.Add(Me.bt_puesto)
+        Me.mnuTABSISTEMA.Controls.Add(Me.btNuevoLugar)
+        Me.mnuTABSISTEMA.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.mnuTABSISTEMA.Location = New System.Drawing.Point(0, 51)
+        Me.mnuTABSISTEMA.Name = "mnuTABSISTEMA"
+        Me.mnuTABSISTEMA.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.mnuTABSISTEMA.Size = New System.Drawing.Size(1105, 106)
+        '
+        '
+        '
+        Me.mnuTABSISTEMA.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.mnuTABSISTEMA.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.mnuTABSISTEMA.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.mnuTABSISTEMA.TabIndex = 4
+        Me.mnuTABSISTEMA.ThemeAware = True
+        Me.mnuTABSISTEMA.Visible = False
+        '
         'mnuTABTIENDA
         '
         Me.mnuTABTIENDA.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Metro
@@ -180,10 +337,10 @@ Partial Class frmMain
         Me.mnuTABTIENDA.Controls.Add(Me.rbTieClientes)
         Me.mnuTABTIENDA.Controls.Add(Me.rbtieVentas)
         Me.mnuTABTIENDA.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mnuTABTIENDA.Location = New System.Drawing.Point(0, 0)
+        Me.mnuTABTIENDA.Location = New System.Drawing.Point(0, 51)
         Me.mnuTABTIENDA.Name = "mnuTABTIENDA"
         Me.mnuTABTIENDA.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.mnuTABTIENDA.Size = New System.Drawing.Size(1105, 157)
+        Me.mnuTABTIENDA.Size = New System.Drawing.Size(1105, 106)
         '
         '
         '
@@ -198,7 +355,6 @@ Partial Class frmMain
         Me.mnuTABTIENDA.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.mnuTABTIENDA.TabIndex = 2
         Me.mnuTABTIENDA.ThemeAware = True
-        Me.mnuTABTIENDA.Visible = False
         '
         'rbTieCaja
         '
@@ -221,9 +377,9 @@ Partial Class frmMain
         Me.rbTieCaja.Dock = System.Windows.Forms.DockStyle.Left
         Me.rbTieCaja.ForeColor = System.Drawing.Color.Black
         Me.rbTieCaja.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem16, Me.ControlContainerItem14, Me.ControlContainerItem17, Me.ControlContainerItem18, Me.ControlContainerItem19})
-        Me.rbTieCaja.Location = New System.Drawing.Point(314, 0)
+        Me.rbTieCaja.Location = New System.Drawing.Point(422, 0)
         Me.rbTieCaja.Name = "rbTieCaja"
-        Me.rbTieCaja.Size = New System.Drawing.Size(326, 154)
+        Me.rbTieCaja.Size = New System.Drawing.Size(326, 103)
         Me.rbTieCaja.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.rbTieCaja.TabIndex = 12
         Me.rbTieCaja.Text = "Caja"
@@ -235,6 +391,41 @@ Partial Class frmMain
         '
         '
         Me.rbTieCaja.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        'ControlContainerItem16
+        '
+        Me.ControlContainerItem16.AllowItemResize = False
+        Me.ControlContainerItem16.Control = Me.btNuAbono
+        Me.ControlContainerItem16.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem16.Name = "ControlContainerItem16"
+        '
+        'ControlContainerItem14
+        '
+        Me.ControlContainerItem14.AllowItemResize = False
+        Me.ControlContainerItem14.Control = Me.btCContado
+        Me.ControlContainerItem14.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem14.Name = "ControlContainerItem14"
+        '
+        'ControlContainerItem17
+        '
+        Me.ControlContainerItem17.AllowItemResize = False
+        Me.ControlContainerItem17.Control = Me.btGastos
+        Me.ControlContainerItem17.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem17.Name = "ControlContainerItem17"
+        '
+        'ControlContainerItem18
+        '
+        Me.ControlContainerItem18.AllowItemResize = False
+        Me.ControlContainerItem18.Control = Me.btDeposito
+        Me.ControlContainerItem18.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem18.Name = "ControlContainerItem18"
+        '
+        'ControlContainerItem19
+        '
+        Me.ControlContainerItem19.AllowItemResize = False
+        Me.ControlContainerItem19.Control = Me.btCorte
+        Me.ControlContainerItem19.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem19.Name = "ControlContainerItem19"
         '
         'rbTieClientes
         '
@@ -254,9 +445,9 @@ Partial Class frmMain
         Me.rbTieClientes.Dock = System.Windows.Forms.DockStyle.Left
         Me.rbTieClientes.ForeColor = System.Drawing.Color.Black
         Me.rbTieClientes.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem12, Me.ControlContainerItem13})
-        Me.rbTieClientes.Location = New System.Drawing.Point(195, 0)
+        Me.rbTieClientes.Location = New System.Drawing.Point(303, 0)
         Me.rbTieClientes.Name = "rbTieClientes"
-        Me.rbTieClientes.Size = New System.Drawing.Size(119, 154)
+        Me.rbTieClientes.Size = New System.Drawing.Size(119, 103)
         Me.rbTieClientes.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.rbTieClientes.TabIndex = 11
         Me.rbTieClientes.Text = "Clientes"
@@ -297,14 +488,15 @@ Partial Class frmMain
         Me.rbtieVentas.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.rbtieVentas.ContainerControlProcessDialogKey = True
         Me.rbtieVentas.Controls.Add(Me.btNuevaVenta)
-        Me.rbtieVentas.Controls.Add(Me.bt_Creditos)
         Me.rbtieVentas.Controls.Add(Me.ButtonX3)
+        Me.rbtieVentas.Controls.Add(Me.bt_Creditos)
+        Me.rbtieVentas.Controls.Add(Me.btDarContrato)
         Me.rbtieVentas.Dock = System.Windows.Forms.DockStyle.Left
         Me.rbtieVentas.ForeColor = System.Drawing.Color.Black
-        Me.rbtieVentas.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem9, Me.ControlContainerItem11, Me.ControlContainerItem10})
+        Me.rbtieVentas.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem9, Me.ControlContainerItem10, Me.ControlContainerItem11, Me.ControlContainerItem24})
         Me.rbtieVentas.Location = New System.Drawing.Point(3, 0)
         Me.rbtieVentas.Name = "rbtieVentas"
-        Me.rbtieVentas.Size = New System.Drawing.Size(192, 154)
+        Me.rbtieVentas.Size = New System.Drawing.Size(300, 103)
         Me.rbtieVentas.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.rbtieVentas.TabIndex = 13
         Me.rbtieVentas.Text = "Ventas"
@@ -324,13 +516,6 @@ Partial Class frmMain
         Me.ControlContainerItem9.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
         Me.ControlContainerItem9.Name = "ControlContainerItem9"
         '
-        'ControlContainerItem11
-        '
-        Me.ControlContainerItem11.AllowItemResize = False
-        Me.ControlContainerItem11.Control = Me.bt_Creditos
-        Me.ControlContainerItem11.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem11.Name = "ControlContainerItem11"
-        '
         'ControlContainerItem10
         '
         Me.ControlContainerItem10.AllowItemResize = False
@@ -338,125 +523,140 @@ Partial Class frmMain
         Me.ControlContainerItem10.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
         Me.ControlContainerItem10.Name = "ControlContainerItem10"
         '
-        'MetroTabPanel1
+        'ControlContainerItem11
         '
-        Me.MetroTabPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.MetroTabPanel1.Controls.Add(Me.mnuBodRbTraslados)
-        Me.MetroTabPanel1.Controls.Add(Me.mnuBodRbInventario)
-        Me.MetroTabPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTabPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.MetroTabPanel1.Name = "MetroTabPanel1"
-        Me.MetroTabPanel1.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.MetroTabPanel1.Size = New System.Drawing.Size(1105, 157)
+        Me.ControlContainerItem11.AllowItemResize = False
+        Me.ControlContainerItem11.Control = Me.bt_Creditos
+        Me.ControlContainerItem11.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem11.Name = "ControlContainerItem11"
         '
+        'ControlContainerItem24
         '
+        Me.ControlContainerItem24.AllowItemResize = False
+        Me.ControlContainerItem24.Control = Me.btDarContrato
+        Me.ControlContainerItem24.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem24.Name = "ControlContainerItem24"
         '
-        Me.MetroTabPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        'mnuTABBODEGA
         '
-        '
-        '
-        Me.MetroTabPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.MetroTabPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.MetroTabPanel1.TabIndex = 6
-        Me.MetroTabPanel1.Visible = False
-        '
-        'mnuBodRbTraslados
-        '
-        Me.mnuBodRbTraslados.AutoOverflowEnabled = True
-        Me.mnuBodRbTraslados.BackColor = System.Drawing.Color.White
+        Me.mnuTABBODEGA.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.mnuTABBODEGA.Controls.Add(Me.RibbonBar2)
+        Me.mnuTABBODEGA.Controls.Add(Me.RibbonBar1)
+        Me.mnuTABBODEGA.Controls.Add(Me.mnuBodRbProducto)
+        Me.mnuTABBODEGA.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.mnuTABBODEGA.Location = New System.Drawing.Point(0, 51)
+        Me.mnuTABBODEGA.Name = "mnuTABBODEGA"
+        Me.mnuTABBODEGA.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.mnuTABBODEGA.Size = New System.Drawing.Size(1105, 106)
         '
         '
         '
-        Me.mnuBodRbTraslados.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.mnuTABBODEGA.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.mnuBodRbTraslados.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.mnuBodRbTraslados.ContainerControlProcessDialogKey = True
-        Me.mnuBodRbTraslados.Controls.Add(Me.btNuevoEnvio)
-        Me.mnuBodRbTraslados.Controls.Add(Me.btEstadoEnvio)
-        Me.mnuBodRbTraslados.Controls.Add(Me.btPedidos)
-        Me.mnuBodRbTraslados.Controls.Add(Me.btEstados)
-        Me.mnuBodRbTraslados.Dock = System.Windows.Forms.DockStyle.Left
-        Me.mnuBodRbTraslados.ForeColor = System.Drawing.Color.Black
-        Me.mnuBodRbTraslados.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem6, Me.ControlContainerItem7, Me.ControlContainerItem8, Me.ControlContainerItem20})
-        Me.mnuBodRbTraslados.Location = New System.Drawing.Point(82, 0)
-        Me.mnuBodRbTraslados.Name = "mnuBodRbTraslados"
-        Me.mnuBodRbTraslados.Size = New System.Drawing.Size(309, 154)
-        Me.mnuBodRbTraslados.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.mnuBodRbTraslados.TabIndex = 9
-        Me.mnuBodRbTraslados.Text = "Movimientos de producto"
+        Me.mnuTABBODEGA.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.mnuBodRbTraslados.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.mnuTABBODEGA.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.mnuTABBODEGA.TabIndex = 5
+        Me.mnuTABBODEGA.ThemeAware = True
+        Me.mnuTABBODEGA.Visible = False
+        '
+        'RibbonBar2
+        '
+        Me.RibbonBar2.AutoOverflowEnabled = True
+        Me.RibbonBar2.BackColor = System.Drawing.Color.White
         '
         '
         '
-        Me.mnuBodRbTraslados.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        'ControlContainerItem6
-        '
-        Me.ControlContainerItem6.AllowItemResize = False
-        Me.ControlContainerItem6.Control = Me.btNuevoEnvio
-        Me.ControlContainerItem6.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem6.Name = "ControlContainerItem6"
-        '
-        'ControlContainerItem7
-        '
-        Me.ControlContainerItem7.AllowItemResize = False
-        Me.ControlContainerItem7.Control = Me.btEstadoEnvio
-        Me.ControlContainerItem7.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem7.Name = "ControlContainerItem7"
-        '
-        'ControlContainerItem8
-        '
-        Me.ControlContainerItem8.AllowItemResize = False
-        Me.ControlContainerItem8.Control = Me.btPedidos
-        Me.ControlContainerItem8.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem8.Name = "ControlContainerItem8"
-        '
-        'ControlContainerItem20
-        '
-        Me.ControlContainerItem20.AllowItemResize = False
-        Me.ControlContainerItem20.Control = Me.btEstados
-        Me.ControlContainerItem20.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem20.Name = "ControlContainerItem20"
-        '
-        'mnuBodRbInventario
-        '
-        Me.mnuBodRbInventario.AutoOverflowEnabled = True
-        Me.mnuBodRbInventario.BackColor = System.Drawing.Color.White
+        Me.RibbonBar2.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.mnuBodRbInventario.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBar2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBar2.ContainerControlProcessDialogKey = True
+        Me.RibbonBar2.Controls.Add(Me.ButtonX2)
+        Me.RibbonBar2.Controls.Add(Me.btTstock)
+        Me.RibbonBar2.Controls.Add(Me.btCreditos)
+        Me.RibbonBar2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.RibbonBar2.ForeColor = System.Drawing.Color.Black
+        Me.RibbonBar2.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem21, Me.ControlContainerItem22, Me.ControlContainerItem23})
+        Me.RibbonBar2.Location = New System.Drawing.Point(362, 0)
+        Me.RibbonBar2.Name = "RibbonBar2"
+        Me.RibbonBar2.Size = New System.Drawing.Size(229, 103)
+        Me.RibbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RibbonBar2.TabIndex = 13
+        Me.RibbonBar2.Text = "Tienda"
         '
         '
         '
-        Me.mnuBodRbInventario.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.mnuBodRbInventario.ContainerControlProcessDialogKey = True
-        Me.mnuBodRbInventario.Controls.Add(Me.btInvetario)
-        Me.mnuBodRbInventario.Dock = System.Windows.Forms.DockStyle.Left
-        Me.mnuBodRbInventario.ForeColor = System.Drawing.Color.Black
-        Me.mnuBodRbInventario.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem5})
-        Me.mnuBodRbInventario.Location = New System.Drawing.Point(3, 0)
-        Me.mnuBodRbInventario.Name = "mnuBodRbInventario"
-        Me.mnuBodRbInventario.Size = New System.Drawing.Size(79, 154)
-        Me.mnuBodRbInventario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.mnuBodRbInventario.TabIndex = 1
-        Me.mnuBodRbInventario.Text = "Inventario"
+        Me.RibbonBar2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.mnuBodRbInventario.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        'ControlContainerItem21
+        '
+        Me.ControlContainerItem21.AllowItemResize = False
+        Me.ControlContainerItem21.Control = Me.ButtonX2
+        Me.ControlContainerItem21.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem21.Name = "ControlContainerItem21"
+        '
+        'ControlContainerItem22
+        '
+        Me.ControlContainerItem22.AllowItemResize = False
+        Me.ControlContainerItem22.Control = Me.btTstock
+        Me.ControlContainerItem22.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem22.Name = "ControlContainerItem22"
+        '
+        'ControlContainerItem23
+        '
+        Me.ControlContainerItem23.AllowItemResize = False
+        Me.ControlContainerItem23.Control = Me.btCreditos
+        Me.ControlContainerItem23.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem23.Name = "ControlContainerItem23"
+        '
+        'RibbonBar1
+        '
+        Me.RibbonBar1.AutoOverflowEnabled = True
+        Me.RibbonBar1.BackColor = System.Drawing.Color.White
         '
         '
         '
-        Me.mnuBodRbInventario.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBar1.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RibbonBar1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBar1.ContainerControlProcessDialogKey = True
+        Me.RibbonBar1.Controls.Add(Me.ButtonX4)
+        Me.RibbonBar1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.RibbonBar1.ForeColor = System.Drawing.Color.Black
+        Me.RibbonBar1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem15})
+        Me.RibbonBar1.Location = New System.Drawing.Point(296, 0)
+        Me.RibbonBar1.Name = "RibbonBar1"
+        Me.RibbonBar1.Size = New System.Drawing.Size(66, 103)
+        Me.RibbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RibbonBar1.TabIndex = 12
+        Me.RibbonBar1.Text = "Clientes"
+        '
+        '
+        '
+        Me.RibbonBar1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RibbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        'ControlContainerItem15
+        '
+        Me.ControlContainerItem15.AllowItemResize = False
+        Me.ControlContainerItem15.Control = Me.ButtonX4
+        Me.ControlContainerItem15.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem15.Name = "ControlContainerItem15"
         '
         'mnuBodRbProducto
         '
@@ -494,101 +694,43 @@ Partial Class frmMain
         '
         Me.mnuBodRbProducto.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
-        'mnuTABSISTEMA
+        'ControlContainerItem2
         '
-        Me.mnuTABSISTEMA.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2010
-        Me.mnuTABSISTEMA.Controls.Add(Me.btPlanCliente)
-        Me.mnuTABSISTEMA.Controls.Add(Me.bt)
-        Me.mnuTABSISTEMA.Controls.Add(Me.bt_puesto)
-        Me.mnuTABSISTEMA.Controls.Add(Me.btNuevoLugar)
-        Me.mnuTABSISTEMA.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mnuTABSISTEMA.Location = New System.Drawing.Point(0, 0)
-        Me.mnuTABSISTEMA.Name = "mnuTABSISTEMA"
-        Me.mnuTABSISTEMA.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.mnuTABSISTEMA.Size = New System.Drawing.Size(1105, 157)
+        Me.ControlContainerItem2.AllowItemResize = False
+        Me.ControlContainerItem2.Control = Me.mnuPRMarca
+        Me.ControlContainerItem2.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem2.Name = "ControlContainerItem2"
         '
+        'ControlContainerItem3
         '
+        Me.ControlContainerItem3.AllowItemResize = False
+        Me.ControlContainerItem3.Control = Me.mnuPRCategoria
+        Me.ControlContainerItem3.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem3.Name = "ControlContainerItem3"
         '
-        Me.mnuTABSISTEMA.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        'ControlContainerItem1
         '
+        Me.ControlContainerItem1.AllowItemResize = False
+        Me.ControlContainerItem1.Control = Me.ButtonX1
+        Me.ControlContainerItem1.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem1.Name = "ControlContainerItem1"
         '
+        'ControlContainerItem4
         '
-        Me.mnuTABSISTEMA.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.mnuTABSISTEMA.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.mnuTABSISTEMA.TabIndex = 4
-        Me.mnuTABSISTEMA.ThemeAware = True
-        Me.mnuTABSISTEMA.Visible = False
-        '
-        'mnuTABBODEGA
-        '
-        Me.mnuTABBODEGA.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.mnuTABBODEGA.Controls.Add(Me.RibbonBar2)
-        Me.mnuTABBODEGA.Controls.Add(Me.RibbonBar1)
-        Me.mnuTABBODEGA.Controls.Add(Me.mnuBodRbProducto)
-        Me.mnuTABBODEGA.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mnuTABBODEGA.Location = New System.Drawing.Point(0, 51)
-        Me.mnuTABBODEGA.Name = "mnuTABBODEGA"
-        Me.mnuTABBODEGA.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.mnuTABBODEGA.Size = New System.Drawing.Size(1105, 106)
-        '
-        '
-        '
-        Me.mnuTABBODEGA.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.mnuTABBODEGA.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.mnuTABBODEGA.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.mnuTABBODEGA.TabIndex = 5
-        Me.mnuTABBODEGA.ThemeAware = True
-        '
-        'RibbonBar1
-        '
-        Me.RibbonBar1.AutoOverflowEnabled = True
-        Me.RibbonBar1.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.RibbonBar1.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBar1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonBar1.ContainerControlProcessDialogKey = True
-        Me.RibbonBar1.Controls.Add(Me.ButtonX4)
-        Me.RibbonBar1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.RibbonBar1.ForeColor = System.Drawing.Color.Black
-        Me.RibbonBar1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem15})
-        Me.RibbonBar1.Location = New System.Drawing.Point(296, 0)
-        Me.RibbonBar1.Name = "RibbonBar1"
-        Me.RibbonBar1.Size = New System.Drawing.Size(66, 103)
-        Me.RibbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RibbonBar1.TabIndex = 12
-        Me.RibbonBar1.Text = "Clientes"
-        '
-        '
-        '
-        Me.RibbonBar1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.ControlContainerItem4.AllowItemResize = False
+        Me.ControlContainerItem4.Control = Me.btNInvetario
+        Me.ControlContainerItem4.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
+        Me.ControlContainerItem4.Name = "ControlContainerItem4"
         '
         'mnuTienda
         '
+        Me.mnuTienda.Checked = True
         Me.mnuTienda.Name = "mnuTienda"
         Me.mnuTienda.Panel = Me.mnuTABTIENDA
         Me.mnuTienda.Text = "&TIENDA"
         '
         'mnuBodega
         '
-        Me.mnuBodega.Checked = True
         Me.mnuBodega.Name = "mnuBodega"
         Me.mnuBodega.Panel = Me.mnuTABBODEGA
         Me.mnuBodega.Text = "BODEGA"
@@ -716,7 +858,7 @@ Partial Class frmMain
         Me.ToolStripContainer1.ContentPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.tpMain)
         Me.ToolStripContainer1.ContentPanel.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(1105, 293)
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(1105, 268)
         Me.ToolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         '
         'ToolStripContainer1.LeftToolStripPanel
@@ -751,38 +893,6 @@ Partial Class frmMain
         Me.mnuINICIO.ShowSubItems = False
         Me.mnuINICIO.Text = "&INICIO"
         '
-        'RibbonBar2
-        '
-        Me.RibbonBar2.AutoOverflowEnabled = True
-        '
-        '
-        '
-        Me.RibbonBar2.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBar2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonBar2.ContainerControlProcessDialogKey = True
-        Me.RibbonBar2.Controls.Add(Me.ButtonX2)
-        Me.RibbonBar2.Controls.Add(Me.btTstock)
-        Me.RibbonBar2.Controls.Add(Me.btCreditos)
-        Me.RibbonBar2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.RibbonBar2.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ControlContainerItem21, Me.ControlContainerItem22, Me.ControlContainerItem23})
-        Me.RibbonBar2.Location = New System.Drawing.Point(362, 0)
-        Me.RibbonBar2.Name = "RibbonBar2"
-        Me.RibbonBar2.Size = New System.Drawing.Size(229, 103)
-        Me.RibbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RibbonBar2.TabIndex = 13
-        Me.RibbonBar2.Text = "Tienda"
-        '
-        '
-        '
-        Me.RibbonBar2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
         'tpMain
         '
         Me.tpMain.AutoCloseTabs = True
@@ -799,7 +909,7 @@ Partial Class frmMain
         Me.tpMain.Name = "tpMain"
         Me.tpMain.SelectedTabFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tpMain.SelectedTabIndex = 0
-        Me.tpMain.Size = New System.Drawing.Size(1105, 293)
+        Me.tpMain.Size = New System.Drawing.Size(1105, 268)
         Me.tpMain.Style = DevComponents.DotNetBar.eTabStripStyle.Metro
         Me.tpMain.TabCloseButtonHot = Global.POS.My.Resources.Resources.close16
         Me.tpMain.TabCloseButtonNormal = Global.POS.My.Resources.Resources.close16
@@ -816,7 +926,7 @@ Partial Class frmMain
         Me.tcpMain.Location = New System.Drawing.Point(0, 33)
         Me.tcpMain.Name = "tcpMain"
         Me.tcpMain.Padding = New System.Windows.Forms.Padding(1)
-        Me.tcpMain.Size = New System.Drawing.Size(1105, 260)
+        Me.tcpMain.Size = New System.Drawing.Size(1105, 235)
         Me.tcpMain.Style.BackColor1.Color = System.Drawing.Color.White
         Me.tcpMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
         Me.tcpMain.Style.BorderColor.Color = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(211, Byte), Integer))
@@ -832,366 +942,80 @@ Partial Class frmMain
         Me.INICIO.Name = "INICIO"
         Me.INICIO.Text = "INICIO"
         '
-        'ButtonX2
+        'btInvetario
         '
-        Me.ButtonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ButtonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.ButtonX2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonX2.Image = Global.POS.My.Resources.Resources._11220
-        Me.ButtonX2.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.ButtonX2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.ButtonX2.Location = New System.Drawing.Point(4, 3)
-        Me.ButtonX2.Name = "ButtonX2"
-        Me.ButtonX2.Size = New System.Drawing.Size(60, 66)
-        Me.ButtonX2.TabIndex = 16
-        Me.ButtonX2.Text = "Corte"
+        Me.btInvetario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btInvetario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btInvetario.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btInvetario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btInvetario.Image = Global.POS.My.Resources.Resources.Inventory_pr
+        Me.btInvetario.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btInvetario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btInvetario.Location = New System.Drawing.Point(4, 3)
+        Me.btInvetario.Name = "btInvetario"
+        Me.btInvetario.Size = New System.Drawing.Size(65, 66)
+        Me.btInvetario.TabIndex = 7
+        Me.btInvetario.Text = "Ver Strock"
         '
-        'btTstock
+        'btNuevoEnvio
         '
-        Me.btTstock.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btTstock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btTstock.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btTstock.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btTstock.Image = Global.POS.My.Resources.Resources.inventary__26_
-        Me.btTstock.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btTstock.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btTstock.Location = New System.Drawing.Point(69, 3)
-        Me.btTstock.Name = "btTstock"
-        Me.btTstock.Size = New System.Drawing.Size(60, 66)
-        Me.btTstock.TabIndex = 17
-        Me.btTstock.Text = "Stock"
+        Me.btNuevoEnvio.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btNuevoEnvio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btNuevoEnvio.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btNuevoEnvio.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevoEnvio.Image = Global.POS.My.Resources.Resources.sendNew
+        Me.btNuevoEnvio.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btNuevoEnvio.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btNuevoEnvio.Location = New System.Drawing.Point(4, 3)
+        Me.btNuevoEnvio.Name = "btNuevoEnvio"
+        Me.btNuevoEnvio.Size = New System.Drawing.Size(72, 66)
+        Me.btNuevoEnvio.TabIndex = 6
+        Me.btNuevoEnvio.Text = "Nuevo Envio"
         '
-        'btCreditos
+        'btEstadoEnvio
         '
-        Me.btCreditos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btCreditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btCreditos.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btCreditos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCreditos.Image = Global.POS.My.Resources.Resources.contrat__2_
-        Me.btCreditos.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btCreditos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btCreditos.Location = New System.Drawing.Point(134, 3)
-        Me.btCreditos.Name = "btCreditos"
-        Me.btCreditos.Size = New System.Drawing.Size(60, 66)
-        Me.btCreditos.TabIndex = 18
-        Me.btCreditos.Text = "Creditos"
+        Me.btEstadoEnvio.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btEstadoEnvio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btEstadoEnvio.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btEstadoEnvio.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEstadoEnvio.Image = Global.POS.My.Resources.Resources.sendStarus
+        Me.btEstadoEnvio.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btEstadoEnvio.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btEstadoEnvio.Location = New System.Drawing.Point(81, 3)
+        Me.btEstadoEnvio.Name = "btEstadoEnvio"
+        Me.btEstadoEnvio.Size = New System.Drawing.Size(92, 66)
+        Me.btEstadoEnvio.TabIndex = 8
+        Me.btEstadoEnvio.Text = "Estado de Envios"
         '
-        'ControlContainerItem21
+        'btPedidos
         '
-        Me.ControlContainerItem21.AllowItemResize = False
-        Me.ControlContainerItem21.Control = Me.ButtonX2
-        Me.ControlContainerItem21.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem21.Name = "ControlContainerItem21"
+        Me.btPedidos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btPedidos.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btPedidos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btPedidos.Image = Global.POS.My.Resources.Resources.ProductsGet
+        Me.btPedidos.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btPedidos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btPedidos.Location = New System.Drawing.Point(178, 3)
+        Me.btPedidos.Name = "btPedidos"
+        Me.btPedidos.Size = New System.Drawing.Size(69, 66)
+        Me.btPedidos.TabIndex = 7
+        Me.btPedidos.Text = "Ver Pedidos"
         '
-        'ControlContainerItem22
+        'btRecepcion
         '
-        Me.ControlContainerItem22.AllowItemResize = False
-        Me.ControlContainerItem22.Control = Me.btTstock
-        Me.ControlContainerItem22.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem22.Name = "ControlContainerItem22"
-        '
-        'ControlContainerItem23
-        '
-        Me.ControlContainerItem23.AllowItemResize = False
-        Me.ControlContainerItem23.Control = Me.btCreditos
-        Me.ControlContainerItem23.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem23.Name = "ControlContainerItem23"
-        '
-        'ButtonX4
-        '
-        Me.ButtonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ButtonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.ButtonX4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonX4.Image = Global.POS.My.Resources.Resources.clientEdit
-        Me.ButtonX4.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.ButtonX4.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.ButtonX4.Location = New System.Drawing.Point(4, 3)
-        Me.ButtonX4.Name = "ButtonX4"
-        Me.ButtonX4.Size = New System.Drawing.Size(55, 66)
-        Me.ButtonX4.TabIndex = 14
-        Me.ButtonX4.Text = "Actualizar"
-        '
-        'ControlContainerItem15
-        '
-        Me.ControlContainerItem15.AllowItemResize = False
-        Me.ControlContainerItem15.Control = Me.ButtonX4
-        Me.ControlContainerItem15.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem15.Name = "ControlContainerItem15"
-        '
-        'mnuPRMarca
-        '
-        Me.mnuPRMarca.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.mnuPRMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.mnuPRMarca.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.mnuPRMarca.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mnuPRMarca.Image = Global.POS.My.Resources.Resources.brand1
-        Me.mnuPRMarca.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuPRMarca.Location = New System.Drawing.Point(4, 3)
-        Me.mnuPRMarca.Name = "mnuPRMarca"
-        Me.mnuPRMarca.Size = New System.Drawing.Size(53, 66)
-        Me.mnuPRMarca.TabIndex = 4
-        Me.mnuPRMarca.Text = "Marcas"
-        '
-        'mnuPRCategoria
-        '
-        Me.mnuPRCategoria.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.mnuPRCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.mnuPRCategoria.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.mnuPRCategoria.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mnuPRCategoria.Image = Global.POS.My.Resources.Resources.product_pr
-        Me.mnuPRCategoria.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.mnuPRCategoria.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuPRCategoria.Location = New System.Drawing.Point(64, 3)
-        Me.mnuPRCategoria.Name = "mnuPRCategoria"
-        Me.mnuPRCategoria.Size = New System.Drawing.Size(71, 66)
-        Me.mnuPRCategoria.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro
-        Me.mnuPRCategoria.TabIndex = 6
-        Me.mnuPRCategoria.Text = "Categoria"
-        '
-        'ButtonX1
-        '
-        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.ButtonX1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonX1.Image = CType(resources.GetObject("ButtonX1.Image"), System.Drawing.Image)
-        Me.ButtonX1.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.ButtonX1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.ButtonX1.Location = New System.Drawing.Point(142, 3)
-        Me.ButtonX1.Name = "ButtonX1"
-        Me.ButtonX1.Size = New System.Drawing.Size(65, 66)
-        Me.ButtonX1.TabIndex = 5
-        Me.ButtonX1.Text = "Modelos"
-        '
-        'btNInvetario
-        '
-        Me.btNInvetario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btNInvetario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btNInvetario.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btNInvetario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNInvetario.Image = Global.POS.My.Resources.Resources.inventaryAdd
-        Me.btNInvetario.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btNInvetario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btNInvetario.Location = New System.Drawing.Point(214, 3)
-        Me.btNInvetario.Name = "btNInvetario"
-        Me.btNInvetario.Size = New System.Drawing.Size(65, 66)
-        Me.btNInvetario.TabIndex = 6
-        Me.btNInvetario.Text = "Agregrar Existencia"
-        '
-        'ControlContainerItem2
-        '
-        Me.ControlContainerItem2.AllowItemResize = False
-        Me.ControlContainerItem2.Control = Me.mnuPRMarca
-        Me.ControlContainerItem2.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem2.Name = "ControlContainerItem2"
-        '
-        'ControlContainerItem3
-        '
-        Me.ControlContainerItem3.AllowItemResize = False
-        Me.ControlContainerItem3.Control = Me.mnuPRCategoria
-        Me.ControlContainerItem3.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem3.Name = "ControlContainerItem3"
-        '
-        'ControlContainerItem1
-        '
-        Me.ControlContainerItem1.AllowItemResize = False
-        Me.ControlContainerItem1.Control = Me.ButtonX1
-        Me.ControlContainerItem1.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem1.Name = "ControlContainerItem1"
-        '
-        'ControlContainerItem4
-        '
-        Me.ControlContainerItem4.AllowItemResize = False
-        Me.ControlContainerItem4.Control = Me.btNInvetario
-        Me.ControlContainerItem4.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem4.Name = "ControlContainerItem4"
-        '
-        'btNuAbono
-        '
-        Me.btNuAbono.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btNuAbono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btNuAbono.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btNuAbono.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuAbono.Image = Global.POS.My.Resources.Resources.salesMoney
-        Me.btNuAbono.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btNuAbono.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btNuAbono.Location = New System.Drawing.Point(4, 4)
-        Me.btNuAbono.Name = "btNuAbono"
-        Me.btNuAbono.Size = New System.Drawing.Size(55, 66)
-        Me.btNuAbono.TabIndex = 13
-        Me.btNuAbono.Text = "Abono"
-        '
-        'btCContado
-        '
-        Me.btCContado.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btCContado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btCContado.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btCContado.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCContado.Image = Global.POS.My.Resources.Resources.cart__7_
-        Me.btCContado.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btCContado.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btCContado.Location = New System.Drawing.Point(64, 4)
-        Me.btCContado.Name = "btCContado"
-        Me.btCContado.Size = New System.Drawing.Size(65, 66)
-        Me.btCContado.TabIndex = 15
-        Me.btCContado.Text = "Cobrar al contado"
-        '
-        'btGastos
-        '
-        Me.btGastos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btGastos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btGastos.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btGastos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btGastos.Image = Global.POS.My.Resources.Resources.salesMinus
-        Me.btGastos.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btGastos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btGastos.Location = New System.Drawing.Point(134, 4)
-        Me.btGastos.Name = "btGastos"
-        Me.btGastos.Size = New System.Drawing.Size(55, 66)
-        Me.btGastos.TabIndex = 14
-        Me.btGastos.Text = "Gastos"
-        '
-        'btDeposito
-        '
-        Me.btDeposito.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btDeposito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btDeposito.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btDeposito.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btDeposito.Image = Global.POS.My.Resources.Resources.Build__7_
-        Me.btDeposito.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btDeposito.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btDeposito.Location = New System.Drawing.Point(194, 4)
-        Me.btDeposito.Name = "btDeposito"
-        Me.btDeposito.Size = New System.Drawing.Size(55, 66)
-        Me.btDeposito.TabIndex = 16
-        Me.btDeposito.Text = "Depositos"
-        '
-        'btCorte
-        '
-        Me.btCorte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btCorte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btCorte.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btCorte.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCorte.Image = Global.POS.My.Resources.Resources._11220
-        Me.btCorte.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btCorte.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btCorte.Location = New System.Drawing.Point(254, 4)
-        Me.btCorte.Name = "btCorte"
-        Me.btCorte.Size = New System.Drawing.Size(60, 66)
-        Me.btCorte.TabIndex = 15
-        Me.btCorte.Text = "Corte"
-        '
-        'ControlContainerItem16
-        '
-        Me.ControlContainerItem16.AllowItemResize = False
-        Me.ControlContainerItem16.Control = Me.btNuAbono
-        Me.ControlContainerItem16.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem16.Name = "ControlContainerItem16"
-        '
-        'ControlContainerItem14
-        '
-        Me.ControlContainerItem14.AllowItemResize = False
-        Me.ControlContainerItem14.Control = Me.btCContado
-        Me.ControlContainerItem14.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem14.Name = "ControlContainerItem14"
-        '
-        'ControlContainerItem17
-        '
-        Me.ControlContainerItem17.AllowItemResize = False
-        Me.ControlContainerItem17.Control = Me.btGastos
-        Me.ControlContainerItem17.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem17.Name = "ControlContainerItem17"
-        '
-        'ControlContainerItem18
-        '
-        Me.ControlContainerItem18.AllowItemResize = False
-        Me.ControlContainerItem18.Control = Me.btDeposito
-        Me.ControlContainerItem18.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem18.Name = "ControlContainerItem18"
-        '
-        'ControlContainerItem19
-        '
-        Me.ControlContainerItem19.AllowItemResize = False
-        Me.ControlContainerItem19.Control = Me.btCorte
-        Me.ControlContainerItem19.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem19.Name = "ControlContainerItem19"
-        '
-        'btNuevoCliente
-        '
-        Me.btNuevoCliente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btNuevoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btNuevoCliente.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btNuevoCliente.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevoCliente.Image = Global.POS.My.Resources.Resources.client__4_
-        Me.btNuevoCliente.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btNuevoCliente.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btNuevoCliente.Location = New System.Drawing.Point(4, 3)
-        Me.btNuevoCliente.Name = "btNuevoCliente"
-        Me.btNuevoCliente.Size = New System.Drawing.Size(45, 66)
-        Me.btNuevoCliente.TabIndex = 13
-        Me.btNuevoCliente.Text = "Nuevo"
-        '
-        'btClActualiza
-        '
-        Me.btClActualiza.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btClActualiza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btClActualiza.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btClActualiza.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btClActualiza.Image = Global.POS.My.Resources.Resources.clientEdit
-        Me.btClActualiza.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btClActualiza.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btClActualiza.Location = New System.Drawing.Point(54, 3)
-        Me.btClActualiza.Name = "btClActualiza"
-        Me.btClActualiza.Size = New System.Drawing.Size(55, 66)
-        Me.btClActualiza.TabIndex = 14
-        Me.btClActualiza.Text = "Actualizar"
-        '
-        'btNuevaVenta
-        '
-        Me.btNuevaVenta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btNuevaVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btNuevaVenta.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btNuevaVenta.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevaVenta.Image = Global.POS.My.Resources.Resources.cart__24_
-        Me.btNuevaVenta.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btNuevaVenta.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btNuevaVenta.Location = New System.Drawing.Point(4, 3)
-        Me.btNuevaVenta.Name = "btNuevaVenta"
-        Me.btNuevaVenta.Size = New System.Drawing.Size(53, 66)
-        Me.btNuevaVenta.TabIndex = 14
-        Me.btNuevaVenta.Text = "Contado"
-        '
-        'bt_Creditos
-        '
-        Me.bt_Creditos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.bt_Creditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.bt_Creditos.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.bt_Creditos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_Creditos.Image = Global.POS.My.Resources.Resources.contrat__25_
-        Me.bt_Creditos.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.bt_Creditos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.bt_Creditos.Location = New System.Drawing.Point(62, 3)
-        Me.bt_Creditos.Name = "bt_Creditos"
-        Me.bt_Creditos.Size = New System.Drawing.Size(55, 66)
-        Me.bt_Creditos.TabIndex = 15
-        Me.bt_Creditos.Text = "Crédito"
-        '
-        'ButtonX3
-        '
-        Me.ButtonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ButtonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.ButtonX3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonX3.Image = Global.POS.My.Resources.Resources.bullet__9_
-        Me.ButtonX3.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.ButtonX3.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.ButtonX3.Location = New System.Drawing.Point(122, 3)
-        Me.ButtonX3.Name = "ButtonX3"
-        Me.ButtonX3.Size = New System.Drawing.Size(64, 66)
-        Me.ButtonX3.TabIndex = 15
-        Me.ButtonX3.Text = "Cotización"
+        Me.btRecepcion.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btRecepcion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btRecepcion.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btRecepcion.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRecepcion.Image = Global.POS.My.Resources.Resources.send__5_
+        Me.btRecepcion.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btRecepcion.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btRecepcion.Location = New System.Drawing.Point(252, 3)
+        Me.btRecepcion.Name = "btRecepcion"
+        Me.btRecepcion.Size = New System.Drawing.Size(77, 66)
+        Me.btRecepcion.TabIndex = 8
+        Me.btRecepcion.Text = "Recepciones"
         '
         'btPlanCliente
         '
@@ -1254,87 +1078,290 @@ Partial Class frmMain
         Me.btNuevoLugar.TabIndex = 1
         Me.btNuevoLugar.Text = "Lugares"
         '
-        'btNuevoEnvio
+        'btNuAbono
         '
-        Me.btNuevoEnvio.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btNuevoEnvio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btNuevoEnvio.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btNuevoEnvio.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevoEnvio.Image = Global.POS.My.Resources.Resources.sendNew
-        Me.btNuevoEnvio.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btNuevoEnvio.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btNuevoEnvio.Location = New System.Drawing.Point(4, 3)
-        Me.btNuevoEnvio.Name = "btNuevoEnvio"
-        Me.btNuevoEnvio.Size = New System.Drawing.Size(72, 66)
-        Me.btNuevoEnvio.TabIndex = 6
-        Me.btNuevoEnvio.Text = "Nuevo Envio"
+        Me.btNuAbono.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btNuAbono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btNuAbono.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btNuAbono.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuAbono.Image = Global.POS.My.Resources.Resources.salesMoney
+        Me.btNuAbono.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btNuAbono.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btNuAbono.Location = New System.Drawing.Point(4, 3)
+        Me.btNuAbono.Name = "btNuAbono"
+        Me.btNuAbono.Size = New System.Drawing.Size(55, 66)
+        Me.btNuAbono.TabIndex = 13
+        Me.btNuAbono.Text = "Abono"
         '
-        'btEstadoEnvio
+        'btCContado
         '
-        Me.btEstadoEnvio.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btEstadoEnvio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btEstadoEnvio.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btEstadoEnvio.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEstadoEnvio.Image = Global.POS.My.Resources.Resources.sendStarus
-        Me.btEstadoEnvio.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btEstadoEnvio.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btEstadoEnvio.Location = New System.Drawing.Point(81, 3)
-        Me.btEstadoEnvio.Name = "btEstadoEnvio"
-        Me.btEstadoEnvio.Size = New System.Drawing.Size(92, 66)
-        Me.btEstadoEnvio.TabIndex = 8
-        Me.btEstadoEnvio.Text = "Estado de Envios"
+        Me.btCContado.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btCContado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btCContado.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btCContado.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCContado.Image = Global.POS.My.Resources.Resources.cart__7_
+        Me.btCContado.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btCContado.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btCContado.Location = New System.Drawing.Point(64, 3)
+        Me.btCContado.Name = "btCContado"
+        Me.btCContado.Size = New System.Drawing.Size(65, 66)
+        Me.btCContado.TabIndex = 15
+        Me.btCContado.Text = "Cobrar al contado"
         '
-        'btPedidos
+        'btGastos
         '
-        Me.btPedidos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btPedidos.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btPedidos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btPedidos.Image = Global.POS.My.Resources.Resources.ProductsGet
-        Me.btPedidos.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btPedidos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btPedidos.Location = New System.Drawing.Point(178, 3)
-        Me.btPedidos.Name = "btPedidos"
-        Me.btPedidos.Size = New System.Drawing.Size(69, 66)
-        Me.btPedidos.TabIndex = 7
-        Me.btPedidos.Text = "Ver Pedidos"
+        Me.btGastos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGastos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btGastos.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btGastos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btGastos.Image = Global.POS.My.Resources.Resources.salesMinus
+        Me.btGastos.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btGastos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btGastos.Location = New System.Drawing.Point(134, 3)
+        Me.btGastos.Name = "btGastos"
+        Me.btGastos.Size = New System.Drawing.Size(55, 66)
+        Me.btGastos.TabIndex = 14
+        Me.btGastos.Text = "Gastos"
         '
-        'btEstados
+        'btDeposito
         '
-        Me.btEstados.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btEstados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btEstados.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btEstados.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEstados.Image = Global.POS.My.Resources.Resources.sendStarus
-        Me.btEstados.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btEstados.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btEstados.Location = New System.Drawing.Point(252, 3)
-        Me.btEstados.Name = "btEstados"
-        Me.btEstados.Size = New System.Drawing.Size(46, 66)
-        Me.btEstados.TabIndex = 8
-        Me.btEstados.Text = "Estado "
+        Me.btDeposito.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btDeposito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btDeposito.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btDeposito.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btDeposito.Image = Global.POS.My.Resources.Resources.Build__7_
+        Me.btDeposito.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btDeposito.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btDeposito.Location = New System.Drawing.Point(194, 3)
+        Me.btDeposito.Name = "btDeposito"
+        Me.btDeposito.Size = New System.Drawing.Size(55, 66)
+        Me.btDeposito.TabIndex = 16
+        Me.btDeposito.Text = "Depositos"
         '
-        'btInvetario
+        'btCorte
         '
-        Me.btInvetario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btInvetario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btInvetario.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
-        Me.btInvetario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btInvetario.Image = Global.POS.My.Resources.Resources.Inventory_pr
-        Me.btInvetario.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btInvetario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btInvetario.Location = New System.Drawing.Point(4, 4)
-        Me.btInvetario.Name = "btInvetario"
-        Me.btInvetario.Size = New System.Drawing.Size(65, 66)
-        Me.btInvetario.TabIndex = 7
-        Me.btInvetario.Text = "Ver Strock"
+        Me.btCorte.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btCorte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btCorte.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btCorte.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCorte.Image = Global.POS.My.Resources.Resources._11220
+        Me.btCorte.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btCorte.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btCorte.Location = New System.Drawing.Point(254, 3)
+        Me.btCorte.Name = "btCorte"
+        Me.btCorte.Size = New System.Drawing.Size(60, 66)
+        Me.btCorte.TabIndex = 15
+        Me.btCorte.Text = "Corte"
         '
-        'ControlContainerItem5
+        'btNuevoCliente
         '
-        Me.ControlContainerItem5.AllowItemResize = False
-        Me.ControlContainerItem5.Control = Me.btInvetario
-        Me.ControlContainerItem5.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways
-        Me.ControlContainerItem5.Name = "ControlContainerItem5"
+        Me.btNuevoCliente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btNuevoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btNuevoCliente.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btNuevoCliente.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevoCliente.Image = Global.POS.My.Resources.Resources.client__4_
+        Me.btNuevoCliente.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btNuevoCliente.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btNuevoCliente.Location = New System.Drawing.Point(4, 3)
+        Me.btNuevoCliente.Name = "btNuevoCliente"
+        Me.btNuevoCliente.Size = New System.Drawing.Size(45, 66)
+        Me.btNuevoCliente.TabIndex = 13
+        Me.btNuevoCliente.Text = "Nuevo"
+        '
+        'btClActualiza
+        '
+        Me.btClActualiza.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btClActualiza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btClActualiza.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btClActualiza.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btClActualiza.Image = Global.POS.My.Resources.Resources.clientEdit
+        Me.btClActualiza.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btClActualiza.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btClActualiza.Location = New System.Drawing.Point(54, 3)
+        Me.btClActualiza.Name = "btClActualiza"
+        Me.btClActualiza.Size = New System.Drawing.Size(55, 66)
+        Me.btClActualiza.TabIndex = 14
+        Me.btClActualiza.Text = "Actualizar"
+        '
+        'btNuevaVenta
+        '
+        Me.btNuevaVenta.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btNuevaVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btNuevaVenta.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btNuevaVenta.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevaVenta.Image = Global.POS.My.Resources.Resources.cart__24_
+        Me.btNuevaVenta.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btNuevaVenta.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btNuevaVenta.Location = New System.Drawing.Point(4, 3)
+        Me.btNuevaVenta.Name = "btNuevaVenta"
+        Me.btNuevaVenta.Size = New System.Drawing.Size(53, 66)
+        Me.btNuevaVenta.TabIndex = 14
+        Me.btNuevaVenta.Text = "Contado"
+        '
+        'ButtonX3
+        '
+        Me.ButtonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.ButtonX3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonX3.Image = Global.POS.My.Resources.Resources.bullet__9_
+        Me.ButtonX3.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.ButtonX3.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.ButtonX3.Location = New System.Drawing.Point(62, 3)
+        Me.ButtonX3.Name = "ButtonX3"
+        Me.ButtonX3.Size = New System.Drawing.Size(64, 66)
+        Me.ButtonX3.TabIndex = 15
+        Me.ButtonX3.Text = "Cotización"
+        '
+        'bt_Creditos
+        '
+        Me.bt_Creditos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.bt_Creditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.bt_Creditos.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.bt_Creditos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_Creditos.Image = Global.POS.My.Resources.Resources.contrat__25_
+        Me.bt_Creditos.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.bt_Creditos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.bt_Creditos.Location = New System.Drawing.Point(131, 3)
+        Me.bt_Creditos.Name = "bt_Creditos"
+        Me.bt_Creditos.Size = New System.Drawing.Size(55, 66)
+        Me.bt_Creditos.TabIndex = 15
+        Me.bt_Creditos.Text = "Contrato"
+        '
+        'btDarContrato
+        '
+        Me.btDarContrato.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btDarContrato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btDarContrato.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btDarContrato.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btDarContrato.Image = Global.POS.My.Resources.Resources.contrat__37_
+        Me.btDarContrato.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btDarContrato.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btDarContrato.Location = New System.Drawing.Point(191, 3)
+        Me.btDarContrato.Name = "btDarContrato"
+        Me.btDarContrato.Size = New System.Drawing.Size(99, 66)
+        Me.btDarContrato.TabIndex = 16
+        Me.btDarContrato.Text = "Entregar a Cliente"
+        '
+        'ButtonX2
+        '
+        Me.ButtonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.ButtonX2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonX2.Image = Global.POS.My.Resources.Resources._11220
+        Me.ButtonX2.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.ButtonX2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.ButtonX2.Location = New System.Drawing.Point(4, 4)
+        Me.ButtonX2.Name = "ButtonX2"
+        Me.ButtonX2.Size = New System.Drawing.Size(60, 66)
+        Me.ButtonX2.TabIndex = 16
+        Me.ButtonX2.Text = "Corte"
+        '
+        'btTstock
+        '
+        Me.btTstock.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btTstock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btTstock.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btTstock.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btTstock.Image = Global.POS.My.Resources.Resources.inventary__26_
+        Me.btTstock.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btTstock.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btTstock.Location = New System.Drawing.Point(69, 4)
+        Me.btTstock.Name = "btTstock"
+        Me.btTstock.Size = New System.Drawing.Size(60, 66)
+        Me.btTstock.TabIndex = 17
+        Me.btTstock.Text = "Stock"
+        '
+        'btCreditos
+        '
+        Me.btCreditos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btCreditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btCreditos.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btCreditos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCreditos.Image = Global.POS.My.Resources.Resources.contrat__2_
+        Me.btCreditos.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btCreditos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btCreditos.Location = New System.Drawing.Point(134, 4)
+        Me.btCreditos.Name = "btCreditos"
+        Me.btCreditos.Size = New System.Drawing.Size(60, 66)
+        Me.btCreditos.TabIndex = 18
+        Me.btCreditos.Text = "Creditos"
+        '
+        'ButtonX4
+        '
+        Me.ButtonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.ButtonX4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonX4.Image = Global.POS.My.Resources.Resources.clientEdit
+        Me.ButtonX4.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.ButtonX4.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.ButtonX4.Location = New System.Drawing.Point(4, 4)
+        Me.ButtonX4.Name = "ButtonX4"
+        Me.ButtonX4.Size = New System.Drawing.Size(55, 66)
+        Me.ButtonX4.TabIndex = 14
+        Me.ButtonX4.Text = "Actualizar"
+        '
+        'mnuPRMarca
+        '
+        Me.mnuPRMarca.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.mnuPRMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.mnuPRMarca.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.mnuPRMarca.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuPRMarca.Image = Global.POS.My.Resources.Resources.brand1
+        Me.mnuPRMarca.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuPRMarca.Location = New System.Drawing.Point(4, 4)
+        Me.mnuPRMarca.Name = "mnuPRMarca"
+        Me.mnuPRMarca.Size = New System.Drawing.Size(53, 66)
+        Me.mnuPRMarca.TabIndex = 4
+        Me.mnuPRMarca.Text = "Marcas"
+        '
+        'mnuPRCategoria
+        '
+        Me.mnuPRCategoria.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.mnuPRCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.mnuPRCategoria.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.mnuPRCategoria.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuPRCategoria.Image = Global.POS.My.Resources.Resources.product_pr
+        Me.mnuPRCategoria.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.mnuPRCategoria.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuPRCategoria.Location = New System.Drawing.Point(64, 4)
+        Me.mnuPRCategoria.Name = "mnuPRCategoria"
+        Me.mnuPRCategoria.Size = New System.Drawing.Size(71, 66)
+        Me.mnuPRCategoria.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro
+        Me.mnuPRCategoria.TabIndex = 6
+        Me.mnuPRCategoria.Text = "Categoria"
+        '
+        'ButtonX1
+        '
+        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.ButtonX1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonX1.Image = CType(resources.GetObject("ButtonX1.Image"), System.Drawing.Image)
+        Me.ButtonX1.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.ButtonX1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.ButtonX1.Location = New System.Drawing.Point(142, 4)
+        Me.ButtonX1.Name = "ButtonX1"
+        Me.ButtonX1.Size = New System.Drawing.Size(65, 66)
+        Me.ButtonX1.TabIndex = 5
+        Me.ButtonX1.Text = "Modelos"
+        '
+        'btNInvetario
+        '
+        Me.btNInvetario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btNInvetario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btNInvetario.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange
+        Me.btNInvetario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNInvetario.Image = Global.POS.My.Resources.Resources.inventaryAdd
+        Me.btNInvetario.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btNInvetario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btNInvetario.Location = New System.Drawing.Point(214, 4)
+        Me.btNInvetario.Name = "btNInvetario"
+        Me.btNInvetario.Size = New System.Drawing.Size(65, 66)
+        Me.btNInvetario.TabIndex = 6
+        Me.btNInvetario.Text = "Agregrar Existencia"
         '
         'btRecibir
         '
@@ -1345,7 +1372,7 @@ Partial Class frmMain
         Me.btRecibir.Image = Global.POS.My.Resources.Resources.send__5_
         Me.btRecibir.ImageFixedSize = New System.Drawing.Size(32, 32)
         Me.btRecibir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btRecibir.Location = New System.Drawing.Point(125, 3)
+        Me.btRecibir.Location = New System.Drawing.Point(12, 3)
         Me.btRecibir.Name = "btRecibir"
         Me.btRecibir.Size = New System.Drawing.Size(66, 66)
         Me.btRecibir.TabIndex = 9
@@ -1370,21 +1397,21 @@ Partial Class frmMain
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.menuMetro.ResumeLayout(False)
         Me.menuMetro.PerformLayout()
+        Me.MetroTabPanel1.ResumeLayout(False)
+        Me.mnuBodRbInventario.ResumeLayout(False)
+        Me.mnuBodRbTraslados.ResumeLayout(False)
+        Me.mnuTABSISTEMA.ResumeLayout(False)
         Me.mnuTABTIENDA.ResumeLayout(False)
         Me.rbTieCaja.ResumeLayout(False)
         Me.rbTieClientes.ResumeLayout(False)
         Me.rbtieVentas.ResumeLayout(False)
-        Me.MetroTabPanel1.ResumeLayout(False)
-        Me.mnuBodRbTraslados.ResumeLayout(False)
-        Me.mnuBodRbInventario.ResumeLayout(False)
-        Me.mnuBodRbProducto.ResumeLayout(False)
-        Me.mnuTABSISTEMA.ResumeLayout(False)
         Me.mnuTABBODEGA.ResumeLayout(False)
+        Me.RibbonBar2.ResumeLayout(False)
         Me.RibbonBar1.ResumeLayout(False)
+        Me.mnuBodRbProducto.ResumeLayout(False)
         Me.ToolStripContainer1.ContentPanel.ResumeLayout(False)
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
-        Me.RibbonBar2.ResumeLayout(False)
         CType(Me.tpMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpMain.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -1434,7 +1461,7 @@ Partial Class frmMain
     Friend WithEvents ControlContainerItem6 As DevComponents.DotNetBar.ControlContainerItem
     Friend WithEvents ControlContainerItem7 As DevComponents.DotNetBar.ControlContainerItem
     Friend WithEvents ControlContainerItem8 As DevComponents.DotNetBar.ControlContainerItem
-    Friend WithEvents btEstados As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents btRecepcion As DevComponents.DotNetBar.ButtonX
     Friend WithEvents btRecibir As DevComponents.DotNetBar.ButtonX
     Friend WithEvents rbTieClientes As DevComponents.DotNetBar.RibbonBar
     Friend WithEvents btClActualiza As DevComponents.DotNetBar.ButtonX
@@ -1456,8 +1483,6 @@ Partial Class frmMain
     Friend WithEvents btNuevaVenta As DevComponents.DotNetBar.ButtonX
     Friend WithEvents ControlContainerItem9 As DevComponents.DotNetBar.ControlContainerItem
     Friend WithEvents ButtonX3 As DevComponents.DotNetBar.ButtonX
-    Friend WithEvents ControlContainerItem10 As DevComponents.DotNetBar.ControlContainerItem
-    Friend WithEvents ControlContainerItem11 As DevComponents.DotNetBar.ControlContainerItem
     Friend WithEvents RibbonBar1 As DevComponents.DotNetBar.RibbonBar
     Friend WithEvents ButtonX4 As DevComponents.DotNetBar.ButtonX
     Friend WithEvents ControlContainerItem15 As DevComponents.DotNetBar.ControlContainerItem
@@ -1474,5 +1499,9 @@ Partial Class frmMain
     Friend WithEvents ControlContainerItem22 As DevComponents.DotNetBar.ControlContainerItem
     Friend WithEvents btCreditos As DevComponents.DotNetBar.ButtonX
     Friend WithEvents ControlContainerItem23 As DevComponents.DotNetBar.ControlContainerItem
+    Friend WithEvents btDarContrato As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents ControlContainerItem10 As DevComponents.DotNetBar.ControlContainerItem
+    Friend WithEvents ControlContainerItem11 As DevComponents.DotNetBar.ControlContainerItem
+    Friend WithEvents ControlContainerItem24 As DevComponents.DotNetBar.ControlContainerItem
 
 End Class

@@ -87,7 +87,7 @@ Public Class ctrlNuevoEnvio
             If existe Then
                 _ESTADO("Este producto ya existe en la lista de envios", frmMain.lbEstado)
             Else
-                dgL.Rows.Add(dg.SelectedCells(0).Value, dg.SelectedCells(1).Value, dg.SelectedCells(2).Value, dg.SelectedCells(5).Value, dg.SelectedCells(6).Value, 0, 0)
+                dgL.Rows.Add(dg.SelectedCells(0).Value, dg.SelectedCells(1).Value, dg.SelectedCells(2).Value, dg.SelectedCells(5).Value, dg.SelectedCells(6).Value, 1, 0)
             End If
         Catch ex As Exception
             _ESTADO(ex.Message, frmMain.lbEstado)

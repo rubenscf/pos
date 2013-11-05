@@ -340,8 +340,6 @@ Public Class ctrlFacturar
 
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
-        
-           
         Dim v As Boolean = True
         If dgD.Rows.Count > 0 Then
             For Each f As DataGridViewRow In dgD.Rows
@@ -429,4 +427,6 @@ Public Class ctrlFacturar
         lbNarticulo.Text = "0"
         txDescuento.Value = 0
     End Sub
+
+   
 End Class

@@ -27,6 +27,7 @@ Partial Class ctrlNuevoCredito
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txObservaciones = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.gbPlanC = New System.Windows.Forms.GroupBox()
+        Me.chDobleEnganche = New System.Windows.Forms.CheckBox()
         Me.lbPorc = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.lbUCuota = New System.Windows.Forms.Label()
@@ -34,6 +35,7 @@ Partial Class ctrlNuevoCredito
         Me.lbCuotas = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.btCalcula = New DevComponents.DotNetBar.ButtonX()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.nPago = New System.Windows.Forms.NumericUpDown()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -49,6 +51,7 @@ Partial Class ctrlNuevoCredito
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txFDireccion = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txFnombre = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txFDPI = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.gb3 = New System.Windows.Forms.GroupBox()
         Me.txDescuento = New System.Windows.Forms.NumericUpDown()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -58,6 +61,7 @@ Partial Class ctrlNuevoCredito
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
@@ -69,21 +73,26 @@ Partial Class ctrlNuevoCredito
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txCDireccion = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txCNombre = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txCDPI = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btBuscar = New DevComponents.DotNetBar.ButtonX()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txMo = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.lbStock = New System.Windows.Forms.Label()
+        Me.btQuitarLista = New DevComponents.DotNetBar.ButtonX()
+        Me.btAgregarLista = New DevComponents.DotNetBar.ButtonX()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.btBStock = New DevComponents.DotNetBar.ButtonX()
         Me.lbModelo = New System.Windows.Forms.Label()
         Me.lbMarca = New System.Windows.Forms.Label()
         Me.lbCodigo = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txMa = New System.Windows.Forms.TextBox()
         Me.dgD = New System.Windows.Forms.DataGridView()
-        Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pr_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -93,15 +102,7 @@ Partial Class ctrlNuevoCredito
         Me.DETALLE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PRECIOU = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.preciop = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btCalcula = New DevComponents.DotNetBar.ButtonX()
-        Me.txFDPI = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.btGuardar = New DevComponents.DotNetBar.ButtonX()
-        Me.txCDPI = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.btBuscar = New DevComponents.DotNetBar.ButtonX()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btQuitarLista = New DevComponents.DotNetBar.ButtonX()
-        Me.btAgregarLista = New DevComponents.DotNetBar.ButtonX()
-        Me.btBStock = New DevComponents.DotNetBar.ButtonX()
+        Me.Splitter1 = New System.Windows.Forms.Splitter()
         CType(Me.Container, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Container.Panel1.SuspendLayout()
         Me.Container.Panel2.SuspendLayout()
@@ -114,8 +115,8 @@ Partial Class ctrlNuevoCredito
         CType(Me.txDescuento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.dgD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Container
@@ -172,6 +173,7 @@ Partial Class ctrlNuevoCredito
         '
         'gbPlanC
         '
+        Me.gbPlanC.Controls.Add(Me.chDobleEnganche)
         Me.gbPlanC.Controls.Add(Me.lbPorc)
         Me.gbPlanC.Controls.Add(Me.Label26)
         Me.gbPlanC.Controls.Add(Me.lbUCuota)
@@ -191,6 +193,16 @@ Partial Class ctrlNuevoCredito
         Me.gbPlanC.TabIndex = 23
         Me.gbPlanC.TabStop = False
         Me.gbPlanC.Text = "Plan de contrato"
+        '
+        'chDobleEnganche
+        '
+        Me.chDobleEnganche.AutoSize = True
+        Me.chDobleEnganche.Location = New System.Drawing.Point(258, 16)
+        Me.chDobleEnganche.Name = "chDobleEnganche"
+        Me.chDobleEnganche.Size = New System.Drawing.Size(112, 21)
+        Me.chDobleEnganche.TabIndex = 25
+        Me.chDobleEnganche.Text = "Enganche en 2"
+        Me.chDobleEnganche.UseVisualStyleBackColor = True
         '
         'lbPorc
         '
@@ -266,6 +278,21 @@ Partial Class ctrlNuevoCredito
         Me.Label10.Size = New System.Drawing.Size(103, 17)
         Me.Label10.TabIndex = 28
         Me.Label10.Text = "Valor de cuotas:"
+        '
+        'btCalcula
+        '
+        Me.btCalcula.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btCalcula.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btCalcula.Enabled = False
+        Me.btCalcula.Image = Global.POS.My.Resources.Resources._4380
+        Me.btCalcula.ImageFixedSize = New System.Drawing.Size(40, 40)
+        Me.btCalcula.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btCalcula.Location = New System.Drawing.Point(313, 40)
+        Me.btCalcula.Name = "btCalcula"
+        Me.btCalcula.Size = New System.Drawing.Size(59, 74)
+        Me.btCalcula.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btCalcula.TabIndex = 27
+        Me.btCalcula.Text = "Calcular"
         '
         'Label9
         '
@@ -450,6 +477,22 @@ Partial Class ctrlNuevoCredito
         Me.txFnombre.TabIndex = 2
         Me.txFnombre.WatermarkText = "Nombre"
         '
+        'txFDPI
+        '
+        Me.txFDPI.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txFDPI.Border.Class = "TextBoxBorder"
+        Me.txFDPI.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txFDPI.ForeColor = System.Drawing.Color.Black
+        Me.txFDPI.Location = New System.Drawing.Point(9, 41)
+        Me.txFDPI.Name = "txFDPI"
+        Me.txFDPI.Size = New System.Drawing.Size(137, 25)
+        Me.txFDPI.TabIndex = 0
+        Me.txFDPI.WatermarkImage = Global.POS.My.Resources.Resources.zoom
+        Me.txFDPI.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+        '
         'gb3
         '
         Me.gb3.Controls.Add(Me.txDescuento)
@@ -551,6 +594,19 @@ Partial Class ctrlNuevoCredito
         Me.Label4.Size = New System.Drawing.Size(70, 17)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "# Articulos"
+        '
+        'btGuardar
+        '
+        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btGuardar.Enabled = False
+        Me.btGuardar.Image = Global.POS.My.Resources.Resources.contrat__39_
+        Me.btGuardar.Location = New System.Drawing.Point(1012, 159)
+        Me.btGuardar.Name = "btGuardar"
+        Me.btGuardar.Size = New System.Drawing.Size(221, 117)
+        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btGuardar.TabIndex = 0
+        Me.btGuardar.Text = "Solicitar"
         '
         'GroupBox1
         '
@@ -695,6 +751,22 @@ Partial Class ctrlNuevoCredito
         Me.txCNombre.TabIndex = 2
         Me.txCNombre.WatermarkText = "Nombre"
         '
+        'txCDPI
+        '
+        Me.txCDPI.BackColor = System.Drawing.Color.White
+        '
+        '
+        '
+        Me.txCDPI.Border.Class = "TextBoxBorder"
+        Me.txCDPI.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txCDPI.ForeColor = System.Drawing.Color.Black
+        Me.txCDPI.Location = New System.Drawing.Point(9, 41)
+        Me.txCDPI.Name = "txCDPI"
+        Me.txCDPI.Size = New System.Drawing.Size(137, 25)
+        Me.txCDPI.TabIndex = 0
+        Me.txCDPI.WatermarkImage = Global.POS.My.Resources.Resources.zoom
+        Me.txCDPI.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+        '
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -723,6 +795,19 @@ Partial Class ctrlNuevoCredito
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Buscar Producto"
         '
+        'btBuscar
+        '
+        Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
+        Me.btBuscar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btBuscar.Location = New System.Drawing.Point(253, 41)
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(58, 55)
+        Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btBuscar.TabIndex = 2
+        Me.btBuscar.Text = "Buscar"
+        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -741,6 +826,16 @@ Partial Class ctrlNuevoCredito
         Me.txMo.Size = New System.Drawing.Size(94, 25)
         Me.txMo.TabIndex = 1
         Me.txMo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.POS.My.Resources.Resources.barcode__29_
+        Me.PictureBox1.Location = New System.Drawing.Point(16, 22)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(34, 43)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 26
+        Me.PictureBox1.TabStop = False
         '
         'Label24
         '
@@ -761,6 +856,35 @@ Partial Class ctrlNuevoCredito
         Me.lbStock.Size = New System.Drawing.Size(23, 25)
         Me.lbStock.TabIndex = 24
         Me.lbStock.Text = "0"
+        '
+        'btQuitarLista
+        '
+        Me.btQuitarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btQuitarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btQuitarLista.Image = Global.POS.My.Resources.Resources.cart__14_
+        Me.btQuitarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btQuitarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btQuitarLista.Location = New System.Drawing.Point(344, 106)
+        Me.btQuitarLista.Name = "btQuitarLista"
+        Me.btQuitarLista.Size = New System.Drawing.Size(58, 55)
+        Me.btQuitarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btQuitarLista.TabIndex = 6
+        Me.btQuitarLista.Text = "Remover"
+        '
+        'btAgregarLista
+        '
+        Me.btAgregarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btAgregarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btAgregarLista.Enabled = False
+        Me.btAgregarLista.Image = Global.POS.My.Resources.Resources.cart__4_
+        Me.btAgregarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btAgregarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btAgregarLista.Location = New System.Drawing.Point(344, 41)
+        Me.btAgregarLista.Name = "btAgregarLista"
+        Me.btAgregarLista.Size = New System.Drawing.Size(58, 55)
+        Me.btAgregarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btAgregarLista.TabIndex = 5
+        Me.btAgregarLista.Text = "Agregar"
         '
         'Label17
         '
@@ -788,6 +912,20 @@ Partial Class ctrlNuevoCredito
         Me.Label15.Size = New System.Drawing.Size(54, 17)
         Me.Label15.TabIndex = 16
         Me.Label15.Text = "Codigo:"
+        '
+        'btBStock
+        '
+        Me.btBStock.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btBStock.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btBStock.Image = Global.POS.My.Resources.Resources.inventary__26_
+        Me.btBStock.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btBStock.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btBStock.Location = New System.Drawing.Point(254, 106)
+        Me.btBStock.Name = "btBStock"
+        Me.btBStock.Size = New System.Drawing.Size(57, 55)
+        Me.btBStock.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btBStock.TabIndex = 4
+        Me.btBStock.Text = "Stock"
         '
         'lbModelo
         '
@@ -853,14 +991,6 @@ Partial Class ctrlNuevoCredito
         Me.dgD.Size = New System.Drawing.Size(796, 231)
         Me.dgD.TabIndex = 1
         '
-        'Splitter1
-        '
-        Me.Splitter1.Location = New System.Drawing.Point(0, 0)
-        Me.Splitter1.Name = "Splitter1"
-        Me.Splitter1.Size = New System.Drawing.Size(455, 231)
-        Me.Splitter1.TabIndex = 0
-        Me.Splitter1.TabStop = False
-        '
         'marca
         '
         Me.marca.HeaderText = "marca"
@@ -925,131 +1055,13 @@ Partial Class ctrlNuevoCredito
         Me.preciop.Name = "preciop"
         Me.preciop.Width = 124
         '
-        'btCalcula
+        'Splitter1
         '
-        Me.btCalcula.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btCalcula.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btCalcula.Enabled = False
-        Me.btCalcula.Image = Global.POS.My.Resources.Resources._4380
-        Me.btCalcula.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btCalcula.Location = New System.Drawing.Point(282, 24)
-        Me.btCalcula.Name = "btCalcula"
-        Me.btCalcula.Size = New System.Drawing.Size(90, 90)
-        Me.btCalcula.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btCalcula.TabIndex = 27
-        Me.btCalcula.Text = "Calcular"
-        '
-        'txFDPI
-        '
-        Me.txFDPI.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.txFDPI.Border.Class = "TextBoxBorder"
-        Me.txFDPI.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txFDPI.ForeColor = System.Drawing.Color.Black
-        Me.txFDPI.Location = New System.Drawing.Point(9, 41)
-        Me.txFDPI.Name = "txFDPI"
-        Me.txFDPI.Size = New System.Drawing.Size(137, 25)
-        Me.txFDPI.TabIndex = 0
-        Me.txFDPI.WatermarkImage = Global.POS.My.Resources.Resources.zoom
-        Me.txFDPI.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'btGuardar
-        '
-        Me.btGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btGuardar.Enabled = False
-        Me.btGuardar.Image = Global.POS.My.Resources.Resources.contrat__39_
-        Me.btGuardar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btGuardar.Location = New System.Drawing.Point(1060, 159)
-        Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(134, 117)
-        Me.btGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btGuardar.TabIndex = 0
-        Me.btGuardar.Text = "Solicitar"
-        '
-        'txCDPI
-        '
-        Me.txCDPI.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
-        Me.txCDPI.Border.Class = "TextBoxBorder"
-        Me.txCDPI.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txCDPI.ForeColor = System.Drawing.Color.Black
-        Me.txCDPI.Location = New System.Drawing.Point(9, 41)
-        Me.txCDPI.Name = "txCDPI"
-        Me.txCDPI.Size = New System.Drawing.Size(137, 25)
-        Me.txCDPI.TabIndex = 0
-        Me.txCDPI.WatermarkImage = Global.POS.My.Resources.Resources.zoom
-        Me.txCDPI.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'btBuscar
-        '
-        Me.btBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btBuscar.Image = Global.POS.My.Resources.Resources.zoom
-        Me.btBuscar.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btBuscar.Location = New System.Drawing.Point(253, 41)
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(58, 55)
-        Me.btBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btBuscar.TabIndex = 2
-        Me.btBuscar.Text = "Buscar"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.POS.My.Resources.Resources.barcode__29_
-        Me.PictureBox1.Location = New System.Drawing.Point(16, 22)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(34, 43)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 26
-        Me.PictureBox1.TabStop = False
-        '
-        'btQuitarLista
-        '
-        Me.btQuitarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btQuitarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btQuitarLista.Image = Global.POS.My.Resources.Resources.cart__14_
-        Me.btQuitarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btQuitarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btQuitarLista.Location = New System.Drawing.Point(344, 106)
-        Me.btQuitarLista.Name = "btQuitarLista"
-        Me.btQuitarLista.Size = New System.Drawing.Size(58, 55)
-        Me.btQuitarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btQuitarLista.TabIndex = 6
-        Me.btQuitarLista.Text = "Remover"
-        '
-        'btAgregarLista
-        '
-        Me.btAgregarLista.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btAgregarLista.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btAgregarLista.Enabled = False
-        Me.btAgregarLista.Image = Global.POS.My.Resources.Resources.cart__4_
-        Me.btAgregarLista.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btAgregarLista.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btAgregarLista.Location = New System.Drawing.Point(344, 41)
-        Me.btAgregarLista.Name = "btAgregarLista"
-        Me.btAgregarLista.Size = New System.Drawing.Size(58, 55)
-        Me.btAgregarLista.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btAgregarLista.TabIndex = 5
-        Me.btAgregarLista.Text = "Agregar"
-        '
-        'btBStock
-        '
-        Me.btBStock.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btBStock.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btBStock.Image = Global.POS.My.Resources.Resources.inventary__26_
-        Me.btBStock.ImageFixedSize = New System.Drawing.Size(32, 32)
-        Me.btBStock.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btBStock.Location = New System.Drawing.Point(254, 106)
-        Me.btBStock.Name = "btBStock"
-        Me.btBStock.Size = New System.Drawing.Size(57, 55)
-        Me.btBStock.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btBStock.TabIndex = 4
-        Me.btBStock.Text = "Stock"
+        Me.Splitter1.Location = New System.Drawing.Point(0, 0)
+        Me.Splitter1.Name = "Splitter1"
+        Me.Splitter1.Size = New System.Drawing.Size(455, 231)
+        Me.Splitter1.TabIndex = 0
+        Me.Splitter1.TabStop = False
         '
         'ctrlNuevoCredito
         '
@@ -1078,8 +1090,8 @@ Partial Class ctrlNuevoCredito
         Me.GroupBox1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.dgD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1162,5 +1174,6 @@ Partial Class ctrlNuevoCredito
     Friend WithEvents DETALLE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PRECIOU As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents preciop As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chDobleEnganche As System.Windows.Forms.CheckBox
 
 End Class

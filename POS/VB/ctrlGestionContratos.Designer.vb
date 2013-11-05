@@ -25,12 +25,8 @@ Partial Class ctrlGestionContratos
         Me.components = New System.ComponentModel.Container()
         Me.ReflectionLabel2 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.btUpdate = New DevComponents.DotNetBar.ButtonX()
         Me.dgD = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DE_CREDITOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me._DS = New POS._DS()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,6 +44,7 @@ Partial Class ctrlGestionContratos
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CREDITOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me._DS = New POS._DS()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lbFTelefono = New System.Windows.Forms.Label()
@@ -58,7 +55,7 @@ Partial Class ctrlGestionContratos
         Me.lbFTipo = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.lbFingresos = New System.Windows.Forms.Label()
+        Me.lbFingreso = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.lbFnit = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -72,7 +69,7 @@ Partial Class ctrlGestionContratos
         Me.lbCDireccion = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lbCBienes = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lbCtipo = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lbCIngreso = New System.Windows.Forms.Label()
@@ -88,16 +85,14 @@ Partial Class ctrlGestionContratos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CREDITOSTableAdapter = New POS._DSTableAdapters.CREDITOSTableAdapter()
         Me.TableAdapterManager = New POS._DSTableAdapters.TableAdapterManager()
-        Me.DE_CREDITOSTableAdapter = New POS._DSTableAdapters.DE_CREDITOSTableAdapter()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         CType(Me.dgD, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DE_CREDITOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CREDITOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me._DS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -110,7 +105,7 @@ Partial Class ctrlGestionContratos
         '
         Me.ReflectionLabel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.ReflectionLabel2.Font = New System.Drawing.Font("Segoe UI Light", 16.25!)
-        Me.ReflectionLabel2.Location = New System.Drawing.Point(20, 20)
+        Me.ReflectionLabel2.Location = New System.Drawing.Point(20, 7)
         Me.ReflectionLabel2.Margin = New System.Windows.Forms.Padding(20)
         Me.ReflectionLabel2.Name = "ReflectionLabel2"
         Me.ReflectionLabel2.ReflectionEnabled = False
@@ -128,6 +123,7 @@ Partial Class ctrlGestionContratos
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.btUpdate)
         Me.SplitContainer1.Panel1.Controls.Add(Me.ReflectionLabel2)
         '
         'SplitContainer1.Panel2
@@ -141,55 +137,33 @@ Partial Class ctrlGestionContratos
         Me.SplitContainer1.Panel2.Controls.Add(Me.btAceptar)
         Me.SplitContainer1.Panel2.Controls.Add(Me.btAnular)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1245, 537)
-        Me.SplitContainer1.SplitterDistance = 68
+        Me.SplitContainer1.Size = New System.Drawing.Size(1245, 547)
+        Me.SplitContainer1.SplitterDistance = 54
         Me.SplitContainer1.TabIndex = 16
+        '
+        'btUpdate
+        '
+        Me.btUpdate.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btUpdate.Image = Global.POS.My.Resources.Resources._12130
+        Me.btUpdate.ImageFixedSize = New System.Drawing.Size(32, 32)
+        Me.btUpdate.Location = New System.Drawing.Point(1189, 7)
+        Me.btUpdate.Name = "btUpdate"
+        Me.btUpdate.Size = New System.Drawing.Size(46, 42)
+        Me.btUpdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btUpdate.TabIndex = 17
         '
         'dgD
         '
         Me.dgD.AllowUserToAddRows = False
         Me.dgD.AllowUserToDeleteRows = False
-        Me.dgD.AutoGenerateColumns = False
         Me.dgD.BackgroundColor = System.Drawing.SystemColors.Window
         Me.dgD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgD.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn19})
-        Me.dgD.DataSource = Me.DE_CREDITOSBindingSource
         Me.dgD.Location = New System.Drawing.Point(20, 231)
         Me.dgD.Name = "dgD"
         Me.dgD.ReadOnly = True
         Me.dgD.Size = New System.Drawing.Size(552, 220)
         Me.dgD.TabIndex = 16
-        '
-        'DataGridViewTextBoxColumn16
-        '
-        Me.DataGridViewTextBoxColumn16.DataPropertyName = "MARCA"
-        Me.DataGridViewTextBoxColumn16.HeaderText = "MARCA"
-        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
-        Me.DataGridViewTextBoxColumn16.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.DataPropertyName = "MODELO"
-        Me.DataGridViewTextBoxColumn17.HeaderText = "MODELO"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        Me.DataGridViewTextBoxColumn17.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn19
-        '
-        Me.DataGridViewTextBoxColumn19.DataPropertyName = "SUBTOTAL"
-        Me.DataGridViewTextBoxColumn19.HeaderText = "SUBTOTAL"
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.ReadOnly = True
-        '
-        'DE_CREDITOSBindingSource
-        '
-        Me.DE_CREDITOSBindingSource.DataMember = "DE_CREDITOS"
-        Me.DE_CREDITOSBindingSource.DataSource = Me._DS
-        '
-        '_DS
-        '
-        Me._DS.DataSetName = "_DS"
-        Me._DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'dg
         '
@@ -321,6 +295,11 @@ Partial Class ctrlGestionContratos
         Me.CREDITOSBindingSource.DataMember = "CREDITOS"
         Me.CREDITOSBindingSource.DataSource = Me._DS
         '
+        '_DS
+        '
+        Me._DS.DataSetName = "_DS"
+        Me._DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label11)
@@ -332,7 +311,7 @@ Partial Class ctrlGestionContratos
         Me.GroupBox2.Controls.Add(Me.lbFTipo)
         Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Controls.Add(Me.Label19)
-        Me.GroupBox2.Controls.Add(Me.lbFingresos)
+        Me.GroupBox2.Controls.Add(Me.lbFingreso)
         Me.GroupBox2.Controls.Add(Me.Label21)
         Me.GroupBox2.Controls.Add(Me.lbFnit)
         Me.GroupBox2.Controls.Add(Me.Label23)
@@ -436,15 +415,15 @@ Partial Class ctrlGestionContratos
         Me.Label19.TabIndex = 7
         Me.Label19.Text = "INGRESOS Q:"
         '
-        'lbFingresos
+        'lbFingreso
         '
-        Me.lbFingresos.AutoSize = True
-        Me.lbFingresos.Font = New System.Drawing.Font("Segoe UI", 10.25!)
-        Me.lbFingresos.Location = New System.Drawing.Point(51, 180)
-        Me.lbFingresos.Name = "lbFingresos"
-        Me.lbFingresos.Size = New System.Drawing.Size(58, 19)
-        Me.lbFingresos.TabIndex = 6
-        Me.lbFingresos.Text = "Q.00.00"
+        Me.lbFingreso.AutoSize = True
+        Me.lbFingreso.Font = New System.Drawing.Font("Segoe UI", 10.25!)
+        Me.lbFingreso.Location = New System.Drawing.Point(51, 180)
+        Me.lbFingreso.Name = "lbFingreso"
+        Me.lbFingreso.Size = New System.Drawing.Size(58, 19)
+        Me.lbFingreso.TabIndex = 6
+        Me.lbFingreso.Text = "Q.00.00"
         '
         'Label21
         '
@@ -514,7 +493,7 @@ Partial Class ctrlGestionContratos
         Me.GroupBox1.Controls.Add(Me.lbCDireccion)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.lbCBienes)
-        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.lbCtipo)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.lbCIngreso)
@@ -591,15 +570,15 @@ Partial Class ctrlGestionContratos
         Me.lbCBienes.TabIndex = 10
         Me.lbCBienes.Text = "CASA"
         '
-        'Label7
+        'lbCtipo
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 10.25!)
-        Me.Label7.Location = New System.Drawing.Point(51, 21)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(19, 19)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "N"
+        Me.lbCtipo.AutoSize = True
+        Me.lbCtipo.Font = New System.Drawing.Font("Segoe UI", 10.25!)
+        Me.lbCtipo.Location = New System.Drawing.Point(51, 21)
+        Me.lbCtipo.Name = "lbCtipo"
+        Me.lbCtipo.Size = New System.Drawing.Size(19, 19)
+        Me.lbCtipo.TabIndex = 9
+        Me.lbCtipo.Text = "N"
         '
         'Label5
         '
@@ -705,27 +684,27 @@ Partial Class ctrlGestionContratos
         '
         Me.btAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btAceptar.Image = Global.POS.My.Resources.Resources.ProductsAcept
+        Me.btAceptar.Image = Global.POS.My.Resources.Resources.contrat__27_
         Me.btAceptar.ImageFixedSize = New System.Drawing.Size(32, 32)
         Me.btAceptar.Location = New System.Drawing.Point(1082, 412)
         Me.btAceptar.Name = "btAceptar"
         Me.btAceptar.Size = New System.Drawing.Size(153, 45)
         Me.btAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btAceptar.TabIndex = 5
-        Me.btAceptar.Text = "Aceptar Pedido"
+        Me.btAceptar.Text = "Aceptar Contrato"
         '
         'btAnular
         '
         Me.btAnular.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btAnular.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btAnular.Image = Global.POS.My.Resources.Resources.ProductsCancel
+        Me.btAnular.Image = Global.POS.My.Resources.Resources.contrat__14_
         Me.btAnular.ImageFixedSize = New System.Drawing.Size(32, 32)
         Me.btAnular.Location = New System.Drawing.Point(923, 412)
         Me.btAnular.Name = "btAnular"
         Me.btAnular.Size = New System.Drawing.Size(153, 45)
         Me.btAnular.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btAnular.TabIndex = 4
-        Me.btAnular.Text = "Anular Pedido"
+        Me.btAnular.Text = "Anular Contrato"
         '
         'Label1
         '
@@ -748,10 +727,6 @@ Partial Class ctrlGestionContratos
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = POS._DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'DE_CREDITOSTableAdapter
-        '
-        Me.DE_CREDITOSTableAdapter.ClearBeforeFill = True
-        '
         'ctrlGestionContratos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -761,17 +736,16 @@ Partial Class ctrlGestionContratos
         Me.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "ctrlGestionContratos"
-        Me.Size = New System.Drawing.Size(1245, 537)
+        Me.Size = New System.Drawing.Size(1245, 547)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.dgD, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DE_CREDITOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._DS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CREDITOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me._DS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -788,7 +762,7 @@ Partial Class ctrlGestionContratos
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents lbCApellido As System.Windows.Forms.Label
     Friend WithEvents lbcNombre As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lbCtipo As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents lbCIngreso As System.Windows.Forms.Label
@@ -806,7 +780,7 @@ Partial Class ctrlGestionContratos
     Friend WithEvents lbFTipo As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents lbFingresos As System.Windows.Forms.Label
+    Friend WithEvents lbFingreso As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents lbFnit As System.Windows.Forms.Label
     Friend WithEvents Label23 As System.Windows.Forms.Label
@@ -839,12 +813,8 @@ Partial Class ctrlGestionContratos
     Friend WithEvents DataGridViewTextBoxColumn13 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn14 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DE_CREDITOSBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents DE_CREDITOSTableAdapter As POS._DSTableAdapters.DE_CREDITOSTableAdapter
     Friend WithEvents dgD As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn16 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn17 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn18 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn19 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btUpdate As DevComponents.DotNetBar.ButtonX
 
 End Class

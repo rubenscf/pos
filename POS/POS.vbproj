@@ -186,10 +186,22 @@
     <Compile Include="ctrlActualizaClientevb.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ctrlContratoACliente.Designer.vb">
+      <DependentUpon>ctrlContratoACliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlContratoACliente.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="VB\ctrlGestionContratos.Designer.vb">
       <DependentUpon>ctrlGestionContratos.vb</DependentUpon>
     </Compile>
     <Compile Include="VB\ctrlGestionContratos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VB\ctrlNuevoAbono.Designer.vb">
+      <DependentUpon>ctrlNuevoAbono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VB\ctrlNuevoAbono.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="VB\ctrlNuevoCredito.Designer.vb">
@@ -369,8 +381,14 @@
     <EmbeddedResource Include="ctrlActualizaClientevb.resx">
       <DependentUpon>ctrlActualizaClientevb.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ctrlContratoACliente.resx">
+      <DependentUpon>ctrlContratoACliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlGestionContratos.resx">
       <DependentUpon>ctrlGestionContratos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB\ctrlNuevoAbono.resx">
+      <DependentUpon>ctrlNuevoAbono.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VB\ctrlNuevoCredito.resx">
       <DependentUpon>ctrlNuevoCredito.vb</DependentUpon>
@@ -499,6 +517,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cloudangel.ico" />
+    <None Include="Resources\sales %2815%29.png" />
+    <None Include="Resources\12140.png" />
+    <None Include="Resources\00.png" />
+    <None Include="Resources\sales %282%29.png" />
+    <None Include="Resources\contrat %2837%29.png" />
+    <None Include="Resources\121301.png" />
+    <None Include="Resources\contrat %2814%29.png" />
     <None Include="Resources\contrat %282%29.png" />
     <None Include="Resources\cart %287%29.png" />
     <None Include="Resources\pantallaPrincipal.jpg" />

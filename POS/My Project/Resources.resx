@@ -142,11 +142,17 @@
   <data name="StockAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StockAdd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cart (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sales (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sales (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Inventory_pr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inventory_pr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contrat (37)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contrat (37).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="contrat (39)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contrat (39).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,14 +187,8 @@
   <data name="8430" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8430.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cart (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cart (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ProductsGet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ProductsGet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="client (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\client (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +202,14 @@
   <data name="management1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\management1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="12130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contrat (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contrat (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="10140" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,6 +241,9 @@
   <data name="ListSend" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ListSend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="contrat (14)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contrat (14).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cloudbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cloudbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -253,8 +262,11 @@
   <data name="13210" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\13210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cart (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cart (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="121301" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\121301.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="contrat (25)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contrat (25).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,8 +313,11 @@
   <data name="11220" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\11220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="00" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\00.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cart (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clientEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clientEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,8 +325,11 @@
   <data name="4170" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4170.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="12130" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\12130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sales (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sales (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employees.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="6420" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6420.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,10 +337,13 @@
   <data name="boxes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boxes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="12140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cart (24)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cart (24).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contrat (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contrat (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sales (15)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sales (15).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

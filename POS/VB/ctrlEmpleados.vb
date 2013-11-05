@@ -17,8 +17,21 @@ Public Class ctrlEmpleados
     End Sub
 
     Private Sub cbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbArea.LostFocus
-        _LLENAR_CMB("SELECT idlugar as id, nombre || '-' || direccion as nombre from lugar where idlu_tipo = " & cbArea.SelectedValue.ToString, cbLugar)
-        _LLENAR_CMB("Select idlu_puesto as id, detalle as nombre from lu_puesto where idlu_tipo=" & cbArea.SelectedValue.ToString, cbPuesto)
+        Dim query As String = "SELECT idlugar as id, nombre || '-' || direccion as nombre from lugar where idlu_tipo = " & cbArea.SelectedValue.ToString
+
+        Try
+            frmMain._cnn.Open()
+            query = "SELECT idlu_puesto as id, detalle as nombre from lu_puesto where idlu_tipo = '" & cbArea.SelectedValue.ToString & "'"
+            _LLENAR_CMB(query, cbPuesto)
+            query = "SELECT idlugar as id, nombre || '-' || direccion as nombre from lugar where idlu_tipo = " & cbArea.SelectedValue.ToString
+            _LLENAR_CMB(query, cbLugar)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            frmMain._cnn.Close()
+        End Try
+        
+
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
@@ -181,6 +194,8 @@ Public Class ctrlEmpleados
 
     End Sub
 
+   
+
     'Private Sub cbEmpleado_SelectedIndexChanged(sender As Object, e As EventArgs)
     '    Try
     '        frmMain._cnn.Open()
@@ -217,5 +232,5 @@ Public Class ctrlEmpleados
 
     
    
- 
+
 End Class
